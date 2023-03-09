@@ -1,10 +1,16 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import { HomeStyled } from '@/styles/pages/Home.styled'
 import { connect } from 'react-redux'
+import { getData } from '@/store/actions/homeActions'
+import TopSection from '@/components/home/TopSection'
+import ContractStats from '@/components/home/ContractStats'
 
 
-const Home = ({ user }: any) => {
-  console.log(user);
+const Home = ({ data, getData }: any) => {
+  useEffect(() => {
+    getData();
+  }, [])
 
   return (
     <>
@@ -15,7 +21,12 @@ const Home = ({ user }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeStyled>
-        <h1>Home</h1>
+        {Object.keys(data).length && (
+          <>
+            <TopSection data={data} />
+            <ContractStats data={data} />
+          </>
+        )}
       </HomeStyled>
     </>
   )
@@ -23,8 +34,8 @@ const Home = ({ user }: any) => {
 
 const mapStateToProps = (state: any) => {
   return {
-    user: state.auth.user
+    data: state.home.homeItems
   }
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps, { getData })(Home)
