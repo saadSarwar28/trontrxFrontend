@@ -1,7 +1,7 @@
 import { NavbarStyled, LogoSection, LinksSection, MobileNavbar } from "@/styles/components/Navbar.styled"
 import { connect } from "react-redux"
-import { useEffect, useState } from "react"
-import NavItem from '@/components/NavItem';
+import { useEffect } from "react"
+import Link from "next/link"
 
 
 const Navbar = ({ content }: any) => {
@@ -20,7 +20,6 @@ const Navbar = ({ content }: any) => {
             })
         })
 
-        console.log(window.innerWidth)
         if (window.innerWidth > 992) {
             // change navbar bg to dark on scroll
             const navbar = document.getElementById('navbar');
@@ -55,11 +54,6 @@ const Navbar = ({ content }: any) => {
                             {Object.keys(content).length && <img src="/assets/images/navbar/home-icon.svg" alt="..." />}
                             <Link href="#" className="active">{Object.keys(content).length && content.navbar.navLinks[0]}</Link>
                         </li>
-                        <li>
-                            {Object.keys(content).length && <img src="/assets/images/navbar/how-works-icon.svg" alt="..." />}
-                            <Link href="#">{Object.keys(content).length && content.navbar.navLinks[1]}</Link>
-                        </li>
-                        {/* For only mobile */}
                         <li>
                             {Object.keys(content).length && <img src="/assets/images/navbar/how-works-icon.svg" alt="..." />}
                             <Link href="#">{Object.keys(content).length && content.navbar.navLinks[1]}</Link>
