@@ -12,16 +12,16 @@ import { DarkTheme } from '@/styles/themes/DarkTheme'
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isLight, setIsLight] = useState(true);
+    const [isLight, setIsLight] = useState(true);
 
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={isLight ? LightTheme : DarkTheme}>
-        <GlobalStyles />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
-    </Provider>
-  )
+    return (
+        <Provider store={store}>
+            <ThemeProvider theme={isLight ? LightTheme : DarkTheme}>
+                <GlobalStyles />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </ThemeProvider>
+        </Provider>
+    )
 }
