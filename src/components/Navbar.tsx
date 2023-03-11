@@ -1,42 +1,29 @@
-import { NavbarStyled, LogoSection, LinksSection } from "@/styles/components/Navbar.styled"
-import { connect } from "react-redux"
-import Link from "next/link"
-import { useEffect } from "react"
+import {NavbarStyled, LogoSection, LinksSection} from "@/styles/components/Navbar.styled"
+import {connect} from "react-redux"
+import {useEffect, useState} from "react"
+import NavItem from '@/components/NavItem';
 
 
-const Navbar = ({ data }: any) => {
+const Navbar = ({data}: any) => {
+
+    const [navbarClass, setNavbarClass] = useState('')
+    // change navbar bg to dark on scroll
+
     useEffect(() => {
-        // make link active when it is clicked
-        const links = document.querySelectorAll('ul a');
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                links.forEach(item => {
-                    if (item.innerText === e.currentTarget.innerText) {
-                        item.classList.add('active')
-                        console.log(e.currentTarget.innerText)
-                    } else {
-                        item.classList.remove('active')
-                    }
-                })
-            })
-        })
-
-        // change navbar bg to dark on scroll
-        const navbar = document.getElementById('navbar');
         window.onscroll = () => {
             if (window.scrollY >= 400) {
-                navbar.classList.add('black')
+                setNavbarClass('black')
             } else {
-                navbar.classList.remove('black')
+                setNavbarClass('')
             }
         }
-    }, [])
+    })
 
     return (
-        <NavbarStyled id="navbar">
+        <NavbarStyled id="navbar" className={navbarClass}>
             <LogoSection>
                 <div>
-                    {Object.keys(data).length && <img src={data.navbar.logo} alt="..." />}
+                    {Object.keys(data).length && <img src={data.navbar.logo} alt="..."/>}
                 </div>
                 <div>
                     <h1 id="navbarTitle">Tron Trx</h1>
@@ -45,21 +32,11 @@ const Navbar = ({ data }: any) => {
             </LogoSection>
             <LinksSection>
                 <ul id="links">
-                    <li>
-                        <Link href="#" className="active">ABOUT US</Link>
-                    </li>
-                    <li>
-                        <Link href="#">HOW IT WORKS</Link>
-                    </li>
-                    <li>
-                        <Link href="#">BENEFITS</Link>
-                    </li>
-                    <li>
-                        <Link href="#">FAQs</Link>
-                    </li>
-                    <li>
-                        <Link href="#">DASHBOARD</Link>
-                    </li>
+                    <NavItem text={'ABOUT US'} link="#"/>
+                    <NavItem text={'HOW IT WORKS'} link="#"/>
+                    <NavItem text={'BENEFITS'} link="#"/>
+                    <NavItem text={'FAQs'} link="#"/>
+                    <NavItem text={'DASHBOARD'} link="#"/>
                 </ul>
             </LinksSection>
         </NavbarStyled>
