@@ -20,7 +20,7 @@ const Navbar = ({ content }: any) => {
     }, [])
 
     return (
-        <NavbarStyled id="navbar">
+        <NavbarStyled id="navbar" className={navbarClass}>
             <LogoSection>
                 <div>
                     {Object.keys(content).length && <img src="/assets/images/navbar/logo.svg" alt="..." />}
