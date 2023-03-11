@@ -1,24 +1,24 @@
 import { ContractStatsStyled, StatsLeft, StatsRight } from "@/styles/pages/components/home/ContractStats.styled"
 
 
-const ContractStats = ({ data }: any) => {
+const ContractStats = ({ content }: any) => {
     return (
         <ContractStatsStyled>
             <StatsLeft>
                 <div>
-                    <img src={data.contractStats.icons[0]} alt="..." />
+                    <img src="/assets/images/home/contractStats/arrows-icon.svg" alt="..." />
                     <h2>Contract Statistics</h2>
                 </div>
-                <img src={data.contractStats.icons[1]} alt="..." />
+                <img src="/assets/images/home/contractStats/right-arrow-icon.svg" alt="..." />
             </StatsLeft>
             <StatsRight>
-                {data.contractStats.stats.map((item: any, index: any) => (
+                {content.contractStats.stats.map((item: any, index: any) => (
                     <div key={index}>
                         <div>
                             <h2>{item.title}</h2>
                             <p>{item.desc}</p>
                         </div>
-                        <img src={data.contractStats.icons[2]} alt="..." />
+                        <img src="/assets/images/home/contractStats/line-icon.svg" alt="..." />
                     </div>
                 ))}
             </StatsRight>

@@ -2,14 +2,16 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 import { HomeStyled } from '@/styles/pages/Home.styled'
 import { connect } from 'react-redux'
-import { getData } from '@/store/actions/homeActions'
+import { getContent } from '@/store/actions/homeActions'
 import TopSection from '@/components/home/TopSection'
 import ContractStats from '@/components/home/ContractStats'
+import WhyChoose from '@/components/home/WhyChoose'
+import HowInvest from '@/components/home/HowInvest'
 
 
-const Home = ({ data, getData }: any) => {
+const Home = ({ content, getContent }: any) => {
   useEffect(() => {
-    getData();
+    getContent();
   }, [])
 
   return (
@@ -21,10 +23,12 @@ const Home = ({ data, getData }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeStyled>
-        {Object.keys(data).length && (
+        {Object.keys(content).length && (
           <>
-            <TopSection data={data} />
-            <ContractStats data={data} />
+            <TopSection content={content} />
+            <ContractStats content={content} />
+            {/* <WhyChoose content={content} />
+            <HowInvest content={content} /> */}
           </>
         )}
       </HomeStyled>
@@ -34,8 +38,8 @@ const Home = ({ data, getData }: any) => {
 
 const mapStateToProps = (state: any) => {
   return {
-    data: state.home.homeItems
+    content: state.home.homeItems
   }
 }
 
-export default connect(mapStateToProps, { getData })(Home)
+export default connect(mapStateToProps, { getContent })(Home)

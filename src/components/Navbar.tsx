@@ -1,10 +1,10 @@
-import { NavbarStyled, LogoSection, LinksSection } from "@/styles/components/Navbar.styled"
+import { NavbarStyled, LogoSection, LinksSection, MobileNavbar } from "@/styles/components/Navbar.styled"
 import { connect } from "react-redux"
 import Link from "next/link"
 import { useEffect } from "react"
 
 
-const Navbar = ({ data }: any) => {
+const Navbar = ({ content }: any) => {
     useEffect(() => {
         // make link active when it is clicked
         const links = document.querySelectorAll('ul a');
@@ -13,7 +13,6 @@ const Navbar = ({ data }: any) => {
                 links.forEach(item => {
                     if (item.innerText === e.currentTarget.innerText) {
                         item.classList.add('active')
-                        console.log(e.currentTarget.innerText)
                     } else {
                         item.classList.remove('active')
                     }
@@ -21,13 +20,16 @@ const Navbar = ({ data }: any) => {
             })
         })
 
-        // change navbar bg to dark on scroll
-        const navbar = document.getElementById('navbar');
-        window.onscroll = () => {
-            if (window.scrollY >= 400) {
-                navbar.classList.add('black')
-            } else {
-                navbar.classList.remove('black')
+        console.log(window.innerWidth)
+        if (window.innerWidth > 992) {
+            // change navbar bg to dark on scroll
+            const navbar = document.getElementById('navbar');
+            window.onscroll = () => {
+                if (window.scrollY >= 400) {
+                    navbar.classList.add('black')
+                } else {
+                    navbar.classList.remove('black')
+                }
             }
         }
     }, [])
@@ -36,31 +38,41 @@ const Navbar = ({ data }: any) => {
         <NavbarStyled id="navbar">
             <LogoSection>
                 <div>
-                    {Object.keys(data).length && <img src={data.navbar.logo} alt="..." />}
+                    {Object.keys(content).length && <img src="/assets/images/navbar/logo.svg" alt="..." />}
                 </div>
                 <div>
-                    <h1 id="navbarTitle">Tron Trx</h1>
+                    <h1 id="navbarTitle">{Object.keys(content).length && content.navbar.navTitle}</h1>
                     <p id="navbarDesc">King of all contracts</p>
                 </div>
             </LogoSection>
             <LinksSection>
-                <ul id="links">
-                    <li>
-                        <Link href="#" className="active">ABOUT US</Link>
-                    </li>
-                    <li>
-                        <Link href="#">HOW IT WORKS</Link>
-                    </li>
-                    <li>
-                        <Link href="#">BENEFITS</Link>
-                    </li>
-                    <li>
-                        <Link href="#">FAQs</Link>
-                    </li>
-                    <li>
-                        <Link href="#">DASHBOARD</Link>
-                    </li>
-                </ul>
+                <div>
+                    <img src="/assets/images/navbar/menu-icon.svg" alt="..." />
+                </div>
+                <MobileNavbar>
+                    <ul id="links">
+                        <li>
+                            {Object.keys(content).length && <img src="/assets/images/navbar/home-icon.svg" alt="..." />}
+                            <Link href="#" className="active">{Object.keys(content).length && content.navbar.navLinks[0]}</Link>
+                        </li>
+                        <li>
+                            {Object.keys(content).length && <img src="/assets/images/navbar/how-works-icon.svg" alt="..." />}
+                            <Link href="#">{Object.keys(content).length && content.navbar.navLinks[1]}</Link>
+                        </li>
+                        <li>
+                            {Object.keys(content).length && <img src="/assets/images/navbar/home-icon.svg" alt="..." />}
+                            <Link href="#">{Object.keys(content).length && content.navbar.navLinks[2]}</Link>
+                        </li>
+                        <li>
+                            {Object.keys(content).length && <img src="/assets/images/navbar/home-icon.svg" alt="..." />}
+                            <Link href="#">{Object.keys(content).length && content.navbar.navLinks[3]}</Link>
+                        </li>
+                        <li>
+                            {Object.keys(content).length && <img src="/assets/images/navbar/home-icon.svg" alt="..." />}
+                            <Link href="#">{Object.keys(content).length && content.navbar.navLinks[4]}</Link>
+                        </li>
+                    </ul>
+                </MobileNavbar>
             </LinksSection>
         </NavbarStyled>
     )
@@ -68,7 +80,7 @@ const Navbar = ({ data }: any) => {
 
 const mapStateToProps = (state: any) => {
     return {
-        data: state.home.homeItems
+        content: state.home.homeItems
     }
 }
 

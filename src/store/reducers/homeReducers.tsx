@@ -5,7 +5,7 @@ const initialState = {
 
 const homeReducers = (state = initialState, action: any) => {
     switch (action.type) {
-        case 'getHomeData':
+        case 'getHomeContent':
             return {
                 ...state,
                 homeItems: action.payload

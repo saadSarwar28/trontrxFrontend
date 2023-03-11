@@ -1,0 +1,105 @@
+
+{
+    "navbar": {
+        "logo": "/assets/images/navbar/logo.svg"
+    },
+    "topSection": {
+        "bgImage": "/assets/images/home/topSection/background.png",
+        "mainImage": "assets/images/home/topSection/main.png",
+        "mainLeft": "assets/images/home/topSection/main-left.png",
+        "mainRight": "assets/images/home/topSection/main-right.png",
+        "heading": "King of all Contracts",
+        "title": "100% Decentralized",
+        "desc": "Tron Trx is the perfect combination of Digital Technology, High Security and Community Program",
+        "socialIcons": [
+            "/assets/images/home/topSection/telegram-icon.svg",
+            "/assets/images/home/topSection/youtube-icon.svg"
+        ]
+    },
+    "contractStats": {
+        "icons": [
+            "/assets/images/home/contractStats/arrows-icon.svg",
+            "/assets/images/home/contractStats/right-arrow-icon.svg",
+            "/assets/images/home/contractStats/line-icon.svg"
+        ],
+        "stats": [
+            {"title": "0.00 TRX", "desc": "Net Contract Balance"},
+            {"title": "0.00 TRX", "desc": "Total Deposited"},
+            {"title": "0.00 TRX", "desc": "Total Withdrawn"},
+            {"title": "0.00 TRX", "desc": "Project insurance"}
+        ]
+    },
+    "whyChoose": {
+        "mainHeading": ["Why Choose ", "Tron Trx ", "Platform?"],
+        "mainImages": [
+            "/assets/images/home/whyChoose/main1.svg",
+            "/assets/images/home/whyChoose/main2.svg",
+            "/assets/images/home/whyChoose/main3.svg",
+            "/assets/images/home/whyChoose/main4.svg"
+        ],
+        "sections": [
+            {
+                "title": "decentralized",
+                "desc": "There is no 3rd Party Management managing your funds . Neither the Affiliates or the Development team have access to the project smart contact once it is deployed on the blockchain.",
+                "image": "/assets/images/home/whyChoose/decentralized.svg"
+            },
+            {
+                "title": "Immutability",
+                "desc": "Once the project code is verified and deployed, it's the law. This means no changes or amendments can be done. Truly safe and secure.",
+                "image": "/assets/images/home/whyChoose/immutability.svg"
+            },
+            {
+                "title": "Automated Perpetual System (APS)",
+                "desc": "Tron Trx's smart contract has a built in APS which automatically sends all rewards to the community members thereby eliminating any scope of human intervention.",
+                "image": "/assets/images/home/whyChoose/aps.svg"
+            },
+            {
+                "title": "Longevity",
+                "desc": "All Anti Whale and Anti Multi Id measures along with APS and Project Insurance will ensure Longevity of the project so that everybody can reap the benefits.",
+                "image": "/assets/images/home/whyChoose/longevity1.svg"
+            },
+            {
+                "title": "Project Insurance",
+                "desc": "Tron Trx's smart contract has a built in Project Insurance mechanism to protect the interests of the community.",
+                "image": "/assets/images/home/whyChoose/projectInsurance.svg"
+            },
+            {
+                "title": "Transparency",
+                "desc": "All codes used to develop the project are visible for community members to look at. Also, all transactions are recorded on the Blockchain's ledger which is accessible to everyone.",
+                "image": "/assets/images/home/whyChoose/transparency.svg"
+            }
+        ]
+    },
+    "hr": [
+        "/assets/images/home/lines.svg",
+        "/assets/images/home/diamond.svg"
+    ],
+    "howInvest": {
+        "mainHeading": ["How to invest in ", "Trontrx?"],
+        "video": "/assets/images/home/howInvest/videoImage.png",
+        "greyImage": "/assets/images/home/howInvest/greyImage.png",
+        "rightSections": [
+            {
+                "title": "Download wallet app",
+                "desc": "Download/Install TronLink based wallet on your mobile or web browser or Klever Wallet for mobile devices.",
+                "image": "/assets/images/home/howInvest/download.svg"
+            },
+            {
+                "title": "Get Tron (TRX)",
+                "desc": "You can easily acquire TRX from the most popular platforms. After purchasing TRX, you can transfer it to your personal wallet, and then transfer it to Tron Trx smart-contract address.",
+                "image": "/assets/images/home/howInvest/getTron.svg"
+            },
+            {
+                "title": "Deposit TRX",
+                "desc": "Head towards contribution",
+                "image": "/assets/images/home/howInvest/deposit.svg"
+            },
+            {
+                "title": "Start Earning",
+                "desc": "Congratulations. You have joined the unique world of Tron Trx. You can find all your personal information on Wallet Statistics page and you can withdraw your money from this screen whenever you want.",
+                "image": "/assets/images/home/howInvest/start-earning.svg"
+            }
+        ]
+    }
+}
+

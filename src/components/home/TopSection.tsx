@@ -1,37 +1,38 @@
 import { TopSectionStyled, ContentColumn, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn } from '@/styles/pages/components/home/TopSection.styled'
 
 
-const TopSection = ({ data }: any) => {
+
+const TopSection = ({ content }: any) => {
     return (
         <TopSectionStyled style={{
-            backgroundImage: `url(${data.topSection.bgImage})`
+            backgroundImage: `url("/assets/images/home/topSection/background.png")`
         }}>
             <ContentColumn>
                 <div>
                     <Text>
-                        <h1>{data.topSection.heading}</h1>
-                        <h3>{data.topSection.title}</h3>
-                        <p>{data.topSection.desc}</p>
+                        <h1>{content.topSection.heading}</h1>
+                        <h3>{content.topSection.title}</h3>
+                        <p>{content.topSection.desc}</p>
                     </Text>
                     <Buttons>
-                        <YellowButton>contract statistics</YellowButton>
-                        <WhiteButton>whitepaper</WhiteButton>
+                        <YellowButton>{content.topSection.buttons[0]}</YellowButton>
+                        <WhiteButton>{content.topSection.buttons[1]}</WhiteButton>
                     </Buttons>
                     <SocialIcons>
                         <div>
-                            <img src={data.topSection.socialIcons[0]} alt="..." />
+                            <img src="/assets/images/home/topSection/telegram-icon.svg" alt="..." />
                         </div>
                         <div>
-                            <img src={data.topSection.socialIcons[1]} alt="..." />
+                            <img src="/assets/images/home/topSection/youtube-icon.svg" alt="..." />
                         </div>
                     </SocialIcons>
                 </div>
             </ContentColumn>
             <ImageColumn>
                 <div>
-                    <img src={data.topSection.mainLeft} alt="..." />
-                    <img src={data.topSection.mainImage} alt="..." />
-                    <img src={data.topSection.mainRight} alt="..." />
+                    <img src="/assets/images/home/topSection/main-left.png" alt="..." />
+                    <img src="/assets/images/home/topSection/main.png" alt="..." />
+                    <img src="/assets/images/home/topSection/main-right.png" alt="..." />
                 </div>
             </ImageColumn>
         </TopSectionStyled>

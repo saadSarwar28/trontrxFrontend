@@ -5,15 +5,24 @@ export const TopSectionStyled = styled.section`
     width: 100%;
     height: 100vh;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
 
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 100%;
+        height: 165vh;
+    }
+
+    @media (orientation: portrait) {
+        height: 1000px;
+    }
 `
 
 export const ContentColumn = styled.div`
-    width: 50%;
     color: white;
     position: relative;
 
@@ -22,6 +31,30 @@ export const ContentColumn = styled.div`
         top: 50%;
         left: 28%;
         transform: translateY(-50%)
+    }
+
+    @media (max-width: 1200px) {
+        > div {
+            left: 20%;
+        }
+    }
+
+    @media (max-width: 992px) {
+        > div {
+            position: relative;
+            width: 70%;
+            top: 45%;
+            /* left: 55%; */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 576px) {
+        > div {
+            width: 100%;
+        }
     }
 `
 
@@ -65,10 +98,53 @@ export const Text = styled.div`
 
         color: ${({ theme }) => theme.colors.whiteFont};
     }
+
+    @media (max-width: 992px) {
+        h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            width: auto;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        h1 {
+            font-size: 23px;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+    }
 `
 
 export const Buttons = styled.div`
+
+@media (max-width: 992px) {
+    > button {
+        width: 160px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 576px) {
     
+    > button:last-child {
+        margin-left: 10px;
+    }
+}
 `
 
 export const YellowButton = styled.button`
@@ -91,7 +167,7 @@ export const WhiteButton = styled(YellowButton)`
     height: 59px;
 
     background: ${({ theme }) => theme.colors.whiteBg};
-    margin-left: 17px;
+    margin-left: 17px;    
 `
 
 export const SocialIcons = styled.div`
@@ -129,6 +205,21 @@ export const SocialIcons = styled.div`
             background: ${({ theme }) => theme.colors.mainYellow};
         }
     }
+
+    @media (max-width: 992px) {
+        justify-content: center;
+
+        > div {
+            svg {
+                height: 24.62px;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        gap: 10px;
+        margin-top: 15px;
+    }
 `
 
 export const ImageColumn = styled.div`
@@ -138,10 +229,7 @@ export const ImageColumn = styled.div`
 
     position: relative;
 
-    width: 50%;
-
-
-    div {
+    > div {
         position: absolute;
         top: 55%;
         left: 15%;
@@ -176,5 +264,28 @@ export const ImageColumn = styled.div`
         position: absolute;
         top: 190px;
         left: 300px;
+    }
+
+    @media (max-width: 1200px) {
+        > div {
+            left: 5%;
+        }
+    }
+
+    @media (max-width: 992px) {
+        > div {
+            position: relative;
+            top: 15%;
+            /* left: 55%; */
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 0;
+        }
+
+        img {
+            position: relative;
+            width: 160.09px;
+            height: 283.23px;
+        }
     }
 `

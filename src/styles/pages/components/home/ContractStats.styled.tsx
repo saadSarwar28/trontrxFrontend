@@ -36,7 +36,7 @@ export const StatsLeft = styled.div`
             /* or 27px */
             letter-spacing: 0.01em;
             text-transform: capitalize;
-            color: #000000;
+            color: ${({ theme }) => theme.colors.blackFont};
         }
     }
 
@@ -88,7 +88,7 @@ export const StatsRight = styled.div`
         /* or 34px */
         letter-spacing: 0.01em;
         text-transform: capitalize;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.blackFont};
 
         margin-bottom: 6px;
     }

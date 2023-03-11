@@ -1,10 +1,10 @@
-import data from '../../data/home.json'
+import data from '../../content/content.json'
 
 
-export const getData = () => {
+export const getContent = () => {
     return (dispatch: any) => {
         dispatch({
-            type: 'getHomeData',
+            type: 'getHomeContent',
             payload: data
         })
     }
