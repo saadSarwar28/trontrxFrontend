@@ -6,6 +6,15 @@ export const ContractStatsStyled = styled.section`
 
     height: 297px;
     background: #F2F2F2;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    @media (max-width: 992px) {
+        height: 330px;
+    }
 `
 
 export const StatsLeft = styled.div`
@@ -44,9 +53,22 @@ export const StatsLeft = styled.div`
         position: absolute;
         top: -20px;
         right: 20px;
+        z-index: 10;
 
         width: 14px;
         height: 102px;
+        display: inline-block;
+    }
+
+    @media (max-width: 1200px) {
+        > img {
+            display: none;
+        }
+    }
+
+    @media (max-width: 992px) {
+        margin: 20px 0;
+        width: 100%;
     }
 `
 
@@ -59,24 +81,40 @@ export const StatsRight = styled.div`
 
     > div {
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: space-around;
+        width: 50%;    
+    }
 
-        position: relative;
+    @media (max-width: 1300px) {
+        padding: 0;
+        width: 80%;
+    }
 
-        width: 25%;
-        text-align: center;
-
-        img {
-            position: absolute;
-            right: 0;
+    @media (max-width: 992px) {
+        > div {
+            flex-direction: column;
         }
     }
 
-    > div:last-child {
-        img {
-            display: none;
-        }
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-left: 10px;
+    }
+`
+
+export const Section = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+    text-align: center;
+    padding-right: 30px;
+
+    img {
+        position: absolute;
+        right: 0;
+        margin-left: 20px;
     }
 
     h2 {
@@ -103,5 +141,27 @@ export const StatsRight = styled.div`
         letter-spacing: 0.01em;
         text-transform: capitalize;
         color: #B0B0B0;
+    }
+
+    @media (max-width: 1200px) {
+        margin-bottom: 30px;
+    }
+
+    @media (max-width: 992px) {
+        #line2 {
+            display: none;
+        }
+
+        h2 {
+            font-size: 24.1444px;
+        }
+
+        p {
+            font-size: 12.0722px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        padding-right: 10px
     }
 `

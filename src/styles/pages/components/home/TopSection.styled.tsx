@@ -20,6 +20,10 @@ export const TopSectionStyled = styled.section`
     @media (orientation: portrait) {
         height: 1000px;
     }
+
+    @media (min-width: 1400px) {
+        padding-left: 3%;
+    }
 `
 
 export const ContentColumn = styled.div`
@@ -29,13 +33,14 @@ export const ContentColumn = styled.div`
     > div {
         position: absolute;
         top: 50%;
-        left: 28%;
+        left: 22%;
         transform: translateY(-50%)
     }
 
     @media (max-width: 1200px) {
         > div {
             left: 20%;
+            width: 100%;
         }
     }
 

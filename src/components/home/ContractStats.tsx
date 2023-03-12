@@ -1,4 +1,4 @@
-import { ContractStatsStyled, StatsLeft, StatsRight } from "@/styles/pages/components/home/ContractStats.styled"
+import { ContractStatsStyled, StatsLeft, StatsRight, Section } from "@/styles/pages/components/home/ContractStats.styled"
 
 
 const ContractStats = ({ content }: any) => {
@@ -12,15 +12,37 @@ const ContractStats = ({ content }: any) => {
                 <img src="/assets/images/home/contractStats/right-arrow-icon.svg" alt="..." />
             </StatsLeft>
             <StatsRight>
-                {content.contractStats.stats.map((item: any, index: any) => (
-                    <div key={index}>
+                <div>
+                    <Section>
                         <div>
-                            <h2>{item.title}</h2>
-                            <p>{item.desc}</p>
+                            <h2>{content.contractStats.stats[0].title}</h2>
+                            <p>{content.contractStats.stats[0].desc}</p>
                         </div>
                         <img src="/assets/images/home/contractStats/line-icon.svg" alt="..." />
-                    </div>
-                ))}
+                    </Section>
+                    <Section>
+                        <div>
+                            <h2>{content.contractStats.stats[1].title}</h2>
+                            <p>{content.contractStats.stats[1].desc}</p>
+                        </div>
+                        <img src="/assets/images/home/contractStats/line-icon.svg" alt="..." />
+                    </Section>
+                </div>
+                <div>
+                    <Section>
+                        <div>
+                            <h2>{content.contractStats.stats[2].title}</h2>
+                            <p>{content.contractStats.stats[2].desc}</p>
+                        </div>
+                        <img src="/assets/images/home/contractStats/line-icon.svg" alt="..." id="line2" />
+                    </Section>
+                    <Section>
+                        <div>
+                            <h2>{content.contractStats.stats[3].title}</h2>
+                            <p>{content.contractStats.stats[3].desc}</p>
+                        </div>
+                    </Section>
+                </div>
             </StatsRight>
         </ContractStatsStyled>
     )

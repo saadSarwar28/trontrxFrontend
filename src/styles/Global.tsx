@@ -8,6 +8,10 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     @media (min-width: 1400px) {
         section, nav {
             padding-left: 5%;

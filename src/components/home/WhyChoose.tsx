@@ -1,5 +1,5 @@
-import { WhyChooseStyled, Sections, Section, HR } from "@/styles/pages/components/home/WhyChoose.styled"
-import React from "react"
+import { WhyChooseStyled, Sections, Section } from "@/styles/pages/components/home/WhyChoose.styled"
+import Divider from "./Divider"
 
 
 const WhyChoose = ({ content }: any) => {
@@ -13,7 +13,7 @@ const WhyChoose = ({ content }: any) => {
     ]
 
     return (
-        <WhyChooseStyled>
+        <WhyChooseStyled id="whyChoose">
             <h1>
                 {content.whyChoose.mainHeading[0]}
                 <span>{content.whyChoose.mainHeading[1]}</span>
@@ -39,10 +39,7 @@ const WhyChoose = ({ content }: any) => {
                     <img src="/assets/images/home/whyChoose/longevity2.svg" alt="..." id="longevityImg2" />
                 </div>
             </Sections>
-            <HR>
-                <img src="/assets/images/home/lines.svg" alt="..." />
-                <img src="/assets/images/home/diamond.svg" alt="..." />
-            </HR>
+            <Divider />
         </WhyChooseStyled>
     )
 }

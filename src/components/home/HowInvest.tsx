@@ -1,5 +1,5 @@
 import { HowInvestStyled, LeftColumn, RightColumn, Section } from "@/styles/pages/components/home/HowInvest.styled"
-import { HR } from "@/styles/pages/components/home/WhyChoose.styled"
+import Divider from './Divider';
 
 
 const HowInvest = ({ content }: any) => {
@@ -12,7 +12,7 @@ const HowInvest = ({ content }: any) => {
 
     return (
         <>
-            <HowInvestStyled>
+            <HowInvestStyled id="howInvest">
                 <h1>
                     {content.howInvest.mainHeading[0]}
                     <span>{content.howInvest.mainHeading[1]}</span>
@@ -37,10 +37,7 @@ const HowInvest = ({ content }: any) => {
                     </RightColumn>
                 </div>
             </HowInvestStyled>
-            <HR>
-                <img src="/assets/images/home/lines.svg" alt="..." />
-                <img src="/assets/images/home/diamond.svg" alt="..." />
-            </HR>
+            <Divider />
         </>
     )
 }

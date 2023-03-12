@@ -11,16 +11,16 @@ const Text = styled.span`
 `
 
 interface NavItemProps {
-    text: string,
-    link: string,
+  text: string,
+  link: string,
 }
 
-const NavItem:React.FC<NavItemProps> = ({text, link}) => {
-    return (
-        <li>
-            <Link href={link}><Text>{text}</Text></Link>
-        </li>
-    )
+const NavItem: React.FC<NavItemProps> = ({ text, link }) => {
+  return (
+    <li>
+      <Link href={link} scroll={false}><Text>{text}</Text></Link>
+    </li>
+  )
 }
 
 export default NavItem

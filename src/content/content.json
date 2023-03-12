@@ -68,5 +68,68 @@
                 "desc": "Congratulations. You have joined the unique world of Tron Trx. You can find all your personal information on Wallet Statistics page and you can withdraw your money from this screen whenever you want."
             }
         ]
+    },
+    "incomeSources": {
+        "mainHeading": ["three main sources of ", "income"],
+        "cards": [
+            {
+                "title": "daily roi",
+                "desc": "There is no 3rd Party Management managing your funds . Neither the Affiliates or the Development team have access to the project smart contact once it is deployed on the blockchain"
+            },
+            {
+                "title": "matching income",
+                "desc": "Additional matching level income (As per your current level) ranging from 30%-90% of your team's daily ROI income"
+            },
+            {
+                "title": "referral income",
+                "desc": "TRON TRX's smart contract has a built in Project Insurance mechanism to protect the interests of the community"
+            }
+        ]
+    },
+    "matchingIncome": {
+        "mainHeading": ["6 LEVEL", "MATCHING INCOME", "AFFILIATE PROGRAM"],
+        "paragraphs": [
+            "Requirements of Direct Referrals must be met along with Total Team Deposits Volume in order to move to next level.",
+            "All volume is calculated on your Total Team's Deposits Volume.",
+            "Matching Income is automatically calculated by APS on a daily basis."
+        ],
+        "levels": [
+            {"percentage": "30%", "level": "level 1"},
+            {"percentage": "20%", "level": "level 2"},
+            {"percentage": "15%", "level": "level 3"},
+            {"percentage": "10%", "level": "level 4"},
+            {"percentage": "10%", "level": "level 5"},
+            {"percentage": "5%", "level": "level 6"}
+        ]
+    },
+    "faqs": {
+        "mainHeading": "Frequently Asked Questions",
+        "tabs": [
+            {
+                "title": "General",
+                "questionsAnswers": [
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    }
+                ]
+            }
+        ]   
     }
 }

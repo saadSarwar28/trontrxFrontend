@@ -4,7 +4,7 @@ import { TopSectionStyled, ContentColumn, Text, Buttons, YellowButton, WhiteButt
 
 const TopSection = ({ content }: any) => {
     return (
-        <TopSectionStyled style={{
+        <TopSectionStyled id="home" style={{
             backgroundImage: `url("/assets/images/home/topSection/background.png")`
         }}>
             <ContentColumn>

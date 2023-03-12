@@ -7,6 +7,9 @@ import TopSection from '@/components/home/TopSection'
 import ContractStats from '@/components/home/ContractStats'
 import WhyChoose from '@/components/home/WhyChoose'
 import HowInvest from '@/components/home/HowInvest'
+import IncomeSources from '../components/home/IncomeSources';
+import MatchingIncome from '@/components/home/MatchingIncome'
+import FAQs from '@/components/home/FAQs'
 
 
 const Home = ({ content, getContent }: any) => {
@@ -27,8 +30,11 @@ const Home = ({ content, getContent }: any) => {
           <>
             <TopSection content={content} />
             <ContractStats content={content} />
-            {/* <WhyChoose content={content} />
-            <HowInvest content={content} /> */}
+            {/* <HowInvest content={content} /> */}
+            {/* <WhyChoose content={content} /> */}
+            {/* <IncomeSources content={content} /> */}
+            {/* <MatchingIncome content={content} /> */}
+            {/* <FAQs content={content} /> */}
           </>
         )}
       </HomeStyled>

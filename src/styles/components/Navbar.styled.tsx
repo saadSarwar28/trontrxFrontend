@@ -7,21 +7,23 @@ export const NavbarStyled = styled.nav`
     z-index: 1000;
 
     display: grid;
-    grid-template-columns: 47% 53%;
+    grid-template-columns: 40% 60%;
     justify-content: space-between;
     align-items: center;
 
     width: 100%;
     transition: 0.3s;
 
-    &.black {
-        background: rgba(1, 5, 31, 0.5);
-        top: 0;
-        padding-top: 5px;
+    @media (min-width: 993px) {
+        &.black {
+            background: rgba(1, 5, 31, 0.5);
+            top: 0;
+            padding-top: 5px;
 
-        /* h1#navbarTitle, p#navbarDesc, a {
-            color: ${({ theme }) => theme.colors.whiteFont};
-        } */
+            /* h1#navbarTitle, p#navbarDesc, a {
+                color: ${({ theme }) => theme.colors.blackFont};
+            } */
+        }
     }
 
     @media (max-width: 1200px) {
@@ -150,20 +152,16 @@ export const LinksSection = styled.div`
 
     @media (max-width: 1200px) {
         ul {
-            gap: 30px;
+            gap: 25px;
         }
     }
 
     @media (max-width: 992px) {
-        /* ul {
-            display: none;
-        } */
-
         // menu icon
         > div:first-child {
             display: block;
             position: absolute;
-            top: 15px;
+            top: 23px;
             right: 30px;
             padding: 2px;
             cursor: pointer;
@@ -181,30 +179,58 @@ export const LinksSection = styled.div`
 export const MobileNavbar = styled.div`
     @media (max-width: 992px) {
         position: absolute;        
-        /* top: 80px; */
-        top: 78px;
-        right: 0;
+        top: 76px;
+        right: -100vw;
         z-index: 4;
 
-        width: 70vw;
+        width: 350px;
         height: 100vh;
         background-image: url('/assets/images/navbar/mobile-bg.png');
         background-repeat: no-repeat;
         background-size: 110% 100%;
+        transition: 300ms;
+
+        &.show {
+            right: 0;
+        }
 
         ul {
             position: absolute;
-            top: 50%;
-            left: 39%;
-            transform: translateX(-50%);
-            transform: translateY(-50%);
-
+            top: 13%;
+            left: 15%;
             flex-direction: column;
+            align-items: flex-start;
+            row-gap: 35px;
 
-            // mobile link icon
-            img:first-child {
-                display: block;
+            > div {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                // mobile link icon
+                img:first-child {
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                }
+
+                a {
+                    font-family: 'PT Sans', sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 13.5421px;
+                    line-height: 18px;
+                    /* identical to box height */
+                    letter-spacing: 0.09em;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                }
             }
         }
+    }
+
+    @media (max-width: 576px) {
+        top: 78px;
+        width: 300px;
     }
 `
