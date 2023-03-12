@@ -23,12 +23,16 @@ const HowInvest = ({ content }: any) => {
                         <img src="/assets/images/home/howInvest/videoImage.png" />
                     </LeftColumn>
                     <RightColumn>
+                        <h1>
+                            {content.howInvest.mainHeading[0]}
+                            <span>{content.howInvest.mainHeading[1]}</span>
+                        </h1>
                         <div>
                             {content.howInvest.rightSections.map((section: any, index: number) => (
                                 <Section key={index}>
                                     <h2>{section.title}</h2>
                                     <div>
-                                        <img src={sectionImages[index]} alt="..." />
+                                        <img src={sectionImages[index]} alt="..." id={`investImg${index}`} />
                                         <p>{section.desc}</p>
                                     </div>
                                 </Section>

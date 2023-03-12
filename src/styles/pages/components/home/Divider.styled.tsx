@@ -13,4 +13,17 @@ export const HR = styled.div`
         left: 50%;
         transform: translateX(-50%);
     }
+
+    @media (max-width: 1200px) {
+        img:last-child {
+            height: 25px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        img:last-child {
+            height: 14px;
+            top: 7px;
+        }
+    }
 `

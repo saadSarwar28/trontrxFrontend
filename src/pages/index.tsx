@@ -30,11 +30,11 @@ const Home = ({ content, getContent }: any) => {
           <>
             <TopSection content={content} />
             <ContractStats content={content} />
-            {/* <HowInvest content={content} /> */}
-            {/* <WhyChoose content={content} /> */}
-            {/* <IncomeSources content={content} /> */}
-            {/* <MatchingIncome content={content} /> */}
-            {/* <FAQs content={content} /> */}
+            <HowInvest content={content} />
+            <WhyChoose content={content} />
+            <IncomeSources content={content} />
+            <MatchingIncome content={content} />
+            <FAQs content={content} />
           </>
         )}
       </HomeStyled>
