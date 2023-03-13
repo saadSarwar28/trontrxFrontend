@@ -24,7 +24,22 @@ export const HowInvestStyled = styled.section`
 
     > div {
         display: grid;
-        grid-template-columns: 45% 55%;
+        grid-template-columns: 47% 53%;
+    }
+
+    @media (min-width: 1400px) {
+            padding-left: 5%;
+            padding-right: 5%;
+    }
+
+    @media (min-width: 1600px) {
+            padding-left: 8%;
+            padding-right: 8%;
+    }
+
+    @media (min-width: 2000px) {
+            padding-left: 10%;
+            padding-right: 10%;
     }
 
     @media (max-width: 1200px) {
@@ -53,7 +68,7 @@ export const LeftColumn = styled.div`
         height: 463px;
         position: absolute;
         top: 90px;
-        left: 24%;
+        left: 25%;
     }
 
     @media (max-width: 1400px) {

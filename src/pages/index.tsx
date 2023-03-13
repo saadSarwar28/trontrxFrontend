@@ -10,6 +10,7 @@ import HowInvest from '@/components/home/HowInvest'
 import IncomeSources from '../components/home/IncomeSources';
 import MatchingIncome from '@/components/home/MatchingIncome'
 import FAQs from '@/components/home/FAQs'
+import Divider from '@/components/home/Divider'
 
 
 const Home = ({ content, getContent }: any) => {
@@ -31,9 +32,13 @@ const Home = ({ content, getContent }: any) => {
             <TopSection content={content} />
             <ContractStats content={content} />
             <HowInvest content={content} />
+            <Divider />
             <WhyChoose content={content} />
+            <Divider />
             <IncomeSources content={content} />
+            <Divider />
             <MatchingIncome content={content} />
+            <Divider />
             <FAQs content={content} />
           </>
         )}

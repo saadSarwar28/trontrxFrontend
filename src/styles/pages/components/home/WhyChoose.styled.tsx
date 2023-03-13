@@ -3,6 +3,57 @@ import styled from 'styled-components'
 
 export const WhyChooseStyled = styled.section`
     padding-top: 53px;
+    padding-bottom: 53px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+
+    #whyChooseDesktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #whyChooseMobile {
+        display: none;
+    }
+
+    @media (max-width: 1200px) {
+        #whyChooseDesktop {
+            display: none;
+        }
+
+        #whyChooseMobile { 
+            display: block;
+        }
+    }
+
+    @media (min-width: 1400px) {
+         & {
+             padding-left: 5%;
+             padding-right: 5%;
+         }
+     }
+
+     @media (min-width: 1600px) {
+         & {
+             padding-left: 8%;
+             padding-right: 8%;
+         }
+     }
+
+     @media (min-width: 2000px) {
+         & {
+             padding-left: 10%;
+             padding-right: 10%;
+         }
+     }
+`
+
+// For Desktop
+export const WhyChooseDesktop = styled.div`
+    display: grid;
+    justify-content: center;
 
     > h1 {
         font-family: 'Poppins', sans-serif;
@@ -22,67 +73,250 @@ export const WhyChooseStyled = styled.section`
             color: ${({ theme }) => theme.colors.mainYellow};
         }
     }
-
 `
 
 export const Sections = styled.div`
+    width: 1100px;
+`
+
+export const TopSection = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    > div {
+        width: 40%;
+    }
+
+    img {
+        margin-top: 5px;
+    }
+`
+
+export const CentralSection = styled.div`
+    display: grid;
+    grid-template-columns: calc(50% - 118px) 236px calc(50% - 118px);
+
+    > div:first-child {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    > div:last-child {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 40px;
+        margin-bottom: -7px;
+    }
+`
+
+export const BottomSection = styled.div`
+    display: flex;
+    justify-content: center;
+
+    > div {
+        width: 40%;
+    }
+`
+
+export const MainImage = styled.div`
     position: relative;
-    min-height: 670px;
+    width: 236px;
+    height: 221px;
 
     > img {
         position: absolute;
-        top: 26.8%;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     > img#main1 {
-        width: 266.32px;
-        height: 251px;
+        width: 236px;
+        height: 221px;
+        top: 0;
         z-index: 1;
     }
 
     > img#main2 {
-        width: 244.2px;
-        height: 230.16px;
-        top: 28.5%;
+        width: 224.2px;
+        height: 210.16px;
+        top: 5px;
+        left: 6px;
         z-index: 2;
     }
 
     > img#main3 {
-        top: 36.5%;
+        width: 115px;
+        top: 51px;
+        left: 60px;
         z-index: 3;
     }
 
     > img#main4 {
-        top: 43.5%;
+        top: 90px;
+        left: 101px;
         z-index: 4;
-    }
-
-    > div {
-        position: absolute;
-        top: 26.8%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-
-        width: 266.32px;
-        height: 251px;
-    }
-
-    #longevityImg2 {
-        position: absolute;
-        bottom: -78px;
-        left: 107px;
     }
 `
 
 export const Section = styled.div`
-    position: absolute;
     display: flex;
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 114.5%;
+        /* or 26px */
+        letter-spacing: 0.01em;
+        text-transform: capitalize;
+        color: ${({ theme }) => theme.colors.blackFont};
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-family: 'PT Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 19px;
+        text-align: center;
+        color: ${({ theme }) => theme.colors.blackFont};
+    }
+
+    img {
+        width: 75px;
+        height: 75px;
+    }
+
+    #longevityImages {
+        position: relative;
+
+        img:last-child {
+            width: 53.75px;
+            height: 50px;
+            position: absolute;
+            top: 15px;
+            left: 10px;
+        }
+    }
+
+    /* Decentralized */
+    &#whySection0 {
+        flex-direction: column;
+        align-items: center;
+
+        div {
+            text-align: center;
+        }
+    }
+
+    /* Transparency */
+    &#whySection1 {
+        align-items: center;
+
+        div {
+            text-align: center;
+        }
+    }
+
+    /* Project Insurance */
+    &#whySection2 {
+        align-items: center;
+
+        div {
+            text-align: center;
+        }
+    }
+
+    /* APS */
+    &#whySection4 {
+        flex-direction: row-reverse;
+        align-items: center;
+
+        div {
+            text-align: center;
+
+            h2 {
+                font-size: 19px;
+                margin-right: -35px;
+            }
+        }
+    }
+
+    /* Immutability */
+    &#whySection5 {
+        flex-direction: row-reverse;
+        align-items: center;
+
+        div {
+            text-align: center;
+        }
+    }
+
+    /* Longevity */
+    &#whySection3 {
+        flex-direction: column-reverse;
+        align-items: center;
+
+        div {
+            text-align: center;
+        }
+    }
+`
+
+// For Mobile
+export const WhyChooseMobile = styled.div`
+
+    > h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 30.6px;
+        line-height: 114.5%;
+        /* or 35px */
+        text-align: center;
+        letter-spacing: 0.01em;
+        text-transform: capitalize;
+        color: ${({ theme }) => theme.colors.blackFont};
+        margin-bottom: 35px;
+
+        span {
+            color: ${({ theme }) => theme.colors.mainYellow};
+        }
+    }
+`
+
+export const MobileSectionContainer = styled.div`
+    display: grid;
+    grid-gap: 30px;
+
+    > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+        > div {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+`
+
+export const MobileSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
     text-align: center;
 
-    left: -150%;
+    img {
+        width: 75px;
+        height: 75px;
+    }
 
     h2 {
         font-family: 'Poppins', sans-serif;
@@ -94,111 +328,27 @@ export const Section = styled.div`
         letter-spacing: 0.01em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
-        margin-bottom: 3px;
     }
 
-    > div {
-        margin-bottom: 5px;
-    }
-
-    > div div p {
-        font-family: 'PT Sans', sans-serif;
+    p {
+        font-family: 'PT Sans';
         font-style: normal;
         font-weight: 400;
-        font-size: 15px;
-        line-height: 19px;
+        font-size: 13px;
+        line-height: 13px;
         text-align: center;
         color: ${({ theme }) => theme.colors.blackFont};
     }
 
-    > img {
-        width: 88px;
-        height: 88px;
-    }
+    #longevityImages {
+        position: relative;
 
-    &#whySection0 {
-        top: -73%;
-        left: 50%;
-        transform: translateX(-50%);
-
-        flex-direction: column;
-        align-items: center;
-        width: 160%;
-    }
-
-    &#whySection1 {
-        top: 2%;
-        left: 97%;
-
-        flex-direction: row-reverse;
-        align-items: center;
-        gap: 5px;
-        width: 160%;
-
-        p {
-            text-align: left;
-        }
-    }
-
-    &#whySection2 {
-        top: 65%;
-        left: 96%;
-
-        flex-direction: row-reverse;
-        align-items: center;
-        gap: 5px;
-        width: 193%;
-
-        > div {
-            margin-bottom: -15px;
-        }
-
-        h2 {
-            font-size: 20px;
-        }
-
-        p {
-            text-align: left;
-        }
-    }
-
-
-    &#whySection3 {
-        left: 50%;
-        top: 102%;
-        transform: translateX(-50%);
-
-        flex-direction: column-reverse;
-        align-items: center;
-        width: 160%;
-    }
-
-
-    &#whySection4 {
-        top: 61%;
-        left: -147%;
-
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
-        width: 150%;
-
-        p {
-            text-align: left;
-        }
-    }
-
-    &#whySection5 {
-        top: 0;
-        left: -155%;
-
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
-        width: 158%;
-
-        p {
-            text-align: left;
+        img:last-child {
+            width: 53.75px;
+            height: 50px;
+            position: absolute;
+            top: 15px;
+            left: 10px;
         }
     }
 `

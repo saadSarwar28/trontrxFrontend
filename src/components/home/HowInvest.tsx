@@ -1,5 +1,4 @@
 import { HowInvestStyled, LeftColumn, RightColumn, Section } from "@/styles/pages/components/home/HowInvest.styled"
-import Divider from './Divider';
 
 
 const HowInvest = ({ content }: any) => {
@@ -41,7 +40,6 @@ const HowInvest = ({ content }: any) => {
                     </RightColumn>
                 </div>
             </HowInvestStyled>
-            <Divider />
         </>
     )
 }

@@ -23,28 +23,28 @@
         "mainHeading": ["Why Choose ", "Tron Trx ", "Platform?"],
         "sections": [
             {
-                "title": "decentralized",
+                "title": "Decentralized",
                 "desc": "There is no 3rd Party Management managing your funds . Neither the Affiliates or the Development team have access to the project smart contact once it is deployed on the blockchain."
             },
             {
-                "title": "Immutability",
-                "desc": "Once the project code is verified and deployed, it's the law. This means no changes or amendments can be done. Truly safe and secure."
-            },
-            {
-                "title": "Automated Perpetual System (APS)",
-                "desc": "Tron Trx's smart contract has a built in APS which automatically sends all rewards to the community members thereby eliminating any scope of human intervention."
-            },
-            {
-                "title": "Longevity",
-                "desc": "All Anti Whale and Anti Multi Id measures along with APS and Project Insurance will ensure Longevity of the project so that everybody can reap the benefits."
+                "title": "Transparency",
+                "desc": "All codes used to develop the project are visible for community members to look at. Also, all transactions are recorded on the Blockchain's ledger which is accessible to everyone."
             },
             {
                 "title": "Project Insurance",
                 "desc": "Tron Trx's smart contract has a built in Project Insurance mechanism to protect the interests of the community."
             },
             {
-                "title": "Transparency",
-                "desc": "All codes used to develop the project are visible for community members to look at. Also, all transactions are recorded on the Blockchain's ledger which is accessible to everyone."
+                "title": "Longevity",
+                "desc": "All Anti Whale and Anti Multi Id measures along with APS and Project Insurance will ensure Longevity of the project so that everybody can reap the benefits."
+            },
+            {
+                "title": "Automated Perpetual System (APS)",
+                "desc": "Tron Trx's smart contract has a built in APS which automatically sends all rewards to the community members thereby eliminating any scope of human intervention."
+            },
+            {
+                "title": "Immutability",
+                "desc": "Once the project code is verified and deployed, it's the law. This means no changes or amendments can be done. Truly safe and secure."
             }
         ]
     },
