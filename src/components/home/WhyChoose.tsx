@@ -14,6 +14,7 @@ const WhyChoose = ({ content }: any) => {
 
     return (
         <WhyChooseStyled id="whyChoose">
+            {/* Desktop */}
             <WhyChooseDesktop id="whyChooseDesktop">
                 <h1>
                     {content.whyChoose.mainHeading[0]}

@@ -56,11 +56,11 @@ const Navbar = ({ content }: any) => {
                         </div>
                         <div>
                             <img src="/assets/images/navbar/benefits-icon.svg" alt="..." />
-                            <NavItem text={'BENEFITS'} link="#" />
+                            <NavItem text={'BENEFITS'} link="#benefits" />
                         </div>
                         <div>
                             <img src="/assets/images/navbar/faqs-icon.svg" alt="..." />
-                            <NavItem text={'FAQs'} link="#" />
+                            <NavItem text={'FAQs'} link="#faqs" />
                         </div>
                         <div>
                             <img src="/assets/images/navbar/dashboard-icon.svg" alt="..." />
