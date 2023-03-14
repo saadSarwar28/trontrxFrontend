@@ -4,7 +4,7 @@ import styled from "styled-components"
 export const NavbarStyled = styled.nav`
     position: fixed;
     top: 15px;
-    z-index: 1000;
+    z-index: 10000;
 
     display: grid;
     grid-template-columns: 40% 60%;

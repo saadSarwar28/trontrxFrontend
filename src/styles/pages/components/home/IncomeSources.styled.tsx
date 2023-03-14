@@ -81,7 +81,7 @@ export const Card = styled.div`
     min-height: 298px;
     text-align: center;
 
-    background: #FFFFFF;
+    background: ${({ theme }) => theme.colors.whiteBg};;
     box-shadow: -10.7234px 12.1532px 22.8766px rgba(0, 0, 0, 0.25), inset 0.714894px 2.14468px 11.4383px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3.57447px);
     /* Note: backdrop-filter has minimal browser support */
@@ -115,7 +115,7 @@ export const CardTop = styled.div`
         text-align: center;
         letter-spacing: 0.05em;
         text-transform: capitalize;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.blackFont};
 
         margin-top: 9px;
     }
@@ -138,7 +138,7 @@ export const CardBottom = styled.div`
         /* or 18px */
         text-align: center;
         letter-spacing: 0.05em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.blackFont};
     }
 
     @media (max-width: 992px) {

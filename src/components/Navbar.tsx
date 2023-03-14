@@ -56,7 +56,7 @@ const Navbar = ({ content }: any) => {
                         </div>
                         <div>
                             <img src="/assets/images/navbar/benefits-icon.svg" alt="..." />
-                            <NavItem text={'BENEFITS'} link="#benefits" />
+                            <NavItem text={'BENEFITS'} link="#" />
                         </div>
                         <div>
                             <img src="/assets/images/navbar/faqs-icon.svg" alt="..." />
