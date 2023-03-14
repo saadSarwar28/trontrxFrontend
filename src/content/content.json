@@ -107,10 +107,10 @@
         "tabs": [
             {
                 "title": "General",
-                "questionsAnswers": [
+                "questionAnswers": [
                     {
                         "question": "When would I be able to see my token balance?",
-                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                        "answer": "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
                     },
                     {
                         "question": "When would I be able to see my token balance?",
@@ -129,7 +129,107 @@
                         "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
                     }
                 ]
-            }
+            },
+            {
+                "title": "Pre ICO",
+                "questionAnswers": [
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    }
+                ]
+            },
+            {
+                "title": "Token",
+                "questionAnswers": [
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    }
+                ]
+            },
+            {
+                "title": "Client",
+                "questionAnswers": [
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    }
+                ]
+            },
+            {
+                "title": "Legal",
+                "questionAnswers": [
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    },
+                    {
+                        "question": "When would I be able to see my token balance?",
+                        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique."
+                    }
+                ]
+            }   
         ]   
     }
 }

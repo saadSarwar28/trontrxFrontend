@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const HR = styled.div`
     position: relative;
     z-index: 1;
-    height: 15px;
+    height: 4px;
 
     img:first-child {
         width: 100%;

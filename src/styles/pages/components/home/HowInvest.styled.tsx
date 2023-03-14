@@ -167,7 +167,7 @@ export const Section = styled.div`
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
         
-        margin-left: 94px;
+        margin-left: 84px
     }
     
 
