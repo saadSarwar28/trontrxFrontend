@@ -1,5 +1,132 @@
 import styled from "styled-components"
 
+
 export const FooterStyled = styled.footer`
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 578px;
+    background: #000000;
+    border: 1px solid #FFFFFF;
+
+    @media (orientation: portrait) {
+        height: 501px;
+    }
+`
+
+export const LogoSectionFooter = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+    margin-left: -20px;
+
+    > div:nth-child(1) {
+        img {
+            width: 74px;
+            height: 76px;
+        }
+    }
+
+    > div:nth-child(2) {
+        h1 {
+            font-family: 'PT Sans', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 37px;
+            line-height: 48px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: ${({ theme }) => theme.colors.whiteFont};
+            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+
+            margin-left: 9px;
+        }
+
+        p {
+            font-family: 'PT Sans', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 19px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: ${({ theme }) => theme.colors.whiteFont};
+            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+
+            margin-left: 5px;
+        }
+    }
+
+@media (orientation: portrait) {
+    > div:nth-child(1) {
+        img {
+            width: 61px;
+            height: 62.65px;
+        }
+    }
+}
+`
+
+export const Links = styled.ul`
+    list-style-type: none;
+    margin-bottom: 74px;
+    display: flex;
+
+    > div {
+        display: flex;
+    }
+
+    li {
+        padding-right: 25px;
+        display: flex;
+        align-items: center;
+    }
+
+    li:not(:first-child) div {
+        height: 26px;
+        border: 0.5px solid #848181;
+        margin-right: 19px;
+    }
+    
+    a {
+        font-family: 'PT Sans', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: ${({ theme }) => theme.colors.whiteFont};
+        text-decoration: none;
+    }
+
+    @media (orientation: portrait) {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        li {
+            padding-right: 11px;
+        }
+
+        li:not(:first-child) div {
+            margin-right: 11px;
+        }
+    }
+`
+
+export const SocialLinks = styled.div`
+    display: flex;
+    gap: 36px;
+
+    @media (orientation: portrait) {
+        gap: 17px;
+        margin-bottom: -100px;
+
+        img {
+            width: 24.06px;
+            height: 24.06px;
+        }
+    }
 `

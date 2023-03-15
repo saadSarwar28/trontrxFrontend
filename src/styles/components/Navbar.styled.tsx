@@ -59,13 +59,15 @@ export const LogoSection = styled.div`
             line-height: 48px;
             letter-spacing: 0.04em;
             text-transform: uppercase;
+            /* color: #f2e4cb; */
             color: ${({ theme }) => theme.colors.whiteFont};
+            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
 
             margin-left: 9px;
         }
 
         p {
-            font-family: 'PT Sans';
+            font-family: 'PT Sans', sans-serif;
             font-style: normal;
             font-weight: 400;
             font-size: 15px;
@@ -73,6 +75,7 @@ export const LogoSection = styled.div`
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: ${({ theme }) => theme.colors.whiteFont};
+            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
 
             margin-left: 5px;
         }

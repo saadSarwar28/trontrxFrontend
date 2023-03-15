@@ -73,7 +73,7 @@ export const Text = styled.div`
     /* or 48px */
     letter-spacing: 0.01em;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.whiteFont};
+    color: ${({ theme }) => theme.colors.whiteFont};
 
     margin-bottom: 18px;
   }
@@ -85,7 +85,8 @@ export const Text = styled.div`
     font-size: 16px;
     line-height: 21px;
     text-transform: uppercase;
-    color: #C28616;
+    color: ${({ theme }) => theme.colors.whiteFont};
+    text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
 
     margin-bottom: 12px;
   }
@@ -101,7 +102,7 @@ export const Text = styled.div`
     line-height: 21px;
     text-transform: uppercase;
 
-    color: ${({theme}) => theme.colors.whiteFont};
+    color: ${({ theme }) => theme.colors.whiteFont};
   }
 
   @media (max-width: 992px) {
@@ -164,7 +165,7 @@ export const YellowButton = styled.button`
   width: 200px;
   height: 56px;
 
-  background: ${({theme}) => theme.colors.mainYellow};
+  background: ${({ theme }) => theme.colors.mainYellow};
   border-radius: 5px;
   font-family: 'PT Sans', sans-serif;
   font-style: normal;
@@ -172,14 +173,14 @@ export const YellowButton = styled.button`
   font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
-  color: ${({theme}) => theme.colors.blackFont};
+  color: ${({ theme }) => theme.colors.blackFont};
 `
 
 export const WhiteButton = styled(YellowButton)`
   width: 160px;
   height: 59px;
 
-  background: ${({theme}) => theme.colors.whiteBg};
+  background: ${({ theme }) => theme.colors.whiteBg};
   margin-left: 17px;
 `
 
@@ -197,7 +198,7 @@ export const SocialIcons = styled.div`
     width: 48.12px;
     height: 48.12px;
 
-    background: ${({theme}) => theme.colors.blackBg};
+    background: ${({ theme }) => theme.colors.blackBg};
     border: 0.491049px solid #656060;
     border-radius: 10.312px;
     cursor: pointer;
@@ -207,7 +208,7 @@ export const SocialIcons = styled.div`
     svg {
       width: 30.94px;
       height: 25.78px;
-      background: ${({theme}) => theme.colors.mainYellow};
+      background: ${({ theme }) => theme.colors.mainYellow};
     }
   }
 
@@ -215,7 +216,7 @@ export const SocialIcons = styled.div`
     svg {
       width: 28px;
       height: 20.91px;
-      background: ${({theme}) => theme.colors.mainYellow};
+      background: ${({ theme }) => theme.colors.mainYellow};
     }
   }
 

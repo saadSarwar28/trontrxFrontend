@@ -3,7 +3,7 @@
     "navbar": {
         "navTitle": "Tron Trx", 
         "navDesc": "King of all contracts",
-        "navLinks": ["ABOUT US", "HOW IT WORKS", "RESOURCES", "FAQs", "DASHBOARD"]
+        "navLinks": ["ABOUT US", "HOW IT WORKS", "BENEFITS", "FAQs", "DASHBOARD"]
     },
     "topSection": {
         "heading": "King of all Contracts",
@@ -231,5 +231,10 @@
                 ]
             }   
         ]   
+    },
+    "footer": {
+        "footerTitle": "Tron Trx", 
+        "footerDesc": "King of all contracts",
+        "footerLinks": ["ABOUT US", "HOW IT WORKS", "BENEFITS", "FAQs", "DASHBOARD"]
     }
 }
