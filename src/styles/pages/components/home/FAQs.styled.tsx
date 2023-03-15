@@ -6,8 +6,7 @@ export const FAQsStyled = styled.section`
     padding-bottom: 138px;
     padding-left: calc(50% - 500px);
     padding-right: calc(50% - 500px);
-    background-color:#F1F1F1;
-    
+    background-color:#F1F1F1;    
 
     > h1 {
         font-family: 'Poppins', sans-serif;
@@ -29,15 +28,32 @@ export const FAQsStyled = styled.section`
         padding-bottom: 108px;
         padding-left: calc(50% - 400px);
         padding-right: calc(50% - 400px);
+
+        h1 {
+            font-size: 50px;
+        }
     }
 
     @media (max-width: 992px) {
-        /* padding-left: calc(50% - 350px);
-        padding-right: calc(50% - 350px); */
-
+       
         > h1 {
             font-size: 45px;
         }
+    }
+
+    @media (max-width: 768px) {
+       padding-top: 40px;
+       padding-bottom: 40px;
+       margin-bottom: 20px;
+    }
+
+    @media (max-width: 576px) {
+       padding-top: 22px;
+
+       > h1 {
+           padding: 0 10px;
+           font-size: 33.6px;
+       }
     }
 `
 
@@ -61,12 +77,13 @@ export const TabHeaders = styled.div`
 
     @media (max-width: 992px) {
         flex-direction: column;
-        margin: 0 30px 43px;
+        margin: 0 0 50px;
+        border-bottom: none;
     }
 `
 
 export const TabHeader = styled.div`
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -85,10 +102,19 @@ export const TabHeader = styled.div`
         color: ${({ theme }) => theme.colors.mainYellow};
         border-bottom: 6px solid ${({ theme }) => theme.colors.mainYellow};
     }
+
+    @media (max-width: 992px) {
+        padding: 28px 0;
+        text-align: center;
+        border-bottom: 0.5px solid #9C9C9C;
+    }
 `
 
 export const TabBodies = styled.div`
-    
+    @media (max-width: 992px) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 `
 
 export const TabBody = styled.div`
@@ -108,6 +134,7 @@ export const Accordion = styled.div`
 export const AccordionTop = styled.div`
     display: flex;
     align-items: center;
+    position: relative;
 
     background-color: ${({ theme }) => theme.colors.whiteBg};
     padding: 15px 18px 18px;
@@ -125,6 +152,56 @@ export const AccordionTop = styled.div`
         color: ${({ theme }) => theme.colors.blackFont};
         margin-left: 13px;
         margin-bottom: -16px;
+    }
+
+    // Chevron up
+    img:nth-child(3) {
+        position: absolute;
+        right: 27px;
+        display: none;
+    }
+
+    // Chevron down
+    img:last-child {
+        position: absolute;
+        right: 27px;
+    }
+
+    &.active {
+        // Chevron down
+        img:last-child {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 15px 4px 18px;
+
+        // Plus Icon
+        img:first-child {
+            width: 26px;
+            height: 26px;
+        }
+
+        img:last-child, img:nth-child(3) {
+            top: 18px;
+            right: 4px;
+            width: 19px;
+            height: 11.72px;
+        }
+
+        h2 {
+            font-size: 15px;
+            margin-bottom: 0px;
+            margin-right: 35px;
+        }
+
+        &.active {
+            // Chevron up
+            img:nth-child(3) {
+                display: block;
+            }
+        }
     }
 `
 
@@ -154,5 +231,24 @@ export const AccordionBottom = styled.div`
         letter-spacing: 0.05em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
+    }
+
+    @media (max-width: 768px) {
+        p {
+            font-size: 13px;
+        }
+
+        &.active {
+            padding: 0;
+            p {
+                padding: 15px 9px;
+            }
+
+            div {
+                dispaly: block;
+                height: 31px;
+                background-color: ${({ theme }) => theme.colors.whiteBg};
+            }
+        }
     }
 `
