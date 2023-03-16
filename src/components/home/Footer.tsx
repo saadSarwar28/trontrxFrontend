@@ -1,6 +1,6 @@
-import { FooterStyled, LogoSectionFooter, Links, SocialLinks } from "@/styles/components/Footer.styled"
-import content from '../content/content.json'
-import FooterNavItem from "./FooterNavItem"
+import { FooterStyled, LogoSectionFooter, Links, SocialLinks } from "@/styles/pages/components/home/Footer.styled"
+import content from '../../content/content.json'
+import FooterNavItem from "../FooterNavItem"
 
 
 const Footer = () => {

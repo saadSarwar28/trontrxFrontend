@@ -84,10 +84,15 @@ export const Links = styled.ul`
         align-items: center;
     }
 
-    li:not(:first-child) div {
+    li div {
         height: 26px;
         border: 0.5px solid #848181;
         margin-right: 19px;
+    }
+
+    > div:first-child li:first-child div {
+        height: 0;
+        border: none;
     }
     
     a {
@@ -105,6 +110,11 @@ export const Links = styled.ul`
         flex-direction: column;
         align-items: center;
         gap: 24px;
+
+        > div:last-child li:first-child div {
+            height: 0;
+            border: none;
+        }
 
         li {
             padding-right: 11px;

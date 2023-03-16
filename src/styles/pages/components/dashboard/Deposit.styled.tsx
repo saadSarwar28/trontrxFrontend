@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
-export const SignupStyled = styled.div`
+
+export const DepositStyled = styled.div`
     
 `

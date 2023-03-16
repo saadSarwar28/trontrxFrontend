@@ -1,4 +1,4 @@
-import { NavbarStyled, LogoSection, LinksSection, MobileNavbar } from "@/styles/components/Navbar.styled"
+import { NavbarStyled, LogoSection, LinksSection, MobileNavbar } from "@/styles/pages/components/home/Navbar.styled"
 import { connect } from "react-redux"
 import { useEffect, useState } from "react"
 import NavItem from '@/components/NavItem';
@@ -64,7 +64,7 @@ const Navbar = ({ content }: any) => {
                         </div>
                         <div>
                             <img src="/assets/images/navbar/dashboard-icon.svg" alt="..." />
-                            <NavItem text={'DASHBOARD'} link="#" />
+                            <NavItem text={'DASHBOARD'} link="/dashboard" />
                         </div>
                     </ul>
                 </MobileNavbar>

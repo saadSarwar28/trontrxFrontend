@@ -236,5 +236,28 @@
         "footerTitle": "Tron Trx", 
         "footerDesc": "King of all contracts",
         "footerLinks": ["ABOUT US", "HOW IT WORKS", "BENEFITS", "FAQs", "DASHBOARD"]
+    },
+    "dashboard": {
+        "header": {
+            "title": "Tron Trx",
+            "desc": "King of all contracts",
+            "heading": "Dashboard",
+            "homeButton": "Back To Home"
+        },
+        "sidebar": {
+            "links": ["CURRENT STATS", "DEPOSIT", "WITHDRAWL", "TREE"]
+        },
+        "currentStats": {
+
+        },
+        "deposit": {
+
+        },
+        "widhdrawl": {
+
+        },
+        "tree": {
+
+        }
     }
 }
