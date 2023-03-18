@@ -2,6 +2,13 @@ import styled from "styled-components"
 
 
 export const CurrentStatsStyled = styled.div`
-    height: 200vh;
+    
+`
 
+export const Main = styled.div`
+    
+`
+
+export const Page = styled.main`
+    
 `

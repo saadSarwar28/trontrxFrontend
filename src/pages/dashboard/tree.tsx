@@ -1,6 +1,7 @@
-import { TreeStyled } from "@/styles/pages/components/dashboard/Tree.styled"
+import { TreeStyled, Main, Page } from "@/styles/pages/components/dashboard/Tree.styled"
 import Header from "@/components/dashboard/Header"
 import SidebarMobile from "@/components/dashboard/SidebarMobile"
+import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
 import { useState } from "react"
 
 
@@ -14,7 +15,12 @@ const Tree = () => {
         <TreeStyled>
             <Header toggleSidebar={toggleSidebar} />
             <SidebarMobile sidebarClass={sidebarClass} activeLink="tree" />
-            Tree
+            <Main>
+                <SidebarDesktop activeLink="tree" />
+                <Page>
+                    Tree
+                </Page>
+            </Main>
         </TreeStyled>
     )
 }

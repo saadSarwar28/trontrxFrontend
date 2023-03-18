@@ -129,6 +129,9 @@ export const Links = styled.ul`
 export const SocialLinks = styled.div`
     display: flex;
     gap: 36px;
+    & img {
+        cursor: pointer;
+    }
 
     @media (orientation: portrait) {
         gap: 17px;
