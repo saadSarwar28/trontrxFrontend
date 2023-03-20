@@ -3,8 +3,7 @@ import styled from "styled-components"
 
 export const SidebarDesktopStyled = styled.aside`
     width: 308px;
-    height: 1264px;
-    margin-top: -2px;
+    min-height: 100vh;
     background-image: url('/assets/images/navbar/mobile-bg.png');
     background-repeat: no-repeat;
     background-size: 100% 180%;
