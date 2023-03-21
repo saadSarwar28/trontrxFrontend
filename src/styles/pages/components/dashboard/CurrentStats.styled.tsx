@@ -110,6 +110,7 @@ export const YellowButton2 = styled(BlackButton1)`
 `
 
 export const BlackButton2 = styled(BlackButton1)`
+
     a {
         font-size: 11.739px;
         color: #F3B51C;
@@ -147,22 +148,25 @@ export const CardText = styled.div`
 `
 
 export const CopyButton = styled.button`
+    position: relative;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
     width: 89.69px;
     height: 49.47px;
     background: #000000;
     border-radius: 4.19249px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 21.8009px;
-    line-height: 33px;
-    text-transform: uppercase;
-    color: #F2A71B;
-    cursor: pointer;
 
-    margin-top: 32px;
-    margin-left: auto;
-    margin-right: auto;
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 21.8009px;
+        line-height: 33px;
+        text-transform: uppercase;
+        color: #F2A71B;
+        cursor: pointer;
+    }
 
     @media (max-width: 1200px) {
         margin-top: 35px;
@@ -170,6 +174,30 @@ export const CopyButton = styled.button`
 
     @media (max-width: 576px) {
         margin-top: 25px;
+    }
+`
+
+export const CopyMessage = styled.div`
+    position: absolute;
+    top: 7px;
+    left: 100%;
+    width: 200%;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.3s;
+
+    &.shown {
+        opacity: 1;
+    }
+
+    @media (max-width: 576px) {
+        left: 75%;
+        top: 10px;
+        font-size: 16px;
     }
 `
 

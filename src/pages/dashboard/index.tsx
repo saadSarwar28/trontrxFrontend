@@ -1,6 +1,6 @@
-import { CurrentStatsStyled, Main, Page, InfoCard, YellowButton1, BlackButton1, YellowButton2, BlackButton2, CardText, CopyButton, StatsCard, StatsButton, CardsContainer, Card } from "@/styles/pages/components/dashboard/CurrentStats.styled"
+import { CurrentStatsStyled, Main, Page, InfoCard, YellowButton1, BlackButton1, YellowButton2, BlackButton2, CopyMessage, CardText, CopyButton, StatsCard, StatsButton, CardsContainer, Card } from "@/styles/pages/components/dashboard/CurrentStats.styled"
 import Header from "@/components/dashboard/Header"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import SidebarMobile from '../../components/dashboard/SidebarMobile'
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
 import Link from "next/link"
@@ -12,6 +12,7 @@ const CurrentStats = () => {
     const toggleSidebar = () => {
         setSidebarClass(!sidebarClass);
     }
+    const [showMessage, setShowMessage] = useState(false);
 
     const cardImages = [
         "/assets/images/dashboard/currentStats/statsCard1.svg",
@@ -20,7 +21,15 @@ const CurrentStats = () => {
         "/assets/images/dashboard/currentStats/statsCard4.svg",
         "/assets/images/dashboard/currentStats/statsCard5.svg",
         "/assets/images/dashboard/currentStats/statsCard6.svg"
-    ]
+    ];
+
+    const copyLink = () => {
+        navigator.clipboard.writeText('https://trontrx.world/?ref=TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s');
+        setShowMessage(true);
+        setTimeout(() => {
+            setShowMessage(false);
+        }, 3000)
+    }
 
     return (
         <CurrentStatsStyled>
@@ -46,7 +55,10 @@ const CurrentStats = () => {
                         <CardText>
                             {content.dashboard.currentStats.infoCard.card1Text}
                         </CardText>
-                        <CopyButton>{content.dashboard.currentStats.infoCard.copyButton}</CopyButton>
+                        <CopyButton onClick={copyLink}>
+                            <p>{content.dashboard.currentStats.infoCard.copyButton}</p>
+                            <CopyMessage className={showMessage ? "shown" : ""}>Link Copied</CopyMessage>
+                        </CopyButton>
                     </InfoCard>
                     <StatsCard>
                         <StatsButton type="button">{content.dashboard.currentStats.statsCard.yellowButton}</StatsButton>
