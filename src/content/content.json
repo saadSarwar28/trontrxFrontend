@@ -248,7 +248,34 @@
             "links": ["CURRENT STATS", "DEPOSIT", "WITHDRAWL", "TREE"]
         },
         "currentStats": {
-
+            "infoCard": {
+                "yellowButton1": "WALLET INFO",
+                "blackButton1": {
+                    "span1": "your trx wallet address",
+                    "span2": "TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s"
+                },
+                "yellowButton2": {
+                    "span1": "Upline Partner Wallet",
+                    "span2": "TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s"
+                },
+                "blackButton2": {
+                    "span1": "Your Referral Link",
+                    "link": "https://trontrx.world/?ref=TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s"
+                },
+                "card1Text": "Share this link with your partners to get referral rewards. You should have active deposit to unlock affiliate bonuses!",
+                "copyButton": "Copy"
+            },
+            "statsCard": {
+                "yellowButton": "your stats",
+                "cards": [
+                    {"title": "your level", "number": 1},
+                    {"title": "number of directs", "number": 0},
+                    {"title": "total team size", "number": 0},
+                    {"title": "CUMULATIVE DEPOSIT", "number": 0.00},
+                    {"title": "Total Team Deposit", "number": 0.00},
+                    {"title": "Cumulative Withdrawn", "number": 0.00}
+                ]
+            }
         },
         "deposit": {
 
