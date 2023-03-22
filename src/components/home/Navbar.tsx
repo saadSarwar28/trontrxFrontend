@@ -19,10 +19,9 @@ const Navbar = ({ content }: any) => {
         }
     }, [])
 
-
     const toggleNavbar = () => {
         const mobileNavbar = document.getElementById('mobileNavbar');
-        mobileNavbar?.classList.contains('show') ? mobileNavbar?.classList.remove('show') : mobileNavbar?.classList.add('show')
+        mobileNavbar?.classList.contains('show') ? mobileNavbar?.classList.remove('show') : mobileNavbar?.classList.add('show');
     }
 
     return (
@@ -56,7 +55,7 @@ const Navbar = ({ content }: any) => {
                         </div>
                         <div>
                             <img src="/assets/images/navbar/benefits-icon.svg" alt="..." />
-                            <NavItem text={'BENEFITS'} link="#" />
+                            <NavItem text={'BENEFITS'} link="#benefits" />
                         </div>
                         <div>
                             <img src="/assets/images/navbar/faqs-icon.svg" alt="..." />

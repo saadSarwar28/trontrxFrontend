@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 
 export const HowInvestStyled = styled.section`
@@ -153,7 +154,7 @@ export const RightColumn = styled.div`
     }
 `
 
-export const Section = styled.div`
+export const Section = styled(motion.div)`
     margin-bottom: 25px;
 
     h2 {

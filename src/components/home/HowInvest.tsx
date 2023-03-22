@@ -9,6 +9,20 @@ const HowInvest = ({ content }: any) => {
         "/assets/images/home/howInvest/start-earning.svg"
     ]
 
+    const sectionVariants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                delay: 0.5,
+                duration: 1
+            }
+        },
+
+    }
+
     return (
         <>
             <HowInvestStyled id="howInvest">
@@ -28,7 +42,12 @@ const HowInvest = ({ content }: any) => {
                         </h1>
                         <div>
                             {content.howInvest.rightSections.map((section: any, index: number) => (
-                                <Section key={index}>
+                                <Section key={index}
+                                    variants={sectionVariants}
+                                    initial={"hidden"}
+                                    whileInView={"visible"}
+                                    viewport={{ once: true }}
+                                >
                                     <h2>{section.title}</h2>
                                     <div>
                                         <img src={sectionImages[index]} alt="..." id={`investImg${index}`} />

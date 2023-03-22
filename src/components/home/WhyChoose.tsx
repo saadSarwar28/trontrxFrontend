@@ -12,6 +12,18 @@ const WhyChoose = ({ content }: any) => {
         "/assets/images/home/whyChoose/immutability.svg"
     ]
 
+    // const topConstraints = {
+    //     hidden: {
+    //         x: "-100vw"
+    //     },
+    //     visible: {
+    //         x: 0,
+    //         transition: {
+    //             duration: 5
+    //         }
+    //     }
+    // }
+
     return (
         <WhyChooseStyled id="whyChoose">
             {/* Desktop */}
@@ -22,7 +34,14 @@ const WhyChoose = ({ content }: any) => {
                     {content.whyChoose.mainHeading[2]}
                 </h1>
                 <Sections>
-                    <TopSection>
+                    <TopSection
+                    // variants={topConstraints}
+                    // initial="hidden"
+                    // whileInView="visible"
+                    // viewport={{
+                    //     once: true
+                    // }}
+                    >
                         {/* Decentralized */}
                         <Section id="whySection0">
                             <div>

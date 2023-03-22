@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 
 export const WhyChooseStyled = styled.section`
@@ -79,10 +80,15 @@ export const Sections = styled.div`
     width: 1100px;
 `
 
-export const TopSection = styled.div`
+export const TopSection = styled(motion.div)`
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+
+    /* position: relative;
+    left: 0;
+    animation-name: topSection;
+    animation-duration: 1.5s; */
 
     > div {
         width: 40%;
@@ -90,7 +96,12 @@ export const TopSection = styled.div`
 
     img {
         margin-top: 5px;
-    }
+    }    
+
+    /* @keyframes topSection {
+        0% {left: -100vw;}
+        100% {left: 0;}
+    } */
 `
 
 export const CentralSection = styled.div`
@@ -206,6 +217,15 @@ export const Section = styled.div`
         flex-direction: column;
         align-items: center;
 
+        // animation
+        animation-name: section0;
+        animation-duration: 1.5s;
+
+        @keyframes section0 {
+            0% {transform: translateX(-100vw);}
+            100% {transform: translateX(0);}
+        }
+
         div {
             text-align: center;
         }
@@ -214,6 +234,15 @@ export const Section = styled.div`
     /* Transparency */
     &#whySection1 {
         align-items: center;
+
+        // animation
+        animation-name: section1;
+        animation-duration: 1.5s;
+
+        @keyframes section1 {
+            0% {transform: translateX(-100vw);}
+            100% {transform: translateX(0);}
+        }
 
         div {
             text-align: center;
@@ -224,6 +253,15 @@ export const Section = styled.div`
     &#whySection2 {
         align-items: center;
 
+        // animation
+        animation-name: section2;
+        animation-duration: 1.5s;
+
+        @keyframes section2 {
+            0% {transform: translateX(-100vw);}
+            100% {transform: translateX(0);}
+        }
+
         div {
             text-align: center;
         }
@@ -233,6 +271,15 @@ export const Section = styled.div`
     &#whySection4 {
         flex-direction: row-reverse;
         align-items: center;
+
+        // animation
+        animation-name: section4;
+        animation-duration: 1.5s;
+
+        @keyframes section4 {
+            0% {transform: translateX(100vw);}
+            100% {transform: translateX(0);}
+        }
 
         div {
             text-align: center;
@@ -249,6 +296,15 @@ export const Section = styled.div`
         flex-direction: row-reverse;
         align-items: center;
 
+        // animation
+        animation-name: section5;
+        animation-duration: 1.5s;
+
+        @keyframes section5 {
+            0% {transform: translateX(100vw);}
+            100% {transform: translateX(0);}
+        }
+
         div {
             text-align: center;
         }
@@ -258,6 +314,15 @@ export const Section = styled.div`
     &#whySection3 {
         flex-direction: column-reverse;
         align-items: center;
+
+        // animation
+        animation-name: section3;
+        animation-duration: 1.5s;
+
+        @keyframes section3 {
+            0% {transform: translateX(100vw);}
+            100% {transform: translateX(0);}
+        }
 
         div {
             text-align: center;
