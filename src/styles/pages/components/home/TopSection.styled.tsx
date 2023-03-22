@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { motion } from 'framer-motion'
 
 
 export const TopSectionStyled = styled.section`
@@ -246,7 +245,8 @@ export const ImageColumn = styled.div`
 
 export const MainImage = styled.div`
     position: absolute;
-    top: 57%;
+    /* top: 57%; */
+    top: 60%;
     left: 17%;
     transform: translateY(-50%);
 

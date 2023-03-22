@@ -1,5 +1,6 @@
 import { WhyChooseStyled, WhyChooseDesktop, Sections, TopSection, CentralSection, BottomSection, MainImage, Section } from "@/styles/pages/components/home/WhyChoose.styled"
 import { WhyChooseMobile, MobileSectionContainer, MobileSection } from "@/styles/pages/components/home/WhyChoose.styled"
+import { useEffect, useState } from "react"
 
 
 const WhyChoose = ({ content }: any) => {
@@ -12,17 +13,15 @@ const WhyChoose = ({ content }: any) => {
         "/assets/images/home/whyChoose/immutability.svg"
     ]
 
-    // const topConstraints = {
-    //     hidden: {
-    //         x: "-100vw"
-    //     },
-    //     visible: {
-    //         x: 0,
-    //         transition: {
-    //             duration: 5
-    //         }
-    //     }
-    // }
+    const [animateClass, setAnimateClass] = useState(false);
+
+    useEffect(() => {
+        document.addEventListener('scroll', () => {
+            if (window.scrollY >= 1300 && window.scrollY <= 1410) {
+                setAnimateClass(true);
+            }
+        })
+    }, [])
 
     return (
         <WhyChooseStyled id="whyChoose">
@@ -34,16 +33,9 @@ const WhyChoose = ({ content }: any) => {
                     {content.whyChoose.mainHeading[2]}
                 </h1>
                 <Sections>
-                    <TopSection
-                    // variants={topConstraints}
-                    // initial="hidden"
-                    // whileInView="visible"
-                    // viewport={{
-                    //     once: true
-                    // }}
-                    >
+                    <TopSection>
                         {/* Decentralized */}
-                        <Section id="whySection0">
+                        <Section id="whySection0" className={animateClass ? 'animate' : ''}>
                             <div>
                                 <h2>{content.whyChoose.sections[0].title}</h2>
                                 <p>{content.whyChoose.sections[0].desc}</p>
@@ -55,7 +47,7 @@ const WhyChoose = ({ content }: any) => {
                     <CentralSection>
                         <div>
                             {/* Transparency */}
-                            <Section id="whySection1">
+                            <Section id="whySection1" className={animateClass ? 'animate' : ''}>
                                 <div>
                                     <h2>{content.whyChoose.sections[1].title}</h2>
                                     <p>{content.whyChoose.sections[1].desc}</p>
@@ -63,7 +55,7 @@ const WhyChoose = ({ content }: any) => {
                                 <img src={sectionImages[1]} alt="..." />
                             </Section>
                             {/* Project Insurance */}
-                            <Section id="whySection2">
+                            <Section id="whySection2" className={animateClass ? 'animate' : ''}>
                                 <div>
                                     <h2>{content.whyChoose.sections[2].title}</h2>
                                     <p>{content.whyChoose.sections[2].desc}</p>
@@ -72,7 +64,7 @@ const WhyChoose = ({ content }: any) => {
                             </Section>
                         </div>
 
-                        <MainImage>
+                        <MainImage className={animateClass ? 'animate' : ''}>
                             <img src="/assets/images/home/whyChoose/main1.svg" alt="..." id="main1" />
                             <img src="/assets/images/home/whyChoose/main2.svg" alt="..." id="main2" />
                             <img src="/assets/images/home/whyChoose/main3.svg" alt="..." id="main3" />
@@ -81,7 +73,7 @@ const WhyChoose = ({ content }: any) => {
 
                         <div>
                             {/*  APS */}
-                            <Section id="whySection4">
+                            <Section id="whySection4" className={animateClass ? 'animate' : ''}>
                                 <div>
                                     <h2>{content.whyChoose.sections[4].title}</h2>
                                     <p>{content.whyChoose.sections[4].desc}</p>
@@ -89,7 +81,7 @@ const WhyChoose = ({ content }: any) => {
                                 <img src={sectionImages[4]} alt="..." />
                             </Section>
                             {/* Immutability */}
-                            <Section id="whySection5">
+                            <Section id="whySection5" className={animateClass ? 'animate' : ''}>
                                 <div>
                                     <h2>{content.whyChoose.sections[5].title}</h2>
                                     <p>{content.whyChoose.sections[5].desc}</p>
@@ -101,7 +93,7 @@ const WhyChoose = ({ content }: any) => {
 
                     <BottomSection>
                         {/* Longevity */}
-                        <Section id="whySection3">
+                        <Section id="whySection3" className={animateClass ? 'animate' : ''}>
                             <div>
                                 <h2>{content.whyChoose.sections[3].title}</h2>
                                 <p>{content.whyChoose.sections[3].desc}</p>

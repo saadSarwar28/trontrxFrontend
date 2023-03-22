@@ -136,6 +136,18 @@ export const MainImage = styled.div`
     width: 236px;
     height: 221px;
 
+    &.animate {
+        // animation
+        animation-name: mainImg;
+        animation-duration: 1.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: backwards;
+        @keyframes mainImg {
+            0% {opacity: 0; transform: scale(0);}
+            100% {opacity: 1; transform: scale(1);}
+        }
+    }
+
     > img {
         position: absolute;
     }
@@ -217,13 +229,16 @@ export const Section = styled.div`
         flex-direction: column;
         align-items: center;
 
-        // animation
-        animation-name: section0;
-        animation-duration: 1.5s;
-
-        @keyframes section0 {
-            0% {transform: translateX(-100vw);}
-            100% {transform: translateX(0);}
+        &.animate {
+            // animation
+            animation-name: section0;
+            animation-duration: 1.5s;
+            animation-delay: 2s;
+            animation-fill-mode: backwards;
+            @keyframes section0 {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
         }
 
         div {
@@ -235,13 +250,16 @@ export const Section = styled.div`
     &#whySection1 {
         align-items: center;
 
-        // animation
-        animation-name: section1;
-        animation-duration: 1.5s;
-
-        @keyframes section1 {
-            0% {transform: translateX(-100vw);}
-            100% {transform: translateX(0);}
+        &.animate {
+            // animation
+            animation-name: section1;
+            animation-duration: 1.5s;
+            animation-delay: 1s;
+            animation-fill-mode: backwards;
+            @keyframes section1 {
+                0% {transform: translateX(-100vw);}
+                100% {transform: translateX(0);}
+            }
         }
 
         div {
@@ -253,13 +271,16 @@ export const Section = styled.div`
     &#whySection2 {
         align-items: center;
 
-        // animation
-        animation-name: section2;
-        animation-duration: 1.5s;
-
-        @keyframes section2 {
-            0% {transform: translateX(-100vw);}
-            100% {transform: translateX(0);}
+        &.animate {
+            // animation
+            animation-name: section2;
+            animation-duration: 1.5s;
+            animation-delay: 1.5s;
+            animation-fill-mode: backwards;
+            @keyframes section2 {
+                0% {transform: translateX(-100vw);}
+                100% {transform: translateX(0);}
+            }
         }
 
         div {
@@ -272,13 +293,16 @@ export const Section = styled.div`
         flex-direction: row-reverse;
         align-items: center;
 
-        // animation
-        animation-name: section4;
-        animation-duration: 1.5s;
-
-        @keyframes section4 {
-            0% {transform: translateX(100vw);}
-            100% {transform: translateX(0);}
+        &.animate {
+            // animation
+            animation-name: section4;
+            animation-duration: 1.5s;
+            animation-delay: 3s;
+            animation-fill-mode: backwards;
+            @keyframes section4 {
+                0% {transform: translateX(100vw);}
+                100% {transform: translateX(0);}
+            }
         }
 
         div {
@@ -296,13 +320,16 @@ export const Section = styled.div`
         flex-direction: row-reverse;
         align-items: center;
 
-        // animation
-        animation-name: section5;
-        animation-duration: 1.5s;
-
-        @keyframes section5 {
-            0% {transform: translateX(100vw);}
-            100% {transform: translateX(0);}
+        &.animate {
+            // animation
+            animation-name: section5;
+            animation-duration: 1.5s;
+            animation-delay: 2.5s;
+            animation-fill-mode: backwards;
+            @keyframes section5 {
+                0% {transform: translateX(100vw);}
+                100% {transform: translateX(0);}
+            }
         }
 
         div {
@@ -315,13 +342,16 @@ export const Section = styled.div`
         flex-direction: column-reverse;
         align-items: center;
 
-        // animation
-        animation-name: section3;
-        animation-duration: 1.5s;
-
-        @keyframes section3 {
-            0% {transform: translateX(100vw);}
-            100% {transform: translateX(0);}
+        &.animate {
+            // animation
+            animation-name: section3;
+            animation-duration: 1.5s;
+            animation-delay: 3.5s;
+            animation-fill-mode: backwards;
+            @keyframes section3 {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
         }
 
         div {
