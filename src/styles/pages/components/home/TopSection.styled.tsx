@@ -264,6 +264,15 @@ export const MainImage = styled.div`
 
       top: 72%;
       left: 16%;
+
+      // animation
+      animation-name: baseImg;
+      animation-duration: 2s;
+
+      @keyframes baseImg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // pillar
@@ -273,6 +282,15 @@ export const MainImage = styled.div`
 
       top: 47%;
       left: 30%;
+
+      // animation
+      animation-name: pillarImg;
+      animation-duration: 1s;
+
+      @keyframes pillarImg {
+        0% {top: 80%;}
+        100% {top: 47%;}
+      }
     }
 
     // middle
@@ -282,36 +300,81 @@ export const MainImage = styled.div`
 
       top: 15%;
       left: 48%;
+
+      // animation
+      animation-name: middleImg;
+      animation-duration: 1.5s;
+      animation-delay: 1s;
+      animation-fill-mode: backwards;
+      @keyframes middleImg {
+        0% {transform: scale(0, 0); top: 30%}
+        100% {transform: scale(1, 1); top: 15%;}
+      }
     }
 
     // line 1
     img:nth-child(4) {
       top: 12%;
       left: 34%;
+
+      // animation
+      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      @keyframes lineImg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // line 2
     img:nth-child(5) {
       top: 16%;
       left: 41%;
+
+      // animation
+      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      @keyframes lineImg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // line 3
     img:nth-child(6) {
       top: 18%;
       left: 65.5%;
+
+      // animation
+      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      @keyframes lineImg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // line 4
     img:nth-child(7) {
       top: 16%;
       left: 88%;
+
+      // animation
+      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      @keyframes lineImg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // line 5
     img:nth-child(8) {
       top: 12%;
       left: 97%;
+
+      // animation
+      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      @keyframes lineImg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // rotating
@@ -323,12 +386,13 @@ export const MainImage = styled.div`
       left: 28%;
 
       // animation
-      animation-name: rotatingImg;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-
+      animation: showImg 1.5s ease 2.5s 1 normal backwards, rotatingImg 3s linear 3s infinite;
+      @keyframes showImg {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
       @keyframes rotatingImg {
+        0% {transform: rotate(0);}
         100% {transform: rotate(360deg);}
       }
     }
@@ -340,6 +404,13 @@ export const MainImage = styled.div`
 
       top: 8.6%;
       left: 53.4%;
+
+      // animation
+      animation: showE 1.5s ease 2.5s 1 normal backwards;
+      @keyframes showE {
+        0% {scale: 0;}
+        100% {scale: 1;}
+      }
     }
 
     // Left
@@ -349,6 +420,13 @@ export const MainImage = styled.div`
 
       top: 42%;
       left: 16%;
+
+      // animation
+      animation: showLeftRight 1.5s ease 3s normal backwards;
+      @keyframes showLeftRight {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // Right
@@ -358,6 +436,13 @@ export const MainImage = styled.div`
 
       top: 34%;
       left: 106%;
+
+      // animation
+      animation: showLeftRight 1.5s ease 3s normal backwards;
+      @keyframes showLeftRight {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
 
     // Moving Right
@@ -367,18 +452,12 @@ export const MainImage = styled.div`
       z-index: -1;
 
       // animation
-      animation-name: movingRight;
-      animation-duration: 7s;
-      animation-delay: 3s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-
+      animation: movingRight 7s linear 3s infinite;
       @keyframes movingRight {
         0% {top: 100%;}
         100% {top: -50%;}
       }
     }
-
 
     // Moving Left
     img:nth-child(14) {
@@ -387,12 +466,7 @@ export const MainImage = styled.div`
       z-index: -1;
 
       // animation
-      animation-name: movingLeft;
-      animation-duration: 7s;
-      animation-delay: 6s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-
+      animation: movingLeft 7s linear 6s infinite;
       @keyframes movingLeft {
         0% {top: 100%;}
         100% {top: -50%;}
@@ -432,6 +506,15 @@ export const MainImage = styled.div`
 
       top: 60%;
       left: 44%;
+
+      // animation
+      animation-name: pillarImg;
+      animation-duration: 1s;
+
+      @keyframes pillarImg {
+        0% {top: 80%;}
+        100% {top: 60%;}
+      }
     }
 
     // middle
@@ -441,6 +524,16 @@ export const MainImage = styled.div`
 
       top: 40%;
       left: 55%;
+
+      // animation
+      animation-name: middleImg;
+      animation-duration: 1.5s;
+      animation-delay: 1s;
+      animation-fill-mode: backwards;
+      @keyframes middleImg {
+        0% {transform: scale(0, 0); top: 50%}
+        100% {transform: scale(1, 1); top: 40%;}
+      }
     }
 
     // line 1
@@ -495,16 +588,6 @@ export const MainImage = styled.div`
 
       top: 25%;
       left: 42%;
-
-      // animation
-      animation-name: rotatingImg;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-
-      @keyframes rotatingImg {
-        100% {transform: rotate(360deg);}
-      }
     }
 
     // E
