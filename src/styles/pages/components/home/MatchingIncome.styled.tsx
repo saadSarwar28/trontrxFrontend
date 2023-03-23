@@ -102,13 +102,14 @@ export const LevelsSection = styled.div`
 
 export const Level = styled.div`
     position: absolute;
+    opacity: 0;
 
     &.animate {
         // animation
         animation-name: level;
         animation-duration: 1.5s;
         animation-delay: 2.5s;
-        animation-fill-mode: backwards;
+        animation-fill-mode: forwards;
         @keyframes level {
             0% {opacity: 0;}
             100% {opacity: 1;}
