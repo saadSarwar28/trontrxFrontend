@@ -17,13 +17,13 @@ const Footer = () => {
             </LogoSectionFooter>
             <Links>
                 <div>
-                    <FooterNavItem text={content.footer.footerLinks[0]} link={`#${content.footer.footerLinks[0].toLowerCase()}`} />
-                    <FooterNavItem text={content.footer.footerLinks[1]} link={`#${content.footer.footerLinks[1].toLowerCase()}`} />
-                    <FooterNavItem text={content.footer.footerLinks[2]} link={`#${content.footer.footerLinks[2].toLowerCase()}`} />
+                    <FooterNavItem text={content.footer.footerLinks[0]} link="#howInvest" />
+                    <FooterNavItem text={content.footer.footerLinks[1]} link="#whyChoose" />
+                    <FooterNavItem text={content.footer.footerLinks[2]} link="#benefits" />
                 </div>
                 <div>
-                    <FooterNavItem text={content.footer.footerLinks[3]} link={`#${content.footer.footerLinks[3].toLowerCase()}`} />
-                    <FooterNavItem text={content.footer.footerLinks[4]} link={`#${content.footer.footerLinks[4].toLowerCase()}`} />
+                    <FooterNavItem text={content.footer.footerLinks[3]} link="#faqs" />
+                    <FooterNavItem text={content.footer.footerLinks[4]} link="dashboard" />
                 </div>
             </Links>
             <SocialLinks>

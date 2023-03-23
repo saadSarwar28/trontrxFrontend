@@ -72,6 +72,22 @@ export const LevelsSection = styled.div`
     position: relative;
     margin-top: 70px;
 
+    > div {
+        img {
+            &.animate {
+                // animation
+                animation-name: levelsImg;
+                animation-duration: 1.5s;
+                animation-delay: 1s;
+                animation-fill-mode: backwards;
+                @keyframes levelsImg {
+                    0% {transform: translateX(-100vw);}
+                    100% {transform: translateX(0);}
+                }
+            }
+        }
+    }
+
     @media (max-width: 992px) {
         left: -30px;
 
@@ -86,6 +102,18 @@ export const LevelsSection = styled.div`
 
 export const Level = styled.div`
     position: absolute;
+
+    &.animate {
+        // animation
+        animation-name: level;
+        animation-duration: 1.5s;
+        animation-delay: 2.5s;
+        animation-fill-mode: backwards;
+        @keyframes level {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    }
 
     /* Percentage  */
     p:first-child {

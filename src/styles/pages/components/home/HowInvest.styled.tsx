@@ -64,7 +64,15 @@ export const LeftColumn = styled.div`
         height: 643px;
     }
 
-    > img:last-child {
+    /* > img:last-child {
+        width: 70%;
+        height: 463px;
+        position: absolute;
+        top: 90px;
+        left: 25%;
+    } */
+
+    > iframe {
         width: 70%;
         height: 463px;
         position: absolute;
@@ -77,7 +85,7 @@ export const LeftColumn = styled.div`
             height: 593px;
         }
 
-        > img:last-child {
+        > iframe {
             height: 413px;
         }
     }
@@ -85,13 +93,13 @@ export const LeftColumn = styled.div`
     @media (max-width: 1200px) {
         margin-top: 20px;
 
-        > img:last-child {
+        > iframe {
             width: 50%;
         }
     }
 
     @media (max-width: 992px) {
-        > img:last-child {
+        > iframe {
             width: 60%;
         }
     }
@@ -101,7 +109,7 @@ export const LeftColumn = styled.div`
             height: 450px;
         }
 
-        > img:last-child {
+        > iframe {
             height: 313px;
             top: 69px;
         }
@@ -113,7 +121,7 @@ export const LeftColumn = styled.div`
             height: 420px;
         }
 
-        > img:last-child {
+        > iframe {
             width: 70%;
             height: 283px;
             left: 17%;

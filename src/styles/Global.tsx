@@ -12,18 +12,18 @@ const GlobalStyles = createGlobalStyle`
         scroll-behavior: smooth;
     }
 
-    /* A very quick an applicable solution is to use this piece of code: */
+    // hide scrollbar
     html {
-    overflow: scroll;
-    overflow-x: hidden;
+        overflow: scroll;
+        overflow-x: hidden;
     }
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
         width: 0px; 
         background: transparent;
     }
     ::-webkit-scrollbar-thumb {
         background: #FF0000;
-    }
+    } */
 
     @media (min-width: 1400px) {
         section, nav {

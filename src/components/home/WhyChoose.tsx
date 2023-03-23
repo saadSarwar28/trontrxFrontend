@@ -14,11 +14,17 @@ const WhyChoose = ({ content }: any) => {
     ]
 
     const [animateClass, setAnimateClass] = useState(false);
-
     useEffect(() => {
         document.addEventListener('scroll', () => {
-            if (window.scrollY >= 1300 && window.scrollY <= 1410) {
-                setAnimateClass(true);
+            // console.log(window.scrollY);
+            if (window.innerWidth <= 1200) {
+                if (window.scrollY >= 1950 && window.scrollY <= 2110) {
+                    setAnimateClass(true);
+                }
+            } else {
+                if (window.scrollY >= 1300 && window.scrollY <= 1410) {
+                    setAnimateClass(true);
+                }
             }
         })
     }, [])
@@ -116,24 +122,24 @@ const WhyChoose = ({ content }: any) => {
                 </h1>
                 <MobileSectionContainer>
                     <div>
-                        <MobileSection id="whySectionMobile0">
+                        <MobileSection id="whySectionMobile0" className={animateClass ? 'animate' : ''}>
                             <img src={sectionImages[0]} alt="..." />
                             <h2>{content.whyChoose.sections[0].title}</h2>
                             <p>{content.whyChoose.sections[0].desc}</p>
                         </MobileSection>
-                        <MobileSection id="whySectionMobile1">
+                        <MobileSection id="whySectionMobile1" className={animateClass ? 'animate' : ''}>
                             <img src={sectionImages[1]} alt="..." />
                             <h2>{content.whyChoose.sections[1].title}</h2>
                             <p>{content.whyChoose.sections[1].desc}</p>
                         </MobileSection>
                     </div>
                     <div>
-                        <MobileSection id="whySectionMobile2">
+                        <MobileSection id="whySectionMobile2" className={animateClass ? 'animate' : ''}>
                             <img src={sectionImages[2]} alt="..." />
                             <h2>{content.whyChoose.sections[2].title}</h2>
                             <p>{content.whyChoose.sections[2].desc}</p>
                         </MobileSection>
-                        <MobileSection id="whySectionMobile3">
+                        <MobileSection id="whySectionMobile3" className={animateClass ? 'animate' : ''}>
                             <div id="longevityImages">
                                 <img src={sectionImages[3]} alt="..." />
                                 <img src="/assets/images/home/whyChoose/longevity2.svg" alt="..." />
@@ -143,12 +149,12 @@ const WhyChoose = ({ content }: any) => {
                         </MobileSection>
                     </div>
                     <div>
-                        <MobileSection id="whySectionMobile4">
+                        <MobileSection id="whySectionMobile4" className={animateClass ? 'animate' : ''}>
                             <img src={sectionImages[4]} alt="..." />
                             <h2>{content.whyChoose.sections[4].title}</h2>
                             <p>{content.whyChoose.sections[4].desc}</p>
                         </MobileSection>
-                        <MobileSection id="whySectionMobile5">
+                        <MobileSection id="whySectionMobile5" className={animateClass ? 'animate' : ''}>
                             <img src={sectionImages[5]} alt="..." />
                             <h2>{content.whyChoose.sections[5].title}</h2>
                             <p>{content.whyChoose.sections[5].desc}</p>

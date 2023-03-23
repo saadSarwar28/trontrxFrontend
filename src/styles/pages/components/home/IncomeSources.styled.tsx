@@ -87,6 +87,19 @@ export const Card = styled.div`
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 4.28936px;
 
+    &.animate {
+        animation: card 3s ease 0.5s 1 normal backwards;
+        @keyframes card {
+            0% {transform: scale(0);}
+            100% {transform: scale(1);}
+        }
+    }
+
+    /* :hover {
+        transform: scale(1.1);
+        transition: 300ms;
+    } */
+
     @media (max-width: 1200px) {
         width: 280px;
     }

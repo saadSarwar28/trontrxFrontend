@@ -447,29 +447,39 @@ export const MainImage = styled.div`
 
     // Moving Right
     img:nth-child(13) {
-      top: 110%;
+      top: 90%;
       left: 75%;
       z-index: -1;
+      opacity: 0;
 
       // animation
-      animation: movingRight 7s linear 3s infinite;
+      animation: showRight 7s ease 3s 1 normal forwards, movingRight 7s linear 3s infinite;
+      @keyframes showRight {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
       @keyframes movingRight {
-        0% {top: 100%;}
-        100% {top: -50%;}
+        0% {top: 85%;}
+        100% {top: -25%;}
       }
     }
 
     // Moving Left
     img:nth-child(14) {
-      top: 110%;
-      left: 33.5%;
+      top: 90%;
+      left: 33.25%;
       z-index: -1;
+      opacity: 0;
 
       // animation
-      animation: movingLeft 7s linear 6s infinite;
+      animation: showLeft 7s ease 6s 1 normal forwards, movingLeft 7s linear 6s infinite;
+      @keyframes showLeft {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
       @keyframes movingLeft {
-        0% {top: 100%;}
-        100% {top: -50%;}
+        0% {top: 85%;}
+        100% {top: -25%;}
       }
     }
 
@@ -617,7 +627,7 @@ export const MainImage = styled.div`
       left: 91%;
     }
 
-    // Moving Right
+    /* // Moving Right
     img:nth-child(13) {
       width: 17.42px;
       height: 60.08px;
@@ -658,6 +668,49 @@ export const MainImage = styled.div`
       @keyframes movingLeft {
         0% {top: 100%;}
         100% {top: -50%;}
+      }
+    } */
+
+    // Moving Right
+    img:nth-child(13) {
+      width: 17.42px;
+      height: 60.08px;
+
+      top: 110%;
+      left: 71%;
+      z-index: -1;
+
+      // animation
+      animation: showRight 7s ease 3s 1 normal forwards, movingRight 7s linear 3s infinite;
+      @keyframes showRight {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+      @keyframes movingRight {
+        0% {top: 85%;}
+        100% {top: 0;}
+      }
+    }
+
+    // Moving Left
+    img:nth-child(14) {
+      width: 6px;
+      height: 50px;
+
+      top: 110%;
+      left: 46%;
+      z-index: -1;
+      opacity: 0;
+
+      // animation
+      animation: showLeft 7s ease 6s 1 normal forwards, movingLeft 7s linear 6s infinite;
+      @keyframes showLeft {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+      @keyframes movingLeft {
+        0% {top: 85%;}
+        100% {top: 0;}
       }
     }
   }

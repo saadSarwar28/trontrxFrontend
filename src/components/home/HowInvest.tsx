@@ -33,7 +33,8 @@ const HowInvest = ({ content }: any) => {
                 <div>
                     <LeftColumn>
                         <img src="/assets/images/home/howInvest/greyImage.png" />
-                        <img src="/assets/images/home/howInvest/videoImage.png" />
+                        <iframe height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                        {/* <img src="/assets/images/home/howInvest/videoImage.png" /> */}
                     </LeftColumn>
                     <RightColumn>
                         <h1>

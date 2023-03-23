@@ -85,11 +85,6 @@ export const TopSection = styled(motion.div)`
     justify-content: center;
     margin-bottom: 10px;
 
-    /* position: relative;
-    left: 0;
-    animation-name: topSection;
-    animation-duration: 1.5s; */
-
     > div {
         width: 40%;
     }
@@ -97,11 +92,6 @@ export const TopSection = styled(motion.div)`
     img {
         margin-top: 5px;
     }    
-
-    /* @keyframes topSection {
-        0% {left: -100vw;}
-        100% {left: 0;}
-    } */
 `
 
 export const CentralSection = styled.div`
@@ -346,7 +336,7 @@ export const Section = styled.div`
             // animation
             animation-name: section3;
             animation-duration: 1.5s;
-            animation-delay: 3.5s;
+            animation-delay: 4s;
             animation-fill-mode: backwards;
             @keyframes section3 {
                 0% {opacity: 0;}
@@ -405,8 +395,85 @@ export const MobileSection = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 7px;
-
     text-align: center;
+
+    @media (max-width: 1200px) {
+        &#whySectionMobile0 {
+            &.animate {
+                // animation
+                animation: section0 3s ease 0.5s 1 normal backwards;
+                @keyframes section0 {
+                    0% {opacity: 0;}
+                    100% {opacity: 1;}
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &#whySectionMobile1 {
+            &.animate {
+                // animation
+                animation: section1 3s ease 1s 1 normal backwards;
+                @keyframes section1 {
+                    0% {opacity: 0;}
+                    100% {opacity: 1;}
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &#whySectionMobile2 {
+            &.animate {
+                // animation
+                animation: section2 3s ease 1.5s 1 normal backwards;
+                @keyframes section2 {
+                    0% {opacity: 0;}
+                    100% {opacity: 1;}
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &#whySectionMobile3 {
+            &.animate {
+                // animation
+                animation: section3 3s ease 2s 1 normal backwards;
+                @keyframes section3 {
+                    0% {opacity: 0;}
+                    100% {opacity: 1;}
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &#whySectionMobile4 {
+            &.animate {
+                // animation
+                animation: section4 3s ease 2.5s 1 normal backwards;
+                @keyframes section4 {
+                    0% {opacity: 0;}
+                    100% {opacity: 1;}
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &#whySectionMobile5 {
+            &.animate {
+                // animation
+                animation: section5 3s ease 3s 1 normal backwards;
+                @keyframes section5 {
+                    0% {opacity: 0;}
+                    100% {opacity: 1;}
+                }
+            }
+        }
+    }
 
     img {
         width: 75px;

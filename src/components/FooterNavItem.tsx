@@ -11,7 +11,7 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ text, link }) => {
     return (
         <li>
             <div></div>
-            <Link href={link}>{text}</Link>
+            <Link href={link} scroll={false}>{text}</Link>
         </li>
     )
 }
