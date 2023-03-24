@@ -96,8 +96,6 @@ export const LevelsSection = styled.div`
             height: 240.88px;
         }
     }
-
-
 `
 
 export const Level = styled.div`

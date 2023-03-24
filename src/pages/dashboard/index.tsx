@@ -1,34 +1,16 @@
-import { CurrentStatsStyled, Main, Page, InfoCard, YellowButton1, BlackButton1, YellowButton2, BlackButton2, CopyMessage, CardText, CopyButton, StatsCard, StatsButton, CardsContainer, Card } from "@/styles/pages/components/dashboard/CurrentStats.styled"
+import { CurrentStatsStyled, Main, Page } from "@/styles/pages/components/dashboard/currentStats/CurrentStats.styled"
 import Header from "@/components/dashboard/Header"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import SidebarMobile from '../../components/dashboard/SidebarMobile'
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
-import Link from "next/link"
-import content from '../../content/content.json'
+import InfoCard from "@/components/dashboard/currentStats/InfoCard"
+import StatsCard from "@/components/dashboard/currentStats/StatsCard"
 
 
 const CurrentStats = () => {
     const [sidebarClass, setSidebarClass] = useState(false);
     const toggleSidebar = () => {
         setSidebarClass(!sidebarClass);
-    }
-    const [showMessage, setShowMessage] = useState(false);
-
-    const cardImages = [
-        "/assets/images/dashboard/currentStats/statsCard1.svg",
-        "/assets/images/dashboard/currentStats/statsCard2.svg",
-        "/assets/images/dashboard/currentStats/statsCard3.svg",
-        "/assets/images/dashboard/currentStats/statsCard4.svg",
-        "/assets/images/dashboard/currentStats/statsCard5.svg",
-        "/assets/images/dashboard/currentStats/statsCard6.svg"
-    ];
-
-    const copyLink = () => {
-        navigator.clipboard.writeText('https://trontrx.world/?ref=TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s');
-        setShowMessage(true);
-        setTimeout(() => {
-            setShowMessage(false);
-        }, 3000)
     }
 
     return (
@@ -38,67 +20,8 @@ const CurrentStats = () => {
             <Main>
                 <SidebarDesktop activeLink="currentStats" />
                 <Page>
-                    <InfoCard>
-                        <YellowButton1 type="button">{content.dashboard.currentStats.infoCard.yellowButton1}</YellowButton1>
-                        <BlackButton1 type="button">
-                            <span>{content.dashboard.currentStats.infoCard.blackButton1.span1}</span>
-                            <span>{content.dashboard.currentStats.infoCard.blackButton1.span2}</span>
-                        </BlackButton1>
-                        <YellowButton2 type="button">
-                            <span>{content.dashboard.currentStats.infoCard.yellowButton2.span1}</span>
-                            <span>{content.dashboard.currentStats.infoCard.yellowButton2.span2}</span>
-                        </YellowButton2>
-                        <BlackButton2 type="button">
-                            <span>{content.dashboard.currentStats.infoCard.blackButton2.span1}</span>
-                            <Link href="https://trontrx.world/?ref=TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s">{content.dashboard.currentStats.infoCard.blackButton2.link}</Link>
-                        </BlackButton2>
-                        <CardText>
-                            {content.dashboard.currentStats.infoCard.card1Text}
-                        </CardText>
-                        <CopyButton onClick={copyLink}>
-                            <p>{content.dashboard.currentStats.infoCard.copyButton}</p>
-                            <CopyMessage className={showMessage ? "shown" : ""}>Link Copied</CopyMessage>
-                        </CopyButton>
-                    </InfoCard>
-                    <StatsCard>
-                        <StatsButton type="button">{content.dashboard.currentStats.statsCard.yellowButton}</StatsButton>
-                        <CardsContainer>
-                            <div>
-                                <Card>
-                                    <img src={cardImages[0]} alt="..." />
-                                    <p>{content.dashboard.currentStats.statsCard.cards[0].title}</p>
-                                    <div>{content.dashboard.currentStats.statsCard.cards[0].number}</div>
-                                </Card>
-                                <Card>
-                                    <img src={cardImages[1]} alt="..." />
-                                    <p>{content.dashboard.currentStats.statsCard.cards[1].title}</p>
-                                    <div>{content.dashboard.currentStats.statsCard.cards[1].number}</div>
-                                </Card>
-                                <Card>
-                                    <img src={cardImages[2]} alt="..." />
-                                    <p>{content.dashboard.currentStats.statsCard.cards[2].title}</p>
-                                    <div>{content.dashboard.currentStats.statsCard.cards[2].number}</div>
-                                </Card>
-                            </div>
-                            <div>
-                                <Card>
-                                    <img src={cardImages[3]} alt="..." />
-                                    <p>{content.dashboard.currentStats.statsCard.cards[3].title}</p>
-                                    <div>{content.dashboard.currentStats.statsCard.cards[3].number}</div>
-                                </Card>
-                                <Card>
-                                    <img src={cardImages[4]} alt="..." />
-                                    <p>{content.dashboard.currentStats.statsCard.cards[4].title}</p>
-                                    <div>{content.dashboard.currentStats.statsCard.cards[4].number}</div>
-                                </Card>
-                                <Card>
-                                    <img src={cardImages[5]} alt="..." />
-                                    <p>{content.dashboard.currentStats.statsCard.cards[5].title}</p>
-                                    <div>{content.dashboard.currentStats.statsCard.cards[5].number}</div>
-                                </Card>
-                            </div>
-                        </CardsContainer>
-                    </StatsCard>
+                    <InfoCard />
+                    <StatsCard />
                 </Page>
             </Main>
         </CurrentStatsStyled>

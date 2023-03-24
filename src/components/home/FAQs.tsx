@@ -50,12 +50,15 @@ const FAQs = ({ content }: any) => {
                     <TabBody className={tabClass === 2 ? "active" : ""}>
                         {content.faqs.tabs[1].questionAnswers.map((item: any, index: number) => (
                             <Accordion key={index}>
-                                <AccordionTop onClick={() => toggleAnswer(index + 1)}>
+                                <AccordionTop onClick={() => toggleAnswer(index + 1)} className={answerClass === index + 1 ? "active" : ""} >
                                     <img src="/assets/images/home/faqs/plus.svg" alt="..." />
                                     <h2>{item.question}</h2>
+                                    <img src="/assets/images/home/faqs/chevron-up.svg" alt="..." />
+                                    <img src="/assets/images/home/faqs/chevron-down.svg" alt="..." />
                                 </AccordionTop>
                                 <AccordionBottom className={answerClass === index + 1 ? "active" : ""}>
                                     <p>{item.answer}</p>
+                                    <div></div>
                                 </AccordionBottom>
                             </Accordion>
                         ))}
@@ -65,12 +68,15 @@ const FAQs = ({ content }: any) => {
                     <TabBody className={tabClass === 3 ? "active" : ""}>
                         {content.faqs.tabs[2].questionAnswers.map((item: any, index: number) => (
                             <Accordion key={index}>
-                                <AccordionTop onClick={() => toggleAnswer(index + 1)}>
+                                <AccordionTop onClick={() => toggleAnswer(index + 1)} className={answerClass === index + 1 ? "active" : ""}>
                                     <img src="/assets/images/home/faqs/plus.svg" alt="..." />
                                     <h2>{item.question}</h2>
+                                    <img src="/assets/images/home/faqs/chevron-up.svg" alt="..." />
+                                    <img src="/assets/images/home/faqs/chevron-down.svg" alt="..." />
                                 </AccordionTop>
                                 <AccordionBottom className={answerClass === index + 1 ? "active" : ""}>
                                     <p>{item.answer}</p>
+                                    <div></div>
                                 </AccordionBottom>
                             </Accordion>
                         ))}
@@ -80,12 +86,15 @@ const FAQs = ({ content }: any) => {
                     <TabBody className={tabClass === 4 ? "active" : ""}>
                         {content.faqs.tabs[3].questionAnswers.map((item: any, index: number) => (
                             <Accordion key={index}>
-                                <AccordionTop onClick={() => toggleAnswer(index + 1)}>
+                                <AccordionTop onClick={() => toggleAnswer(index + 1)} className={answerClass === index + 1 ? "active" : ""}>
                                     <img src="/assets/images/home/faqs/plus.svg" alt="..." />
                                     <h2>{item.question}</h2>
+                                    <img src="/assets/images/home/faqs/chevron-up.svg" alt="..." />
+                                    <img src="/assets/images/home/faqs/chevron-down.svg" alt="..." />
                                 </AccordionTop>
                                 <AccordionBottom className={answerClass === index + 1 ? "active" : ""}>
                                     <p>{item.answer}</p>
+                                    <div></div>
                                 </AccordionBottom>
                             </Accordion>
                         ))}
@@ -95,12 +104,15 @@ const FAQs = ({ content }: any) => {
                     <TabBody className={tabClass === 5 ? "active" : ""}>
                         {content.faqs.tabs[4].questionAnswers.map((item: any, index: number) => (
                             <Accordion key={index}>
-                                <AccordionTop onClick={() => toggleAnswer(index + 1)}>
+                                <AccordionTop onClick={() => toggleAnswer(index + 1)} className={answerClass === index + 1 ? "active" : ""}>
                                     <img src="/assets/images/home/faqs/plus.svg" alt="..." />
                                     <h2>{item.question}</h2>
+                                    <img src="/assets/images/home/faqs/chevron-up.svg" alt="..." />
+                                    <img src="/assets/images/home/faqs/chevron-down.svg" alt="..." />
                                 </AccordionTop>
                                 <AccordionBottom className={answerClass === index + 1 ? "active" : ""}>
                                     <p>{item.answer}</p>
+                                    <div></div>
                                 </AccordionBottom>
                             </Accordion>
                         ))}
