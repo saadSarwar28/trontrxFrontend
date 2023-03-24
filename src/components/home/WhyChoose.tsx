@@ -22,7 +22,7 @@ const WhyChoose = ({ content }: any) => {
                     setAnimateClass(true);
                 }
             } else {
-                if (window.scrollY >= 1300 && window.scrollY <= 1410) {
+                if (window.scrollY >= 1200 && window.scrollY <= 1410) {
                     setAnimateClass(true);
                 }
             }
@@ -33,7 +33,7 @@ const WhyChoose = ({ content }: any) => {
         <WhyChooseStyled id="whyChoose">
             {/* Desktop */}
             <WhyChooseDesktop id="whyChooseDesktop">
-                <h1>
+                <h1 className={animateClass ? 'animate' : ''}>
                     {content.whyChoose.mainHeading[0]}
                     <span>{content.whyChoose.mainHeading[1]}</span>
                     {content.whyChoose.mainHeading[2]}

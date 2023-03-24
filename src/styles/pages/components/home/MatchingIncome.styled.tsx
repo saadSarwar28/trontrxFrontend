@@ -77,8 +77,8 @@ export const LevelsSection = styled.div`
             &.animate {
                 // animation
                 animation-name: levelsImg;
-                animation-duration: 1.5s;
-                animation-delay: 1s;
+                animation-duration: 1s;
+                animation-delay: 0.5s;
                 animation-fill-mode: backwards;
                 @keyframes levelsImg {
                     0% {transform: translateX(-100vw);}
@@ -106,7 +106,7 @@ export const Level = styled.div`
         // animation
         animation-name: level;
         animation-duration: 1.5s;
-        animation-delay: 2.5s;
+        animation-delay: 1s;
         animation-fill-mode: forwards;
         @keyframes level {
             0% {opacity: 0;}

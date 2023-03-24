@@ -88,7 +88,7 @@ export const Card = styled.div`
     border-radius: 4.28936px;
 
     &.animate {
-        animation: card 3s ease 0.5s 1 normal backwards;
+        animation: card 1.5s ease 0.5s 1 normal backwards;
         @keyframes card {
             0% {transform: scale(0);}
             100% {transform: scale(1);}

@@ -1,8 +1,9 @@
-import { DepositStyled, Main, Page } from "@/styles/pages/components/dashboard/Deposit.styled"
+import { DepositStyled, Main, Page } from "@/styles/pages/components/dashboard/deposit/Deposit.styled"
 import Header from "@/components/dashboard/Header"
 import SidebarMobile from "@/components/dashboard/SidebarMobile"
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
 import { useState } from "react"
+import DepositCard from "@/components/dashboard/deposit/DepositCard"
 
 
 const Deposit = () => {
@@ -18,7 +19,7 @@ const Deposit = () => {
             <Main>
                 <SidebarDesktop activeLink="deposit" />
                 <Page>
-                    deposit
+                    <DepositCard />
                 </Page>
             </Main>
         </DepositStyled>

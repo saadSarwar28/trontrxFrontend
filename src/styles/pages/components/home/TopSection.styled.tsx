@@ -267,7 +267,7 @@ export const MainImage = styled.div`
 
       // animation
       animation-name: baseImg;
-      animation-duration: 2s;
+      animation-duration: 1s;
 
       @keyframes baseImg {
         0% {opacity: 0;}
@@ -285,7 +285,7 @@ export const MainImage = styled.div`
 
       // animation
       animation-name: pillarImg;
-      animation-duration: 1s;
+      animation-duration: 0.5s;
 
       @keyframes pillarImg {
         0% {top: 80%;}
@@ -303,8 +303,8 @@ export const MainImage = styled.div`
 
       // animation
       animation-name: middleImg;
-      animation-duration: 1.5s;
-      animation-delay: 1s;
+      animation-duration: 1s;
+      animation-delay: 0.5s;
       animation-fill-mode: backwards;
       @keyframes middleImg {
         0% {transform: scale(0, 0); top: 30%}
@@ -318,7 +318,7 @@ export const MainImage = styled.div`
       left: 34%;
 
       // animation
-      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      animation: lineImg 1s linear 0.5s 1 normal backwards;
       @keyframes lineImg {
         0% {opacity: 0;}
         100% {opacity: 1;}
@@ -331,7 +331,7 @@ export const MainImage = styled.div`
       left: 41%;
 
       // animation
-      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      animation: lineImg 1s linear 0.5s 1 normal backwards;
       @keyframes lineImg {
         0% {opacity: 0;}
         100% {opacity: 1;}
@@ -344,7 +344,7 @@ export const MainImage = styled.div`
       left: 65.5%;
 
       // animation
-      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      animation: lineImg 1s linear 0.5s 1 normal backwards;
       @keyframes lineImg {
         0% {opacity: 0;}
         100% {opacity: 1;}
@@ -357,7 +357,7 @@ export const MainImage = styled.div`
       left: 88%;
 
       // animation
-      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      animation: lineImg 1s linear 0.5s 1 normal backwards;
       @keyframes lineImg {
         0% {opacity: 0;}
         100% {opacity: 1;}
@@ -370,7 +370,7 @@ export const MainImage = styled.div`
       left: 97%;
 
       // animation
-      animation: lineImg 1.5s linear 1s 1 normal backwards;
+      animation: lineImg 1s linear 0.5s 1 normal backwards;
       @keyframes lineImg {
         0% {opacity: 0;}
         100% {opacity: 1;}
@@ -386,7 +386,7 @@ export const MainImage = styled.div`
       left: 28%;
 
       // animation
-      animation: showImg 1.5s ease 2.5s 1 normal backwards, rotatingImg 3s linear 3s infinite;
+      animation: showImg 1s ease 1.5s 1 normal backwards, rotatingImg 3s linear 3s infinite;
       @keyframes showImg {
         0% {opacity: 0;}
         100% {opacity: 1;}
@@ -406,7 +406,7 @@ export const MainImage = styled.div`
       left: 53.4%;
 
       // animation
-      animation: showE 1.5s ease 2.5s 1 normal backwards;
+      animation: showE 1s ease 1.5s 1 normal backwards;
       @keyframes showE {
         0% {scale: 0;}
         100% {scale: 1;}
@@ -626,50 +626,6 @@ export const MainImage = styled.div`
       top: 50%;
       left: 91%;
     }
-
-    /* // Moving Right
-    img:nth-child(13) {
-      width: 17.42px;
-      height: 60.08px;
-
-      top: 110%;
-      left: 71%;
-      z-index: -1;
-
-      // animation
-      animation-name: movingRight;
-      animation-duration: 7s;
-      animation-delay: 3s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-
-      @keyframes movingRight {
-        0% {top: 100%;}
-        100% {top: -50%;}
-      }
-    }
-  
-    // Moving Left
-    img:nth-child(14) {
-      width: 6px;
-      height: 50px;
-
-      top: 110%;
-      left: 46%;
-      z-index: -1;
-
-      // animation
-      animation-name: movingLeft;
-      animation-duration: 7s;
-      animation-delay: 6s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-
-      @keyframes movingLeft {
-        0% {top: 100%;}
-        100% {top: -50%;}
-      }
-    } */
 
     // Moving Right
     img:nth-child(13) {

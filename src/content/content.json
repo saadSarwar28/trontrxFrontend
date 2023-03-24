@@ -278,7 +278,25 @@
             }
         },
         "deposit": {
-
+            "yellowButton": "MAKE NEW CONTRIBUTION",
+            "blackButton": "Select TRX Amount",
+            "cards": [
+                {"title": "TRX", "amount": "+50"},
+                {"title": "TRX", "amount": "+100"},
+                {"title": "TRX", "amount": "+500"},
+                {"title": "TRX", "amount": "+1000"},
+                {"title": "TRX", "amount": "+5000"},
+                {"title": "TRX", "amount": "+10000"}
+            ],
+            "paragraphs": [
+                "IMPORTANT! Do not forget about blockchain fee! You should have 40-60 TRX more on your wallet, or your transaction will get *out of energy* status!",
+                "Please consider staking some TRX to increase your Energy and Bandwidth to save some transaction cost.",
+                "Minimum contribution amount 100 TRX.",
+                "You can deposit again after withdrawing 310% from you previous deposit.",           
+                "Your contribution will be activated after 1 confirmation in blockchain.",
+                "Withdrawable rewards come instantly to your secure wallet balance, which is accessible only to You.c"    
+            ],
+            "depositButton": "DEPOSIT"
         },
         "widhdrawl": {
 
