@@ -25,6 +25,19 @@ export const MatchingIncomeStyled = styled.section`
         margin-bottom: 26px;
         text-align: center;
 
+        transform: scale(0);
+        &.animate {
+            // animation
+            animation-name: mainHeading;
+            animation-duration: 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            @keyframes mainHeading {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+
         span {
             color: ${({ theme }) => theme.colors.mainYellow};
         }
@@ -51,12 +64,23 @@ export const Paragraphs = styled.ul`
         font-weight: 400;
         font-size: 18px;
         line-height: 114.5%;
-        /* identical to box height, or 21px */
         letter-spacing: 0.025em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
 
         margin-bottom: 17px;
+
+        &.animate {
+            // animation
+            animation-name: li;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-fill-mode: backwards;
+            @keyframes li {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+        }
     }
 
     @media (max-width: 992px) {
@@ -78,7 +102,7 @@ export const LevelsSection = styled.div`
                 // animation
                 animation-name: levelsImg;
                 animation-duration: 1s;
-                animation-delay: 0.5s;
+                animation-delay: 1.5s;
                 animation-fill-mode: backwards;
                 @keyframes levelsImg {
                     0% {transform: translateX(-100vw);}
@@ -106,7 +130,7 @@ export const Level = styled.div`
         // animation
         animation-name: level;
         animation-duration: 1.5s;
-        animation-delay: 1s;
+        animation-delay: 2s;
         animation-fill-mode: forwards;
         @keyframes level {
             0% {opacity: 0;}
@@ -134,7 +158,6 @@ export const Level = styled.div`
         font-weight: 400;
         font-size: 18.3855px;
         line-height: 114.5%;
-        /* identical to box height, or 21px */
         letter-spacing: 0.025em;
         text-transform: capitalize;
         color: #7F7F7F;

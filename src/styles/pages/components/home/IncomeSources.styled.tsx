@@ -25,6 +25,19 @@ export const IncomeSourcesStyled = styled.section`
         margin-bottom: 36px;
         text-align: center;
 
+        transform: scale(0);
+        &.animate {
+            // animation
+            animation-name: mainHeading;
+            animation-duration: 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            @keyframes mainHeading {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+
         span {
             color: ${({ theme }) => theme.colors.mainYellow};
         }
@@ -81,10 +94,9 @@ export const Card = styled.div`
     min-height: 298px;
     text-align: center;
 
-    background: ${({ theme }) => theme.colors.whiteBg};;
+    background: ${({ theme }) => theme.colors.whiteBg};
     box-shadow: -10.7234px 12.1532px 22.8766px rgba(0, 0, 0, 0.25), inset 0.714894px 2.14468px 11.4383px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3.57447px);
-    /* Note: backdrop-filter has minimal browser support */
     border-radius: 4.28936px;
 
     &.animate {
@@ -95,13 +107,12 @@ export const Card = styled.div`
         }
     }
 
-    /* :hover {
-        transform: scale(1.1);
-        transition: 300ms;
-    } */
-
     @media (max-width: 1200px) {
         width: 280px;
+        
+        &.animate {
+            animation-delay: 1s;
+        }
     }
 
     @media (max-width: 992px) {
@@ -124,7 +135,6 @@ export const CardTop = styled.div`
         font-weight: 700;
         font-size: 20px;
         line-height: 114.5%;
-        /* or 23px */
         text-align: center;
         letter-spacing: 0.05em;
         text-transform: capitalize;

@@ -85,6 +85,16 @@ export const Text = styled.div`
     color: ${({ theme }) => theme.colors.whiteFont};
 
     margin-bottom: 18px;
+
+    // animation
+    animation-name: topHeading;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+    @keyframes topHeading {
+      0% {transform: translateX(-100vw);}
+      100% {transform: translateX(0);}
+    }
   }
 
   h3 {
@@ -98,6 +108,16 @@ export const Text = styled.div`
     text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
 
     margin-bottom: 12px;
+
+    // animation
+    animation-name: secHeading;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    @keyframes secHeading {
+      0% {transform: translateX(-100vw);}
+      100% {transform: translateX(0);}
+    }
   }
 
   p {
@@ -112,6 +132,16 @@ export const Text = styled.div`
     text-transform: uppercase;
 
     color: ${({ theme }) => theme.colors.whiteFont};
+
+    // animation
+    animation-name: para;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    @keyframes para {
+      0% {transform: translateX(-100vw);}
+      100% {transform: translateX(0);}
+    }
   }
 
   @media (max-width: 992px) {
@@ -151,6 +181,16 @@ export const Buttons = styled.div`
   display: flex;
   gap: 10px;
 
+  // animation
+  animation-name: topButtons;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+  @keyframes topButtons {
+    0% {transform: translateY(200px); opacity: 0;}
+    100% {transform: translateY(0);  opacity: 1;}
+  }
+
   @media (max-width: 992px) {
     justify-content: center;
 
@@ -186,7 +226,7 @@ export const YellowButton = styled.button`
 
 export const WhiteButton = styled(YellowButton)`
   width: 160px;
-  height: 59px;
+  /* height: 59px; */
 
   background: ${({ theme }) => theme.colors.whiteBg};
 `
@@ -194,8 +234,17 @@ export const WhiteButton = styled(YellowButton)`
 export const SocialIcons = styled.div`
   display: flex;
   gap: 21px;
-
   margin-top: 22px;
+
+  // animation
+  animation-name: topIcons;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+  @keyframes topIcons {
+    0% {transform: translateY(200px); opacity: 0;}
+    100% {transform: translateY(0);  opacity: 1;}
+  }
 
   > div {
     display: flex;

@@ -13,13 +13,27 @@ const IncomeSources = ({ content }: any) => {
     useEffect(() => {
         document.addEventListener('scroll', () => {
             // console.log(window.scrollY);
-            if (window.innerWidth <= 1200) {
-                if (window.scrollY >= 3000 && window.scrollY <= 3610) {
+            if (window.innerWidth <= 1200 && window.innerWidth > 768) {
+                if (window.scrollY >= 2600 && window.scrollY <= 2710) {
                     setAnimateClass(true);
+                } else if (window.scrollY < 2600) {
+                    setAnimateClass(false);
                 }
-            } else {
-                if (window.scrollY >= 2100 && window.scrollY <= 2310) {
+            }
+
+            if (window.innerWidth <= 768) {
+                if (window.scrollY >= 2800 && window.scrollY <= 2910) {
                     setAnimateClass(true);
+                } else if (window.scrollY < 2750) {
+                    setAnimateClass(false);
+                }
+            }
+
+            if (window.innerWidth > 1200) {
+                if (window.scrollY >= 2100 && window.scrollY <= 2210) {
+                    setAnimateClass(true);
+                } else if (window.scrollY < 2100) {
+                    setAnimateClass(false);
                 }
             }
         })
@@ -27,7 +41,7 @@ const IncomeSources = ({ content }: any) => {
 
     return (
         <IncomeSourcesStyled id="benefits">
-            <h1>
+            <h1 className={animateClass ? 'animate' : ''}>
                 {content.incomeSources.mainHeading[0]}
                 <span>{content.incomeSources.mainHeading[1]}</span>
             </h1>

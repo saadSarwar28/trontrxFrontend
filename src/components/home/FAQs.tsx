@@ -1,10 +1,40 @@
 import { FAQsStyled, TabsContainer, TabHeaders, TabHeader, TabBodies, TabBody, Accordion, AccordionTop, AccordionBottom } from "@/styles/pages/components/home/FAQs.styled"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 const FAQs = ({ content }: any) => {
     const [tabClass, setTabClass] = useState(1);
     const [answerClass, setAnswerClass] = useState(1);
+
+    const [animateClass, setAnimateClass] = useState(false);
+    useEffect(() => {
+        document.addEventListener('scroll', () => {
+            console.log(window.scrollY);
+            if (window.innerWidth <= 1200 && window.innerWidth > 992) {
+                if (window.scrollY >= 4300 && window.scrollY <= 4410) {
+                    setAnimateClass(true);
+                } else if (window.scrollY < 4300) {
+                    setAnimateClass(false);
+                }
+            }
+
+            if (window.innerWidth <= 992) {
+                if (window.scrollY >= 5000 && window.scrollY <= 5110) {
+                    setAnimateClass(true);
+                } else if (window.scrollY < 5000) {
+                    setAnimateClass(false);
+                }
+            }
+
+            if (window.innerWidth > 1200) {
+                if (window.scrollY >= 3600 && window.scrollY <= 3710) {
+                    setAnimateClass(true);
+                } else if (window.scrollY < 3600) {
+                    setAnimateClass(false);
+                }
+            }
+        })
+    }, [])
 
     const toggleTab = (index: number) => {
         setTabClass(index);
@@ -17,9 +47,9 @@ const FAQs = ({ content }: any) => {
 
     return (
         <FAQsStyled id="faqs">
-            <h1>{content.faqs.mainHeading}</h1>
+            <h1 className={animateClass ? 'animate' : ''}>{content.faqs.mainHeading}</h1>
             <TabsContainer>
-                <TabHeaders>
+                <TabHeaders className={animateClass ? 'animate' : ''}>
                     <TabHeader onClick={() => toggleTab(1)} className={tabClass === 1 ? "active" : ""}>{content.faqs.tabs[0].title}</TabHeader>
                     <TabHeader onClick={() => toggleTab(2)} className={tabClass === 2 ? "active" : ""}>{content.faqs.tabs[1].title}</TabHeader>
                     <TabHeader onClick={() => toggleTab(3)} className={tabClass === 3 ? "active" : ""}>{content.faqs.tabs[2].title}</TabHeader>
@@ -31,7 +61,7 @@ const FAQs = ({ content }: any) => {
                     {/* General Tab */}
                     <TabBody className={tabClass === 1 ? "active" : ""}>
                         {content.faqs.tabs[0].questionAnswers.map((item: any, index: number) => (
-                            <Accordion key={index}>
+                            <Accordion key={index} id={`question${index}`} className={animateClass ? 'animate' : ''}>
                                 <AccordionTop onClick={() => toggleAnswer(index + 1)} className={answerClass === index + 1 ? "active" : ""}>
                                     <img src="/assets/images/home/faqs/plus.svg" alt="..." />
                                     <h2>{item.question}</h2>

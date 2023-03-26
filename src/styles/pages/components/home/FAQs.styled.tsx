@@ -21,6 +21,19 @@ export const FAQsStyled = styled.section`
         text-align: center;
 
         margin-bottom: 35px;
+
+        transform: translateY(-40px);
+        &.animate {
+            // animation
+            animation-name: faqsHeading;
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            @keyframes faqsHeading {
+                0% {transform: translateY(-40px);}
+                100% {transform: translateY(0);}
+            }
+        }
     }
 
     @media (max-width: 1200px) {
@@ -75,6 +88,19 @@ export const TabHeaders = styled.div`
     border-bottom: 0.5px solid #9C9C9C;
     margin: 0 30px 43px;
 
+    transform: translateX(-100vw);
+    &.animate {
+        // animation
+        animation-name: tabHeaders;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        @keyframes tabHeaders {
+            0% {transform: translateX(100vw);}
+            100% {transform: translateX(0);}
+        }
+    }
+
     @media (max-width: 992px) {
         flex-direction: column;
         margin: 0 0 50px;
@@ -128,7 +154,34 @@ export const TabBody = styled.div`
 `
 
 export const Accordion = styled.div`
-    
+    transform: translateY(20vh);
+    &.animate {
+        // animation
+        animation-name: accordion;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        @keyframes accordion {
+            0% {transform: translateY(20vh);}
+            100% {transform: translateY(0);}
+        }
+    }
+
+    &#question1 {
+        animation-delay: 0.7s;
+    }
+
+    &#question2 {
+        animation-delay: 0.9s;
+    }
+
+    &#question3 {
+        animation-delay: 1.1s;
+    }
+
+    &#question4 {
+        animation-delay: 1.3s;
+    }
 `
 
 export const AccordionTop = styled.div`

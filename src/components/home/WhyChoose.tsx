@@ -17,13 +17,27 @@ const WhyChoose = ({ content }: any) => {
     useEffect(() => {
         document.addEventListener('scroll', () => {
             // console.log(window.scrollY);
-            if (window.innerWidth <= 1200) {
-                if (window.scrollY >= 1950 && window.scrollY <= 2110) {
+            if (window.innerWidth <= 1200 && window.innerWidth > 768) {
+                if (window.scrollY >= 1900 && window.scrollY <= 2010) {
                     setAnimateClass(true);
+                } else if (window.scrollY < 1900) {
+                    setAnimateClass(false);
                 }
-            } else {
+            }
+
+            if (window.innerWidth <= 768) {
+                if (window.scrollY >= 1600 && window.scrollY <= 1710) {
+                    setAnimateClass(true);
+                } else if (window.scrollY < 1600) {
+                    setAnimateClass(false);
+                }
+            }
+
+            if (window.innerWidth > 1200) {
                 if (window.scrollY >= 1200 && window.scrollY <= 1410) {
                     setAnimateClass(true);
+                } else if (window.scrollY < 1200) {
+                    setAnimateClass(false);
                 }
             }
         })
@@ -115,7 +129,7 @@ const WhyChoose = ({ content }: any) => {
 
             {/* Mobile */}
             <WhyChooseMobile id="whyChooseMobile">
-                <h1>
+                <h1 className={animateClass ? 'animate' : ''}>
                     {content.whyChoose.mainHeading[0]}
                     <span>{content.whyChoose.mainHeading[1]}</span>
                     {content.whyChoose.mainHeading[2]}

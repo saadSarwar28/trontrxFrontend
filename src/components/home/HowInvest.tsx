@@ -1,4 +1,5 @@
-import { HowInvestStyled, LeftColumn, RightColumn, Section } from "@/styles/pages/components/home/HowInvest.styled"
+import { HowInvestStyled, HowInvestHeading, LeftColumn, RightColumn, HeadingMobile, Section } from "@/styles/pages/components/home/HowInvest.styled"
+import { useState, useEffect } from "react"
 
 
 const HowInvest = ({ content }: any) => {
@@ -9,46 +10,46 @@ const HowInvest = ({ content }: any) => {
         "/assets/images/home/howInvest/start-earning.svg"
     ]
 
-    const sectionVariants = {
-        hidden: {
-            opacity: 0
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                delay: 0.2,
-                duration: 1
+    const [animateClass, setAnimateClass] = useState(false);
+    useEffect(() => {
+        document.addEventListener('scroll', () => {
+            // console.log(window.scrollY);
+            if (window.innerWidth <= 1200) {
+                if (window.scrollY >= 900 && window.scrollY <= 1010) {
+                    setAnimateClass(true);
+                } else if (window.scrollY < 900) {
+                    setAnimateClass(false);
+                }
+            } else {
+                if (window.scrollY >= 300 && window.scrollY <= 410) {
+                    setAnimateClass(true);
+                } else if (window.scrollY < 300) {
+                    setAnimateClass(false);
+                }
             }
-        },
-
-    }
+        })
+    }, [])
 
     return (
         <>
             <HowInvestStyled id="howInvest">
-                <h1>
+                <HowInvestHeading className={animateClass ? 'animate' : ''}>
                     {content.howInvest.mainHeading[0]}
                     <span>{content.howInvest.mainHeading[1]}</span>
-                </h1>
+                </HowInvestHeading>
                 <div>
                     <LeftColumn>
                         <img src="/assets/images/home/howInvest/greyImage.png" />
                         <iframe height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
-                        {/* <img src="/assets/images/home/howInvest/videoImage.png" /> */}
                     </LeftColumn>
                     <RightColumn>
-                        <h1>
+                        <HeadingMobile className={animateClass ? 'animate' : ''}>
                             {content.howInvest.mainHeading[0]}
                             <span>{content.howInvest.mainHeading[1]}</span>
-                        </h1>
+                        </HeadingMobile>
                         <div>
                             {content.howInvest.rightSections.map((section: any, index: number) => (
-                                <Section key={index}
-                                    variants={sectionVariants}
-                                    initial={"hidden"}
-                                    whileInView={"visible"}
-                                    viewport={{ once: true }}
-                                >
+                                <Section key={index} id={`investSection${index}`} className={animateClass ? 'animate' : ''}>
                                     <h2>{section.title}</h2>
                                     <div>
                                         <img src={sectionImages[index]} alt="..." id={`investImg${index}`} />

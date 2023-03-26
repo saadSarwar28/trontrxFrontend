@@ -1,27 +1,8 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 
 
 export const HowInvestStyled = styled.section`
     padding: 90px 0 110px 0;
-
-    h1 {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 54px;
-        line-height: 114.5%;
-        /* identical to box height, or 62px */
-        letter-spacing: 0.05em;
-        text-transform: capitalize;
-        color: ${({ theme }) => theme.colors.blackFont};
-        text-align: center;
-        margin-bottom: 5px;
-
-        span {
-            color: ${({ theme }) => theme.colors.mainYellow};
-        }
-    }
 
     > div {
         display: grid;
@@ -46,13 +27,40 @@ export const HowInvestStyled = styled.section`
     @media (max-width: 1200px) {
         padding: initial;
 
-        > h1 {
-            display: none;
-        }
-
        > div {
             grid-template-columns: 100%;
        }   
+    }
+`
+
+export const HowInvestHeading = styled.h1`
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 114.5%;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: ${({ theme }) => theme.colors.blackFont};
+    text-align: center;
+    margin-bottom: 5px;
+
+    transform: scale(0);
+    &.animate {
+        // animation
+        animation: investHeading 1s ease 0.5s 1 normal forwards;
+        @keyframes investHeading {
+            0% {transform: scale(0);}
+            100% {transform: scale(1);}
+        }
+    }
+
+    span {
+        color: ${({ theme }) => theme.colors.mainYellow};
+    }
+
+    @media (max-width: 1200px) {
+        display: none;
     }
 `
 
@@ -63,14 +71,6 @@ export const LeftColumn = styled.div`
         width: 50%;
         height: 643px;
     }
-
-    /* > img:last-child {
-        width: 70%;
-        height: 463px;
-        position: absolute;
-        top: 90px;
-        left: 25%;
-    } */
 
     > iframe {
         width: 70%;
@@ -130,10 +130,7 @@ export const LeftColumn = styled.div`
 `
 
 export const RightColumn = styled.div`
-    > h1 {
-        display: none;
-    }
-
+    
     > div {
         margin-top: 47px;
     }
@@ -162,8 +159,79 @@ export const RightColumn = styled.div`
     }
 `
 
-export const Section = styled(motion.div)`
+export const HeadingMobile = styled.h1`
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 114.5%;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: ${({ theme }) => theme.colors.blackFont};
+    text-align: center;
+    margin-bottom: 5px;
+
+    transform: scale(0);
+    &.animate {
+        // animation
+        animation: investHeading 1s ease 0.5s 1 normal forwards;
+        @keyframes investHeading {
+            0% {transform: scale(0);}
+            100% {transform: scale(1);}
+        }
+    }
+
+    span {
+        color: ${({ theme }) => theme.colors.mainYellow};
+    }
+
+    @media (max-width: 1200px) {
+        display: block;
+        font-size: 50px;
+        margin-bottom: 110px
+    }
+
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 33px;
+    }
+`
+
+export const Section = styled.div`
     margin-bottom: 25px;
+
+    opacity: 0;
+    &.animate {
+        // animation
+        animation-name: section0;
+        animation-duration: 2s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        @keyframes section0 {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    }
+
+    &#investSection0 {
+        animation-delay: 0.5s;
+    }
+
+    &#investSection1 {
+        animation-delay: 0.75s;
+    }
+
+    &#investSection2 {
+        animation-delay: 1s;
+    }
+
+    &#investSection3 {
+        animation-delay: 1.25s;
+    }
 
     h2 {
         font-family: 'Poppins', sans-serif;

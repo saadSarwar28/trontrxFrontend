@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 
 
 export const WhyChooseStyled = styled.section`
@@ -93,7 +92,7 @@ export const Sections = styled.div`
     width: 1100px;
 `
 
-export const TopSection = styled(motion.div)`
+export const TopSection = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
@@ -379,6 +378,19 @@ export const WhyChooseMobile = styled.div`
         color: ${({ theme }) => theme.colors.blackFont};
         margin-bottom: 35px;
 
+        transform: scale(0);
+        &.animate {
+            // animation
+            animation-name: mainHeading;
+            animation-duration: 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            @keyframes mainHeading {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+
         span {
             color: ${({ theme }) => theme.colors.mainYellow};
         }
@@ -414,7 +426,7 @@ export const MobileSection = styled.div`
         &#whySectionMobile0 {
             &.animate {
                 // animation
-                animation: section0 3s ease 0.5s 1 normal backwards;
+                animation: section0 2s ease 0.5s 1 normal backwards;
                 @keyframes section0 {
                     0% {opacity: 0;}
                     100% {opacity: 1;}
@@ -427,7 +439,7 @@ export const MobileSection = styled.div`
         &#whySectionMobile1 {
             &.animate {
                 // animation
-                animation: section1 3s ease 1s 1 normal backwards;
+                animation: section1 2s ease 1s 1 normal backwards;
                 @keyframes section1 {
                     0% {opacity: 0;}
                     100% {opacity: 1;}
@@ -440,7 +452,7 @@ export const MobileSection = styled.div`
         &#whySectionMobile2 {
             &.animate {
                 // animation
-                animation: section2 3s ease 1.5s 1 normal backwards;
+                animation: section2 2s ease 1.5s 1 normal backwards;
                 @keyframes section2 {
                     0% {opacity: 0;}
                     100% {opacity: 1;}
@@ -453,7 +465,7 @@ export const MobileSection = styled.div`
         &#whySectionMobile3 {
             &.animate {
                 // animation
-                animation: section3 3s ease 2s 1 normal backwards;
+                animation: section3 2s ease 2s 1 normal backwards;
                 @keyframes section3 {
                     0% {opacity: 0;}
                     100% {opacity: 1;}
@@ -466,7 +478,7 @@ export const MobileSection = styled.div`
         &#whySectionMobile4 {
             &.animate {
                 // animation
-                animation: section4 3s ease 2.5s 1 normal backwards;
+                animation: section4 2s ease 2.5s 1 normal backwards;
                 @keyframes section4 {
                     0% {opacity: 0;}
                     100% {opacity: 1;}
@@ -479,7 +491,7 @@ export const MobileSection = styled.div`
         &#whySectionMobile5 {
             &.animate {
                 // animation
-                animation: section5 3s ease 3s 1 normal backwards;
+                animation: section5 2s ease 3s 1 normal backwards;
                 @keyframes section5 {
                     0% {opacity: 0;}
                     100% {opacity: 1;}

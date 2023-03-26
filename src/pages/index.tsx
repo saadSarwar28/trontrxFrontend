@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useEffect } from 'react'
-import { HomeStyled } from '@/styles/pages/Home.styled'
+import { HomeStyled, UpArrow } from '@/styles/pages/Home.styled'
 import { connect } from 'react-redux'
 import { getContent } from '@/store/actions/homeActions'
 import TopSection from '@/components/home/TopSection'
@@ -44,6 +44,9 @@ const Home = ({ content, getContent }: any) => {
             <Divider />
             <FAQs content={content} />
             <Footer />
+            <UpArrow onClick={() => window.scrollTo(0, 0)}>
+              <img id="upArrow" src="assets/images/home/arrow-up.png" alt="..." />
+            </UpArrow>
           </>
         )}
       </HomeStyled>
