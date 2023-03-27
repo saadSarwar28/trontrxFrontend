@@ -45,7 +45,7 @@ export const YellowButton1 = styled.button`
     margin-left: 40px;
 
     // animation
-    animation: yellowButton1 1s ease 0.5s 1 normal backwards;
+    animation: yellowButton1 1s ease 0s 1 normal backwards;
     @keyframes yellowButton1 {
         0% {transform: translateY(-100vh);}
         100% {transform: translateY(initial);}
@@ -77,7 +77,7 @@ export const BlackButton1 = styled(YellowButton1)`
     align-items: center;
 
     // animation
-    animation-delay: 1s;
+    animation-delay: 0.25s;
 
     @media (max-width: 1200px) {
         flex-direction: column;
@@ -100,12 +100,12 @@ export const YellowButton2 = styled(BlackButton1)`
     color: #000000;
 
     // animation
-    animation-delay: 1.5s;
+    animation-delay: 0.5s;
 `
 
 export const BlackButton2 = styled(BlackButton1)`
     // animation
-    animation-delay: 2s;
+    animation-delay: 0.75s;
 
     a {
         font-size: 11.739px;
@@ -137,7 +137,7 @@ export const CardText = styled.div`
     margin-right: auto;
 
     // animation
-    animation: cardText 1s ease 3s 1 normal backwards;
+    animation: cardText 2s ease 1s 1 normal backwards;
     @keyframes cardText {
         0% {opacity: 0;}
         100% {opacity: 1;}
@@ -161,8 +161,8 @@ export const CopyButton = styled.button`
     border-radius: 4.19249px;
 
     // animation
-    animation: cardText 1s ease 3.5s 1 normal backwards;
-    @keyframes cardText {
+    animation: copyButton 1s ease 1.25s 1 normal backwards;
+    @keyframes copyButton {
         0% {transform: scale(0);}
         100% {transform: scale(1);}
     }

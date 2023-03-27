@@ -1,5 +1,6 @@
 import { IncomeSourcesStyled, CardsContainer, Card, CardTop, CardBottom } from "@/styles/pages/components/home/IncomeSources.styled"
 import { useState, useEffect } from "react"
+import MovingLines from "./MovingLines"
 
 
 const IncomeSources = ({ content }: any) => {
@@ -44,6 +45,7 @@ const IncomeSources = ({ content }: any) => {
             <h1 className={animateClass ? 'animate' : ''}>
                 {content.incomeSources.mainHeading[0]}
                 <span>{content.incomeSources.mainHeading[1]}</span>
+                <MovingLines />
             </h1>
             <CardsContainer>
                 {content.incomeSources.cards.map((card: any, index: any) => (

@@ -1,5 +1,6 @@
 import { FAQsStyled, TabsContainer, TabHeaders, TabHeader, TabBodies, TabBody, Accordion, AccordionTop, AccordionBottom } from "@/styles/pages/components/home/FAQs.styled"
 import { useState, useEffect } from "react"
+import MovingLines from "./MovingLines";
 
 
 const FAQs = ({ content }: any) => {
@@ -9,7 +10,7 @@ const FAQs = ({ content }: any) => {
     const [animateClass, setAnimateClass] = useState(false);
     useEffect(() => {
         document.addEventListener('scroll', () => {
-            console.log(window.scrollY);
+            // console.log(window.scrollY);
             if (window.innerWidth <= 1200 && window.innerWidth > 992) {
                 if (window.scrollY >= 4300 && window.scrollY <= 4410) {
                     setAnimateClass(true);
@@ -47,7 +48,10 @@ const FAQs = ({ content }: any) => {
 
     return (
         <FAQsStyled id="faqs">
-            <h1 className={animateClass ? 'animate' : ''}>{content.faqs.mainHeading}</h1>
+            <h1 className={animateClass ? 'animate' : ''}>
+                {content.faqs.mainHeading}
+                {/* <MovingLines /> */}
+            </h1>
             <TabsContainer>
                 <TabHeaders className={animateClass ? 'animate' : ''}>
                     <TabHeader onClick={() => toggleTab(1)} className={tabClass === 1 ? "active" : ""}>{content.faqs.tabs[0].title}</TabHeader>

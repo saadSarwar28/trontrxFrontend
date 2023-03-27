@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 
 export const MatchingIncomeStyled = styled.section`
-    padding-top: 144px;
+    /* padding-top: 144px; */
+    padding-top: 130px;
     padding-bottom: 166px;
     padding-left: 10%;
     padding-right: 10%;
@@ -22,7 +23,8 @@ export const MatchingIncomeStyled = styled.section`
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
 
-        margin-bottom: 26px;
+        /* margin-bottom: 26px; */
+        margin-bottom: 40px;
         text-align: center;
 
         transform: scale(0);

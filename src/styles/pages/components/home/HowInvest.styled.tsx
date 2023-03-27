@@ -43,7 +43,7 @@ export const HowInvestHeading = styled.h1`
     text-transform: capitalize;
     color: ${({ theme }) => theme.colors.blackFont};
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 
     transform: scale(0);
     &.animate {
@@ -138,6 +138,10 @@ export const RightColumn = styled.div`
     @media (max-width: 1200px) {
         padding-top: 50px;
         padding-bottom: 40px;
+
+        > div {
+            margin-top: 130px;
+        }
 
         > h1 {
             display: block;

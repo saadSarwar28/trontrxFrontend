@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 
 export const IncomeSourcesStyled = styled.section`
-    padding-top: 144px;
+    /* padding-top: 144px; */
+    padding-top: 130px;
     padding-bottom: 166px;
     padding-left: 10%;
     padding-right: 10%;
@@ -17,12 +18,12 @@ export const IncomeSourcesStyled = styled.section`
         font-weight: 700;
         font-size: 54px;
         line-height: 114.5%;
-        /* identical to box height, or 62px */
         letter-spacing: 0.05em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
 
-        margin-bottom: 36px;
+        /* margin-bottom: 36px; */
+        margin-bottom: 46px;
         text-align: center;
 
         transform: scale(0);

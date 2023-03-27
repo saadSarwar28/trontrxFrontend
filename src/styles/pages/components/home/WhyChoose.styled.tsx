@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 
 export const WhyChooseStyled = styled.section`
-    padding-top: 53px;
+    /* padding-top: 53px; */
+    padding-top: 40px;
     padding-bottom: 53px;
     padding-left: 5%;
     padding-right: 5%;
@@ -66,8 +67,9 @@ export const WhyChooseDesktop = styled.div`
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
         text-align: center;
-
-        margin-bottom: 20px;
+        position: relative;
+        /* margin-bottom: 20px; */
+        margin-bottom: 35px;
 
         transform: scale(0);
         &.animate {
@@ -82,7 +84,7 @@ export const WhyChooseDesktop = styled.div`
             }
         }
 
-        span {
+        > span {
             color: ${({ theme }) => theme.colors.mainYellow};
         }
     }
@@ -234,8 +236,8 @@ export const Section = styled.div`
         &.animate {
             // animation
             animation-name: section0;
-            animation-duration: 2s;
-            animation-delay: 1s;
+            animation-duration: 1.5s;
+            animation-delay: 0.5s;
             animation-fill-mode: backwards;
             @keyframes section0 {
                 0% {opacity: 0;}
@@ -255,8 +257,8 @@ export const Section = styled.div`
         &.animate {
             // animation
             animation-name: section1;
-            animation-duration: 1.5s;
-            animation-delay: 0.5s;
+            animation-duration: 1s;
+            animation-delay: 0.75s;
             animation-fill-mode: backwards;
             @keyframes section1 {
                 0% {transform: translateX(-100vw);}
@@ -276,7 +278,7 @@ export const Section = styled.div`
         &.animate {
             // animation
             animation-name: section2;
-            animation-duration: 1.5s;
+            animation-duration: 1s;
             animation-delay: 1s;
             animation-fill-mode: backwards;
             @keyframes section2 {
@@ -298,8 +300,8 @@ export const Section = styled.div`
         &.animate {
             // animation
             animation-name: section4;
-            animation-duration: 1.5s;
-            animation-delay: 2s;
+            animation-duration: 1s;
+            animation-delay: 1.5s;
             animation-fill-mode: backwards;
             @keyframes section4 {
                 0% {transform: translateX(100vw);}
@@ -325,8 +327,8 @@ export const Section = styled.div`
         &.animate {
             // animation
             animation-name: section5;
-            animation-duration: 1.5s;
-            animation-delay: 1.5s;
+            animation-duration: 1s;
+            animation-delay: 1.25s;
             animation-fill-mode: backwards;
             @keyframes section5 {
                 0% {transform: translateX(100vw);}
@@ -347,8 +349,8 @@ export const Section = styled.div`
         &.animate {
             // animation
             animation-name: section3;
-            animation-duration: 1.5s;
-            animation-delay: 3s;
+            animation-duration: 1s;
+            animation-delay: 2s;
             animation-fill-mode: backwards;
             @keyframes section3 {
                 0% {opacity: 0;}

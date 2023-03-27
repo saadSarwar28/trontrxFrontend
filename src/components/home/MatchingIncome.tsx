@@ -1,5 +1,6 @@
 import { MatchingIncomeStyled, Paragraphs, LevelsSection, Level } from "@/styles/pages/components/home/MatchingIncome.styled"
 import { useState, useEffect } from "react"
+import MovingLines from "./MovingLines"
 
 
 const MatchingIncome = ({ content }: any) => {
@@ -39,6 +40,7 @@ const MatchingIncome = ({ content }: any) => {
                 {content.matchingIncome.mainHeading[0]}
                 <span>{content.matchingIncome.mainHeading[1]}</span>
                 {content.matchingIncome.mainHeading[2]}
+                <MovingLines />
             </h1>
             <Paragraphs>
                 {content.matchingIncome.paragraphs.map((para: any, index: any) => (

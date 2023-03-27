@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 
 export const FAQsStyled = styled.section`
-    padding-top: 111px;
+    /* padding-top: 111px; */
+    padding-top: 105px;
     padding-bottom: 138px;
     padding-left: calc(50% - 500px);
     padding-right: calc(50% - 500px);
@@ -20,7 +21,8 @@ export const FAQsStyled = styled.section`
         color: ${({ theme }) => theme.colors.blackFont};
         text-align: center;
 
-        margin-bottom: 35px;
+        /* margin-bottom: 35px; */
+        margin-bottom: 45px;
 
         transform: translateY(-40px);
         &.animate {

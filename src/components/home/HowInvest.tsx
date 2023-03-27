@@ -1,5 +1,6 @@
 import { HowInvestStyled, HowInvestHeading, LeftColumn, RightColumn, HeadingMobile, Section } from "@/styles/pages/components/home/HowInvest.styled"
 import { useState, useEffect } from "react"
+import MovingLines from "./MovingLines"
 
 
 const HowInvest = ({ content }: any) => {
@@ -36,6 +37,7 @@ const HowInvest = ({ content }: any) => {
                 <HowInvestHeading className={animateClass ? 'animate' : ''}>
                     {content.howInvest.mainHeading[0]}
                     <span>{content.howInvest.mainHeading[1]}</span>
+                    <MovingLines />
                 </HowInvestHeading>
                 <div>
                     <LeftColumn>
@@ -46,6 +48,7 @@ const HowInvest = ({ content }: any) => {
                         <HeadingMobile className={animateClass ? 'animate' : ''}>
                             {content.howInvest.mainHeading[0]}
                             <span>{content.howInvest.mainHeading[1]}</span>
+                            <MovingLines />
                         </HeadingMobile>
                         <div>
                             {content.howInvest.rightSections.map((section: any, index: number) => (

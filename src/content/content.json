@@ -288,8 +288,8 @@
                 {"title": "TRX", "amount": "+5000"},
                 {"title": "TRX", "amount": "+10000"}
             ],
+            "firstPara": "IMPORTANT! Do not forget about blockchain fee! You should have 40-60 TRX more on your wallet, or your transaction will get *out of energy* status!",
             "paragraphs": [
-                "IMPORTANT! Do not forget about blockchain fee! You should have 40-60 TRX more on your wallet, or your transaction will get *out of energy* status!",
                 "Please consider staking some TRX to increase your Energy and Bandwidth to save some transaction cost.",
                 "Minimum contribution amount 100 TRX.",
                 "You can deposit again after withdrawing 310% from you previous deposit.",           

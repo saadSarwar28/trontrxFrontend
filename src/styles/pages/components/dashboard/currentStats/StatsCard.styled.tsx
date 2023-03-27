@@ -44,7 +44,7 @@ export const StatsButton = styled.button`
     // animation
     transform: translateX(-100vw);
     &.animate {
-        animation: statsButton 2s ease 0s 1 normal forwards;
+        animation: statsButton 1s ease 0.25s 1 normal forwards;
         @keyframes statsButton {
             0% {transform: translateX(-100vw);}
             100% {transform: translateX(0);}
@@ -113,7 +113,7 @@ export const Card = styled.div`
     // animation
     transform: scale(0);
     &.animate {
-        animation: statsCard 2s ease 2s 1 normal forwards;
+        animation: statsCard 2s ease 0.5s 1 normal forwards;
         @keyframes statsCard {
             0% {transform: scale(0);}
             100% {transform: scale(1);}

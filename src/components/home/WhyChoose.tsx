@@ -1,6 +1,7 @@
 import { WhyChooseStyled, WhyChooseDesktop, Sections, TopSection, CentralSection, BottomSection, MainImage, Section } from "@/styles/pages/components/home/WhyChoose.styled"
 import { WhyChooseMobile, MobileSectionContainer, MobileSection } from "@/styles/pages/components/home/WhyChoose.styled"
 import { useEffect, useState } from "react"
+import MovingLines from "./MovingLines"
 
 
 const WhyChoose = ({ content }: any) => {
@@ -51,6 +52,7 @@ const WhyChoose = ({ content }: any) => {
                     {content.whyChoose.mainHeading[0]}
                     <span>{content.whyChoose.mainHeading[1]}</span>
                     {content.whyChoose.mainHeading[2]}
+                    <MovingLines />
                 </h1>
                 <Sections>
                     <TopSection>
@@ -133,6 +135,7 @@ const WhyChoose = ({ content }: any) => {
                     {content.whyChoose.mainHeading[0]}
                     <span>{content.whyChoose.mainHeading[1]}</span>
                     {content.whyChoose.mainHeading[2]}
+                    <MovingLines />
                 </h1>
                 <MobileSectionContainer>
                     <div>
