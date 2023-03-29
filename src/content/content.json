@@ -298,8 +298,25 @@
             ],
             "depositButton": "DEPOSIT"
         },
-        "widhdrawl": {
-
+        "withdrawal": {
+            "yellowButton": "withdrawal info",
+            "cards": [
+                {"title": "CURRENT ACTIVE DEPOSIT", "amount": "0.00"},
+                {"title": "daily roi", "amount": "0.00"},
+                {"title": "Total Direct Referral Income", "amount": "0.00"},
+                {"title": "Matching Level Income", "amount": "0.00"},
+                {"title": "Total Withdrawn", "amount": "0.00"},
+                {"title": "310% Remaining Income Limit", "amount": "0.00"},
+                {"title": "Available To Withdraw", "amount": "0.00"},
+                {"title": "Last Withdrawn", "amount": "NA"}
+            ],
+            "timerTitle": "Can Withdraw After",
+            "paragraphs": [
+                "Click Withdraw button, and you will instantly get all your deposits earnings with a single transaction.",
+                "When withdrawing, you should have between 4-100 TRX on your wallet balance for blockchain fees.",
+                "Please consider staking some TRX to increase your Energy and Bandwidth to save some transaction cost."
+            ],
+            "withdrawButton": "withdraw"
         },
         "tree": {
 

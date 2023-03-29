@@ -3,12 +3,14 @@ import styled from "styled-components"
 
 export const MovingLinesStyled = styled.div`
     position: absolute;
-    bottom: -15px;
+    /* bottom: -15px; */
+    bottom: -10px;
     left: 50%;
+    transform: translateX(-50%);
+
     width: 150px;
     height: 5px;
     border-radius: 5px;
-    transform: translateX(-50%);
     overflow: hidden;
 
     > div:first-child {
@@ -45,5 +47,9 @@ export const MovingLinesStyled = styled.div`
             75% {right: -70px}
             100%  {right: -20px}
         }
+    }
+
+    @media (max-width: 1200px) {
+        height: 3px;
     }
 `

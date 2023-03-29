@@ -11,17 +11,19 @@ const DepositCard = () => {
             if (window.innerWidth <= 1200 && window.innerWidth > 992) {
                 if (window.scrollY >= 100 && window.scrollY <= 210) {
                     setAnimateClass(true);
-                } else if (window.scrollY < 100) {
-                    setAnimateClass(false);
                 }
+                // else if (window.scrollY < 100) {
+                //     setAnimateClass(false);
+                // }
             }
 
             if (window.innerWidth > 1200) {
                 if (window.scrollY >= 100 && window.scrollY <= 210) {
                     setAnimateClass(true);
-                } else if (window.scrollY < 100) {
-                    setAnimateClass(false);
                 }
+                // else if (window.scrollY < 100) {
+                //     setAnimateClass(false);
+                // }
             }
         })
     }, [])

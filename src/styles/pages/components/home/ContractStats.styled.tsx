@@ -21,10 +21,45 @@ export const StatsLeft = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    
     position: relative;
-
     width: 30%;
+
+    // animations start
+    // right arrow
+    > img {
+        opacity: 0;
+    }
+
+    // main heading
+    > div {
+        transform: scale(0);
+    }
+    &.animate {
+        // main heading
+        > div {
+            animation-name: mainHeading;
+            animation-duration: 1s;
+            animation-delay: 0.25s;
+            animation-fill-mode: forwards;
+            @keyframes mainHeading {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+
+        // right arrow
+        > img {
+            animation-name: rightArrow;
+            animation-duration: 2s;
+            animation-delay: 0.25s;
+            animation-fill-mode: forwards;
+            @keyframes rightArrow {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+        }   
+    }
+    // animations end
 
     > div {
         text-align: center;
@@ -75,9 +110,24 @@ export const StatsLeft = styled.div`
 export const StatsRight = styled.div`
     display: flex;
     align-items: center;
-
     width: 70%;
     padding: 0 30px 0 45px;
+
+    // left section and right section
+    > div:first-child, > div:last-child {
+        transform: translateX(100vw);
+        &.animate {
+            // animation
+            animation-name: StatsSection;
+            animation-duration: 1s;
+            animation-delay: 0.25s;
+            animation-fill-mode: forwards;
+            @keyframes StatsSection {
+                0% {transform: translateX(100vw);}
+                100% {transform: translateX(0);}
+            }
+        }
+    }
 
     > div {
         display: flex;
@@ -93,6 +143,38 @@ export const StatsRight = styled.div`
     @media (max-width: 992px) {
         > div {
             flex-direction: column;
+        }
+
+        // left section
+        > div:first-child {
+            transform: translateX(-100vw);
+            &.animate {
+                // animation
+                animation-name: statsLeftSection;
+                animation-duration: 1s;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
+                @keyframes statsLeftSection {
+                    0% {transform: translateX(-100vw);}
+                    100% {transform: translateX(0);}
+                }
+            }
+        }
+
+        // right section
+        > div:last-child {
+            transform: translateX(100vw);
+            &.animate {
+                // animation
+                animation-name: statsRightSection;
+                animation-duration: 1s;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
+                @keyframes statsRightSection {
+                    0% {transform: translateX(100vw);}
+                    100% {transform: translateX(0);}
+                }
+            }
         }
     }
 

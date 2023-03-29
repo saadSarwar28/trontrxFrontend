@@ -43,7 +43,8 @@ export const HowInvestHeading = styled.h1`
     text-transform: capitalize;
     color: ${({ theme }) => theme.colors.blackFont};
     text-align: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    margin-bottom: 8px;
 
     transform: scale(0);
     &.animate {
@@ -208,11 +209,11 @@ export const HeadingMobile = styled.h1`
 export const Section = styled.div`
     margin-bottom: 25px;
 
+    // animation
     opacity: 0;
     &.animate {
-        // animation
         animation-name: section0;
-        animation-duration: 2s;
+        animation-duration: 1s;
         animation-delay: 0.5s;
         animation-fill-mode: forwards;
         @keyframes section0 {
@@ -221,39 +222,67 @@ export const Section = styled.div`
         }
     }
 
-    &#investSection0 {
-        animation-delay: 0.5s;
-    }
-
-    &#investSection1 {
-        animation-delay: 0.75s;
-    }
-
-    &#investSection2 {
-        animation-delay: 1s;
-    }
-
-    &#investSection3 {
-        animation-delay: 1.25s;
-    }
-
+    // heading
     h2 {
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 26px;
         line-height: 114.5%;
-        /* or 35px */
         letter-spacing: 0.05em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
-        
-        margin-left: 84px
-    }
-    
+        margin-left: 84px;
+        position: relative;
 
+         // moving lines
+         > div {
+            left: 15%;
+            bottom: -7px;
+        }
+    }
+
+    // moving lines position according to different headings
+    /* &#investSection0 {
+        h2 {
+            // moving lines
+            > div {
+                left: 23%;
+            }
+        }
+    }
+
+    &#investSection1 {
+        h2 {
+            // moving lines
+            > div {
+                left: 16%;
+            }
+        }
+    }
+
+    &#investSection2 {
+        h2 {
+            // moving lines
+            > div {
+                left: 13%;
+            }
+        }
+    }
+
+    &#investSection3 {
+        h2 {
+            // moving lines
+            > div {
+                left: 14%;
+            }
+        }
+    } */
+
+    // content
     > div {
         display: flex;
+        align-items: center;
         gap: 6px;
 
         img {
@@ -267,7 +296,6 @@ export const Section = styled.div`
             font-weight: 400;
             font-size: 17px;
             line-height: 114.5%;
-            /* or 23px */
             letter-spacing: 0.05em;
             color: ${({ theme }) => theme.colors.blackFont};
             padding-top: 5px;
@@ -284,6 +312,65 @@ export const Section = styled.div`
 
         &:last-child {
             height: 90px;
+        }
+
+        // icon
+        > div {
+            img {
+                transform: translateX(-100vw);
+            }
+        }
+
+        // heading
+        h2 {
+            transform: translateX(100vw);
+        }
+
+        // description
+        > div {
+            p {
+                transform: translateX(100vw);
+            }
+        }
+
+        &.animate {
+            > div {
+                img {
+                    animation-name: sectionImage;
+                    animation-duration: 1s;
+                    animation-delay: 0.25s;
+                    animation-fill-mode: forwards;
+                    @keyframes sectionImage {
+                        0% {transform: translateX(-100vw);}
+                        100% {transform: translateX(-38px);}
+                    }
+                }
+            }
+
+            h2 {
+                animation-name: sectionHeading;
+                animation-duration: 1s;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
+                @keyframes sectionHeading {
+                    0% {transform: translateX(100vw);}
+                    100% {transform: translateX(0);}
+                }
+            }
+
+            // description
+            > div {
+                p {
+                    animation-name: sectionDescription;
+                    animation-duration: 1s;
+                    animation-delay: 0.25s;
+                    animation-fill-mode: forwards;
+                    @keyframes sectionDescription {
+                        0% {transform: translateX(100vw);}
+                        100% {transform: translateX(0);}
+                    }
+                }
+            }
         }
 
         > div {
@@ -304,8 +391,15 @@ export const Section = styled.div`
 
         h2 {
             margin-left: 0px;
+            margin-bottom: 15px;
             font-size: 24px;            
             text-align: center;
+
+            // moving lines
+            > div {
+                left: 50%;
+                bottom: -12px;
+            }
         }
     }
 

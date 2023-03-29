@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 
 export const WhyChooseStyled = styled.section`
-    /* padding-top: 53px; */
-    padding-top: 40px;
+    padding-top: 53px;
+    /* padding-top: 40px; */
     padding-bottom: 53px;
     padding-left: 5%;
     padding-right: 5%;
@@ -62,14 +62,13 @@ export const WhyChooseDesktop = styled.div`
         font-weight: 800;
         font-size: 44.8px;
         line-height: 114.5%;
-        /* or 51px */
         letter-spacing: 0.01em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
         text-align: center;
         position: relative;
-        /* margin-bottom: 20px; */
-        margin-bottom: 35px;
+        margin-bottom: 20px;
+        /* margin-bottom: 35px; */
 
         transform: scale(0);
         &.animate {
@@ -144,7 +143,7 @@ export const MainImage = styled.div`
         // animation
         animation-name: mainImg;
         animation-duration: 1s;
-        animation-delay: 0.5s;
+        animation-delay: 0.1s;
         animation-fill-mode: backwards;
         @keyframes mainImg {
             0% {opacity: 0; transform: scale(0);}
@@ -194,11 +193,17 @@ export const Section = styled.div`
         font-weight: 700;
         font-size: 22px;
         line-height: 114.5%;
-        /* or 26px */
         letter-spacing: 0.01em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
-        margin-bottom: 5px;
+        /* margin-bottom: 5px; */
+        margin-bottom: 15px;
+        position: relative;
+
+        // moving lines
+        > div {
+            bottom: -9px;
+        }
     }
 
     p {
@@ -233,12 +238,13 @@ export const Section = styled.div`
         flex-direction: column;
         align-items: center;
 
+        opacity: 0;
         &.animate {
             // animation
             animation-name: section0;
             animation-duration: 1.5s;
             animation-delay: 0.5s;
-            animation-fill-mode: backwards;
+            animation-fill-mode: forwards;
             @keyframes section0 {
                 0% {opacity: 0;}
                 100% {opacity: 1;}
@@ -258,7 +264,7 @@ export const Section = styled.div`
             // animation
             animation-name: section1;
             animation-duration: 1s;
-            animation-delay: 0.75s;
+            animation-delay: 0.5s;
             animation-fill-mode: backwards;
             @keyframes section1 {
                 0% {transform: translateX(-100vw);}
@@ -279,7 +285,7 @@ export const Section = styled.div`
             // animation
             animation-name: section2;
             animation-duration: 1s;
-            animation-delay: 1s;
+            animation-delay: 0.5s;
             animation-fill-mode: backwards;
             @keyframes section2 {
                 0% {transform: translateX(-100vw);}
@@ -301,7 +307,7 @@ export const Section = styled.div`
             // animation
             animation-name: section4;
             animation-duration: 1s;
-            animation-delay: 1.5s;
+            animation-delay: 0.75s;
             animation-fill-mode: backwards;
             @keyframes section4 {
                 0% {transform: translateX(100vw);}
@@ -328,7 +334,7 @@ export const Section = styled.div`
             // animation
             animation-name: section5;
             animation-duration: 1s;
-            animation-delay: 1.25s;
+            animation-delay: 0.75s;
             animation-fill-mode: backwards;
             @keyframes section5 {
                 0% {transform: translateX(100vw);}
@@ -350,7 +356,7 @@ export const Section = styled.div`
             // animation
             animation-name: section3;
             animation-duration: 1s;
-            animation-delay: 2s;
+            animation-delay: 0.75s;
             animation-fill-mode: backwards;
             @keyframes section3 {
                 0% {opacity: 0;}
@@ -368,7 +374,7 @@ export const Section = styled.div`
 export const WhyChooseMobile = styled.div`
 
     > h1 {
-        font-family: 'Poppins';
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 800;
         font-size: 30.6px;
@@ -424,79 +430,69 @@ export const MobileSection = styled.div`
     gap: 7px;
     text-align: center;
 
-    @media (max-width: 1200px) {
-        &#whySectionMobile0 {
+    /* @media (max-width: 1200px) {
+        &#whySectionMobile0, &#whySectionMobile2, &#whySectionMobile4 {
+            transform: translateX(-100vw);
             &.animate {
                 // animation
-                animation: section0 2s ease 0.5s 1 normal backwards;
-                @keyframes section0 {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
+                animation-name: sectionMobile0;
+                animation-duration: 1s;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
+                @keyframes sectionMobile0 {
+                    0% {transform: translateX(-100vw);}
+                    100% {transform: translateX(0);}
                 }
             }
         }
     }
 
     @media (max-width: 1200px) {
-        &#whySectionMobile1 {
+        &#whySectionMobile1, &#whySectionMobile3, &#whySectionMobile5 {
+            transform: translateX(100vw);
             &.animate {
                 // animation
-                animation: section1 2s ease 1s 1 normal backwards;
-                @keyframes section1 {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
+                animation-name: sectionMobile1;
+                animation-duration: 1s;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
+                @keyframes sectionMobile1 {
+                    0% {transform: translateX(100vw);}
+                    100% {transform: translateX(0);}
                 }
             }
         }
-    }
+    } */
 
     @media (max-width: 1200px) {
-        &#whySectionMobile2 {
-            &.animate {
+        > img, &#whySectionMobile3 > div {
+            transform: translateX(-100vw);
+        }
+        > h2, > p {
+            transform: translateX(100vw);
+        }
+        &.animate {
+            > img, &#whySectionMobile3 > div {
                 // animation
-                animation: section2 2s ease 1.5s 1 normal backwards;
-                @keyframes section2 {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
+                animation-name: sectionMobileImg;
+                animation-duration: 1s;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
+                @keyframes sectionMobileImg {
+                    0% {transform: translateX(-100vw);}
+                    100% {transform: translateX(0);}
                 }
             }
-        }
-    }
 
-    @media (max-width: 1200px) {
-        &#whySectionMobile3 {
-            &.animate {
-                // animation
-                animation: section3 2s ease 2s 1 normal backwards;
-                @keyframes section3 {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
-                }
-            }
-        }
-    }
-
-    @media (max-width: 1200px) {
-        &#whySectionMobile4 {
-            &.animate {
-                // animation
-                animation: section4 2s ease 2.5s 1 normal backwards;
-                @keyframes section4 {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
-                }
-            }
-        }
-    }
-
-    @media (max-width: 1200px) {
-        &#whySectionMobile5 {
-            &.animate {
-                // animation
-                animation: section5 2s ease 3s 1 normal backwards;
-                @keyframes section5 {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
+            > h2, > p {
+                 // animation
+                animation-name: sectionMobileContent;
+                animation-duration: 1s;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
+                @keyframes sectionMobileContent {
+                    0% {transform: translateX(100vw);}
+                    100% {transform: translateX(0);}
                 }
             }
         }
@@ -517,6 +513,13 @@ export const MobileSection = styled.div`
         letter-spacing: 0.01em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
+        position: relative;
+        margin-bottom: 8px;
+
+        // moving lines
+        > div {
+            bottom: -7px;
+        }
     }
 
     p {

@@ -13,8 +13,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     // hide scrollbar
-    html {
-        overflow: scroll;
+    html, body {
+        overflow-y: auto;
         overflow-x: hidden;
     }
     /* ::-webkit-scrollbar {

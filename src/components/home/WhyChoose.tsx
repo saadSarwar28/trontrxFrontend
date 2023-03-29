@@ -14,79 +14,162 @@ const WhyChoose = ({ content }: any) => {
         "/assets/images/home/whyChoose/immutability.svg"
     ]
 
-    const [animateClass, setAnimateClass] = useState(false);
+    const animate = (setAnimationClass: any, element: any) => {
+        const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
+        if (elementBottomPosition <= 0 && elementBottomPosition >= -100) {
+            setAnimationClass(true);
+        }
+        if (elementBottomPosition > 100) {
+            setAnimationClass(false);
+        }
+    }
+    const [whyHeadingClass, setWhyHeadingClass] = useState(false);
+    const [whyMainImageClass, setWhyMainImageClass] = useState(false);
+    // sections desktop
+    const [decentralizedClass, setDecentralizedClass] = useState(false);
+    const [transparecyClass, setTransparecyClass] = useState(false);
+    const [projectInsuranceClass, setProjectInsuranceClass] = useState(false);
+    const [apsClass, setApsClass] = useState(false);
+    const [immutabilityClass, setImmutabilityClass] = useState(false);
+    const [longevityClass, setLongevityClass] = useState(false);
+    // sections mobile
+    const [decentralizedMobileClass, setDecentralizedMobileClass] = useState(false);
+    const [transparecyMobileClass, setTransparecyMobileClass] = useState(false);
+    const [projectInsuranceMobileClass, setProjectInsuranceMobileClass] = useState(false);
+    const [apsMobileClass, setApsMobileClass] = useState(false);
+    const [immutabilityMobileClass, setImmutabilityMobileClass] = useState(false);
+    const [longevityMobileClass, setLongevityMobileClass] = useState(false);
+
     useEffect(() => {
+        const headingDesktop = document.querySelectorAll('.whyHeadingDesktop');
+        const whyMainImage = document.querySelectorAll('.whyMainImage');
+        const headingMobile = document.querySelectorAll('.whyHeadingMobile');
+        // sections desktop
+        const decentralized = document.querySelectorAll('.decentralized');
+        const transparecy = document.querySelectorAll('.transparecy');
+        const projectInsurance = document.querySelectorAll('.projectInsurance');
+        const aps = document.querySelectorAll('.aps');
+        const immutability = document.querySelectorAll('.immutability');
+        const longevity = document.querySelectorAll('.longevity');
+        // sections mobile
+        const decentralizedMobile = document.querySelectorAll('.decentralizedMobile');
+        const transparecyMobile = document.querySelectorAll('.transparecyMobile');
+        const projectInsuranceMobile = document.querySelectorAll('.projectInsuranceMobile');
+        const apsMobile = document.querySelectorAll('.apsMobile');
+        const immutabilityMobile = document.querySelectorAll('.immutabilityMobile');
+        const longevityMobile = document.querySelectorAll('.longevityMobile');
+
         document.addEventListener('scroll', () => {
-            // console.log(window.scrollY);
-            if (window.innerWidth <= 1200 && window.innerWidth > 768) {
-                if (window.scrollY >= 1900 && window.scrollY <= 2010) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 1900) {
-                    setAnimateClass(false);
+            if (!whyHeadingClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setWhyHeadingClass, headingDesktop[0]);
+                } else {
+                    animate(setWhyHeadingClass, headingMobile[0]);
+                }
+            }
+            if (!whyMainImageClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setWhyMainImageClass, whyMainImage[0]);
                 }
             }
 
-            if (window.innerWidth <= 768) {
-                if (window.scrollY >= 1600 && window.scrollY <= 1710) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 1600) {
-                    setAnimateClass(false);
+            // sections 
+            if (!decentralizedClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setDecentralizedClass, decentralized[0]);
+                } else {
+                    animate(setDecentralizedMobileClass, decentralizedMobile[0])
                 }
             }
-
-            if (window.innerWidth > 1200) {
-                if (window.scrollY >= 1200 && window.scrollY <= 1410) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 1200) {
-                    setAnimateClass(false);
+            if (!transparecyClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setTransparecyClass, transparecy[0]);
+                } else {
+                    animate(setTransparecyMobileClass, transparecyMobile[0]);
+                }
+            }
+            if (!projectInsuranceClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setProjectInsuranceClass, projectInsurance[0]);
+                } else {
+                    animate(setProjectInsuranceMobileClass, projectInsuranceMobile[0]);
+                }
+            }
+            if (!apsClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setApsClass, aps[0]);
+                } else {
+                    animate(setApsMobileClass, apsMobile[0]);
+                }
+            }
+            if (!immutabilityClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setImmutabilityClass, immutability[0]);
+                } else {
+                    animate(setImmutabilityMobileClass, immutabilityMobile[0]);
+                }
+            }
+            if (!longevityClass) {
+                if (window.innerWidth > 1200) {
+                    animate(setLongevityClass, longevity[0]);
+                } else {
+                    animate(setLongevityMobileClass, longevityMobile[0]);
                 }
             }
         })
     }, [])
 
+
     return (
         <WhyChooseStyled id="whyChoose">
             {/* Desktop */}
             <WhyChooseDesktop id="whyChooseDesktop">
-                <h1 className={animateClass ? 'animate' : ''}>
+                <h1 className={`whyHeadingDesktop ${whyHeadingClass ? 'animate' : ''}`}>
                     {content.whyChoose.mainHeading[0]}
                     <span>{content.whyChoose.mainHeading[1]}</span>
                     {content.whyChoose.mainHeading[2]}
-                    <MovingLines />
                 </h1>
                 <Sections>
                     <TopSection>
                         {/* Decentralized */}
-                        <Section id="whySection0" className={animateClass ? 'animate' : ''}>
+                        <Section id="whySection0" className={`decentralized ${decentralizedClass ? 'animate' : ''}`}>
                             <div>
-                                <h2>{content.whyChoose.sections[0].title}</h2>
+                                <h2>
+                                    {content.whyChoose.sections[0].title}
+                                    <MovingLines />
+                                </h2>
                                 <p>{content.whyChoose.sections[0].desc}</p>
                             </div>
                             <img src={sectionImages[0]} alt="..." />
                         </Section>
                     </TopSection>
-
                     <CentralSection>
                         <div>
                             {/* Transparency */}
-                            <Section id="whySection1" className={animateClass ? 'animate' : ''}>
+                            <Section id="whySection1" className={`transparecy ${transparecyClass ? 'animate' : ''}`}>
                                 <div>
-                                    <h2>{content.whyChoose.sections[1].title}</h2>
+                                    <h2>
+                                        {content.whyChoose.sections[1].title}
+                                        <MovingLines />
+                                    </h2>
                                     <p>{content.whyChoose.sections[1].desc}</p>
                                 </div>
                                 <img src={sectionImages[1]} alt="..." />
                             </Section>
                             {/* Project Insurance */}
-                            <Section id="whySection2" className={animateClass ? 'animate' : ''}>
+                            <Section id="whySection2" className={`projectInsurance ${projectInsuranceClass ? 'animate' : ''}`}>
                                 <div>
-                                    <h2>{content.whyChoose.sections[2].title}</h2>
+                                    <h2>
+                                        {content.whyChoose.sections[2].title}
+                                        <MovingLines />
+                                    </h2>
                                     <p>{content.whyChoose.sections[2].desc}</p>
                                 </div>
                                 <img src={sectionImages[2]} alt="..." />
                             </Section>
                         </div>
 
-                        <MainImage className={animateClass ? 'animate' : ''}>
+                        <MainImage className={`whyMainImage ${whyMainImageClass ? 'animate' : ''}`}>
                             <img src="/assets/images/home/whyChoose/main1.svg" alt="..." id="main1" />
                             <img src="/assets/images/home/whyChoose/main2.svg" alt="..." id="main2" />
                             <img src="/assets/images/home/whyChoose/main3.svg" alt="..." id="main3" />
@@ -95,29 +178,37 @@ const WhyChoose = ({ content }: any) => {
 
                         <div>
                             {/*  APS */}
-                            <Section id="whySection4" className={animateClass ? 'animate' : ''}>
+                            <Section id="whySection4" className={`aps ${apsClass ? 'animate' : ''}`}>
                                 <div>
-                                    <h2>{content.whyChoose.sections[4].title}</h2>
+                                    <h2>
+                                        {content.whyChoose.sections[4].title}
+                                        <MovingLines />
+                                    </h2>
                                     <p>{content.whyChoose.sections[4].desc}</p>
                                 </div>
                                 <img src={sectionImages[4]} alt="..." />
                             </Section>
                             {/* Immutability */}
-                            <Section id="whySection5" className={animateClass ? 'animate' : ''}>
+                            <Section id="whySection5" className={`immutability ${immutabilityClass ? 'animate' : ''}`}>
                                 <div>
-                                    <h2>{content.whyChoose.sections[5].title}</h2>
+                                    <h2>
+                                        {content.whyChoose.sections[5].title}
+                                        <MovingLines />
+                                    </h2>
                                     <p>{content.whyChoose.sections[5].desc}</p>
                                 </div>
                                 <img src={sectionImages[5]} alt="..." />
                             </Section>
                         </div>
                     </CentralSection>
-
                     <BottomSection>
                         {/* Longevity */}
-                        <Section id="whySection3" className={animateClass ? 'animate' : ''}>
+                        <Section id="whySection3" className={`longevity ${longevityClass ? 'animate' : ''}`}>
                             <div>
-                                <h2>{content.whyChoose.sections[3].title}</h2>
+                                <h2>
+                                    {content.whyChoose.sections[3].title}
+                                    <MovingLines />
+                                </h2>
                                 <p>{content.whyChoose.sections[3].desc}</p>
                             </div>
                             <div id="longevityImages">
@@ -131,49 +222,66 @@ const WhyChoose = ({ content }: any) => {
 
             {/* Mobile */}
             <WhyChooseMobile id="whyChooseMobile">
-                <h1 className={animateClass ? 'animate' : ''}>
+                <h1 className={`whyHeadingMobile ${whyHeadingClass ? 'animate' : ''}`}>
                     {content.whyChoose.mainHeading[0]}
                     <span>{content.whyChoose.mainHeading[1]}</span>
                     {content.whyChoose.mainHeading[2]}
-                    <MovingLines />
                 </h1>
                 <MobileSectionContainer>
                     <div>
-                        <MobileSection id="whySectionMobile0" className={animateClass ? 'animate' : ''}>
+                        <MobileSection id="whySectionMobile0" className={`decentralizedMobile ${decentralizedMobileClass ? 'animate' : ''}`}>
                             <img src={sectionImages[0]} alt="..." />
-                            <h2>{content.whyChoose.sections[0].title}</h2>
+                            <h2>
+                                {content.whyChoose.sections[0].title}
+                                <MovingLines />
+                            </h2>
                             <p>{content.whyChoose.sections[0].desc}</p>
                         </MobileSection>
-                        <MobileSection id="whySectionMobile1" className={animateClass ? 'animate' : ''}>
+                        <MobileSection id="whySectionMobile1" className={`transparecyMobile ${transparecyMobileClass ? 'animate' : ''}`}>
                             <img src={sectionImages[1]} alt="..." />
-                            <h2>{content.whyChoose.sections[1].title}</h2>
+                            <h2>
+                                {content.whyChoose.sections[1].title}
+                                <MovingLines />
+                            </h2>
                             <p>{content.whyChoose.sections[1].desc}</p>
                         </MobileSection>
                     </div>
                     <div>
-                        <MobileSection id="whySectionMobile2" className={animateClass ? 'animate' : ''}>
+                        <MobileSection id="whySectionMobile2" className={`projectInsuranceMobile ${projectInsuranceMobileClass ? 'animate' : ''}`}>
                             <img src={sectionImages[2]} alt="..." />
-                            <h2>{content.whyChoose.sections[2].title}</h2>
+                            <h2>
+                                {content.whyChoose.sections[2].title}
+                                <MovingLines />
+                            </h2>
                             <p>{content.whyChoose.sections[2].desc}</p>
                         </MobileSection>
-                        <MobileSection id="whySectionMobile3" className={animateClass ? 'animate' : ''}>
+                        <MobileSection id="whySectionMobile3" className={`longevityMobile ${longevityMobileClass ? 'animate' : ''}`}>
                             <div id="longevityImages">
                                 <img src={sectionImages[3]} alt="..." />
                                 <img src="/assets/images/home/whyChoose/longevity2.svg" alt="..." />
                             </div>
-                            <h2>{content.whyChoose.sections[3].title}</h2>
+                            <h2>
+                                {content.whyChoose.sections[3].title}
+                                <MovingLines />
+                            </h2>
                             <p>{content.whyChoose.sections[3].desc}</p>
                         </MobileSection>
                     </div>
                     <div>
-                        <MobileSection id="whySectionMobile4" className={animateClass ? 'animate' : ''}>
+                        <MobileSection id="whySectionMobile4" className={`apsMobile ${apsMobileClass ? 'animate' : ''}`}>
                             <img src={sectionImages[4]} alt="..." />
-                            <h2>{content.whyChoose.sections[4].title}</h2>
+                            <h2>
+                                {content.whyChoose.sections[4].title}
+                                <MovingLines />
+                            </h2>
                             <p>{content.whyChoose.sections[4].desc}</p>
                         </MobileSection>
-                        <MobileSection id="whySectionMobile5" className={animateClass ? 'animate' : ''}>
+                        <MobileSection id="whySectionMobile5" className={`immutabilityMobile ${immutabilityMobileClass ? 'animate' : ''}`}>
                             <img src={sectionImages[5]} alt="..." />
-                            <h2>{content.whyChoose.sections[5].title}</h2>
+                            <h2>
+                                {content.whyChoose.sections[5].title}
+                                <MovingLines />
+                            </h2>
                             <p>{content.whyChoose.sections[5].desc}</p>
                         </MobileSection>
                     </div>

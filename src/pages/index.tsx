@@ -7,10 +7,13 @@ import TopSection from '@/components/home/TopSection'
 import ContractStats from '@/components/home/ContractStats'
 import WhyChoose from '@/components/home/WhyChoose'
 import HowInvest from '@/components/home/HowInvest'
-import IncomeSources from '../components/home/IncomeSources';
+import IncomeSources from '../components/home/IncomeSources'
 import MatchingIncome from '@/components/home/MatchingIncome'
 import FAQs from '@/components/home/FAQs'
-import Divider from '@/components/home/Divider'
+import HowInvestDivider from '@/components/home/dividers/HowInvestDiveder'
+import WhyChooseDivider from '@/components/home/dividers/WhyChooseDivider'
+import IncomeSourcesDivider from '@/components/home/dividers/IncomeSourcesDivider'
+import MatchingIncomeDivider from '@/components/home/dividers/MatchingIncomeDivider'
 import Navbar from '@/components/home/Navbar'
 import Footer from '@/components/home/Footer'
 
@@ -35,13 +38,13 @@ const Home = ({ content, getContent }: any) => {
             <TopSection content={content} />
             <ContractStats content={content} />
             <HowInvest content={content} />
-            <Divider />
+            <HowInvestDivider />
             <WhyChoose content={content} />
-            <Divider />
+            <WhyChooseDivider />
             <IncomeSources content={content} />
-            <Divider />
+            <IncomeSourcesDivider />
             <MatchingIncome content={content} />
-            <Divider />
+            <MatchingIncomeDivider />
             <FAQs content={content} />
             <Footer />
             <UpArrow onClick={() => window.scrollTo(0, 0)}>
