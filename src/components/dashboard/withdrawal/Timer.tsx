@@ -14,9 +14,11 @@ const TimerBoxContainerWrapper = styled.div`
     height: 34px;
   }
 
-  /* @media only screen and (max-width: 400px) {
-    width: auto;
-  } */
+  @media (max-width: 768px) {
+    > img {
+      display: none;
+    }
+  }
 `
 
 const TimerBoxContainer = styled.div`
@@ -27,7 +29,7 @@ const TimerBoxContainer = styled.div`
   margin-top: 6px;
 `
 
-const TimerBox = styled.p`
+const TimerBox = styled.div`
     width: 37px;
     height: 31px;
     position: relative;
@@ -44,11 +46,12 @@ const TimerBox = styled.p`
       font-style: normal;
       font-weight: 700;
       font-size: 18.0592px;
-      line-height: 23px;
+      /* line-height: 23px; */
+      line-height: 30px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #FFFFFF;
-      text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
 
     > span {
@@ -68,24 +71,46 @@ const TimerBox = styled.p`
       color: #FFFFFF;
       text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
     }
+
+  @media (max-width: 768px) {
+      width: 21px;
+      height: 18px;
+
+      > p {
+        font-size: 10.3472px;
+        line-height: 13px;
+      }
+
+      > span {
+        font-size: 3px;
+        line-height: 4px;
+        bottom: -10px;
+      }
+  }
 `
 
+const callbackFunction = () => {
+  console.log('timer callback fired');
+}
+
 interface TimerInterface {
-  endTs: number,
-  callback: () => {}
+  timerMinutes: number,
+  // callback: () => {}
 }
 
 // @ts-ignore
-const Timer: React.FC<TimerInterface> = ({ endTs, callback }) => {
+const Timer: React.FC<TimerInterface> = ({ timerMinutes }) => {
+  const time = new Date();
 
   const { seconds, minutes, hours, days } = useTimer({
-    expiryTimestamp: new Date(endTs * 1000),
-    onExpire: callback,
+    // expiryTimestamp: new Date(endTs * 1000),
+    expiryTimestamp: new Date(time.setMinutes(time.getMinutes() + timerMinutes)),
+    onExpire: callbackFunction
   });
 
   useEffect(() => {
     if (seconds === 0 && minutes === 0 && hours === 0) {
-      callback();
+      callbackFunction();
     }
   })
 

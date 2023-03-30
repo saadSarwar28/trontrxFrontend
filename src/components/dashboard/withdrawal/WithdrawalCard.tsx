@@ -108,12 +108,13 @@ const WithdrawalCard = () => {
             </CardsSectionMobile>
             <TimerSection>
                 <p>{content.dashboard.withdrawal.timerTitle}</p>
-                {/* <Timer endTs={10} callback={() => { }} /> */}
+                <Timer timerMinutes={1} />
             </TimerSection>
             <Paragraphs>
                 {content.dashboard.withdrawal.paragraphs.map((paragraph, index) => (
                     <Paragraph key={index} id={`para${index + 1}`} className={animateClass ? 'animate' : ''}>
-                        <img src="/assets/images/dashboard/deposit/check.png" alt="..." />
+                        <img src="/assets/images/dashboard/withdrawal/paragraph.svg" alt="..." />
+                        <p>{paragraph}</p>
                     </Paragraph>
                 ))}
             </Paragraphs>

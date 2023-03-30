@@ -4,7 +4,7 @@ import { YellowButton1 } from "../currentStats/InfoCard.styled"
 export const WithdrawalCardStyled = styled.div`
     width: 95%;
     max-width: 1038px;
-    min-height: 1445px;
+    min-height: 1495px;;
     background: #FFFFFF;
     border-radius: 24.5px;
     text-align: center;
@@ -12,13 +12,27 @@ export const WithdrawalCardStyled = styled.div`
     margin-left: -23px;
     margin-bottom: 21px;
 
+    @media (max-width: 1200px) {
+        min-height: 840px;
+    }
+
     @media (max-width: 992px) {
         margin-left: 5px;
         margin-top: 29px;
     }
+
+    @media (max-width: 768px) {
+        min-height: 730px;
+    }
+
+    @media (max-width: 600px) {
+        padding-bottom: 30px;
+    }
 `
 
 export const InfoButton = styled(YellowButton1)`
+    animation: none;
+
     @media (max-width: 992px) {
         margin-top: 22px;
     }
@@ -168,7 +182,6 @@ export const TimerSection = styled.div`
 
     height: 114px;
     margin-top: 30px;
-    /* margin-left: 100px; */
     margin-left: 67px;
     margin-right: 60px;
     padding-left: 23px;
@@ -193,31 +206,79 @@ export const TimerSection = styled.div`
         text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
     }
 
-    > div {
-        color: white;
+    @media (max-width: 1200px) {
+        margin: 11px 90px 0;
+    }
+
+    @media (max-width: 768px) {
+        margin: 11px 30px 0;
+        height: 52px;
+        padding-left: 12px;
+        padding-right: 12px;
+        border: 2.4497px solid #FBBD18;
+
+        > p {
+            font-size: 8px;
+        }
     }
 `
 
 export const Paragraphs = styled.ul`
     list-style-type: none;
-    margin-top: 90px;
-    padding-left: 94px;
-    padding-right: 100px;
+    margin-top: 190px;
+    padding-left: 60px;
+    padding-right: 50px;
 
-    @media (max-width: 992px) {
-        padding-left: 50px;
-        padding-right: 50px;
+    > li:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 1200px) {
+        margin: 40px 90px 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     @media (max-width: 768px) {
-        margin-top: 31px;
-        padding-left: 28px;
-        padding-right: 28px;
+        margin: 21px 30px 0;
+
+        > li:not(:last-child) {
+            margin-bottom: 12px;
+        }
     }
 `
 
 export const Paragraph = styled.li`
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
 
+    > p {
+        font-family: 'PT Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 149.4%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #000000;
+        text-align: left;
+    }
+
+    @media (max-width: 768px) {
+        align-items: flex-start;
+
+        > img {
+            margin-top: 3px;
+        }
+
+        > p {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 149.4%;
+            letter-spacing: -0.05em;
+        }
+    }
 `
 
 export const WithdrawButton = styled.div`
@@ -225,14 +286,14 @@ export const WithdrawButton = styled.div`
     justify-content: center;
     margin-top: 39px;
 
-    &.animate {
+    /* &.animate {
         // animation
         animation: withdrawButton 2s ease 1.25s 1 normal backwards;
         @keyframes withdrawButton {
             0% {transform: scale(0);}
             100% {transform: scale(1);}
         }
-    }
+    } */
 
     button {
         display: flex;
@@ -257,10 +318,10 @@ export const WithdrawButton = styled.div`
 
     @media (max-width: 992px) {
         // animation
-        animation: withdrawButton 2s ease 1.5s 1 normal backwards;
+        /* animation: withdrawButton 2s ease 1.5s 1 normal backwards;
         @keyframes withdrawButton {
             0% {transform: scale(0);}
             100% {transform: scale(1);}
-        }
+        } */
     }
 `
