@@ -236,14 +236,14 @@ export const Section = styled.div`
         position: relative;
 
          // moving lines
-         > div {
+         /* > div {
             left: 15%;
             bottom: -7px;
-        }
+        } */
     }
 
     // moving lines position according to different headings
-    /* &#investSection0 {
+    &#investSection0 {
         h2 {
             // moving lines
             > div {
@@ -277,7 +277,7 @@ export const Section = styled.div`
                 left: 14%;
             }
         }
-    } */
+    }
 
     // content
     > div {

@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 export const MovingLinesStyled = styled.div`
     position: absolute;
-    /* bottom: -15px; */
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);

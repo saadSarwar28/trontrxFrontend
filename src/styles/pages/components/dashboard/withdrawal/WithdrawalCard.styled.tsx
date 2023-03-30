@@ -239,7 +239,7 @@ export const WithdrawButton = styled.div`
         justify-content: center;
         align-items: center;
 
-        width: 126px;
+        width: 154px;
         height: 56px;
         background: #F2A71B;
         border-radius: 5px;
@@ -257,8 +257,8 @@ export const WithdrawButton = styled.div`
 
     @media (max-width: 992px) {
         // animation
-        animation: depositButton 2s ease 1.5s 1 normal backwards;
-        @keyframes depositButton {
+        animation: withdrawButton 2s ease 1.5s 1 normal backwards;
+        @keyframes withdrawButton {
             0% {transform: scale(0);}
             100% {transform: scale(1);}
         }
