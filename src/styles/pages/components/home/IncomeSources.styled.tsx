@@ -120,6 +120,12 @@ export const Card = styled.div`
     @media (max-width: 600px) {
         width: 100%;
     }
+  
+  :hover {
+    transition-duration: 500ms;
+    background: linear-gradient(to top, ${({ theme }) => theme.colors.cardBgFilled} 50%, ${({ theme }) => theme.colors.whiteBg} 50%) bottom;
+    background-size: 100% 200%;
+  }
 `
 
 export const CardTop = styled.div`
