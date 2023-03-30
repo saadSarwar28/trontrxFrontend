@@ -10,55 +10,82 @@ const IncomeSources = ({ content }: any) => {
         "/assets/images/home/incomeSources/referral-income.svg",
     ]
 
-    const [animateClass, setAnimateClass] = useState(false);
+    const animate = (setAnimationClass: any, element: any) => {
+        const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
+        if (elementBottomPosition <= 0 && elementBottomPosition >= -100) {
+            setAnimationClass(true);
+        }
+        if (elementBottomPosition > 100) {
+            setAnimationClass(false);
+        }
+    }
+    const [incomeHeadingClass, setIncomeHeadingClass] = useState(false);
+    const [incomeCardClass0, setIncomeCardClass0] = useState(false);
+    const [incomeCardClass1, setIncomeCardClass1] = useState(false);
+    const [incomeCardClass2, setIncomeCardClass2] = useState(false);
     useEffect(() => {
+        const incomeHeading = document.querySelectorAll('.incomeHeading');
+        const incomeCard = document.querySelectorAll('.incomeCard');
+
         document.addEventListener('scroll', () => {
-            // console.log(window.scrollY);
-            if (window.innerWidth <= 1200 && window.innerWidth > 768) {
-                if (window.scrollY >= 2600 && window.scrollY <= 2710) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 2600) {
-                    setAnimateClass(false);
-                }
+            if (!incomeHeadingClass) {
+                animate(setIncomeHeadingClass, incomeHeading[0]);
             }
-
-            if (window.innerWidth <= 768) {
-                if (window.scrollY >= 2800 && window.scrollY <= 2910) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 2750) {
-                    setAnimateClass(false);
-                }
+            if (!incomeCardClass0) {
+                animate(setIncomeCardClass0, incomeCard[0]);
             }
-
-            if (window.innerWidth > 1200) {
-                if (window.scrollY >= 2100 && window.scrollY <= 2210) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 2100) {
-                    setAnimateClass(false);
-                }
+            if (!incomeCardClass1) {
+                animate(setIncomeCardClass1, incomeCard[1]);
+            }
+            if (!incomeCardClass2) {
+                animate(setIncomeCardClass2, incomeCard[2]);
             }
         })
-    }, [])
+    })
 
     return (
         <IncomeSourcesStyled id="benefits">
-            <h1 className={animateClass ? 'animate' : ''}>
+            <h1 className={`incomeHeading ${incomeHeadingClass ? 'animate' : ''}`}>
                 {content.incomeSources.mainHeading[0]}
                 <span>{content.incomeSources.mainHeading[1]}</span>
-                <MovingLines />
             </h1>
             <CardsContainer>
-                {content.incomeSources.cards.map((card: any, index: any) => (
-                    <Card key={index} className={animateClass ? 'animate' : ''}>
-                        <CardTop>
-                            <img src={cardImages[index]} alt="..." />
-                            <h2>{card.title}</h2>
-                        </CardTop>
-                        <CardBottom>
-                            <p>{card.desc}</p>
-                        </CardBottom>
-                    </Card>
-                ))}
+                <Card className={`incomeCard ${incomeCardClass0 ? 'animate' : ''}`}>
+                    <CardTop>
+                        <img src={cardImages[0]} alt="..." />
+                        <h2>
+                            {content.incomeSources.cards[0].title}
+                            <MovingLines />
+                        </h2>
+                    </CardTop>
+                    <CardBottom>
+                        <p>{content.incomeSources.cards[0].desc}</p>
+                    </CardBottom>
+                </Card>
+                <Card className={`incomeCard ${incomeCardClass1 ? 'animate' : ''}`}>
+                    <CardTop>
+                        <img src={cardImages[1]} alt="..." />
+                        <h2>
+                            {content.incomeSources.cards[1].title}
+                            <MovingLines />
+                        </h2>
+                    </CardTop>
+                    <CardBottom>
+                        <p>{content.incomeSources.cards[1].desc}</p>
+                    </CardBottom>
+                </Card>
+                <Card className={`incomeCard ${incomeCardClass2 ? 'animate' : ''}`}>
+                    <CardTop>
+                        <img src={cardImages[2]} alt="..." />
+                        <h2>
+                            {content.incomeSources.cards[2].title}
+                            <MovingLines />
+                        </h2>
+                    </CardTop>
+                    <CardBottom>
+                        <p>{content.incomeSources.cards[2].desc}</p>
+                    </CardBottom>
+                </Card>
             </CardsContainer>
         </IncomeSourcesStyled>
     )

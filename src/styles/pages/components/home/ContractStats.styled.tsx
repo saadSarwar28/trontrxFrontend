@@ -105,6 +105,33 @@ export const StatsLeft = styled.div`
         margin: 20px 0;
         width: 100%;
     }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+        // animation
+        // main heading
+        > div {
+            animation-name: mainHeading;
+            animation-duration: 1s;
+            animation-delay: 0.25s;
+            animation-fill-mode: forwards;
+            @keyframes mainHeading {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+
+        // right arrow
+        > img {
+            animation-name: rightArrow;
+            animation-duration: 2s;
+            animation-delay: 0.25s;
+            animation-fill-mode: forwards;
+            @keyframes rightArrow {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+        }   
+    }
 `
 
 export const StatsRight = styled.div`

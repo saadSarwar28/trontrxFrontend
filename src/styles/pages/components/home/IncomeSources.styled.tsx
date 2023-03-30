@@ -100,8 +100,9 @@ export const Card = styled.div`
     backdrop-filter: blur(3.57447px);
     border-radius: 4.28936px;
 
+    transform: scale(0);
     &.animate {
-        animation: card 1.5s ease 0.5s 1 normal backwards;
+        animation: card 1s ease 0.1s 1 normal forwards;
         @keyframes card {
             0% {transform: scale(0);}
             100% {transform: scale(1);}
@@ -110,10 +111,6 @@ export const Card = styled.div`
 
     @media (max-width: 1200px) {
         width: 280px;
-        
-        &.animate {
-            animation-delay: 1s;
-        }
     }
 
     @media (max-width: 992px) {
@@ -140,8 +137,13 @@ export const CardTop = styled.div`
         letter-spacing: 0.05em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
-
         margin-top: 9px;
+        position: relative;
+
+        // moving lines
+        > div {
+            bottom: -9px;
+        }
     }
 
     @media (max-width: 992px) {

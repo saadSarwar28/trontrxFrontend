@@ -214,7 +214,7 @@ export const Section = styled.div`
     &.animate {
         animation-name: section0;
         animation-duration: 1s;
-        animation-delay: 0.5s;
+        animation-delay: 0.25s;
         animation-fill-mode: forwards;
         @keyframes section0 {
             0% {opacity: 0;}

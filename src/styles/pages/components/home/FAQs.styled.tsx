@@ -15,25 +15,27 @@ export const FAQsStyled = styled.section`
         font-weight: 800;
         font-size: 56px;
         line-height: 114.5%;
-        /* or 64px */
         letter-spacing: 0.025em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
         text-align: center;
 
-        /* margin-bottom: 35px; */
-        margin-bottom: 45px;
+        margin-bottom: 35px;
+    }
 
-        transform: translateY(-40px);
-        &.animate {
-            // animation
-            animation-name: faqsHeading;
-            animation-duration: 2s;
-            animation-delay: 0.5s;
-            animation-fill-mode: forwards;
-            @keyframes faqsHeading {
-                0% {transform: translateY(-40px);}
-                100% {transform: translateY(0);}
+    @media (min-width: 769px) {
+        > h1 {
+            transform: translateY(-40px);
+            &.animate {
+                // animation
+                animation-name: faqsHeading;
+                animation-duration: 2s;
+                animation-delay: 0.5s;
+                animation-fill-mode: forwards;
+                @keyframes faqsHeading {
+                    0% {transform: translateY(-40px);}
+                    100% {transform: translateY(0);}
+                }
             }
         }
     }
@@ -60,6 +62,21 @@ export const FAQsStyled = styled.section`
        padding-top: 40px;
        padding-bottom: 40px;
        margin-bottom: 20px;
+
+       > h1 {
+            transform: translateY(-25px);
+            &.animate {
+                // animation
+                animation-name: faqsHeading;
+                animation-duration: 2s;
+                animation-delay: 0.5s;
+                animation-fill-mode: forwards;
+                @keyframes faqsHeading {
+                    0% {transform: translateY(-25px);}
+                    100% {transform: translateY(0);}
+                }
+            }
+        }
     }
 
     @media (max-width: 576px) {
@@ -94,8 +111,8 @@ export const TabHeaders = styled.div`
     &.animate {
         // animation
         animation-name: tabHeaders;
-        animation-duration: 2s;
-        animation-delay: 0.5s;
+        animation-duration: 1.5s;
+        animation-delay: 0.25s;
         animation-fill-mode: forwards;
         @keyframes tabHeaders {
             0% {transform: translateX(100vw);}
@@ -160,29 +177,12 @@ export const Accordion = styled.div`
     &.animate {
         // animation
         animation-name: accordion;
-        animation-duration: 2s;
-        animation-delay: 0.5s;
+        animation-duration: 1.5s;
         animation-fill-mode: forwards;
         @keyframes accordion {
             0% {transform: translateY(20vh);}
             100% {transform: translateY(0);}
         }
-    }
-
-    &#question1 {
-        animation-delay: 0.7s;
-    }
-
-    &#question2 {
-        animation-delay: 0.9s;
-    }
-
-    &#question3 {
-        animation-delay: 1.1s;
-    }
-
-    &#question4 {
-        animation-delay: 1.3s;
     }
 `
 

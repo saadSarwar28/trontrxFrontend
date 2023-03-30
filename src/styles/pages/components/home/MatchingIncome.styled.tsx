@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 
 export const MatchingIncomeStyled = styled.section`
-    /* padding-top: 144px; */
-    padding-top: 130px;
+    padding-top: 144px;
+    /* padding-top: 130px; */
     padding-bottom: 166px;
     padding-left: 10%;
     padding-right: 10%;
@@ -18,13 +18,12 @@ export const MatchingIncomeStyled = styled.section`
         font-weight: 800;
         font-size: 40px;
         line-height: 114.5%;
-        /* identical to box height, or 46px */
         letter-spacing: 0.025em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
 
-        /* margin-bottom: 26px; */
-        margin-bottom: 40px;
+        margin-bottom: 26px;
+        /* margin-bottom: 40px; */
         text-align: center;
 
         transform: scale(0);
@@ -59,6 +58,19 @@ export const MatchingIncomeStyled = styled.section`
 
 export const Paragraphs = styled.ul`
     padding-left: 40px;
+
+    opacity: 0;
+    &.animate {
+        // animation
+        animation-name: paragraphs;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        @keyframes paragraphs {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    }
     
     li {
         font-family: 'PT Sans', sans-serif;
@@ -69,20 +81,7 @@ export const Paragraphs = styled.ul`
         letter-spacing: 0.025em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
-
         margin-bottom: 17px;
-
-        &.animate {
-            // animation
-            animation-name: li;
-            animation-duration: 2s;
-            animation-delay: 1s;
-            animation-fill-mode: backwards;
-            @keyframes li {
-                0% {opacity: 0;}
-                100% {opacity: 1;}
-            }
-        }
     }
 
     @media (max-width: 992px) {
@@ -98,17 +97,46 @@ export const LevelsSection = styled.div`
     position: relative;
     margin-top: 70px;
 
+    // animations
     > div {
         img {
-            &.animate {
+            transform: translateX(-100vw);
+        }
+    }
+
+    > div {
+        > div {
+            opacity: 0;
+        }
+    }
+
+    &.animate {
+        // main image
+        > div {
+            img {
                 // animation
                 animation-name: levelsImg;
                 animation-duration: 1s;
-                animation-delay: 1.5s;
-                animation-fill-mode: backwards;
+                animation-delay: 0.25s;
+                animation-fill-mode: forwards;
                 @keyframes levelsImg {
                     0% {transform: translateX(-100vw);}
                     100% {transform: translateX(0);}
+                }
+            }
+        }
+
+        // levels
+        > div {
+            > div {
+                // animation
+                animation-name: level;
+                animation-duration: 2.5s;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+                @keyframes level {
+                    0% {opacity: 0;}
+                    100% {opacity: 1;}
                 }
             }
         }
@@ -126,19 +154,6 @@ export const LevelsSection = styled.div`
 
 export const Level = styled.div`
     position: absolute;
-    opacity: 0;
-
-    &.animate {
-        // animation
-        animation-name: level;
-        animation-duration: 1.5s;
-        animation-delay: 2s;
-        animation-fill-mode: forwards;
-        @keyframes level {
-            0% {opacity: 0;}
-            100% {opacity: 1;}
-        }
-    }
 
     /* Percentage  */
     p:first-child {

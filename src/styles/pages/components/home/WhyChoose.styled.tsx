@@ -139,12 +139,14 @@ export const MainImage = styled.div`
     width: 236px;
     height: 221px;
 
+    opacity: 0; 
+    transform: scale(0);
     &.animate {
         // animation
         animation-name: mainImg;
         animation-duration: 1s;
         animation-delay: 0.1s;
-        animation-fill-mode: backwards;
+        animation-fill-mode: forwards;
         @keyframes mainImg {
             0% {opacity: 0; transform: scale(0);}
             100% {opacity: 1; transform: scale(1);}
@@ -260,12 +262,13 @@ export const Section = styled.div`
     &#whySection1 {
         align-items: center;
 
+        transform: translateX(-100vw);
         &.animate {
             // animation
             animation-name: section1;
             animation-duration: 1s;
             animation-delay: 0.5s;
-            animation-fill-mode: backwards;
+            animation-fill-mode: forwards;
             @keyframes section1 {
                 0% {transform: translateX(-100vw);}
                 100% {transform: translateX(0);}
@@ -281,12 +284,13 @@ export const Section = styled.div`
     &#whySection2 {
         align-items: center;
 
+        transform: translateX(-100vw);
         &.animate {
             // animation
             animation-name: section2;
             animation-duration: 1s;
             animation-delay: 0.5s;
-            animation-fill-mode: backwards;
+            animation-fill-mode: forwards;
             @keyframes section2 {
                 0% {transform: translateX(-100vw);}
                 100% {transform: translateX(0);}
@@ -303,12 +307,13 @@ export const Section = styled.div`
         flex-direction: row-reverse;
         align-items: center;
 
+        transform: translateX(100vw);
         &.animate {
             // animation
             animation-name: section4;
             animation-duration: 1s;
             animation-delay: 0.75s;
-            animation-fill-mode: backwards;
+            animation-fill-mode: forwards;
             @keyframes section4 {
                 0% {transform: translateX(100vw);}
                 100% {transform: translateX(0);}
@@ -330,12 +335,13 @@ export const Section = styled.div`
         flex-direction: row-reverse;
         align-items: center;
 
+        transform: translateX(100vw);
         &.animate {
             // animation
             animation-name: section5;
             animation-duration: 1s;
             animation-delay: 0.75s;
-            animation-fill-mode: backwards;
+            animation-fill-mode: forwards;
             @keyframes section5 {
                 0% {transform: translateX(100vw);}
                 100% {transform: translateX(0);}
@@ -352,12 +358,13 @@ export const Section = styled.div`
         flex-direction: column-reverse;
         align-items: center;
 
+        opacity: 0;
         &.animate {
             // animation
             animation-name: section3;
             animation-duration: 1s;
             animation-delay: 0.75s;
-            animation-fill-mode: backwards;
+            animation-fill-mode: forwards;
             @keyframes section3 {
                 0% {opacity: 0;}
                 100% {opacity: 1;}
@@ -430,7 +437,7 @@ export const MobileSection = styled.div`
     gap: 7px;
     text-align: center;
 
-    /* @media (max-width: 1200px) {
+    @media (max-width: 1200px) and (min-width: 769px) {
         &#whySectionMobile0, &#whySectionMobile2, &#whySectionMobile4 {
             transform: translateX(-100vw);
             &.animate {
@@ -447,7 +454,7 @@ export const MobileSection = styled.div`
         }
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1200px) and (min-width: 769px) {
         &#whySectionMobile1, &#whySectionMobile3, &#whySectionMobile5 {
             transform: translateX(100vw);
             &.animate {
@@ -462,9 +469,9 @@ export const MobileSection = styled.div`
                 }
             }
         }
-    } */
+    }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 768px) {
         > img, &#whySectionMobile3 > div {
             transform: translateX(-100vw);
         }

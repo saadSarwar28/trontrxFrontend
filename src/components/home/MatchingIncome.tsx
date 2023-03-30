@@ -4,56 +4,56 @@ import MovingLines from "./MovingLines"
 
 
 const MatchingIncome = ({ content }: any) => {
-    const [animateClass, setAnimateClass] = useState(false);
+
+    const animate = (setAnimationClass: any, element: any) => {
+        const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
+        if (elementBottomPosition <= 0 && elementBottomPosition >= -100) {
+            setAnimationClass(true);
+        }
+        if (elementBottomPosition > 100) {
+            setAnimationClass(false);
+        }
+    }
+    const [matchingIncomeHeadingClass, setMatchingIncomeHeadingClass] = useState(false);
+    const [matchingParagraphsClass, setMatchingParagraphsClass] = useState(false);
+    const [levelsClass, setlevelsClass] = useState(false);
     useEffect(() => {
+        const matchingIncomeHeading = document.querySelectorAll('.matchingIncomeHeading');
+        const matchingParagraphs = document.querySelectorAll('.matchingParagraphs');
+        const levels = document.querySelectorAll('.levels');
+
         document.addEventListener('scroll', () => {
-            // console.log(window.scrollY);
-            if (window.innerWidth <= 1200) {
-                if (window.scrollY >= 3200 && window.scrollY <= 3310) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 3200) {
-                    setAnimateClass(false);
-                }
+            if (!matchingIncomeHeadingClass) {
+                animate(setMatchingIncomeHeadingClass, matchingIncomeHeading[0]);
             }
-
-            if (window.innerWidth <= 992) {
-                if (window.scrollY >= 4400 && window.scrollY <= 4510) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 4400) {
-                    setAnimateClass(false);
-                }
+            if (!matchingParagraphsClass) {
+                animate(setMatchingParagraphsClass, matchingParagraphs[0]);
             }
-
-            if (window.innerWidth > 1200) {
-                if (window.scrollY >= 2700 && window.scrollY <= 2810) {
-                    setAnimateClass(true);
-                } else if (window.scrollY < 2700) {
-                    setAnimateClass(false);
-                }
+            if (!levelsClass) {
+                animate(setlevelsClass, levels[0]);
             }
         })
-    }, [])
+    })
 
     return (
         <MatchingIncomeStyled>
-            <h1 className={animateClass ? 'animate' : ''}>
+            <h1 className={`matchingIncomeHeading ${matchingIncomeHeadingClass ? 'animate' : ''}`}>
                 {content.matchingIncome.mainHeading[0]}
                 <span>{content.matchingIncome.mainHeading[1]}</span>
                 {content.matchingIncome.mainHeading[2]}
-                <MovingLines />
             </h1>
-            <Paragraphs>
+            <Paragraphs className={`matchingParagraphs ${matchingParagraphsClass ? 'animate' : ''}`}>
                 {content.matchingIncome.paragraphs.map((para: any, index: any) => (
-                    <li key={index} className={animateClass ? 'animate' : ''}>
+                    <li key={index}>
                         {para}
                     </li>
                 ))}
             </Paragraphs>
-            <LevelsSection>
+            <LevelsSection className={`levels ${levelsClass ? 'animate' : ''}`}>
                 <div>
-                    <img src="/assets/images/home/matchingIncome/main.png" className={animateClass ? 'animate' : ''} />
+                    <img src="/assets/images/home/matchingIncome/main.png" />
                     {content.matchingIncome.levels.map((level: any, index: any) => (
-                        <Level key={index} id={`level${index}`} className={animateClass ? 'animate' : ''}>
+                        <Level key={index} id={`level${index}`}>
                             <p>{level.percentage}</p>
                             <p>{level.level}</p>
                         </Level>
