@@ -1,8 +1,9 @@
-import { TreeStyled, Main, Page } from "@/styles/pages/components/dashboard/Tree.styled"
+import { TreeStyled, Main, Page } from "@/styles/pages/components/dashboard/tree/Tree.styled"
 import Header from "@/components/dashboard/Header"
 import SidebarMobile from "@/components/dashboard/SidebarMobile"
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
 import { useState } from "react"
+import TreeCard from "@/components/dashboard/tree/TreeCard"
 
 
 const Tree = () => {
@@ -18,7 +19,7 @@ const Tree = () => {
             <Main>
                 <SidebarDesktop activeLink="tree" />
                 <Page>
-                    Tree
+                    <TreeCard />
                 </Page>
             </Main>
         </TreeStyled>

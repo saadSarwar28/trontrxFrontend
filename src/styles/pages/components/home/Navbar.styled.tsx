@@ -116,6 +116,18 @@ export const LogoSection = styled.div`
     @media (max-width: 576px) {
         padding-left: 15px;
     }
+
+    @media (max-width: 300px) {
+        > div:nth-child(2) {
+            h1 {
+                font-size: 23px;
+            }
+
+            p {
+                font-size: 9px;
+            }
+        }
+    }
 `
 
 export const LinksSection = styled.div`
@@ -235,5 +247,10 @@ export const MobileNavbar = styled.div`
     @media (max-width: 576px) {
         top: 78px;
         width: 300px;
+    }
+
+    @media (max-width: 300px) {
+        width: 250px;
+        right: -110vw;
     }
 `

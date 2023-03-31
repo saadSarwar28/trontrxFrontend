@@ -39,6 +39,7 @@ export const YellowButton1 = styled.button`
     line-height: 40px;
     text-transform: uppercase;
     color: #000000;
+    cursor: pointer;
 
     margin-top: 10px;
     margin-right: 40px;

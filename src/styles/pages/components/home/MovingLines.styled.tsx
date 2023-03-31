@@ -8,13 +8,13 @@ export const MovingLinesStyled = styled.div`
     transform: translateX(-50%);
 
     width: 150px;
-    height: 5px;
+    height: 7px;
     border-radius: 5px;
     overflow: hidden;
 
     > div:first-child {
         width: 130px;
-        height: 5px;
+        height: 7px;
         background: ${({ theme }) => theme.colors.mainYellow};
         border-radius: 5px;
 
@@ -32,7 +32,7 @@ export const MovingLinesStyled = styled.div`
 
     > div:last-child {
         width: 130px;
-        height: 5px;
+        height: 7px;
         background: ${({ theme }) => theme.colors.mainYellow};
         border-radius: 5px;
 
@@ -49,6 +49,6 @@ export const MovingLinesStyled = styled.div`
     }
 
     @media (max-width: 1200px) {
-        height: 3px;
+        height: 5px;
     }
 `

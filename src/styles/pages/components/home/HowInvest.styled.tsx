@@ -333,6 +333,16 @@ export const Section = styled.div`
             }
         }
 
+        // moving lines position according to different headings
+        &#investSection0, &#investSection1, &#investSection2, &#investSection3 {
+            h2 {
+                // moving lines
+                > div {
+                    left: 50%;
+                }
+            }
+        }
+        
         &.animate {
             > div {
                 img {

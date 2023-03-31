@@ -9,7 +9,7 @@ export const UpArrow = styled.div`
     position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 10000;
+    z-index: 1000;
 
     display: flex;
     justify-content: center;

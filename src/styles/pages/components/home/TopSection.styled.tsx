@@ -70,6 +70,12 @@ export const ContentColumn = styled.div`
       margin-top: 50px;
     }
   }
+
+  @media (max-width: 576px) {
+    > div {
+      padding: 0 20px;
+    }
+  }
 `
 
 export const Text = styled.div`
@@ -175,6 +181,20 @@ export const Text = styled.div`
       font-size: 13px;
     }
   }
+
+  @media (max-width: 576px) {
+    > h1 {
+      font-size: 19px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 11px;
+    }
+  }
 `
 
 export const Buttons = styled.div`
@@ -205,6 +225,12 @@ export const Buttons = styled.div`
   @media (max-width: 576px) {
     button {
       height: 45px;
+    }
+  }
+
+  @media (max-width: 300px) {
+    button {
+      font-size: 10px;
     }
   }
 `
