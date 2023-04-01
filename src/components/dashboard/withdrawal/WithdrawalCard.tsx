@@ -22,25 +22,55 @@ const WithdrawalCard = () => {
     ]
 
     const [animateClass, setAnimateClass] = useState(false);
-    useEffect(() => {
-        document.addEventListener('scroll', () => {
-            // console.log(window.scrollY);
-            if (window.innerWidth <= 1200 && window.innerWidth > 992) {
-                if (window.scrollY >= 100 && window.scrollY <= 210) {
-                    setAnimateClass(true);
-                }
-                // else if (window.scrollY < 100) {
-                //     setAnimateClass(false);
-                // }
-            }
+    // useEffect(() => {
+    //     document.addEventListener('scroll', () => {
+    //         // console.log(window.scrollY);
+    //         if (window.innerWidth <= 1200 && window.innerWidth > 992) {
+    //             if (window.scrollY >= 100 && window.scrollY <= 210) {
+    //                 setAnimateClass(true);
+    //             }
+    //             // else if (window.scrollY < 100) {
+    //             //     setAnimateClass(false);
+    //             // }
+    //         }
 
-            if (window.innerWidth > 1200) {
-                if (window.scrollY >= 100 && window.scrollY <= 210) {
-                    setAnimateClass(true);
-                }
-                // else if (window.scrollY < 100) {
-                //     setAnimateClass(false);
-                // }
+    //         if (window.innerWidth > 1200) {
+    //             if (window.scrollY >= 100 && window.scrollY <= 210) {
+    //                 setAnimateClass(true);
+    //             }
+    //             // else if (window.scrollY < 100) {
+    //             //     setAnimateClass(false);
+    //             // }
+    //         }
+    //     })
+    // }, [])
+
+    const animate = (setAnimationClass: any, element: any) => {
+        const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
+        if (elementBottomPosition <= 0 && elementBottomPosition >= -100) {
+            setAnimationClass(true);
+        }
+        if (elementBottomPosition > 50) {
+            setAnimationClass(false);
+        }
+    }
+    const [timerWithdrawalClass, setTimerWithdrawalClass] = useState(false);
+    const [withdrawButtonClass, setWithdrawButtonClass] = useState(false);
+    const [paraWithdrawalClass, setParaWithdrawalClass] = useState(false);
+
+    useEffect(() => {
+        const timerWithdrawal = document.querySelectorAll('.timerWithdrawal');
+        const withdrawButton = document.querySelectorAll('.withdrawButton');
+        const paraWithdrawal = document.querySelectorAll('.paraWithdrawal');
+        document.addEventListener('scroll', () => {
+            if (!timerWithdrawalClass) {
+                animate(setTimerWithdrawalClass, timerWithdrawal[0]);
+            }
+            if (!withdrawButtonClass) {
+                animate(setWithdrawButtonClass, withdrawButton[0]);
+            }
+            if (!paraWithdrawalClass) {
+                animate(setParaWithdrawalClass, paraWithdrawal[0]);
             }
         })
     }, [])
@@ -106,19 +136,19 @@ const WithdrawalCard = () => {
                     </CardMobile>
                 ))}
             </CardsSectionMobile>
-            <TimerSection>
+            <TimerSection className={`timerWithdrawal ${timerWithdrawalClass ? 'animate' : ''}`}>
                 <p>{content.dashboard.withdrawal.timerTitle}</p>
                 <Timer timerMinutes={1} />
             </TimerSection>
             <Paragraphs>
                 {content.dashboard.withdrawal.paragraphs.map((paragraph, index) => (
-                    <Paragraph key={index} id={`para${index + 1}`} className={animateClass ? 'animate' : ''}>
+                    <Paragraph key={index} id={`para${index + 1}`} className={`paraWithdrawal ${paraWithdrawalClass ? 'animate' : ''}`}>
                         <img src="/assets/images/dashboard/withdrawal/paragraph.svg" alt="..." />
                         <p>{paragraph}</p>
                     </Paragraph>
                 ))}
             </Paragraphs>
-            <WithdrawButton className={animateClass ? 'animate' : ''}>
+            <WithdrawButton className={`withdrawButton ${withdrawButtonClass ? 'animate' : ''}`}>
                 <button>{content.dashboard.withdrawal.withdrawButton}</button>
             </WithdrawButton>
         </WithdrawalCardStyled>

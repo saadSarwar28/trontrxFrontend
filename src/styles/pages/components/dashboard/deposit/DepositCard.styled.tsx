@@ -21,6 +21,9 @@ export const DepositCardStyled = styled.div`
 
 export const ContributionButton = styled(YellowButton1)`
     
+    @media (max-width: 300px) {
+        font-size: 15px;
+    }
 `
 
 export const AmountButton = styled.button`
@@ -74,6 +77,18 @@ export const AmountButton = styled.button`
             font-size: 13.83px;
         }
     }
+
+    @media (max-width: 300px) {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        > span {
+            font-size: 9px;
+        }
+    }
 `
 
 export const AmountSection = styled.div`
@@ -112,6 +127,7 @@ export const AmountSection = styled.div`
         background: #FFFFFF;
         border: 0.375258px solid #FBBD18;
         border-radius: 2.25155px;
+        cursor: pointer;
     }
 
     > div:nth-child(3) {
@@ -158,6 +174,10 @@ export const CardsSection = styled.div`
         grid-template-columns: repeat(2, minmax(135px, 1fr));
         grid-auto-rows: 44px; 
     }
+
+    @media (max-width: 300px) {
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+    }
 `
 
 export const Card = styled.div`
@@ -169,7 +189,7 @@ export const Card = styled.div`
 
     // animation
     transform: scale(0);
-    animation: depositCard 2s ease 0.5s 1 normal forwards;
+    animation: depositCard 1s ease 0.5s 1 normal forwards;
     @keyframes depositCard {
         0% {transform: scale(0);}
         100% {transform: scale(1);}
@@ -241,6 +261,12 @@ export const Card = styled.div`
             padding-right: 5px;
         }
     }
+
+    @media (max-width: 300px) {
+        > div:first-child p, > div:last-child { {
+            font-size: 13.1511px;
+        }
+    }
 `
 
 export const Paragraphs = styled.ul`
@@ -259,6 +285,12 @@ export const Paragraphs = styled.ul`
         padding-left: 28px;
         padding-right: 28px;
     }
+
+    @media (max-width: 300px) {
+        margin-top: 31px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 `
 
 export const Paragraph = styled.li`
@@ -266,8 +298,15 @@ export const Paragraph = styled.li`
     margin-bottom: 25px;
 
     // animation
-    transform: translateX(-100vw);
+    animation: paragraph1 1s ease 0.25s 1 normal backwards;
+    @keyframes paragraph1 {
+        0% {transform: translateX(-100vw);}
+        100% {transform: translateX(0);}
+    }
+
     &.animate {
+        // animation
+        transform: translateX(-100vw);
         animation: paragraph 1s ease 0.25s 1 normal forwards;
         @keyframes paragraph {
             0% {transform: translateX(-100vw);}
@@ -276,23 +315,23 @@ export const Paragraph = styled.li`
     }
 
     &#para1 {
-        animation-delay: 0.5s;
+        animation-delay: 0.35s;
     }
 
     &#para2 {
-        animation-delay: 0.75s;
+        animation-delay: 0.45s;
     }
 
     &#para3 {
-        animation-delay: 1s;
+        animation-delay: 0.55s;
     }
 
     &#para4 {
-        animation-delay: 1.25s;
+        animation-delay: 0.65s;
     }
 
     &#para5 {
-        animation-delay: 1.5s;
+        animation-delay: 0.75s;
     }
 
     > img {
@@ -314,33 +353,36 @@ export const Paragraph = styled.li`
     }
 
     @media (max-width: 992px) {
-        // animation
-        transform: translateX(-100vw);
-        animation: paragraph 1s ease 1s 1 normal forwards;
-        @keyframes paragraph {
-            0% {transform: translateX(-100vw);}
-            100% {transform: translateX(0);}
+        &.animate {
+            // animation
+            transform: translateX(-100vw);
+            animation: paragraph 1s ease 0.25s 1 normal forwards;
+            @keyframes paragraph {
+                0% {transform: translateX(-100vw);}
+                100% {transform: translateX(0);}
+            }
         }
 
         &#para1 {
-            animation-delay: 1.25s;
+        animation-delay: 0.35s;
         }
 
         &#para2 {
-            animation-delay: 1.5s;
+            animation-delay: 0.45s;
         }
 
         &#para3 {
-            animation-delay: 1.75s;
+            animation-delay: 0.55s;
         }
 
         &#para4 {
-            animation-delay: 2s;
+            animation-delay: 0.65s;
         }
 
         &#para5 {
-            animation-delay: 2.25s;
+            animation-delay: 0.75s;
         }
+
     }
 
     @media (max-width: 768px) {
@@ -361,15 +403,6 @@ export const DepositButton = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 39px;
-
-    &.animate {
-        // animation
-        animation: depositButton 2s ease 1.25s 1 normal backwards;
-        @keyframes depositButton {
-            0% {transform: scale(0);}
-            100% {transform: scale(1);}
-        }
-    }
 
     button {
         display: flex;
@@ -392,12 +425,42 @@ export const DepositButton = styled.div`
         cursor: pointer;
     }
 
-    @media (max-width: 992px) {
+    @media (min-width: 993px) {
+        transform: scale(0);
+        &.animate {
+            // animation
+            animation: depositButton 2s ease 0.25s 1 normal forwards;
+            @keyframes depositButton {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+    }
+
+    @media (max-width: 992px) and (min-width: 601px) {
+        transform: scale(0);
         // animation
-        animation: depositButton 2s ease 1.5s 1 normal backwards;
+        animation: depositButton 2s ease 0.25s 1 normal forwards;
         @keyframes depositButton {
             0% {transform: scale(0);}
             100% {transform: scale(1);}
         }
+    }
+
+    @media (max-width: 600px) {
+        transform: scale(0);
+        &.animate {
+        // animation
+            animation: depositButton 2s ease 0.25s 1 normal forwards;
+            @keyframes depositButton {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+    }
+
+    @media (max-width: 300px) {
+        margin-top: 30px;
+        margin-bottom: 20px;
     }
 `

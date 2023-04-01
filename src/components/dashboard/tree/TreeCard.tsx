@@ -1,5 +1,5 @@
 import { TreeCardStyled, HierarchyButton, HierarchyTreeStyled } from "@/styles/pages/components/dashboard/tree/TreeCard.styled"
-import HierarchyTree from "./HierarchyTree"
+import HierarchyTreeDesktop from "./HierarchyTreeDesktop"
 
 
 const TreeCard = () => {
@@ -8,7 +8,7 @@ const TreeCard = () => {
         <TreeCardStyled>
             <HierarchyButton>Your Hierarchy</HierarchyButton>
             <HierarchyTreeStyled>
-                <HierarchyTree />
+                <HierarchyTreeDesktop />
             </HierarchyTreeStyled>
         </TreeCardStyled >
     )

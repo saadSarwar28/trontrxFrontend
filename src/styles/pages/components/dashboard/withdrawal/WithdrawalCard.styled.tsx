@@ -30,8 +30,7 @@ export const WithdrawalCardStyled = styled.div`
     }
 `
 
-export const InfoButton = styled(YellowButton1)`
-    animation: none;
+export const InfoButton = styled(YellowButton1)`    
 
     @media (max-width: 992px) {
         margin-top: 22px;
@@ -84,6 +83,14 @@ export const CardDesktop = styled.div`
     padding: 0 10px;
     position: relative;
 
+    // animation
+    transform: scale(0);
+    animation: withdrawalCard 1s ease 0.5s 1 normal forwards;
+    @keyframes withdrawalCard {
+        0% {transform: scale(0);}
+        100% {transform: scale(1);}
+    }
+
     > img {
         margin-top: 27px;
     }
@@ -134,6 +141,10 @@ export const CardsSectionMobile = styled.div`
         grid-template-columns: repeat(2, minmax(110px, 1fr));
         margin: 23px 30px 0;
     }
+
+    @media (max-width: 300px) {
+        margin: 23px 5px 0;
+    }
 `
 
 export const CardMobile = styled.div`
@@ -148,6 +159,14 @@ export const CardMobile = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    // animation
+    transform: scale(0);
+    animation: withdrawalCard 1s ease 0.5s 1 normal forwards;
+    @keyframes withdrawalCard {
+        0% {transform: scale(0);}
+        100% {transform: scale(1);}
+    }
 
     > p {
         font-family: 'Poppins', sans-serif;
@@ -193,6 +212,16 @@ export const TimerSection = styled.div`
     backdrop-filter: blur(3.57447px);
     border-radius: 4.28936px;
 
+    // animation
+    transform: translateX(100vw);
+    &.animate {
+        animation: timer 1s ease 0.25s 1 normal forwards;
+        @keyframes timer {
+            0% {transform: translateX(100vw);}
+            100% {transform: translateX(0);}
+        }
+    }
+
     > p {
         font-family: 'Poppins', sans-serif;
         font-style: normal;
@@ -208,6 +237,12 @@ export const TimerSection = styled.div`
 
     @media (max-width: 1200px) {
         margin: 11px 90px 0;
+
+        animation: timer 1s ease 0.25s 1 normal forwards;
+        @keyframes timer {
+            0% {transform: translateX(100vw);}
+            100% {transform: translateX(0);}
+        }
     }
 
     @media (max-width: 768px) {
@@ -220,6 +255,12 @@ export const TimerSection = styled.div`
         > p {
             font-size: 8px;
         }
+    }
+
+    @media (max-width: 300px) {
+        margin: 11px 5px 0;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 `
 
@@ -246,12 +287,26 @@ export const Paragraphs = styled.ul`
             margin-bottom: 12px;
         }
     }
+
+    @media (max-width: 300px) {
+        margin: 21px 5px 0;
+    }
 `
 
 export const Paragraph = styled.li`
     display: flex;
     align-items: center;
     column-gap: 13px;
+
+    // animation
+    transform: translateX(-100vw);
+    &.animate {
+        animation: paragraph 1s ease 0.25s 1 normal forwards;
+        @keyframes paragraph {
+            0% {transform: translateX(-100vw);}
+            100% {transform: translateX(0);}
+        }
+    }
 
     > p {
         font-family: 'PT Sans', sans-serif;
@@ -263,6 +318,14 @@ export const Paragraph = styled.li`
         text-transform: uppercase;
         color: #000000;
         text-align: left;
+    }
+
+    @media (max-width: 992px) {
+        animation: paragraph 1s ease 0.25s 1 normal forwards;
+        @keyframes paragraph {
+            0% {transform: translateX(-100vw);}
+            100% {transform: translateX(0);}
+        }
     }
 
     @media (max-width: 768px) {
@@ -286,14 +349,15 @@ export const WithdrawButton = styled.div`
     justify-content: center;
     margin-top: 39px;
 
-    /* &.animate {
+    transform: scale(0);
+    &.animate {
         // animation
-        animation: withdrawButton 2s ease 1.25s 1 normal backwards;
+        animation: withdrawButton 2s ease 0.25s 1 normal forwards;
         @keyframes withdrawButton {
             0% {transform: scale(0);}
             100% {transform: scale(1);}
         }
-    } */
+    }
 
     button {
         display: flex;
@@ -316,12 +380,25 @@ export const WithdrawButton = styled.div`
         cursor: pointer;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 992px) and (min-width: 601px) {
+        transform: scale(0);
         // animation
-        /* animation: withdrawButton 2s ease 1.5s 1 normal backwards;
+        animation: withdrawButton 2s ease 0.25s 1 normal forwards;
         @keyframes withdrawButton {
             0% {transform: scale(0);}
             100% {transform: scale(1);}
-        } */
+        }
+    }
+
+    @media (max-width: 600px) {
+        transform: scale(0);
+        &.animate {
+        // animation
+            animation: depositButton 2s ease 0.25s 1 normal forwards;
+            @keyframes depositButton {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
     }
 `

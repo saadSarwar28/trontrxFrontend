@@ -410,6 +410,12 @@ export const WhyChooseMobile = styled.div`
             color: ${({ theme }) => theme.colors.mainYellow};
         }
     }
+
+    @media (max-width: 300px) {
+        > h1 {
+            font-size: 22px;
+        }
+    }
 `
 
 export const MobileSectionContainer = styled.div`

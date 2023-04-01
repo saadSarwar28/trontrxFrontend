@@ -58,6 +58,12 @@ export const YellowButton1 = styled.button`
         margin-left: 14px;
         font-size: 21px;
     }
+
+    @media (max-width: 300px) {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 `
 
 export const BlackButton1 = styled(YellowButton1)`
@@ -94,6 +100,18 @@ export const BlackButton1 = styled(YellowButton1)`
             font-size: 11.77px;
         }
     }
+
+    @media (max-width: 300px) {
+        padding-left: 16px;
+
+        span:first-child {
+            font-size: 13px;
+        }
+        
+        span:last-child {
+            font-size: 8px;
+        }
+    }
 `
 
 export const YellowButton2 = styled(BlackButton1)`
@@ -114,11 +132,17 @@ export const BlackButton2 = styled(BlackButton1)`
     }
 
     @media (max-width: 1200px) {
+        padding: 0;
+
         a {
             font-size: 9.77px;
         }
+    }
 
-        padding: 0;
+    @media (max-width: 300px) {
+        a {
+            font-size: 8px;
+        }
     }
 `
 
@@ -186,6 +210,10 @@ export const CopyButton = styled.button`
     @media (max-width: 576px) {
         margin-top: 25px;
     }
+
+    @media (max-width: 576px) {
+        margin-top: 15px;
+    }
 `
 
 export const CopyMessage = styled.div`
@@ -209,5 +237,11 @@ export const CopyMessage = styled.div`
         left: 75%;
         top: 10px;
         font-size: 16px;
+    }
+
+    @media (max-width: 300px) {
+        left: -50%;
+        top: -20px;
+        font-size: 13px;
     }
 `

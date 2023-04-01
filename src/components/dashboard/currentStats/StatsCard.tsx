@@ -13,55 +13,92 @@ const StatsCard = () => {
         "/assets/images/dashboard/currentStats/statsCard6.svg"
     ];
 
-    const [animateClass, setAnimateClass] = useState(false);
+    const animate = (setAnimationClass: any, element: any) => {
+        const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
+        if (elementBottomPosition <= 0 && elementBottomPosition >= -100) {
+            setAnimationClass(true);
+        }
+        if (elementBottomPosition > 50) {
+            setAnimationClass(false);
+        }
+    }
+    const [statsButtonClass, setStatsButtonClass] = useState(false);
+    // cards
+    const [statsCard1Class, setStatsCard1Class] = useState(false);
+    const [statsCard2Class, setStatsCard2Class] = useState(false);
+    const [statsCard3Class, setStatsCard3Class] = useState(false);
+    const [statsCard4Class, setStatsCard4Class] = useState(false);
+    const [statsCard5Class, setStatsCard5Class] = useState(false);
+    const [statsCard6Class, setStatsCard6Class] = useState(false);
+
     useEffect(() => {
+        const statsButton = document.querySelectorAll('.statsButton');
+        // cards
+        const statsCard1 = document.querySelectorAll('.statsCard1');
+        const statsCard2 = document.querySelectorAll('.statsCard2');
+        const statsCard3 = document.querySelectorAll('.statsCard3');
+        const statsCard4 = document.querySelectorAll('.statsCard4');
+        const statsCard5 = document.querySelectorAll('.statsCard5');
+        const statsCard6 = document.querySelectorAll('.statsCard6');
+
         document.addEventListener('scroll', () => {
-            // console.log(window.scrollY);
-            if (window.innerWidth <= 1200) {
-                if (window.scrollY >= 100 && window.scrollY <= 210) {
-                    setAnimateClass(true);
-                }
-            } else {
-                if (window.scrollY >= 400 && window.scrollY <= 510) {
-                    setAnimateClass(true);
-                }
+            if (!statsButtonClass) {
+                animate(setStatsButtonClass, statsButton[0]);
+            }
+            if (!statsCard1Class) {
+                animate(setStatsCard1Class, statsCard1[0]);
+            }
+            if (!statsCard2Class) {
+                animate(setStatsCard2Class, statsCard2[0]);
+            }
+            if (!statsCard3Class) {
+                animate(setStatsCard3Class, statsCard3[0]);
+            }
+            if (!statsCard4Class) {
+                animate(setStatsCard4Class, statsCard4[0]);
+            }
+            if (!statsCard5Class) {
+                animate(setStatsCard5Class, statsCard5[0]);
+            }
+            if (!statsCard6Class) {
+                animate(setStatsCard6Class, statsCard6[0]);
             }
         })
     }, [])
 
     return (
         <StatsCardStyled>
-            <StatsButton type="button" className={animateClass ? 'animate' : ''}>{content.dashboard.currentStats.statsCard.yellowButton}</StatsButton>
+            <StatsButton type="button" className={`statsButton ${statsButtonClass ? 'animate' : ''}`}>{content.dashboard.currentStats.statsCard.yellowButton}</StatsButton>
             <CardsContainer>
                 <div>
-                    <Card className={animateClass ? 'animate' : ''}>
+                    <Card className={`statsCard1 ${statsCard1Class ? 'animate' : ''}`}>
                         <img src={cardImages[0]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[0].title}</p>
                         <div>{content.dashboard.currentStats.statsCard.cards[0].number}</div>
                     </Card>
-                    <Card className={animateClass ? 'animate' : ''}>
+                    <Card className={`statsCard2 ${statsCard2Class ? 'animate' : ''}`}>
                         <img src={cardImages[1]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[1].title}</p>
                         <div>{content.dashboard.currentStats.statsCard.cards[1].number}</div>
                     </Card>
-                    <Card className={animateClass ? 'animate' : ''}>
+                    <Card className={`statsCard3 ${statsCard3Class ? 'animate' : ''}`}>
                         <img src={cardImages[2]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[2].title}</p>
                         <div>{content.dashboard.currentStats.statsCard.cards[2].number}</div>
                     </Card>
                 </div>
                 <div>
-                    <Card className={animateClass ? 'animate' : ''}>
+                    <Card className={`statsCard4 ${statsCard4Class ? 'animate' : ''}`}>
                         <img src={cardImages[3]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[3].title}</p>
                         <div>{content.dashboard.currentStats.statsCard.cards[3].number}</div>
                     </Card>
-                    <Card className={animateClass ? 'animate' : ''}>
+                    <Card className={`statsCard5 ${statsCard5Class ? 'animate' : ''}`}>
                         <img src={cardImages[4]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[4].title}</p>
                         <div>{content.dashboard.currentStats.statsCard.cards[4].number}</div>
                     </Card>
-                    <Card className={animateClass ? 'animate' : ''}>
+                    <Card className={`statsCard6 ${statsCard6Class ? 'animate' : ''}`}>
                         <img src={cardImages[5]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[5].title}</p>
                         <div>{content.dashboard.currentStats.statsCard.cards[5].number}</div>

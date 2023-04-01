@@ -128,6 +128,20 @@ export const LeftColumn = styled.div`
             left: 17%;
         }
     }
+
+    @media (max-width: 300px) {
+        > img:first-child {
+            width: 30%;
+            height: 290px;
+        }
+
+        > iframe {
+            width: 70%;
+            height: 200px;
+            left: 17%;
+            top: 46px;
+        }
+    }
 `
 
 export const RightColumn = styled.div`
@@ -160,6 +174,14 @@ export const RightColumn = styled.div`
     @media (max-width: 576px) {
         > h1 {
             font-size: 33px;
+        }
+    }
+
+    @media (max-width: 300px) {
+        padding-bottom: 70px;
+
+        > h1 {
+            font-size: 28px;
         }
     }
 `
@@ -423,6 +445,20 @@ export const Section = styled.div`
         &:nth-child(4) {
             height: 150px;
             margin-top: -50px;
+        }
+    }
+
+    @media (max-width: 300px) {
+        &#investSection0 {
+            height: 255px;
+        }
+
+        &#investSection1 {
+            height: 258px;
+        }
+
+        h2 {
+            font-size: 22px;
         }
     }
 `

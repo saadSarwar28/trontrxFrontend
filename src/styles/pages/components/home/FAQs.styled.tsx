@@ -61,7 +61,7 @@ export const FAQsStyled = styled.section`
     @media (max-width: 768px) {
        padding-top: 40px;
        padding-bottom: 40px;
-       margin-bottom: 20px;
+       /* margin-bottom: 20px; */
 
        > h1 {
             transform: translateY(-25px);
@@ -86,6 +86,12 @@ export const FAQsStyled = styled.section`
            padding: 0 10px;
            font-size: 33.6px;
        }
+    }
+
+    @media (max-width: 300px) {
+        > h1 {
+            margin-bottom: 25px;
+        }
     }
 `
 
@@ -159,6 +165,11 @@ export const TabBodies = styled.div`
     @media (max-width: 992px) {
         padding-left: 25px;
         padding-right: 25px;
+    }
+
+    @media (max-width: 300px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `
 

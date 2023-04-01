@@ -4,26 +4,27 @@ import { useState, useEffect } from "react";
 
 
 const DepositCard = () => {
-    const [animateClass, setAnimateClass] = useState(false);
-    useEffect(() => {
-        document.addEventListener('scroll', () => {
-            // console.log(window.scrollY);
-            if (window.innerWidth <= 1200 && window.innerWidth > 992) {
-                if (window.scrollY >= 100 && window.scrollY <= 210) {
-                    setAnimateClass(true);
-                }
-                // else if (window.scrollY < 100) {
-                //     setAnimateClass(false);
-                // }
-            }
 
-            if (window.innerWidth > 1200) {
-                if (window.scrollY >= 100 && window.scrollY <= 210) {
-                    setAnimateClass(true);
-                }
-                // else if (window.scrollY < 100) {
-                //     setAnimateClass(false);
-                // }
+    const animate = (setAnimationClass: any, element: any) => {
+        const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
+        if (elementBottomPosition <= 0 && elementBottomPosition >= -100) {
+            setAnimationClass(true);
+        }
+        if (elementBottomPosition > 50) {
+            setAnimationClass(false);
+        }
+    }
+    const [paraDepositClass, setParaDepositClass] = useState(false);
+    const [depositButtonClass, setDepositButtonClass] = useState(false);
+    useEffect(() => {
+        const paraDeposit = document.querySelectorAll('.paraDeposit');
+        const depositButton = document.querySelectorAll('.depositButton');
+        document.addEventListener('scroll', () => {
+            if (!paraDepositClass) {
+                animate(setParaDepositClass, paraDeposit[0]);
+            }
+            if (!depositButtonClass) {
+                animate(setDepositButtonClass, depositButton[0]);
             }
         })
     }, [])
@@ -55,18 +56,18 @@ const DepositCard = () => {
                 ))}
             </CardsSection>
             <Paragraphs>
-                <Paragraph className={animateClass ? 'animate' : ''}>
+                <Paragraph className={`paraDeposit ${paraDepositClass ? 'animate' : ''}`}>
                     <img src="/assets/images/dashboard/deposit/exclamation.svg" alt="..." />
                     <p>{content.dashboard.deposit.firstPara}</p>
                 </Paragraph>
                 {content.dashboard.deposit.paragraphs.map((paragraph, index) => (
-                    <Paragraph key={index} id={`para${index + 1}`} className={animateClass ? 'animate' : ''}>
+                    <Paragraph key={index} id={`para${index + 1}`} className={`paraDeposit ${paraDepositClass ? 'animate' : ''}`}>
                         <img src="/assets/images/dashboard/deposit/check.png" alt="..." />
                         <p>{paragraph}</p>
                     </Paragraph>
                 ))}
             </Paragraphs>
-            <DepositButton className={animateClass ? 'animate' : ''}>
+            <DepositButton className={`depositButton ${depositButtonClass ? 'animate' : ''}`}>
                 <button>{content.dashboard.deposit.depositButton}</button>
             </DepositButton>
         </DepositCardStyled>

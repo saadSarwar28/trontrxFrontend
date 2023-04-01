@@ -756,4 +756,20 @@ export const MainImage = styled.div`
   @media (max-width: 415px) {
     left: 36%;
   }
+
+  @media (max-width: 300px) {
+    left: 29%;
+
+    img:nth-child(3) {
+      left: 57.5%;
+    }
+
+    img:nth-child(10) {
+      left: 61%;
+    }
+
+    img:nth-child(12) {
+      left: 100%;
+    }
+  }
 `

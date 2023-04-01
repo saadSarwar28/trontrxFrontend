@@ -273,4 +273,14 @@ export const Section = styled.div`
     @media (max-width: 992px) {
         padding-right: 10px
     }
+
+    @media (max-width: 300px) {
+        h2 {
+            font-size: 22.1444px;
+        }
+
+        p {
+            font-size: 11.0722px;
+        }
+    }
 `

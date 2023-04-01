@@ -3,50 +3,71 @@ import { YellowButton1 } from "../currentStats/InfoCard.styled"
 
 
 export const TreeCardStyled = styled.div`
-    width: 100%;
     max-width: 1038px;
-    min-height: 1495px;;
+    margin: 0 30px;
+    min-height: 1495px;
     background: #FFFFFF;
     border-radius: 24.5px;
     text-align: center;
     border: 5px solid #FBBD18;
-    /* margin-left: -23px; */
     margin-bottom: 21px;
+    padding-bottom: 30px;
 
-    /* @media (max-width: 1200px) {
-        min-height: 840px;
-    } */
+    @media (min-width: 1400px) {
+        max-width: 1200px;
+    }
 
-    /* @media (max-width: 992px) {
-        margin-left: 5px;
-        margin-top: 29px;
-    } */
+    @media (min-width: 1500px) {
+        max-width: 1250px;
+    }
 
-    /* @media (max-width: 768px) {
-        min-height: 730px;
-    } */
+    @media (min-width: 1600px) {
+        max-width: 1350px;
+    }
 
-    /* @media (max-width: 600px) {
-        padding-bottom: 30px;
-    } */
+    @media (min-width: 1800px) {
+        max-width: 1500px;
+    }
+
+    @media (min-width: 2000px) {
+        max-width: 1800px;
+    }
+
+    @media (max-width: 1300px) {
+        max-width: 900px;
+    }
+
+    @media (max-width: 1200px) {
+        max-width: 800px;
+    }
+
+    @media (max-width: 991px) {
+        max-width: 100%;
+    }
 `
 
 export const HierarchyButton = styled(YellowButton1)`
     animation: none;
-
-    /* @media (max-width: 992px) {
-        margin-top: 22px;
-    } */
 `
 
 export const HierarchyTreeStyled = styled.div`
     margin-top: 50px;
-    width: 100%;
     overflow: auto;
     padding-bottom: 50px;
 
-    /* display: flex;
-    justify-content: center; */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius:10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
 
     ul::before {
         height: 73px;

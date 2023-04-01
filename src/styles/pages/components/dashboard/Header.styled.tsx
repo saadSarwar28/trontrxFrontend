@@ -23,6 +23,12 @@ export const HeaderStyled = styled.header`
             margin-right: 25px;
         }
     }
+
+    @media (max-width: 300px) {
+        > img {
+            margin-right: 13px;
+        }
+    }
 `
 
 export const DashboardLogo = styled.div`
@@ -93,6 +99,12 @@ export const DashboardLogo = styled.div`
                 margin-top: -12px;
             }
         }   
+    }
+
+    @media (max-width: 300px) {
+        margin-top: 26px;
+        margin-left: 13px;
+    }
 `
 
 export const DashboardSection = styled.div`

@@ -55,6 +55,12 @@ export const StatsButton = styled.button`
         margin-top: 13px;
         margin-bottom: 28px;
     }
+
+    @media (max-width: 300px) {
+        width: calc(100% - 20px);
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 `
 
 export const CardsContainer = styled.div`
@@ -94,6 +100,13 @@ export const CardsContainer = styled.div`
             margin-right: 40px
         }
     }
+
+    @media (max-width: 300px) {
+        > div {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
 `
 
 export const Card = styled.div`
@@ -113,7 +126,7 @@ export const Card = styled.div`
     // animation
     transform: scale(0);
     &.animate {
-        animation: statsCard 2s ease 0.5s 1 normal forwards;
+        animation: statsCard 1s ease 0.5s 1 normal forwards;
         @keyframes statsCard {
             0% {transform: scale(0);}
             100% {transform: scale(1);}

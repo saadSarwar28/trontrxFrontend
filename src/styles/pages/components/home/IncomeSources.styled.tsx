@@ -70,6 +70,11 @@ export const IncomeSourcesStyled = styled.section`
         padding-left: 28px;
         padding-right: 28px;
     }
+
+    @media (max-width: 300px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 export const CardsContainer = styled.div`
@@ -175,5 +180,9 @@ export const CardBottom = styled.div`
 
     @media (max-width: 992px) {
         padding: 10px 37px 40px;
+    }
+
+    @media (max-width: 300px) {
+        padding: 10px 15px 25px;
     }
 `

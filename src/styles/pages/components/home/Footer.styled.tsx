@@ -19,6 +19,7 @@ export const FooterStyled = styled.footer`
 export const LogoSectionFooter = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 90px;
     margin-left: -20px;
 
@@ -59,14 +60,29 @@ export const LogoSectionFooter = styled.div`
         }
     }
 
-@media (orientation: portrait) {
-    > div:nth-child(1) {
-        img {
-            width: 61px;
-            height: 62.65px;
+    @media (orientation: portrait) {
+        > div:nth-child(1) {
+            img {
+                width: 61px;
+                height: 62.65px;
+            }
         }
     }
-}
+
+    @media (max-width: 300px) {
+        margin-bottom: 70px;
+
+        > div:nth-child(2) {
+            h1 {
+                font-size: 23px;
+                line-height: 27px;
+            }
+
+            p {
+                font-size: 9px;
+            }
+        }
+    }
 `
 
 export const Links = styled.ul`
@@ -122,6 +138,22 @@ export const Links = styled.ul`
 
         li:not(:first-child) div {
             margin-right: 11px;
+        }
+    }
+
+    @media (max-width: 300px) {
+        margin-left: -10px;
+
+        li {
+            padding-right: 9px;
+        }
+
+        li:not(:first-child) div {
+            margin-right: 9px;
+        }
+
+        a {
+            font-size: 13px;
         }
     }
 `

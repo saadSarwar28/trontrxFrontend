@@ -80,6 +80,12 @@ export const SidebarMobileStyled = styled.aside`
             }
         }
     }
+
+    @media (max-width: 300px) {
+        &.show {
+            width: 220px;
+        }
+    }
 `
 
 export const HomeButtonMobile = styled.div`
@@ -110,6 +116,14 @@ export const HomeButtonMobile = styled.div`
                 color: ${({ theme }) => theme.colors.blackFont};
                 margin-left: 9px;
                 text-decoration: none;
+            }
+        }
+    }
+
+    @media (max-width: 300px) {
+        > button {
+            img {
+                margin-left: -2px;
             }
         }
     }

@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 export const MatchingIncomeStyled = styled.section`
     padding-top: 144px;
-    /* padding-top: 130px; */
     padding-bottom: 166px;
     padding-left: 10%;
     padding-right: 10%;
@@ -21,9 +20,7 @@ export const MatchingIncomeStyled = styled.section`
         letter-spacing: 0.025em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
-
         margin-bottom: 26px;
-        /* margin-bottom: 40px; */
         text-align: center;
 
         transform: scale(0);
@@ -53,6 +50,10 @@ export const MatchingIncomeStyled = styled.section`
         > h1 {
             font-size: 30px;
         }
+    }
+
+    @media (max-width: 300px) {
+        padding-bottom: 80px;
     }
 `
 
@@ -148,6 +149,14 @@ export const LevelsSection = styled.div`
         img {
             width: 248.88px;
             height: 240.88px;
+        }
+    }
+
+    @media (max-width: 300px) {
+    
+        img {
+            width: 200.88px;
+            height: 200.88px;
         }
     }
 `
@@ -250,6 +259,37 @@ export const Level = styled.div`
         &#level5 {
             top: 239px;
             right: 21px;
+        }
+    }
+
+    @media (max-width: 300px) {
+        &#level1 {
+            top: -39px;
+        }
+
+        &#level1 {
+            top: -42px;
+            left: 140px;
+        }
+
+        &#level2 {
+            top: 30px;
+            right: -50px;
+        }
+
+        &#level3 {
+            top: 100px;
+            right: -50px;
+        }
+
+        &#level4 {
+            top: 162px;
+            right: -19px;
+        }
+
+        &#level5 {
+            top: 213px;
+            right: 15px;
         }
     }
 `

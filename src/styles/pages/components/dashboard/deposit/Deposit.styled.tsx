@@ -18,4 +18,8 @@ export const Page = styled.main`
     @media (max-width: 768px) {
         padding-left: 15px;
     }
+
+    @media (max-width: 300px) {
+        padding-left: 10px;
+    }
 `
