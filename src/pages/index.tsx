@@ -7,6 +7,7 @@ import TopSection from '@/components/home/TopSection'
 import ContractStats from '@/components/home/ContractStats'
 import WhyChoose from '@/components/home/WhyChoose'
 import HowInvest from '@/components/home/HowInvest'
+import HowInvestNew from '@/components/home/HowInvestNew'
 import IncomeSources from '../components/home/IncomeSources'
 import MatchingIncome from '@/components/home/MatchingIncome'
 import FAQs from '@/components/home/FAQs'
@@ -36,8 +37,9 @@ const Home = ({ content, getContent }: any) => {
           <>
             <Navbar />
             <TopSection content={content} />
-            <ContractStats content={content} />
-            <HowInvest content={content} />
+            {/* <ContractStats content={content} /> */}
+            {/* <HowInvest content={content} /> */}
+            <HowInvestNew content={content} />
             <HowInvestDivider />
             <WhyChoose content={content} />
             <WhyChooseDivider />

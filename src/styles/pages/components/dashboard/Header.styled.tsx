@@ -136,13 +136,14 @@ export const HomeButton = styled.div`
     margin-top: 40px;
     margin-right: 72px;
 
-    > button {
+    > a {
         background: ${({ theme }) => theme.colors.mainYellow};
         border-radius: 3.2243px;
         padding: 5px 5px;
         border: none;
+        text-decoration: none;
 
-        a {
+        span {
             font-family: 'Poppins', sans-serif;
             font-style: normal;
             font-weight: 700;
@@ -154,6 +155,7 @@ export const HomeButton = styled.div`
             text-decoration: none;
         }
     }
+
 
     @media (max-width: 1200px) {
         margin-right: 36px;
