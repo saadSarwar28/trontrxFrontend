@@ -1,4 +1,4 @@
-import { Tree, TreeNode } from 'react-organizational-chart'
+import {Tree, TreeNode} from 'react-organizational-chart'
 import CustomNode from "./CustomNode"
 
 
@@ -46,104 +46,20 @@ const HierarchyTreeDesktop = () => {
                         amount={treeData[0].amount}
                     />
                 }>
-                {/* child 1 */}
-                <TreeNode label={
-                    <CustomNode
-                        profileBg={treeData[0].images.profileBg}
-                        profileImg={treeData[0].images.profile}
-                        address={treeData[0].address}
-                        amount={treeData[0].amount}
-                    />
-                }>
-                    {/* grandchildren */}
-                    {treeData.map((item, index) => (
-                        <TreeNode key={index} label={
-                            <CustomNode
-                                profileBg={item.images.profileBg}
-                                profileImg={item.images.profile}
-                                address={item.address}
-                                amount={item.amount}
-                            />}>
-
-                            {/* great grandchildren */}
-                            {treeData.map((item2, index) => (
-                                <TreeNode key={index} label={
-                                    <CustomNode
-                                        profileBg={item2.images.profileBg}
-                                        profileImg={item2.images.profile}
-                                        address={item2.address}
-                                        amount={item2.amount}
-                                    />}>
-
-                                    {/* great great grandchildren */}
-                                    {treeData.map((item2, index) => (
-                                        <TreeNode key={index} label={
-                                            <CustomNode
-                                                profileBg={item2.images.profileBg}
-                                                profileImg={item2.images.profile}
-                                                address={item2.address}
-                                                amount={item2.amount}
-                                            />}>
-                                        </TreeNode>
-                                    ))}
-
-                                </TreeNode>
-                            ))}
-
-                        </TreeNode>
-                    ))}
-                </TreeNode>
-
-                {/* child 2 */}
-                <TreeNode label={
-                    <CustomNode
-                        profileBg={treeData[0].images.profileBg}
-                        profileImg={treeData[0].images.profile}
-                        address={treeData[0].address}
-                        amount={treeData[0].amount}
-                    />
-                }>
-                    {/* grandchildren */}
-                    {treeData.map((item, index) => (
-                        <TreeNode key={index} label={
-                            <CustomNode
-                                profileBg={item.images.profileBg}
-                                profileImg={item.images.profile}
-                                address={item.address}
-                                amount={item.amount}
-                            />}>
-
-                            {/* great grandchildren */}
-                            {treeData.map((item2, index) => (
-                                <TreeNode key={index} label={
-                                    <CustomNode
-                                        profileBg={item2.images.profileBg}
-                                        profileImg={item2.images.profile}
-                                        address={item2.address}
-                                        amount={item2.amount}
-                                    />}>
-
-                                    {/* great great grandchildren */}
-                                    {treeData.map((item2, index) => (
-                                        <TreeNode key={index} label={
-                                            <CustomNode
-                                                profileBg={item2.images.profileBg}
-                                                profileImg={item2.images.profile}
-                                                address={item2.address}
-                                                amount={item2.amount}
-                                            />}>
-                                        </TreeNode>
-                                    ))}
-
-                                </TreeNode>
-                            ))}
-
-                        </TreeNode>
-                    ))}
-                </TreeNode>
-            </Tree>
-        </div>
-    )
+                {
+                    treeData.map((item, index) => (
+                    <TreeNode key={index} label={
+                        <CustomNode
+                            profileBg={item.images.profileBg}
+                            profileImg={item.images.profile}
+                            address={item.address}
+                            amount={item.amount}
+                        />}>
+                    </TreeNode>
+                ))}
+        </Tree>
+</div>
+)
 }
 
 export default HierarchyTreeDesktop
