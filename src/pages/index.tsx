@@ -5,12 +5,14 @@ import { connect } from 'react-redux'
 import { getContent } from '@/store/actions/homeActions'
 import TopSection from '@/components/home/TopSection'
 import ContractStats from '@/components/home/ContractStats'
+import About from '@/components/home/About'
 import WhyChoose from '@/components/home/WhyChoose'
 // import HowInvest from '@/components/home/HowInvest'
 import HowInvestNew from '@/components/home/HowInvestNew'
 import IncomeSources from '../components/home/IncomeSources'
 import MatchingIncome from '@/components/home/MatchingIncome'
 import FAQs from '@/components/home/FAQs'
+import AboutDivider from '@/components/home/dividers/AboutDivider'
 import HowInvestDivider from '@/components/home/dividers/HowInvestDiveder'
 import WhyChooseDivider from '@/components/home/dividers/WhyChooseDivider'
 import IncomeSourcesDivider from '@/components/home/dividers/IncomeSourcesDivider'
@@ -38,6 +40,8 @@ const Home = ({ content, getContent }: any) => {
             <Navbar />
             <TopSection content={content} />
             {/* <ContractStats content={content} /> */}
+            <About content={content} />
+            <AboutDivider />
             {/* <HowInvest content={content} /> */}
             <HowInvestNew content={content} />
             <HowInvestDivider />
