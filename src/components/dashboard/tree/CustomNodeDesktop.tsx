@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-export const NodeStyled = styled.li`
+export const NodeStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,12 +12,12 @@ export const NodeImage = styled.div`
     width: 86.88px;
     height: 86.88px;
 
-> img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 `
 
 export const NodeBody = styled.div`
@@ -51,7 +51,7 @@ interface CustomNodeProps {
     amount: number
 }
 
-const CustomNode: React.FC<CustomNodeProps> = ({ profileBg, profileImg, address, amount }) => {
+const CustomNodeDesktop: React.FC<CustomNodeProps> = ({ profileBg, profileImg, address, amount }) => {
 
     return (
         <NodeStyled>
@@ -67,4 +67,4 @@ const CustomNode: React.FC<CustomNodeProps> = ({ profileBg, profileImg, address,
     )
 }
 
-export default CustomNode
+export default CustomNodeDesktop
