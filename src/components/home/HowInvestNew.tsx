@@ -16,10 +16,10 @@ const HowInvestNew = ({ content }: any) => {
   const [headingClass, setHeadingClass] = useState(false);
   const [howInvestImg, setHowInvestImg] = useState(false);
 
-  const [section0Class, setSection0Class] = useState(false);
-  const [section1Class, setSection1Class] = useState(false);
-  const [section2Class, setSection2Class] = useState(false);
-  const [section3Class, setSection3Class] = useState(false);
+  // const [section0Class, setSection0Class] = useState(false);
+  // const [section1Class, setSection1Class] = useState(false);
+  // const [section2Class, setSection2Class] = useState(false);
+  // const [section3Class, setSection3Class] = useState(false);
   useEffect(() => {
     const headingDesktop = document.querySelectorAll('.investHeading');
     const investImg = document.querySelectorAll('.investImg');

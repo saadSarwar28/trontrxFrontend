@@ -4,6 +4,10 @@ import styled from "styled-components"
 export const HowInvestCarouselStyled = styled.div`
     height: 700px;
 
+   @media (min-width: 769px) {
+        overflow: hidden;
+   }
+
    @media (max-width: 768px) {
         height: 350px;
    }
@@ -13,6 +17,7 @@ export const CarouselItem = styled.div`
     width: 100%;
     height: 700px;
     position: relative;
+    overflow: hidden;
 
     // heading and description
     > div {

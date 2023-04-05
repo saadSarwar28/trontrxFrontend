@@ -17,14 +17,14 @@ const HowInvestCarousel = ({ content }: any) => {
     return (
         <HowInvestCarouselStyled>
             <Carousel
-                beforeChange={(nextSlide, { currentSlide }) => {
+                afterChange={(nextSlide, { currentSlide }) => {
                     const items = document.querySelectorAll('.react-multi-carousel-item');
                     items.forEach((item) => {
-                        const iframes = item.querySelectorAll('iframe');
-                        if (item.classList.contains('react-multi-carousel-item--active')) {
-
-                        } else {
-                            // iframe[0].style.display = 'block';
+                        if (!item.classList.contains('react-multi-carousel-item--active')) {
+                            const iframe = item.querySelectorAll('iframe');
+                            const temp = iframe[0].src;
+                            iframe[0].src = '';
+                            iframe[0].src = temp;
                         }
                     })
                 }}
@@ -33,12 +33,9 @@ const HowInvestCarousel = ({ content }: any) => {
                 showDots={true}
                 responsive={responsive}
                 infinite={true}
-            // autoPlay={true}
-            // autoPlaySpeed={3000}
-            // keyBoardControl={true}
             >
                 <CarouselItem>
-                    <iframe id="howInvestVideo1" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe1" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[0].title}
@@ -48,7 +45,7 @@ const HowInvestCarousel = ({ content }: any) => {
                     </div>
                 </CarouselItem>
                 <CarouselItem>
-                    <iframe height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe2" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[1].title}
@@ -58,7 +55,7 @@ const HowInvestCarousel = ({ content }: any) => {
                     </div>
                 </CarouselItem>
                 <CarouselItem>
-                    <iframe height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe3" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[2].title}
@@ -68,7 +65,7 @@ const HowInvestCarousel = ({ content }: any) => {
                     </div>
                 </CarouselItem>
                 <CarouselItem>
-                    <iframe height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe4" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[3].title}

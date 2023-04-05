@@ -5,6 +5,7 @@ export const HowInvestNewStyled = styled.div`
     width: 100%;
     height: 1050px;
     padding: 90px 0 110px 0;
+    overflow: hidden;
 
     @media (min-width: 1400px) {
             padding-left: 5%;
@@ -131,13 +132,20 @@ export const CarouselSection = styled.div`
         } */
     }
 
-    .react-multi-carousel-item--active {
-       
+    .react-multi-carousel-dot--active {
+        > button {
+            background: ${({ theme }) => theme.colors.mainYellow};
+        }
     }
 
     // left and right arrows 
     .react-multiple-carousel__arrow--left, .react-multiple-carousel__arrow--right {
         bottom: 22.5%;
+    }
+
+    // dots
+    .react-multi-carousel-dot-list {
+        gap: 20px;
     }
 
     

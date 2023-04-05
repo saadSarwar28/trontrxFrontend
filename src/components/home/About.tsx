@@ -51,7 +51,7 @@ const About = ({ content }: any) => {
     }, [])
 
     return (
-        <AboutStyled>
+        <AboutStyled id="about">
             <LeftColumn>
                 <AboutHeading className={`aboutHeading ${aboutHeadingClass ? 'animate' : ''}`}>
                     {content.about.mainHeading[0]}

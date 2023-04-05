@@ -1,6 +1,7 @@
 import { Tree, TreeNode } from 'react-organizational-chart'
 import { HierarchyTreeMobileStyled } from "@/styles/pages/components/dashboard/tree/HierarchyTreeMobile.styled"
 import CustomNodeMobile from './CustomNodeMobile'
+import { useEffect, useState } from 'react'
 
 
 const treeData = [
@@ -31,8 +32,16 @@ const treeData = [
 ]
 
 const HierarchyTreeMobile = () => {
+    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(true);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //     }, 2000)
+    // }, [])
+
     return (
-        <HierarchyTreeMobileStyled>
+        <HierarchyTreeMobileStyled className={loading ? '' : 'animate'}>
             <Tree
                 lineWidth={'4px'}
                 lineHeight={'50px'}

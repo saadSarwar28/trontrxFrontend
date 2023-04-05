@@ -92,6 +92,10 @@ export const Paragraphs = styled.ul`
         }
     }
 
+    > li::first-letter {
+        text-transform: capitalize;
+    }
+
     > li:not(:last-child) {
         margin-bottom: 15px;
     }
