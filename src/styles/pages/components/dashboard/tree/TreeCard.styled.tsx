@@ -44,38 +44,77 @@ export const TreeCardStyled = styled.div`
     @media (max-width: 991px) {
         max-width: 100%;
     }
+
+    @media (max-width: 768px) {
+        min-height: 880px;
+        margin: 0 15px;
+        margin-top: 27px;
+    }
 `
 
 export const HierarchyButton = styled(YellowButton1)`
     animation: none;
+
+    @media (max-width: 300px) {
+        font-size: 19px;
+    }
 `
 
 export const HierarchyTreeStyled = styled.div`
+    /* height: 1450px; */
     margin-top: 50px;
     overflow: auto;
+    padding-top: 20px;
     padding-bottom: 50px;
 
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #888; 
-        border-radius:10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555; 
+    // mobile
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
     }
 
-    ul::before {
-        height: 73px;
-        top: -22px;
-    }
+    // desktop
+    @media (min-width: 769px) {
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius:10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
 
-    li::after, li::before {
-        height: 71px
+        ul::before {
+            height: 93px;
+            top: -22px;
+        }
+
+        li::after, li::before {
+            height: 71px
+        }
     }
 `
 

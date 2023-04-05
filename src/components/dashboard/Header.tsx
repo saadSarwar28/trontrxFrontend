@@ -25,12 +25,12 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
                 <h1>{content.dashboard.header.heading}</h1>
             </DashboardSection>
             <HomeButton>
-                <button type="button">
+                <Link href="/">
                     <img src="/assets/images/dashboard/header/home.svg" />
-                    <Link href="/">
+                    <span>
                         {content.dashboard.header.homeButton}
-                    </Link>
-                </button>
+                    </span>
+                </Link>
             </HomeButton>
             <img src="/assets/images/dashboard/header/menu.svg" onClick={() => toggleSidebar()} />
         </HeaderStyled>

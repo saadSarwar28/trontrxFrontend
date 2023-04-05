@@ -132,6 +132,12 @@ export const StatsLeft = styled.div`
             }
         }   
     }
+
+    @media (max-width: 300px) {
+        > div { 
+            margin-left: 0;
+        }
+    }
 `
 
 export const StatsRight = styled.div`

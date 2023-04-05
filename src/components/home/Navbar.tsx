@@ -47,7 +47,7 @@ const Navbar = ({ content }: any) => {
                         </div>
                         <div>
                             <img src="/assets/images/navbar/about-icon.svg" alt="..." />
-                            <NavItem text={'ABOUT US'} link="#howInvest" />
+                            <NavItem text={'ABOUT US'} link="#about" />
                         </div>
                         <div>
                             <img src="/assets/images/navbar/how-works-icon.svg" alt="..." />

@@ -13,10 +13,4 @@ export const Main = styled.div`
 
 export const Page = styled.main`
     width: 100%;
-    /* padding-left: 30px; */
-
-    /* 
-    @media (max-width: 768px) {
-        padding-left: 15px;
-    } */
 `

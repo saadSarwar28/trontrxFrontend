@@ -17,13 +17,20 @@ const GlobalStyles = createGlobalStyle`
         overflow-y: auto;
         overflow-x: hidden;
     }
-    /* ::-webkit-scrollbar {
-        width: 0px; 
-        background: transparent;
+    
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
     }
     ::-webkit-scrollbar-thumb {
-        background: #FF0000;
-    } */
+        background: #888; 
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
 
     @media (min-width: 1400px) {
         section, nav {

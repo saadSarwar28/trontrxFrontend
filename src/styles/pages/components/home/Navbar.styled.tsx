@@ -76,7 +76,6 @@ export const LogoSection = styled.div`
             text-transform: uppercase;
             color: ${({ theme }) => theme.colors.whiteFont};
             text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
-
             margin-left: 5px;
         }
     }
@@ -197,6 +196,7 @@ export const MobileNavbar = styled.div`
         top: 76px;
         right: -100vw;
         z-index: 4;
+        /* z-index: 10000; */
 
         width: 350px;
         height: 100vh;
