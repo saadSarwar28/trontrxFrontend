@@ -59,26 +59,36 @@ export const LogoSection = styled.div`
             line-height: 48px;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            /* color: #f2e4cb; */
             color: ${({ theme }) => theme.colors.whiteFont};
+            /* text-shadow: -1px 0 #f0e262, 0 1px #f0e262, 1px 0 #f0e262, 0 -1px #f0e262;
+            -webkit-text-stroke: 1px #f0e262; */
             text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
-
+            -webkit-text-stroke: 1px #FBBD18;
             margin-left: 9px;
         }
 
         p {
             font-family: 'PT Sans', sans-serif;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 700;
             font-size: 15px;
             line-height: 19px;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: ${({ theme }) => theme.colors.whiteFont};
-            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+            /* color: ${({ theme }) => theme.colors.whiteFont}; */
+            color: ${({ theme }) => theme.colors.cardBgFilled};
             margin-left: 5px;
         }
     }
+
+    /* @media (min-width: 769px) {
+        > div:nth-child(2) {
+            h1 {
+                text-shadow: -1px 0 #f0e262, 0 1px #f0e262, 1px 0 #f0e262, 0 -1px #f0e262;
+                -webkit-text-stroke: 1px #f0e262;
+            }
+        }
+    } */
 
     @media (max-width: 1200px) {
         padding-left: 40px;
@@ -99,18 +109,25 @@ export const LogoSection = styled.div`
             h1 {
                 font-size: 25px;
                 line-height: 32px;
-
                 margin-left: 9px;
             }
 
             p {
                 font-size: 11px;
                 line-height: 14px;
-
                 margin-left: 5px;
             }
         }
     }
+
+    /* @media (max-width: 768px) {
+
+        > div:nth-child(2) {
+            h1 {
+                -webkit-text-stroke: 1px #f0e262;
+            }
+        }
+    } */
 
     @media (max-width: 576px) {
         padding-left: 15px;

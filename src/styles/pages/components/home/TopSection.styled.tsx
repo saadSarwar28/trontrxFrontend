@@ -113,9 +113,7 @@ export const Text = styled.div`
     font-size: 16px;
     line-height: 21px;
     text-transform: uppercase;
-    color: ${({ theme }) => theme.colors.whiteFont};
-    text-shadow: -1px 0 #c28616, 0 1px #c28616, 1px 0 #c28616, 0 -1px #c28616;
-
+    color: ${({ theme }) => theme.colors.cardBgFilled};
     margin-bottom: 12px;
 
     // animation
@@ -136,14 +134,12 @@ export const Text = styled.div`
   p {
     width: 413px;
     height: 68px;
-
     font-family: "PT Sans", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 21px;
     text-transform: uppercase;
-
     color: ${({ theme }) => theme.colors.whiteFont};
 
     // animation
@@ -176,20 +172,6 @@ export const Text = styled.div`
       width: auto;
       font-size: 14px;
       line-height: 18px;
-    }
-  }
-
-  @media (max-width: 576px) {
-    h1 {
-      font-size: 23px;
-    }
-
-    h3 {
-      font-size: 15px;
-    }
-
-    p {
-      font-size: 13px;
     }
   }
 

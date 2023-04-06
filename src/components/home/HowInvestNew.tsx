@@ -16,18 +16,9 @@ const HowInvestNew = ({ content }: any) => {
   const [headingClass, setHeadingClass] = useState(false);
   const [howInvestImg, setHowInvestImg] = useState(false);
 
-  // const [section0Class, setSection0Class] = useState(false);
-  // const [section1Class, setSection1Class] = useState(false);
-  // const [section2Class, setSection2Class] = useState(false);
-  // const [section3Class, setSection3Class] = useState(false);
   useEffect(() => {
     const headingDesktop = document.querySelectorAll('.investHeading');
     const investImg = document.querySelectorAll('.investImg');
-
-    // const section0 = document.querySelectorAll('.investSection0');
-    // const section1 = document.querySelectorAll('.investSection1');
-    // const section2 = document.querySelectorAll('.investSection2');
-    // const section3 = document.querySelectorAll('.investSection3');
 
     document.addEventListener('scroll', () => {
       if (!headingClass) {
@@ -37,18 +28,6 @@ const HowInvestNew = ({ content }: any) => {
       if (!howInvestImg) {
         animate(setHowInvestImg, investImg[0]);
       }
-      // if (!section0Class) {
-      //   animate(setSection0Class, section0[0]);
-      // }
-      // if (!section1Class) {
-      //   animate(setSection1Class, section1[0]);
-      // }
-      // if (!section2Class) {
-      //   animate(setSection2Class, section2[0]);
-      // }
-      // if (!section3Class) {
-      //   animate(setSection3Class, section3[0]);
-      // }
     })
   }, [])
 
