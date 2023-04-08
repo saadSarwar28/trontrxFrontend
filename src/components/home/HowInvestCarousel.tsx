@@ -35,7 +35,7 @@ const HowInvestCarousel = ({ content }: any) => {
                 infinite={true}
             >
                 <CarouselItem>
-                    <iframe id="howInvestIframe1" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe1" height="463" src="https://www.youtube.com/embed/BCslcyJUiZc"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[0].title}
@@ -45,7 +45,7 @@ const HowInvestCarousel = ({ content }: any) => {
                     </div>
                 </CarouselItem>
                 <CarouselItem>
-                    <iframe id="howInvestIframe2" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe2" height="463" src="https://www.youtube.com/embed/BCslcyJUiZc"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[1].title}
@@ -55,7 +55,7 @@ const HowInvestCarousel = ({ content }: any) => {
                     </div>
                 </CarouselItem>
                 <CarouselItem>
-                    <iframe id="howInvestIframe3" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe3" height="463" src="https://www.youtube.com/embed/BCslcyJUiZc"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[2].title}
@@ -65,7 +65,7 @@ const HowInvestCarousel = ({ content }: any) => {
                     </div>
                 </CarouselItem>
                 <CarouselItem>
-                    <iframe id="howInvestIframe4" height="463" src="https://www.youtube.com/embed/ebnQsTk9s-s"></iframe>
+                    <iframe id="howInvestIframe4" height="463" src="https://www.youtube.com/embed/BCslcyJUiZc"></iframe>
                     <div>
                         <h2>
                             {content.howInvest.rightSections[3].title}

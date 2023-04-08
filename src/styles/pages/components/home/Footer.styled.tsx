@@ -40,7 +40,9 @@ export const LogoSectionFooter = styled.div`
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: ${({ theme }) => theme.colors.whiteFont};
+            /* text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616; */
             text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+            -webkit-text-stroke: 1px #FBBD18;
 
             margin-left: 9px;
         }
@@ -53,8 +55,9 @@ export const LogoSectionFooter = styled.div`
             line-height: 19px;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: ${({ theme }) => theme.colors.whiteFont};
-            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+            /* color: ${({ theme }) => theme.colors.whiteFont};
+            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616; */
+            color: ${({ theme }) => theme.colors.cardBgFilled};
 
             margin-left: 5px;
         }
