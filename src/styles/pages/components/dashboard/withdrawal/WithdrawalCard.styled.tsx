@@ -402,3 +402,62 @@ export const WithdrawButton = styled.div`
         }
     }
 `
+
+export const ConnectWalletButton = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 39px;
+
+    transform: scale(0);
+    &.animate {
+        // animation
+        animation: withdrawButton 2s ease 0.25s 1 normal forwards;
+        @keyframes withdrawButton {
+            0% {transform: scale(0);}
+            100% {transform: scale(1);}
+        }
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 254px;
+        height: 56px;
+        background: #F2A71B;
+        border-radius: 5px;
+        border: none;
+
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    @media (max-width: 992px) and (min-width: 601px) {
+        transform: scale(0);
+        // animation
+        animation: withdrawButton 2s ease 0.25s 1 normal forwards;
+        @keyframes withdrawButton {
+            0% {transform: scale(0);}
+            100% {transform: scale(1);}
+        }
+    }
+
+    @media (max-width: 600px) {
+        transform: scale(0);
+        &.animate {
+        // animation
+            animation: depositButton 2s ease 0.25s 1 normal forwards;
+            @keyframes depositButton {
+                0% {transform: scale(0);}
+                100% {transform: scale(1);}
+            }
+        }
+    }
+`

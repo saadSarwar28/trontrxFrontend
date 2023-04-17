@@ -1,5 +1,5 @@
 import { HeaderStyled, DashboardLogo, DashboardSection, HomeButton } from "@/styles/pages/components/dashboard/Header.styled"
-import content from './../../content/content.json'
+import { CONTENT as content } from '@/content/content';
 import React from "react"
 import Link from 'next/link'
 

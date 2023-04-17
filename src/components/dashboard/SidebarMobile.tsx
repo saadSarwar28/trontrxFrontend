@@ -1,6 +1,6 @@
 import { SidebarMobileStyled, HomeButtonMobile } from "@/styles/pages/components/dashboard/SidebarMobile.styled"
 import FooterNavItem from "../FooterNavItem"
-import content from '../../content/content.json'
+import { CONTENT as content } from '@/content/content';
 import Link from "next/link"
 import React from "react"
 
