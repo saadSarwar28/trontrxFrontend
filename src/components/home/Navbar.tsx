@@ -1,8 +1,8 @@
 import { NavbarStyled, LogoSection, LinksSection, MobileNavbar } from "@/styles/pages/components/home/Navbar.styled"
-import { connect } from "react-redux"
 import { useEffect, useState } from "react"
 import NavItem from '@/components/NavItem';
-
+import {CONTENT} from '@/content/content';
+import exp from 'constants';
 
 const Navbar = ({ content }: any) => {
 
@@ -31,8 +31,8 @@ const Navbar = ({ content }: any) => {
                     <img src="/assets/images/navbar/logo.svg" alt="..." />
                 </div>
                 <div>
-                    <h1 id="navbarTitle">{Object.keys(content).length && content.navbar.navTitle}</h1>
-                    <p id="navbarDesc">{Object.keys(content).length && content.navbar.navDesc}</p>
+                    <h1 id="navbarTitle">{CONTENT.navbar.navTitle}</h1>
+                    <p id="navbarDesc">{CONTENT.navbar.navDesc}</p>
                 </div>
             </LogoSection>
             <LinksSection>
@@ -72,10 +72,4 @@ const Navbar = ({ content }: any) => {
     )
 }
 
-const mapStateToProps = (state: any) => {
-    return {
-        content: state.home.homeItems
-    }
-}
-
-export default connect(mapStateToProps)(Navbar)
+export default Navbar

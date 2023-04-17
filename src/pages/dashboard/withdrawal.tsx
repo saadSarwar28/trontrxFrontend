@@ -1,9 +1,12 @@
-import { WithdrawalStyled, Main, Page } from "@/styles/pages/components/dashboard/withdrawal/Withdrawal.styled"
+import {WithdrawalStyled, Main, Page} from "@/styles/pages/components/dashboard/withdrawal/Withdrawal.styled"
 import Header from "@/components/dashboard/Header"
 import SidebarMobile from "@/components/dashboard/SidebarMobile"
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
-import { useState } from "react"
+import {useEffect, useState} from "react"
 import WithdrawalCard from "@/components/dashboard/withdrawal/WithdrawalCard"
+import {useDispatch, useSelector} from 'react-redux';
+import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
+import {connectWallet} from '@/utils/wallet';
 
 
 const Withdrawal = () => {
@@ -12,14 +15,27 @@ const Withdrawal = () => {
         setSidebarClass(!sidebarClass);
     }
 
+    const accountState = useSelector(selectUserAccount)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (!accountState.account.walletConnected) {
+            connectWallet()
+                .then((address: string) => {
+                    // @ts-ignore
+                    dispatch(getUserAccountDetails(address))
+                })
+        }
+    }, [])
+
     return (
         <WithdrawalStyled>
-            <Header toggleSidebar={toggleSidebar} />
-            <SidebarMobile sidebarClass={sidebarClass} activeLink="withdrawal" />
+            <Header toggleSidebar={toggleSidebar}/>
+            <SidebarMobile sidebarClass={sidebarClass} activeLink="withdrawal"/>
             <Main>
-                <SidebarDesktop activeLink="withdrawal" />
+                <SidebarDesktop activeLink="withdrawal"/>
                 <Page>
-                    <WithdrawalCard />
+                    <WithdrawalCard/>
                 </Page>
             </Main>
         </WithdrawalStyled>

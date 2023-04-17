@@ -1,9 +1,13 @@
 import { StatsCardStyled, StatsButton, CardsContainer, Card } from "@/styles/pages/components/dashboard/currentStats/StatsCard.styled"
-import content from '../../../content/content.json'
+import { CONTENT as content } from '@/content/content';
 import { useState, useEffect } from "react";
+import {useSelector} from 'react-redux';
+import {selectUserAccount} from '@/store/accountSlice';
 
 
 const StatsCard = () => {
+    const accountState = useSelector(selectUserAccount)
+
     const cardImages = [
         "/assets/images/dashboard/currentStats/statsCard1.svg",
         "/assets/images/dashboard/currentStats/statsCard2.svg",
@@ -74,34 +78,34 @@ const StatsCard = () => {
                     <Card className={`statsCard1 ${statsCard1Class ? 'animate' : ''}`}>
                         <img src={cardImages[0]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[0].title}</p>
-                        <div>{content.dashboard.currentStats.statsCard.cards[0].number}</div>
+                        <div>{accountState.account.level == 0 ? 1 : accountState.account.level}</div>
                     </Card>
                     <Card className={`statsCard2 ${statsCard2Class ? 'animate' : ''}`}>
                         <img src={cardImages[1]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[1].title}</p>
-                        <div>{content.dashboard.currentStats.statsCard.cards[1].number}</div>
+                        <div>{accountState.account.directRefs}</div>
                     </Card>
                     <Card className={`statsCard3 ${statsCard3Class ? 'animate' : ''}`}>
                         <img src={cardImages[2]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[2].title}</p>
-                        <div>{content.dashboard.currentStats.statsCard.cards[2].number}</div>
+                        <div>{accountState.account.totalRefs}</div>
                     </Card>
                 </div>
                 <div>
                     <Card className={`statsCard4 ${statsCard4Class ? 'animate' : ''}`}>
                         <img src={cardImages[3]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[3].title}</p>
-                        <div>{content.dashboard.currentStats.statsCard.cards[3].number}</div>
+                        <div>{accountState.account.totalDeposited}</div>
                     </Card>
                     <Card className={`statsCard5 ${statsCard5Class ? 'animate' : ''}`}>
                         <img src={cardImages[4]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[4].title}</p>
-                        <div>{content.dashboard.currentStats.statsCard.cards[4].number}</div>
+                        <div>{accountState.account.totalTeamDeposit}</div>
                     </Card>
                     <Card className={`statsCard6 ${statsCard6Class ? 'animate' : ''}`}>
                         <img src={cardImages[5]} alt="..." />
                         <p>{content.dashboard.currentStats.statsCard.cards[5].title}</p>
-                        <div>{content.dashboard.currentStats.statsCard.cards[5].number}</div>
+                        <div>{accountState.account.totalWithdrawn}</div>
                     </Card>
                 </div>
             </CardsContainer>

@@ -175,6 +175,47 @@ export const CardText = styled.div`
     }
 `
 
+export const ConnectWalletButton = styled.button`
+    position: relative;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 235px;
+    height: 49.47px;
+    background: #000000;
+    border-radius: 4.19249px;
+
+    // animation
+    animation: copyButton 1s ease 1.25s 1 normal backwards;
+    @keyframes copyButton {
+        0% {transform: scale(0);}
+        100% {transform: scale(1);}
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 21.8009px;
+        line-height: 33px;
+        text-transform: uppercase;
+        color: #F2A71B;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1200px) {
+        margin-top: 35px;
+    }
+
+    @media (max-width: 576px) {
+        margin-top: 25px;
+    }
+
+    @media (max-width: 576px) {
+        margin-top: 15px;
+    }
+`
+
 export const CopyButton = styled.button`
     position: relative;
     margin-top: 32px;
