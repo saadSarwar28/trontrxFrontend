@@ -1,4 +1,4 @@
-import CONSTANTS from '@/utils/constants';
+import {CONSTANTS} from '@/utils/constants';
 
 export const get = async (url: any): Promise<any> => {
     return new Promise((resolve, reject) => {
