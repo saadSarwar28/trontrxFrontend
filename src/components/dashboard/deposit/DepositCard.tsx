@@ -15,9 +15,19 @@ import { useState, useEffect } from "react";
 // @ts-ignore
 import TronWeb from "tronweb";
 import {ethers} from 'ethers';
+import {useDispatch, useSelector} from 'react-redux';
+import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
+import { useRouter } from 'next/router'
 
 
 const DepositCard = () => {
+
+    const router = useRouter()
+    const { ref } = router.query
+    const [referrerAddress, setReferrerAddress] = useState('')
+    useEffect(() => {
+        setReferrerAddress(String(ref))
+    },[])
 
     const animate = (setAnimationClass: any, element: any) => {
         const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
@@ -81,6 +91,81 @@ const DepositCard = () => {
     const setDepositPlus10000 = () => {
         setAmount(amount + 10000)
     }
+
+    const accountState = useSelector(selectUserAccount)
+    const [defaultReferrerAddress, setDefaultReferrerAddress] = useState('')
+
+    const dispatch = useDispatch()
+
+    const connectWallet = async () => {
+        // @ts-ignore
+        if (window.tronWeb) {
+            // @ts-ignore
+            await window.tronLink.request({method: 'tron_requestAccounts'});
+            // @ts-ignore
+            const {name, base58} = await window.tronWeb.defaultAddress;
+            // @ts-ignore
+            dispatch(getUserAccountDetails(base58))
+        }
+    }
+
+    const deposit = async () => {
+        // if (projectInsuranceActivated) {
+        //     alert('Deposits have been stopped due to project insurance activation. Please wait for v2 of the contract. Thanks for your participation.')
+        //     return
+        // }
+
+        if (Number(amount) > accountState.account.balance) {
+            alert('Not enough TRX in your wallet')
+            return
+        }
+        if (Number(amount) < 100) {
+            alert('Deposit amount should be atleast 50')
+            return
+        }
+        // if (!notificationModalShown) {
+        //     openNotficationModal()
+        //     setNotificationModalShown(true)
+        //     return
+        // }
+        // @ts-ignore
+        if (window.tronWeb) {
+            try {
+                // @ts-ignore
+                let contract = await window.tronWeb.contract().at(CONSTANTS.contractAddress);
+                // These methods do not modify the blockchain, do not cost anything to execute and are also not broadcasted to the network.
+                let refCode = 0
+                // if (referrerCode !== '') {
+                //     refCode = Number(referrerCode)
+                // }
+                if (referrerAddress !== '' && referrerAddress !== null) {
+                    let result = await contract.deposit(referrerAddress).send(
+                        {
+                            callValue: amount + '000000',
+                            feeLimit: 2000000000
+                        }
+                    );
+                    alert('successfully deposited, Trx id : ' + String(result));
+                } else {
+                    let result = await contract.deposit(defaultReferrerAddress).send(
+                        {
+                            callValue: amount + '000000',
+                            feeLimit: 2000000000
+                        }
+                    );
+                    alert('successfully deposited, Trx id : ' + String(result));
+                }
+            } catch (error: any) {
+                console.log(error)
+                if (error.error === 'CONTRACT_VALIDATE_ERROR') {
+                    alert('Insufficient Trx balance in your wallet!')
+                } else {
+                    alert('Transaction declined!')
+                }
+            }
+
+        }
+    };
 
     return (
         <DepositCardStyled>
@@ -154,7 +239,11 @@ const DepositCard = () => {
                 ))}
             </Paragraphs>
             <DepositButton className={`depositButton ${depositButtonClass ? 'animate' : ''}`}>
-                <button>{content.dashboard.deposit.depositButton}</button>
+                {
+                    accountState.account.walletConnected ?
+                        <button onClick={deposit}>{content.dashboard.deposit.depositButton}</button>
+                        : <button onClick={connectWallet}>{content.dashboard.deposit.depositButton}</button>
+                }
             </DepositButton>
         </DepositCardStyled>
     )

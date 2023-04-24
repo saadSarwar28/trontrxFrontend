@@ -94,23 +94,21 @@ const callbackFunction = () => {
 }
 
 interface TimerInterface {
-  timerMinutes: number,
-  // callback: () => {}
+  endTs: number,
+  callback: () => void
 }
-
 // @ts-ignore
-const Timer: React.FC<TimerInterface> = ({ timerMinutes }) => {
-  const time = new Date();
+const Timer: React.FC<TimerInterface> = ({ endTs, callback }) => {
 
   const { seconds, minutes, hours, days } = useTimer({
-    // expiryTimestamp: new Date(endTs * 1000),
-    expiryTimestamp: new Date(time.setMinutes(time.getMinutes() + timerMinutes)),
-    onExpire: callbackFunction
+    expiryTimestamp: new Date(endTs * 1000),
+    // expiryTimestamp: new Date(time.setMinutes(time.getMinutes() + timerMinutes)),
+    onExpire: () => {},
   });
 
   useEffect(() => {
     if (seconds === 0 && minutes === 0 && hours === 0) {
-      callbackFunction();
+      callback();
     }
   })
 

@@ -75,7 +75,7 @@ export const BlackButton1 = styled(YellowButton1)`
     font-size: 16.77px;
     line-height: 25px;
     text-transform: uppercase;
-    padding-left: 27px;
+    padding-left: 20px;
     padding-right: 16px;
     margin-top: 24px;
 
@@ -97,7 +97,7 @@ export const BlackButton1 = styled(YellowButton1)`
         }
         
         span:last-child {
-            font-size: 11.77px;
+            font-size: 10px;
         }
     }
 

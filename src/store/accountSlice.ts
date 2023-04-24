@@ -10,6 +10,8 @@ import {getWalletDetails} from '@/utils/wallet';
 const initialState: User = {
     account: {
         balance: 0,
+        activeDeposit: 0,
+        activeDepositWithdrawn: 0,
         walletConnected: false,
         referrer: '',
         address: '',
@@ -25,6 +27,9 @@ const initialState: User = {
         totalTeamDeposit: 0,
         totalWithdrawn: 0,
         lastWithdrawn: 0,
+        projectInsurance: 0,
+        dailyRoi: 0,
+        contractBalance: 0,
     }
 }
 

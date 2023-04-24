@@ -9,6 +9,8 @@ import Timer from './Timer'
 import {useSelector} from 'react-redux';
 import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
 import {connectWallet} from '@/utils/wallet';
+import {CONSTANTS} from '@/utils/constants';
+import timer from './Timer';
 
 
 const WithdrawalCard = () => {
@@ -60,6 +62,7 @@ const WithdrawalCard = () => {
     const [timerWithdrawalClass, setTimerWithdrawalClass] = useState(false);
     const [withdrawButtonClass, setWithdrawButtonClass] = useState(false);
     const [paraWithdrawalClass, setParaWithdrawalClass] = useState(false);
+    const [dailyRoi, setDailyRoi] = useState(0)
 
     useEffect(() => {
         const timerWithdrawal = document.querySelectorAll('.timerWithdrawal');
@@ -90,8 +93,36 @@ const WithdrawalCard = () => {
         }
     }
 
-    const withdraw = () => {
-        console.log(' withdraw ')
+    const withdraw = async () => {
+        // console.log(' withdraw ')
+        if (Math.floor(Date.now() / 1000) < (accountState.account.lastWithdrawn + CONSTANTS.timeStep)) {
+            alert('Cannot withdraw yet')
+            return
+        }
+
+        // @ts-ignore
+        if (window.tronWeb) {
+            try {
+                // @ts-ignore
+                let contract = await window.tronWeb.contract().at(CONSTANTS.contractAddress);
+                let result = await contract.withdraw().send(
+                    {
+                        callValue: '1000000',
+                        from: accountState.account.address,
+                        feeLimit: 2000000000
+                    }
+                );
+                alert('Transaction broadcast, Trx id : ' + String(result));
+            } catch (error) {
+                // console.log(error)
+                alert('Transaction declined!')
+            }
+        }
+    }
+
+    const timerCallback = () => {
+        // console.log('its time')
+        // setCanWithdraw(true)
     }
 
     return (
@@ -102,62 +133,186 @@ const WithdrawalCard = () => {
                 <ThreeCardsDesktop>
                     <CardDesktop>
                         <img src={cardImages[0]} alt="..."/>
+                        {/*current active deposit*/}
                         <p>{content.dashboard.withdrawal.cards[0].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[0].amount}</div>
+                        <div>{accountState.account.activeDeposit}</div>
                     </CardDesktop>
                     <CardDesktop>
                         <img src={cardImages[1]} alt="..."/>
+                        {/*daily ROI*/}
                         <p>{content.dashboard.withdrawal.cards[1].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[1].amount}</div>
+                        <div>
+                            {
+                                accountState.account.activeDepositWithdrawn >= (((accountState.account.activeDeposit * 310)) / 100) ? '0.00' : ((accountState.account.activeDeposit) / 100).toFixed(2)
+                            }
+                        </div>
                     </CardDesktop>
                     <CardDesktop>
                         <img src={cardImages[2]} alt="..."/>
+                        {/*DIRECT REFERRAL INCOME*/}
                         <p>{content.dashboard.withdrawal.cards[2].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[2].amount}</div>
+                        <div>{Number(accountState.account.directCommission - accountState.account.directCommissionDebt).toFixed(2)}</div>
                     </CardDesktop>
                 </ThreeCardsDesktop>
                 <TwoCardsDesktop>
                     <CardDesktop>
                         <img src={cardImages[3]} alt="..."/>
+                        {/*MATCHING LEVEL INCOME*/}
                         <p>{content.dashboard.withdrawal.cards[3].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[3].amount}</div>
+                        <div>
+                            {
+                                accountState.account.levelIncome > 0 ? (accountState.account.levelIncome - accountState.account.levelIncomeDebt).toFixed(2) : '0.00'
+                            }
+                        </div>
                     </CardDesktop>
                     <CardDesktop>
                         <img src={cardImages[4]} alt="..."/>
+                        {/*TOTAL WITHDRAWN*/}
                         <p>{content.dashboard.withdrawal.cards[4].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[4].amount}</div>
+                        <div>
+                            {
+                                accountState.account.activeDepositWithdrawn
+                            }
+                        </div>
                     </CardDesktop>
                 </TwoCardsDesktop>
                 <ThreeCardsDesktop>
                     <CardDesktop>
                         <img src={cardImages[5]} alt="..."/>
+                        {/*310% REMAINING INCOME LIMIT*/}
                         <p>{content.dashboard.withdrawal.cards[5].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[5].amount}</div>
+                        <div>
+                            {
+                                (accountState.account.address === CONSTANTS.adminId || accountState.account.address === CONSTANTS.topId) ? 'NA'
+                                    : ((accountState.account.activeDeposit * 310) / 100) - accountState.account.activeDepositWithdrawn
+                            }
+                        </div>
                     </CardDesktop>
                     <CardDesktop>
                         <img src={cardImages[6]} alt="..."/>
+                        {/*AVAILABLE TO WITHDRAW*/}
                         <p>{content.dashboard.withdrawal.cards[6].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[6].amount}</div>
+                        <div>
+                            {
+                                accountState.account.contractBalance < accountState.account.projectInsurance ? 0.00
+                                    :
+                                    <>
+                                        {
+                                            (accountState.account.address === CONSTANTS.topId || accountState.account.address === CONSTANTS.adminId) ?
+                                                <>
+                                                    {
+                                                        Number((accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt)).toFixed(2)
+                                                    }
+                                                </> :
+                                                <>
+                                                    {
+                                                        (((accountState.account.activeDeposit * 310)) / 100) === accountState.account.activeDepositWithdrawn ?
+                                                            Number(accountState.account.directCommission - accountState.account.directCommissionDebt).toFixed(2)
+                                                            :
+                                                            <>
+                                                                {
+                                                                    (accountState.account.dailyRoi + (accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt) + accountState.account.activeDepositWithdrawn) > (accountState.account.activeDeposit * 310) / 100 ?
+                                                                        ((accountState.account.activeDeposit * 310) / 100 - accountState.account.activeDepositWithdrawn).toFixed(2)
+                                                                        :
+                                                                        Number(accountState.account.dailyRoi + (accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt)).toFixed(2)
+                                                                }
+                                                            </>
+                                                    }
+                                                </>
+                                        }
+                                    </>
+                            }
+                        </div>
                     </CardDesktop>
                     <CardDesktop>
                         <img src={cardImages[7]} alt="..."/>
+                        {/*LAST WITHDRAWN*/}
                         <p>{content.dashboard.withdrawal.cards[7].title}</p>
-                        <div>{content.dashboard.withdrawal.cards[7].amount}</div>
+                        <div style={{fontSize: '20px', whiteSpace: 'nowrap'}}>
+                            {
+                                accountState.account.lastWithdrawn === 0 ? 'NA' : new Date(accountState.account.lastWithdrawn * 1000).toLocaleDateString() + ' ' + new Date(accountState.account.lastWithdrawn * 1000).toLocaleTimeString()
+                            }
+                        </div>
                     </CardDesktop>
                 </ThreeCardsDesktop>
             </CardsSectionDesktop>
             {/* Cards Mobile */}
             <CardsSectionMobile>
-                {content.dashboard.withdrawal.cards.map((card, index) => (
-                    <CardMobile key={index}>
-                        <p>{card.title}</p>
-                        <div>{card.amount}</div>
-                    </CardMobile>
-                ))}
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[0].title}</p>
+                    <div>{accountState.account.activeDeposit}</div>
+                </CardMobile>
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[1].title}</p>
+                    <div>{accountState.account.activeDepositWithdrawn >= (((accountState.account.activeDeposit * 310)) / 100) ? '0.00' : ((accountState.account.activeDeposit) / 100).toFixed(2)}</div>
+                </CardMobile>
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[2].title}</p>
+                    <div>{Number(accountState.account.directCommission - accountState.account.directCommissionDebt).toFixed(2)}</div>
+                </CardMobile>
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[3].title}</p>
+                    <div>{accountState.account.levelIncome > 0 ? (accountState.account.levelIncome - accountState.account.levelIncomeDebt).toFixed(2) : '0.00'}</div>
+                </CardMobile>
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[4].title}</p>
+                    <div>{accountState.account.activeDepositWithdrawn}</div>
+                </CardMobile>
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[5].title}</p>
+                    <div>
+                        {
+                            (accountState.account.address === CONSTANTS.adminId || accountState.account.address === CONSTANTS.topId) ? 'NA'
+                                : ((accountState.account.activeDeposit * 310) / 100) - accountState.account.activeDepositWithdrawn
+                        }
+                    </div>
+                </CardMobile>
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[6].title}</p>
+                    <div>
+                        {
+                            accountState.account.contractBalance < accountState.account.projectInsurance ? 0.00
+                                :
+                                <>
+                                    {
+                                        (accountState.account.address === CONSTANTS.topId || accountState.account.address === CONSTANTS.adminId) ?
+                                            <>
+                                                {
+                                                    Number((accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt)).toFixed(2)
+                                                }
+                                            </> :
+                                            <>
+                                                {
+                                                    (((accountState.account.activeDeposit * 310)) / 100) === accountState.account.activeDepositWithdrawn ?
+                                                        Number(accountState.account.directCommission - accountState.account.directCommissionDebt).toFixed(2)
+                                                        :
+                                                        <>
+                                                            {
+                                                                (accountState.account.dailyRoi + (accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt) + accountState.account.activeDepositWithdrawn) > (accountState.account.activeDeposit * 310) / 100 ?
+                                                                    ((accountState.account.activeDeposit * 310) / 100 - accountState.account.activeDepositWithdrawn).toFixed(2)
+                                                                    :
+                                                                    Number(accountState.account.dailyRoi + (accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt)).toFixed(2)
+                                                            }
+                                                        </>
+                                                }
+                                            </>
+                                    }
+                                </>
+                        }
+                    </div>
+                </CardMobile>
+                <CardMobile>
+                    <p>{content.dashboard.withdrawal.cards[7].title}</p>
+                    <div>{accountState.account.lastWithdrawn === 0 ? 'NA' : new Date(accountState.account.lastWithdrawn * 1000).toLocaleDateString() + ' ' + new Date(accountState.account.lastWithdrawn * 1000).toLocaleTimeString()}</div>
+                </CardMobile>
             </CardsSectionMobile>
             <TimerSection className={`timerWithdrawal ${timerWithdrawalClass ? 'animate' : ''}`}>
                 <p>{content.dashboard.withdrawal.timerTitle}</p>
-                <Timer timerMinutes={1}/>
+                {
+                    accountState.account.lastWithdrawn === 0 ? null :
+                        <Timer endTs={accountState.account.lastWithdrawn + CONSTANTS.timeStep}
+                               callback={timerCallback}/>
+                }
             </TimerSection>
             <Paragraphs>
                 {content.dashboard.withdrawal.paragraphs.map((paragraph, index) => (

@@ -4,16 +4,27 @@ import {add} from '@noble/hashes/_u64';
 import {getUserAccountDetails} from '@/store/accountSlice';
 
 export const getWalletDetails = async (address: string) => {
+    console.log('wallet details called')
     // @ts-ignore
     const balance = Number(ethers.formatUnits(await window.tronWeb.trx.getBalance(address), 6))
     // @ts-ignore
+    const contractBalance = Number(ethers.formatUnits(await window.tronWeb.trx.getBalance(CONSTANTS.contractAddress), 6))
+    // @ts-ignore
     let contract = await window.tronWeb.contract().at(CONSTANTS.contractAddress);
     let result = await contract.users(address).call();
+    let deposit = await contract.userDeposits(address, Number(result?.depositsLength.toString()) - 1).call()
+    const PROJECT_INSURANCE = await contract.PROJECT_INSURANCE().call();
+    let roi = await contract.getDailyRoi().call(
+        {from: address}
+    )
     return {
         address: address,
         balance: balance,
+        activeDeposit: Number(Number(ethers.formatUnits(deposit?.amount.toString(), 6)).toFixed(2)),
+        activeDepositWithdrawn: Number(Number(ethers.formatUnits(deposit?.withdrawn.toString(), 6)).toFixed(2)),
         walletConnected: true,
-        referrer: result?.referrer,
+        // @ts-ignore
+        referrer: window.tronWeb.address.fromHex(result?.referrer),
         depositsLength: Number(result?.depositsLength.toString()),
         totalDeposited: Number(Number(ethers.formatUnits(result?.totalDeposited.toString(), 6)).toFixed(2)),
         directCommission: Number(Number(ethers.formatUnits(result?.directCommission.toString(), 6)).toFixed(2)),
@@ -26,6 +37,9 @@ export const getWalletDetails = async (address: string) => {
         totalTeamDeposit: Number(Number(ethers.formatUnits(result?.totalTeamDeposit.toString(), 6)).toFixed(2)),
         totalWithdrawn: Number(Number(ethers.formatUnits(result?.totalWithdrawn.toString(), 6)).toFixed(2)),
         lastWithdrawn: Number(result?.lastWithdrawn),
+        projectInsurance : Number(Number(ethers.formatUnits(PROJECT_INSURANCE.toString(), 6)).toFixed(2)),
+        dailyRoi: Number(Number(ethers.formatUnits(roi.toString(), 6)).toFixed(2)),
+        contractBalance: contractBalance,
     }
 }
 

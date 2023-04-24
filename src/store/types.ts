@@ -1,6 +1,8 @@
 export interface User {
     account: {
         balance: number,
+        activeDeposit: number,
+        activeDepositWithdrawn: number,
         walletConnected: false,
         referrer: string,
         address: string,
@@ -16,5 +18,8 @@ export interface User {
         totalTeamDeposit: number,
         totalWithdrawn: number,
         lastWithdrawn: number,
+        projectInsurance: number,
+        dailyRoi: number,
+        contractBalance: number,
     }
 }

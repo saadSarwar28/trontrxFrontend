@@ -48,9 +48,7 @@ const InfoCard = () => {
             <BlackButton1 type="button">
                 <span>{content.dashboard.currentStats.infoCard.blackButton1.span1}</span>
                 <span>
-                    {
-                        isMobile ? accountState.account.address.slice(0, 5) + '...' + accountState.account.address.slice(38) : accountState.account.address
-                    }
+                    {accountState.account.address}
                 </span>
             </BlackButton1>
             <YellowButton2 type="button">
