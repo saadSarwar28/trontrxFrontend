@@ -1,8 +1,16 @@
 import { TopSectionStyled, ContentColumn, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn, MainImage } from '@/styles/pages/components/home/TopSection.styled'
-
+import { useEffect, useState } from 'react'
 
 
 const TopSection = ({ content }: any) => {
+    const [animate, setAnimate] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setAnimate(true);
+        }, 3000)
+    }, [])
+
 
     return (
         <TopSectionStyled id="home" style={{
@@ -15,7 +23,7 @@ const TopSection = ({ content }: any) => {
                         <h3>{content.topSection.title}</h3>
                         <p>{content.topSection.desc}</p>
                     </Text>
-                    <Buttons>
+                    <Buttons className={animate ? 'animate' : ''}>
                         <YellowButton>{content.topSection.buttons[0]}</YellowButton>
                         <WhiteButton>{content.topSection.buttons[1]}</WhiteButton>
                     </Buttons>

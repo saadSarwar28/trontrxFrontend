@@ -210,6 +210,19 @@ export const Buttons = styled.div`
     }
   }
 
+  &.animate {
+    animation-name: floatingButtons;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    @keyframes floatingButtons {
+      0% { transform: translate(0,  0px); }
+      50%  { transform: translate(0, 5px); }
+      100%   { transform: translate(0, -0px); }   
+    }
+  }
+
   > button {
     border: none;
   }
@@ -239,11 +252,11 @@ export const Buttons = styled.div`
 `
 
 export const YellowButton = styled.button`
-  width: 200px;
+  width: 160px;
   height: 56px;
 
   background: ${({ theme }) => theme.colors.mainYellow};
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -251,6 +264,8 @@ export const YellowButton = styled.button`
   line-height: 19px;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.blackFont};
+  cursor: pointer;
+  box-shadow: rgba(184, 137, 18, 0.2) 5px 5px 15px, rgba(184, 137, 18, 0.2) -2px -2px 10px;
 `
 
 export const WhiteButton = styled(YellowButton)`

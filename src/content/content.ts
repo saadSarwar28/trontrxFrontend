@@ -15,7 +15,7 @@ export const CONTENT = {
     "title": "100% Decentralized",
     "desc": "Tron Trx is the perfect combination of Digital Technology, High Security and Community Program",
     "buttons": [
-      "contract statistics",
+      "Contribute",
       "whitepaper"
     ]
   },
