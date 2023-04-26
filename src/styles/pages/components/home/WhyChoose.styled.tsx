@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 export const WhyChooseStyled = styled.section`
     padding-top: 53px;
-    /* padding-top: 40px; */
     padding-bottom: 53px;
     padding-left: 5%;
     padding-right: 5%;
@@ -68,7 +67,6 @@ export const WhyChooseDesktop = styled.div`
         text-align: center;
         position: relative;
         margin-bottom: 20px;
-        /* margin-bottom: 35px; */
 
         transform: scale(0);
         &.animate {
@@ -198,7 +196,6 @@ export const Section = styled.div`
         letter-spacing: 0.01em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
-        /* margin-bottom: 5px; */
         margin-bottom: 15px;
         position: relative;
 
@@ -209,7 +206,8 @@ export const Section = styled.div`
     }
 
     p {
-        font-family: 'PT Sans', sans-serif;
+        /* font-family: 'PT Sans', sans-serif; */
+        font-family: "Manrope", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -357,6 +355,7 @@ export const Section = styled.div`
     &#whySection3 {
         flex-direction: column-reverse;
         align-items: center;
+        margin-top: -15px;
 
         opacity: 0;
         &.animate {
@@ -386,7 +385,6 @@ export const WhyChooseMobile = styled.div`
         font-weight: 800;
         font-size: 30.6px;
         line-height: 114.5%;
-        /* or 35px */
         text-align: center;
         letter-spacing: 0.01em;
         text-transform: capitalize;
@@ -536,7 +534,8 @@ export const MobileSection = styled.div`
     }
 
     p {
-        font-family: 'PT Sans';
+        /* font-family: 'PT Sans'; */
+        font-family: "Manrope", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 13px;

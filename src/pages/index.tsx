@@ -17,8 +17,17 @@ import PressDivider from '@/components/home/dividers/PressDivider'
 import Navbar from '@/components/home/Navbar'
 import Footer from '@/components/home/Footer'
 import { CONTENT } from '@/content/content';
+import { useEffect } from 'react';
+
 
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'instant'
+        })
+    }, [])
 
     return (
         <>
@@ -35,18 +44,18 @@ const Home = () => {
                     {/* <ContractStats content={content} /> */}
                     <About content={CONTENT} />
                     <AboutDivider />
-                    {/* <HowInvest content={content} /> */}
-                    <HowInvestNew content={CONTENT} />
-                    <HowInvestDivider />
                     <WhyChoose content={CONTENT} />
                     <WhyChooseDivider />
                     <IncomeSources content={CONTENT} />
                     <IncomeSourcesDivider />
                     <MatchingIncome content={CONTENT} />
                     <MatchingIncomeDivider />
+                    {/* <HowInvest content={content} /> */}
+                    <HowInvestNew content={CONTENT} />
+                    <HowInvestDivider />
                     <Press />
-                    {/* <PressDivider /> */}
-                    {/* <FAQs content={CONTENT} /> */}
+                    {/* <PressDivider />
+                    <FAQs content={CONTENT} /> */}
                     <Footer />
                     <UpArrow onClick={() => window.scrollTo(0, 0)}>
                         <img id="upArrow" src="assets/images/home/arrow-up.png" alt="..." />

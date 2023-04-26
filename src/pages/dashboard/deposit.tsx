@@ -2,13 +2,21 @@ import { DepositStyled, Main, Page } from "@/styles/pages/components/dashboard/d
 import Header from "@/components/dashboard/Header"
 import SidebarMobile from "@/components/dashboard/SidebarMobile"
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 import DepositCard from "@/components/dashboard/deposit/DepositCard"
-import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
-import {useDispatch, useSelector} from 'react-redux';
+import { getUserAccountDetails, selectUserAccount } from '@/store/accountSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const Deposit = () => {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'instant'
+        })
+    }, [])
+
     const [sidebarClass, setSidebarClass] = useState(false);
     const toggleSidebar = () => {
         setSidebarClass(!sidebarClass);
@@ -21,9 +29,9 @@ const Deposit = () => {
         // @ts-ignore
         if (window.tronWeb) {
             // @ts-ignore
-            await window.tronLink.request({method: 'tron_requestAccounts'});
+            await window.tronLink.request({ method: 'tron_requestAccounts' });
             // @ts-ignore
-            const {name, base58} = await window.tronWeb.defaultAddress;
+            const { name, base58 } = await window.tronWeb.defaultAddress;
             // @ts-ignore
             dispatch(getUserAccountDetails(base58))
         }

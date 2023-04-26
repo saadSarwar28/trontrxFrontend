@@ -1,16 +1,23 @@
 // noinspection DuplicatedCode
 
-import {TreeStyled, Main, Page} from "@/styles/pages/components/dashboard/tree/Tree.styled"
+import { TreeStyled, Main, Page } from "@/styles/pages/components/dashboard/tree/Tree.styled"
 import Header from "@/components/dashboard/Header"
 import SidebarMobile from "@/components/dashboard/SidebarMobile"
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 import TreeCard from "@/components/dashboard/tree/TreeCard"
-import {useDispatch, useSelector} from 'react-redux';
-import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAccountDetails, selectUserAccount } from '@/store/accountSlice';
 
 
 const Tree = () => {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'instant'
+        })
+    }, [])
 
     const [sidebarClass, setSidebarClass] = useState(false);
     const toggleSidebar = () => {
@@ -24,9 +31,9 @@ const Tree = () => {
         // @ts-ignore
         if (window.tronWeb) {
             // @ts-ignore
-            await window.tronLink.request({method: 'tron_requestAccounts'});
+            await window.tronLink.request({ method: 'tron_requestAccounts' });
             // @ts-ignore
-            const {name, base58} = await window.tronWeb.defaultAddress;
+            const { name, base58 } = await window.tronWeb.defaultAddress;
             // @ts-ignore
             dispatch(getUserAccountDetails(base58))
         }
@@ -39,12 +46,12 @@ const Tree = () => {
 
     return (
         <TreeStyled>
-            <Header toggleSidebar={toggleSidebar}/>
-            <SidebarMobile sidebarClass={sidebarClass} activeLink="tree"/>
+            <Header toggleSidebar={toggleSidebar} />
+            <SidebarMobile sidebarClass={sidebarClass} activeLink="tree" />
             <Main>
-                <SidebarDesktop activeLink="tree"/>
+                <SidebarDesktop activeLink="tree" />
                 <Page>
-                    <TreeCard/>
+                    <TreeCard />
                 </Page>
             </Main>
         </TreeStyled>

@@ -78,13 +78,13 @@ export const ContentColumn = styled.div`
 `
 
 export const Text = styled.div`
+
   h1 {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 42px;
     line-height: 114.5%;
-    /* or 48px */
     letter-spacing: 0.01em;
     text-transform: capitalize;
     color: ${({ theme }) => theme.colors.whiteFont};
@@ -107,7 +107,8 @@ export const Text = styled.div`
   }
 
   h3 {
-    font-family: "PT Sans", sans-serif;
+    /* font-family: "PT Sans", sans-serif; */
+    font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -132,9 +133,10 @@ export const Text = styled.div`
   }
 
   p {
-    width: 413px;
+    /* width: 413px; */
     height: 68px;
-    font-family: "PT Sans", sans-serif;
+    /* font-family: "PT Sans", sans-serif; */
+    font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -185,7 +187,7 @@ export const Text = styled.div`
     }
 
     p {
-      font-size: 11px;
+      font-size: 12px;
     }
   }
 `
@@ -257,7 +259,8 @@ export const YellowButton = styled.button`
 
   background: ${({ theme }) => theme.colors.mainYellow};
   border-radius: 10px;
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
+  font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 15px;

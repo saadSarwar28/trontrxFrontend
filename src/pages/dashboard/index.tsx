@@ -1,17 +1,25 @@
-import {CurrentStatsStyled, Main, Page} from "@/styles/pages/components/dashboard/currentStats/CurrentStats.styled"
+import { CurrentStatsStyled, Main, Page } from "@/styles/pages/components/dashboard/currentStats/CurrentStats.styled"
 import Header from "@/components/dashboard/Header"
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 import SidebarMobile from '../../components/dashboard/SidebarMobile'
 import SidebarDesktop from "@/components/dashboard/SidebarDesktop"
 import InfoCard from "@/components/dashboard/currentStats/InfoCard"
 import StatsCard from "@/components/dashboard/currentStats/StatsCard"
 import Head from 'next/head';
-import {useDispatch, useSelector} from 'react-redux';
-import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
-import {connectWallet} from '@/utils/wallet';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAccountDetails, selectUserAccount } from '@/store/accountSlice';
+import { connectWallet } from '@/utils/wallet';
 
 
 const CurrentStats = () => {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'instant'
+        })
+    }, [])
+
     const [sidebarClass, setSidebarClass] = useState(false);
     const toggleSidebar = () => {
         setSidebarClass(!sidebarClass);
@@ -34,18 +42,18 @@ const CurrentStats = () => {
         <>
             <Head>
                 <title>Trontrx</title>
-                <meta name="TronTrx" content="TronTrx - King Of All Contracts"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="icon" href="/favicon.ico"/>
+                <meta name="TronTrx" content="TronTrx - King Of All Contracts" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <CurrentStatsStyled>
-                <Header toggleSidebar={toggleSidebar}/>
-                <SidebarMobile sidebarClass={sidebarClass} activeLink="currentStats"/>
+                <Header toggleSidebar={toggleSidebar} />
+                <SidebarMobile sidebarClass={sidebarClass} activeLink="currentStats" />
                 <Main>
-                    <SidebarDesktop activeLink="currentStats"/>
+                    <SidebarDesktop activeLink="currentStats" />
                     <Page>
-                        <InfoCard/>
-                        <StatsCard/>
+                        <InfoCard />
+                        <StatsCard />
                     </Page>
                 </Main>
             </CurrentStatsStyled>

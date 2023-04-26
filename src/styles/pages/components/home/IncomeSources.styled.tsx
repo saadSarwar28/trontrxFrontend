@@ -164,22 +164,23 @@ export const CardTop = styled.div`
 
 export const CardBottom = styled.div`
     min-height: 162px;
-    padding: 18px 30px 30px;
+    padding: 18px 25px 30px;
 
     p {
-        font-family: 'PT Sans', sans-serif;
+        /* font-family: 'PT Sans', sans-serif; */
+        font-family: "Manrope", sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 16px;
-        line-height: 114.5%;
-        /* or 18px */
+        /* line-height: 114.5%; */
+        line-height: 130%;
         text-align: center;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.04em;
         color: ${({ theme }) => theme.colors.blackFont};
     }
 
     @media (max-width: 992px) {
-        padding: 10px 37px 40px;
+        padding: 10px 20px 40px;
     }
 
     @media (max-width: 300px) {

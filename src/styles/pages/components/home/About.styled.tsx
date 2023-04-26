@@ -69,13 +69,13 @@ export const Paragraphs = styled.ul`
     list-style-type: none;
 
     > li {
-        font-family: 'PT Sans', sans-serif;
+        /* font-family: 'PT Sans', sans-serif; */
+        font-family: "Manrope", sans-serif;
         font-style: normal;
-        font-weight: 400;
-        font-size: 18.04px;
+        font-weight: 500;
+        font-size: 17px;
         line-height: 23px;
-        letter-spacing: 0.02em;
-        /* text-transform: lowercase; */
+        letter-spacing: 0.04em;
         color: ${({ theme }) => theme.colors.blackFont};
 
         transform: translateX(-100vw);
@@ -104,7 +104,6 @@ export const Paragraphs = styled.ul`
         > li {
             font-size: 13px;
             line-height: 13px;
-            /* text-align: center; */
         }
     }
 `

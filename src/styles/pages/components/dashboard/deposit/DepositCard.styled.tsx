@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {YellowButton1} from "../currentStats/InfoCard.styled"
+import { YellowButton1 } from "../currentStats/InfoCard.styled"
 
 
 export const DepositCardStyled = styled.div`
@@ -280,10 +280,11 @@ export const Card = styled.div`
   }
 
   @media (max-width: 300px) {
-    > div:first-child p, > div:last-child { {
+    > div:first-child p, > div:last-child {
       font-size: 13.1511px;
     }
-    }
+  }
+    
 `
 
 export const Paragraphs = styled.ul`

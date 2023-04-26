@@ -41,10 +41,11 @@ export const CarouselItem = styled.div`
         }
 
         p {
-            font-family: 'PT Sans', sans-serif;
+            /* font-family: 'PT Sans', sans-serif; */
+            font-family: "Manrope", sans-serif;
             font-style: normal;
-            font-weight: 400;
-            font-size: 17px;
+            font-weight: 500;
+            font-size: 16px;
             line-height: 114.5%;
             letter-spacing: 0.05em;
             color: ${({ theme }) => theme.colors.blackFont};

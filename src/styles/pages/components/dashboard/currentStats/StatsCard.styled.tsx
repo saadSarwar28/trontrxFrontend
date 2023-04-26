@@ -35,6 +35,7 @@ export const StatsButton = styled.button`
     line-height: 40px;
     text-transform: uppercase;
     color: #000000;
+    cursor: pointer;
 
     margin-right: 40px;
     margin-left: 40px;

@@ -74,10 +74,12 @@ export const Paragraphs = styled.ul`
     }
     
     li {
-        font-family: 'PT Sans', sans-serif;
+        /* font-family: 'PT Sans', sans-serif; */
+        font-family: "Manrope", sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        /* font-size: 18px; */
+        font-size: 17px;
         line-height: 114.5%;
         letter-spacing: 0.025em;
         text-transform: capitalize;
@@ -179,10 +181,12 @@ export const Level = styled.div`
 
     /* Level */
     p:last-child {
-        font-family: 'PT Sans', sans-serif;
+        /* font-family: 'PT Sans', sans-serif; */
+        font-family: "Manrope", sans-serif;
         font-style: normal;
-        font-weight: 400;
-        font-size: 18.3855px;
+        font-weight: 500;
+        /* font-size: 18.3855px; */
+        font-size: 17px;
         line-height: 114.5%;
         letter-spacing: 0.025em;
         text-transform: capitalize;

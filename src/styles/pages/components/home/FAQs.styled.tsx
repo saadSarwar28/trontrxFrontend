@@ -288,12 +288,12 @@ export const AccordionBottom = styled.div`
 
     p {
         display: none;
-        font-family: 'PT Sans', sans-serif;
+        /* font-family: 'PT Sans', sans-serif; */
+        font-family: "Manrope", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 114.5%;
-        /* or 18px */
         letter-spacing: 0.05em;
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.blackFont};
@@ -311,7 +311,7 @@ export const AccordionBottom = styled.div`
             }
 
             div {
-                dispaly: block;
+                display: block;
                 height: 31px;
                 background-color: ${({ theme }) => theme.colors.whiteBg};
             }
