@@ -153,7 +153,7 @@ export const CardMobile = styled.div`
     box-shadow: -8.75639px 9.92391px 18.6803px rgba(0, 0, 0, 0.25), inset 0.583759px 1.75128px 9.34015px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2.9188px);
     border-radius: 3.50256px;
-    padding: 0 10px;
+    padding: 0 5px;
 
     display: flex;
     flex-direction: column;
@@ -171,26 +171,33 @@ export const CardMobile = styled.div`
     > p {
         font-family: 'Poppins', sans-serif;
         font-style: normal;
-        font-weight: 800;
+        /* font-weight: 800; */
         font-size: 8px;
         line-height: 12px;
         text-align: center;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: #FFFFFF;
-        text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+        color: #f0e262;
+        /* text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616; */
     }
 
     > div {
         font-family: 'PT Sans', sans-serif;
         font-style: normal;
-        font-weight: 700;
+        /* font-weight: 700; */
         font-size: 12.6427px;
         line-height: 16px;
         text-align: center;
         text-transform: uppercase;
-        color: #FFFFFF;
-        text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+        color: #f0e262;
+        /* text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616; */
+    }
+
+    @media (max-width: 300px) {
+        > p {
+            font-size: 7px;
+            letter-spacing: 0.05em;
+        }
     }
 `
 
@@ -254,6 +261,13 @@ export const TimerSection = styled.div`
 
         > p {
             font-size: 8px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        > p {
+            text-shadow: none;
+            color: #f0e262;
         }
     }
 
@@ -423,7 +437,7 @@ export const ConnectWalletButton = styled.div`
         justify-content: center;
         align-items: center;
 
-        width: 254px;
+        width: 227px;
         height: 56px;
         background: #F2A71B;
         border-radius: 5px;
