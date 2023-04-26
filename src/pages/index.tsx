@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {HomeStyled, UpArrow} from '@/styles/pages/Home.styled'
+import { HomeStyled, UpArrow } from '@/styles/pages/Home.styled'
 import TopSection from '@/components/home/TopSection'
 import About from '@/components/home/About'
 import WhyChoose from '@/components/home/WhyChoose'
@@ -16,7 +16,7 @@ import MatchingIncomeDivider from '@/components/home/dividers/MatchingIncomeDivi
 import PressDivider from '@/components/home/dividers/PressDivider'
 import Navbar from '@/components/home/Navbar'
 import Footer from '@/components/home/Footer'
-import {CONTENT} from '@/content/content';
+import { CONTENT } from '@/content/content';
 
 const Home = () => {
 
@@ -24,32 +24,32 @@ const Home = () => {
         <>
             <Head>
                 <title>Trontrx</title>
-                <meta name="TronTrx" content="TronTrx - King Of All Contracts"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="icon" href="/favicon.ico"/>
+                <meta name="TronTrx" content="TronTrx - King Of All Contracts" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <HomeStyled>
                 <>
-                    <Navbar/>
-                    <TopSection content={CONTENT}/>
+                    <Navbar />
+                    <TopSection content={CONTENT} />
                     {/* <ContractStats content={content} /> */}
-                    <About content={CONTENT}/>
-                    <AboutDivider/>
+                    <About content={CONTENT} />
+                    <AboutDivider />
                     {/* <HowInvest content={content} /> */}
-                    <HowInvestNew content={CONTENT}/>
-                    <HowInvestDivider/>
-                    <WhyChoose content={CONTENT}/>
-                    <WhyChooseDivider/>
-                    <IncomeSources content={CONTENT}/>
-                    <IncomeSourcesDivider/>
-                    <MatchingIncome content={CONTENT}/>
-                    <MatchingIncomeDivider/>
-                    <Press/>
-                    <PressDivider/>
-                    <FAQs content={CONTENT}/>
-                    <Footer/>
+                    <HowInvestNew content={CONTENT} />
+                    <HowInvestDivider />
+                    <WhyChoose content={CONTENT} />
+                    <WhyChooseDivider />
+                    <IncomeSources content={CONTENT} />
+                    <IncomeSourcesDivider />
+                    <MatchingIncome content={CONTENT} />
+                    <MatchingIncomeDivider />
+                    <Press />
+                    {/* <PressDivider /> */}
+                    {/* <FAQs content={CONTENT} /> */}
+                    <Footer />
                     <UpArrow onClick={() => window.scrollTo(0, 0)}>
-                        <img id="upArrow" src="assets/images/home/arrow-up.png" alt="..."/>
+                        <img id="upArrow" src="assets/images/home/arrow-up.png" alt="..." />
                     </UpArrow>
                 </>
             </HomeStyled>

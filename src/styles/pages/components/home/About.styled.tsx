@@ -75,7 +75,7 @@ export const Paragraphs = styled.ul`
         font-size: 18.04px;
         line-height: 23px;
         letter-spacing: 0.02em;
-        text-transform: lowercase;
+        /* text-transform: lowercase; */
         color: ${({ theme }) => theme.colors.blackFont};
 
         transform: translateX(-100vw);
@@ -104,7 +104,7 @@ export const Paragraphs = styled.ul`
         > li {
             font-size: 13px;
             line-height: 13px;
-            text-align: center;
+            /* text-align: center; */
         }
     }
 `

@@ -35,6 +35,7 @@ export const DashboardLogo = styled.div`
     margin-top: 16px;
     margin-left: 84px;
     display: flex;
+    cursor: pointer;
 
     > div:nth-child(1) {
         img {
@@ -52,10 +53,10 @@ export const DashboardLogo = styled.div`
             line-height: 48px;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            /* color: #f2e4cb; */
             color: ${({ theme }) => theme.colors.whiteFont};
+            /* text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616; */
             text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
-
+            -webkit-text-stroke: 1px #FBBD18;
             margin-left: 9px;
         }
 
@@ -67,9 +68,9 @@ export const DashboardLogo = styled.div`
             line-height: 19px;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: ${({ theme }) => theme.colors.whiteFont};
-            text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
-
+            /* color: ${({ theme }) => theme.colors.whiteFont}; */
+            color: ${({ theme }) => theme.colors.cardBgFilled};
+            /* text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616; */
             margin-left: 5px;
         }
     }

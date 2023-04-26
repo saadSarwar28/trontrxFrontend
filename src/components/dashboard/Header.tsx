@@ -2,16 +2,20 @@ import { HeaderStyled, DashboardLogo, DashboardSection, HomeButton } from "@/sty
 import { CONTENT as content } from '@/content/content';
 import React from "react"
 import Link from 'next/link'
+import { useRouter } from "next/router";
 
 
 interface HeaderProps {
     toggleSidebar: Function
 }
 
+
 const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
+    const router = useRouter();
+
     return (
         <HeaderStyled>
-            <DashboardLogo>
+            <DashboardLogo onClick={() => router.push('/')}>
                 <div>
                     <img src="/assets/images/navbar/logo.svg" alt="..." />
                 </div>

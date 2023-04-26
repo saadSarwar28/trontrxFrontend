@@ -9,6 +9,7 @@ export const SidebarMobileStyled = styled.aside`
 
     width: 0;
     height: 100vh;
+    /* height: 500px; */
     overflow: hidden;
     background-image: url('/assets/images/navbar/mobile-bg.png');
     background-repeat: no-repeat;
