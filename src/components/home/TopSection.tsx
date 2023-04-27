@@ -31,13 +31,13 @@ const TopSection = ({ content }: any) => {
         }}>
             <ContentColumn>
                 <div>
-                    <TopSectionHeading>
-                        <h1>The first and only decentralized community defi project</h1>
-                    </TopSectionHeading>
+                    {/*<TopSectionHeading>*/}
+                    {/*    <h1>The first and only decentralized community defi project</h1>*/}
+                    {/*</TopSectionHeading>*/}
                     <Text>
                         <h1>{content.topSection.heading}</h1>
                         {/*<h3>{content.topSection.title}</h3>*/}
-                        {/*<p>{content.topSection.desc}</p>*/}
+                        <p>{content.topSection.desc}</p>
                         {/*<p>{content.topSection.getStarted}</p>*/}
                     </Text>
                     <Buttons className={animate ? 'animate' : ''}>
