@@ -26,6 +26,30 @@ export const ContributionButton = styled(YellowButton1)`
   }
 `
 
+export const ContributionInput = styled.input`
+  max-width: 130px;
+  padding: 0.35rem;
+  text-align: center;
+  margin-right: 10px;
+  font-weight: bolder;
+  font-size: 16px;
+
+  @media (max-width: 300px) {
+    max-width: 90px;
+    height: 25px;
+    
+    ::-webkit-outer-spin-button {
+      display: none;
+    }
+    
+    ::-webkit-inner-spin-button {
+      display: none;
+    }
+    
+    -moz-appearance: textfield;
+  }
+`
+
 export const AmountButton = styled.button`
   width: calc(100% - 80px);
   height: 82px;
@@ -91,6 +115,7 @@ export const AmountButton = styled.button`
 
     > span {
       font-size: 9px;
+      line-height: 12px;
     }
   }
 `

@@ -15,8 +15,7 @@ const Tree = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            // @ts-ignore
-            behavior: 'instant'
+            behavior: 'auto'
         })
     }, [])
 
