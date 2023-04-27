@@ -32,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
         background: #555; 
     }
 
+
     @media (min-width: 1400px) {
         section, nav {
             padding-left: 5%;

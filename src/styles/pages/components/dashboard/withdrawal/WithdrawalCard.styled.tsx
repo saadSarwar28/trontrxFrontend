@@ -9,7 +9,7 @@ export const WithdrawalCardStyled = styled.div`
     border-radius: 24.5px;
     text-align: center;
     border: 5px solid #FBBD18;
-    margin-left: -23px;
+    /* margin-left: -23px; */
     margin-bottom: 21px;
 
     @media (max-width: 1200px) {
