@@ -1,4 +1,4 @@
-import { TopSectionStyled, ContentColumn, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn, MainImage } from '@/styles/pages/components/home/TopSection.styled'
+import { TopSectionStyled, ContentColumn, TopSectionHeading, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn, MainImage } from '@/styles/pages/components/home/TopSection.styled'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -18,6 +18,9 @@ const TopSection = ({ content }: any) => {
         }}>
             <ContentColumn>
                 <div>
+                    <TopSectionHeading>
+                        <h1>The first and only decentralized community defi project</h1>
+                    </TopSectionHeading>
                     <Text>
                         <h1>{content.topSection.heading}</h1>
                         <h3>{content.topSection.title}</h3>
