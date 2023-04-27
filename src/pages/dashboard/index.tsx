@@ -32,8 +32,10 @@ const CurrentStats = () => {
         if (!accountState.account.walletConnected) {
             connectWallet()
                 .then((address: string) => {
-                    // @ts-ignore
-                    dispatch(getUserAccountDetails(address))
+                    if (address !== undefined) {
+                        // @ts-ignore
+                        dispatch(getUserAccountDetails(address))
+                    }
                 })
         }
     }, [])
