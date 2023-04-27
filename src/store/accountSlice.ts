@@ -80,7 +80,7 @@ export const accountSlice = createSlice({
     name: "account",
     initialState,
     reducers: {
-        // clearFullState: () => initialState,
+        clearFullState: () => initialState,
     },
     extraReducers: {
         [updateUserAddress.fulfilled.toString()]: (state, {payload}) => {

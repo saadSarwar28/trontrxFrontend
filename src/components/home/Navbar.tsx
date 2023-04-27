@@ -41,27 +41,27 @@ const Navbar = ({ content }: any) => {
                 </div>
                 <MobileNavbar id="mobileNavbar">
                     <ul id="links">
-                        <div>
+                        <div onClick={toggleNavbar}>
                             <img src="/assets/images/navbar/home-icon.svg" alt="..." />
                             <NavItem text={'HOME'} link="#home" />
                         </div>
-                        <div>
+                        <div onClick={toggleNavbar}>
                             <img src="/assets/images/navbar/about-icon.svg" alt="..." />
                             <NavItem text={'ABOUT US'} link="#about" />
                         </div>
-                        <div>
+                        <div onClick={toggleNavbar}>
                             <img src="/assets/images/navbar/how-works-icon.svg" alt="..." />
                             <NavItem text={'HOW IT WORKS'} link="#whyChoose" />
                         </div>
-                        <div>
+                        <div onClick={toggleNavbar}>
                             <img src="/assets/images/navbar/benefits-icon.svg" alt="..." />
                             <NavItem text={'BENEFITS'} link="#benefits" />
                         </div>
-                        <div>
-                            <img src="/assets/images/navbar/faqs-icon.svg" alt="..." />
-                            <NavItem text={'FAQs'} link="#faqs" />
-                        </div>
-                        <div>
+                        {/*<div>*/}
+                        {/*    <img src="/assets/images/navbar/faqs-icon.svg" alt="..." />*/}
+                        {/*    <NavItem text={'FAQs'} link="#faqs" />*/}
+                        {/*</div>*/}
+                        <div onClick={toggleNavbar}>
                             <img src="/assets/images/navbar/dashboard-icon.svg" alt="..." />
                             <NavItem text={'DASHBOARD'} link="/dashboard" />
                         </div>
