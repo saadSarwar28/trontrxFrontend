@@ -13,8 +13,12 @@ const TopSection = ({ content }: any) => {
         }, 3000)
     }, [])
 
-    const gotoDashboard = () => {
+    const gotoDashboardDeposit = () => {
         router.push('/dashboard/deposit')
+    }
+
+    const gotoDashboard = () => {
+        router.push('/dashboard')
     }
 
     const gotoWhitepaper = () => {
@@ -33,7 +37,8 @@ const TopSection = ({ content }: any) => {
                         <p>{content.topSection.desc}</p>
                     </Text>
                     <Buttons className={animate ? 'animate' : ''}>
-                        <YellowButton onClick={gotoDashboard}>{content.topSection.buttons[0]}</YellowButton>
+                        <YellowButton onClick={gotoDashboardDeposit}>{content.topSection.buttons[0]}</YellowButton>
+                        <YellowButton onClick={gotoDashboard}>{content.topSection.buttons[2]}</YellowButton>
                         <WhiteButton onClick={gotoWhitepaper}>{content.topSection.buttons[1]}</WhiteButton>
                     </Buttons>
                     <SocialIcons>

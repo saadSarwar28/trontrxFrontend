@@ -194,6 +194,7 @@ export const Text = styled.div`
 
 export const Buttons = styled.div`
   display: flex;
+  flex-flow: wrap;
   gap: 10px;
 
   // animation
@@ -243,12 +244,15 @@ export const Buttons = styled.div`
   @media (max-width: 576px) {
     button {
       height: 45px;
+      width: 150px;
+      font-size: 14px;
     }
   }
 
   @media (max-width: 300px) {
     button {
-      font-size: 10px;
+      font-size: 12px;
+      width: 140px;
     }
   }
 `
