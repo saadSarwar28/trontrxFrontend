@@ -27,10 +27,6 @@ function App({ Component, pageProps }: AppProps) {
         }, 100)
     }, [])
 
-    if (!loaded) {
-
-    }
-
     // styles
     const LogoSection = {
         display: 'flex',
