@@ -33,6 +33,21 @@ export const ContributionInput = styled.input`
   margin-right: 10px;
   font-weight: bolder;
   font-size: 16px;
+
+  @media (max-width: 300px) {
+    max-width: 90px;
+    height: 25px;
+    
+    ::-webkit-outer-spin-button {
+      display: none;
+    }
+    
+    ::-webkit-inner-spin-button {
+      display: none;
+    }
+    
+    -moz-appearance: textfield;
+  }
 `
 
 export const AmountButton = styled.button`
@@ -100,6 +115,7 @@ export const AmountButton = styled.button`
 
     > span {
       font-size: 9px;
+      line-height: 12px;
     }
   }
 `
