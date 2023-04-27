@@ -76,6 +76,8 @@ export const Paragraphs = styled.ul`
   > li {
     font-family: 'PT Sans', sans-serif;
     font-style: normal;
+    text-align: justify;
+    text-justify: inter-word;
     font-weight: 400;
     font-size: 16px;
     line-height: 115%;

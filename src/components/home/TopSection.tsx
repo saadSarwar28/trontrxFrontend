@@ -35,6 +35,7 @@ const TopSection = ({ content }: any) => {
                         <h1>{content.topSection.heading}</h1>
                         {/*<h3>{content.topSection.title}</h3>*/}
                         <p>{content.topSection.desc}</p>
+                        {/*<p>{content.topSection.getStarted}</p>*/}
                     </Text>
                     <Buttons className={animate ? 'animate' : ''}>
                         <YellowButton onClick={gotoDashboardDeposit}>{content.topSection.buttons[0]}</YellowButton>

@@ -14,6 +14,7 @@ export const CONTENT = {
         "heading": "King of all Contracts",
         "title": "100% Decentralized",
         "desc": "The first and only 100% decentralized community DeFi project",
+        "getStarted": "Get Started Now",
         "buttons": [
             "Contribute",
             "whitepaper",
