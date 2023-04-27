@@ -3,20 +3,20 @@ import {
     ContributionButton,
     AmountButton,
     AmountSection,
+    ContributionInput,
     CardsSection,
     Card,
     Paragraphs,
     Paragraph,
-    DepositButton,
-    ContributionInput
+    DepositButton
 } from "@/styles/pages/components/dashboard/deposit/DepositCard.styled"
-import {CONTENT as content} from '@/content/content';
+import { CONTENT as content } from '@/content/content';
 import { useState, useEffect } from "react";
 // @ts-ignore
 import TronWeb from "tronweb";
-import {ethers} from 'ethers';
-import {useDispatch, useSelector} from 'react-redux';
-import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
+import { ethers } from 'ethers';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAccountDetails, selectUserAccount } from '@/store/accountSlice';
 import { useRouter } from 'next/router'
 
 
@@ -27,7 +27,7 @@ const DepositCard = () => {
     const [referrerAddress, setReferrerAddress] = useState('')
     useEffect(() => {
         setReferrerAddress(String(ref))
-    },[])
+    }, [])
 
     const animate = (setAnimationClass: any, element: any) => {
         const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
@@ -101,9 +101,9 @@ const DepositCard = () => {
         // @ts-ignore
         if (window.tronWeb) {
             // @ts-ignore
-            await window.tronLink.request({method: 'tron_requestAccounts'});
+            await window.tronLink.request({ method: 'tron_requestAccounts' });
             // @ts-ignore
-            const {name, base58} = await window.tronWeb.defaultAddress;
+            const { name, base58 } = await window.tronWeb.defaultAddress;
             // @ts-ignore
             dispatch(getUserAccountDetails(base58))
         }
@@ -173,11 +173,11 @@ const DepositCard = () => {
             <AmountButton>
                 <span>{content.dashboard.deposit.blackButton}</span>
                 <AmountSection>
-                    <ContributionInput type={'number'} min="100" step="50" value={amount} onInput={adjustAmount}/>
-                    <div style={{cursor: 'pointer'}} onClick={increaseAmount}>
+                    <ContributionInput type={'number'} min="100" step="50" value={amount} onInput={adjustAmount} />
+                    <div style={{ cursor: 'pointer' }} onClick={increaseAmount}>
                         <img src="/assets/images/dashboard/deposit/plus.svg" alt="..." />
                     </div>
-                    <div style={{cursor: 'pointer'}} onClick={decreaseAmount}>
+                    <div style={{ cursor: 'pointer' }} onClick={decreaseAmount}>
                         <img src="/assets/images/dashboard/deposit/minus.svg" alt="..." />
                     </div>
                 </AmountSection>
@@ -228,13 +228,13 @@ const DepositCard = () => {
             </CardsSection>
             <Paragraphs>
                 <Paragraph className={`paraDeposit ${paraDepositClass ? 'animate' : ''}`}>
-                    <img style={{marginTop: '10px'}} src="/assets/images/dashboard/deposit/exclamation.svg" alt="..." />
-                    <p style={{color: 'red', fontWeight: 'bolder'}}>{content.dashboard.deposit.firstPara}</p>
+                    <img style={{ marginTop: '10px' }} src="/assets/images/dashboard/deposit/exclamation.svg" alt="..." />
+                    <p style={{ color: 'red', fontWeight: 'bolder' }}>{content.dashboard.deposit.firstPara}</p>
                 </Paragraph>
                 {content.dashboard.deposit.paragraphs.map((paragraph, index) => (
                     <Paragraph key={index} id={`para${index + 1}`} className={`paraDeposit ${paraDepositClass ? 'animate' : ''}`}>
                         <img src="/assets/images/dashboard/deposit/check.png" alt="..." />
-                        <p style={{fontWeight: 'bold'}}>{paragraph}</p>
+                        <p style={{ fontWeight: 'bold' }}>{paragraph}</p>
                     </Paragraph>
                 ))}
             </Paragraphs>

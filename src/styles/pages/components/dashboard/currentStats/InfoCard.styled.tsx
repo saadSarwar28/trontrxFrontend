@@ -109,7 +109,8 @@ export const BlackButton1 = styled(YellowButton1)`
         }
         
         span:last-child {
-            font-size: 8px;
+            /* font-size: 8px; */
+            font-size: 7px;
         }
     }
 `
@@ -126,7 +127,7 @@ export const BlackButton2 = styled(BlackButton1)`
     // animation
     animation-delay: 0.75s;
 
-    a {
+    span {
         font-size: 11.739px;
         color: #F3B51C;
     }
@@ -134,16 +135,16 @@ export const BlackButton2 = styled(BlackButton1)`
     @media (max-width: 1200px) {
         padding: 0;
 
-        a {
+        span {
             font-size: 9.77px;
         }
     }
 
-    @media (max-width: 300px) {
-        a {
-            font-size: 8px;
+    /* @media (max-width: 300px) {
+        span {
+            font-size: 7px;
         }
-    }
+    } */
 `
 
 export const CardText = styled.div`
@@ -171,7 +172,8 @@ export const CardText = styled.div`
     @media (max-width: 1200px) {
         width: calc(100% - 28px);
         margin-top: 16px;
-        font-size: 14.77px;
+        font-size: 14px;
+        line-height: 23px;
     }
 `
 
@@ -183,6 +185,7 @@ export const ConnectWalletButton = styled.button`
     width: 235px;
     height: 49.47px;
     background: #000000;
+    border: none;
     border-radius: 4.19249px;
 
     // animation
@@ -212,7 +215,7 @@ export const ConnectWalletButton = styled.button`
     }
 
     @media (max-width: 576px) {
-        margin-top: 15px;
+        margin-top: 20px;
     }
 `
 
@@ -253,7 +256,7 @@ export const CopyButton = styled.button`
     }
 
     @media (max-width: 576px) {
-        margin-top: 15px;
+        margin-top: 20px;
     }
 `
 

@@ -22,17 +22,8 @@ export const DepositCardStyled = styled.div`
 export const ContributionButton = styled(YellowButton1)`
 
   @media (max-width: 300px) {
-    font-size: 15px;
+    font-size: 13px;
   }
-`
-
-export const ContributionInput = styled.input`
-  max-width: 130px;
-  padding: 0.35rem;
-  text-align: center;
-  margin-right: 10px;
-  font-weight: bolder;
-  font-size: 16px;
 `
 
 export const AmountButton = styled.button`
@@ -81,7 +72,7 @@ export const AmountButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    height: 40px;
+    height: 45px;
     padding-left: 13px;
     padding-right: 13px;
     margin-top: 13px;
@@ -172,6 +163,19 @@ export const AmountSection = styled.div`
     > div:nth-child(3) {
       margin-left: 5px;
     }
+  }
+`
+
+export const ContributionInput = styled.input`
+  max-width: 130px;
+  padding: 0.35rem;
+  text-align: center;
+  margin-right: 10px;
+  font-weight: bolder;
+  font-size: 16px;
+
+  @media (max-width: 576px) {
+    max-width: 60px;
   }
 `
 
@@ -420,7 +424,7 @@ export const Paragraph = styled.li`
 
     > p {
       font-weight: 400;
-      font-size: 12px;
+      font-size: 11px;
       line-height: 149.4%;
       letter-spacing: -0.05em;
       text-transform: uppercase;

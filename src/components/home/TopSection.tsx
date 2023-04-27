@@ -26,12 +26,10 @@ const TopSection = ({ content }: any) => {
     }
 
     const gotoTelegram = () => {
-        // console.log('tele')
         router.push('https://t.me/trontrxworld')
     }
 
     const gotoYoutube = () => {
-        // console.log('youtue')
         router.push('https://youtube.com/@trontrx875')
     }
 

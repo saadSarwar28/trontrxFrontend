@@ -185,7 +185,7 @@ export const Card = styled.div`
         width: 100%;
 
         p {
-            font-size: 16.54px;
+            font-size: 15px;
         }
     }
 `

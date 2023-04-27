@@ -79,7 +79,7 @@ export const CarouselItem = styled.div`
             }
 
             > p {
-                font-size: 16px;
+                font-size: 15px;
                 margin-top: 30px;
             }
         }
