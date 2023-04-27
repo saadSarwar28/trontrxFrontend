@@ -104,7 +104,7 @@ export const CONTENT = {
         "rightSections": [
             {
                 "title": "Download wallet app",
-                "desc": "Download/Install TronLink based wallet on your mobile or web browser or Klever Wallet for mobile devices."
+                "desc": "Download/Install TRON LINK PRO/GLOBAL wallet on your mobile phone and access the link from Dapp Browser in Advanced Features section."
             },
             {
                 "title": "Get Tron (TRX)",
