@@ -1,16 +1,29 @@
 import { TopSectionStyled, ContentColumn, TopSectionHeading, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn, MainImage } from '@/styles/pages/components/home/TopSection.styled'
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router';
 
 
 const TopSection = ({ content }: any) => {
-    const router = useRouter();
     const [animate, setAnimate] = useState(false);
+    const router = useRouter()
+
     useEffect(() => {
         setTimeout(() => {
             setAnimate(true);
         }, 3000)
     }, [])
+
+    const gotoDashboardDeposit = () => {
+        router.push('/dashboard/deposit')
+    }
+
+    const gotoDashboard = () => {
+        router.push('/dashboard')
+    }
+
+    const gotoWhitepaper = () => {
+        router.push('/whitepaper')
+    }
 
     return (
         <TopSectionStyled id="home" style={{
@@ -23,12 +36,14 @@ const TopSection = ({ content }: any) => {
                     </TopSectionHeading>
                     <Text>
                         <h1>{content.topSection.heading}</h1>
-                        <h3>{content.topSection.title}</h3>
+                        {/*<h3>{content.topSection.title}</h3>*/}
                         <p>{content.topSection.desc}</p>
+                        {/*<p>{content.topSection.getStarted}</p>*/}
                     </Text>
                     <Buttons className={animate ? 'animate' : ''}>
-                        <YellowButton onClick={() => router.push('/dashboard/deposit')}>{content.topSection.buttons[0]}</YellowButton>
-                        <WhiteButton>{content.topSection.buttons[1]}</WhiteButton>
+                        <YellowButton onClick={gotoDashboardDeposit}>{content.topSection.buttons[0]}</YellowButton>
+                        <YellowButton onClick={gotoDashboard}>{content.topSection.buttons[2]}</YellowButton>
+                        <WhiteButton onClick={gotoWhitepaper}>{content.topSection.buttons[1]}</WhiteButton>
                     </Buttons>
                     <SocialIcons>
                         <div>

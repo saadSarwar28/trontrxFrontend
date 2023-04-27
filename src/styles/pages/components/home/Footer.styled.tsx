@@ -156,7 +156,7 @@ export const Links = styled.ul`
         }
 
         a {
-            font-size: 13px;
+            font-size: 12px;
         }
     }
 `

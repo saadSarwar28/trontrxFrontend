@@ -145,7 +145,7 @@ export const Text = styled.div`
     line-height: 114.5%;
     letter-spacing: 0.01em;
     text-transform: capitalize;
-    color: ${({ theme }) => theme.colors.whiteFont};
+    color: ${({ theme }) => theme.colors.mainYellow};
 
     margin-bottom: 18px;
 
@@ -245,13 +245,22 @@ export const Text = styled.div`
     }
 
     p {
-      font-size: 12px;
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    p {
+      margin-bottom: 90px;
     }
   }
 `
 
 export const Buttons = styled.div`
   display: flex;
+  flex-flow: wrap;
   gap: 10px;
 
   // animation
@@ -301,12 +310,15 @@ export const Buttons = styled.div`
   @media (max-width: 576px) {
     button {
       height: 45px;
+      width: 150px;
+      font-size: 14px;
     }
   }
 
   @media (max-width: 300px) {
     button {
-      font-size: 10px;
+      font-size: 12px;
+      width: 95px;
     }
   }
 `

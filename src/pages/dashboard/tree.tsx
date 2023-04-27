@@ -51,7 +51,8 @@ const Tree = () => {
             <Main>
                 <SidebarDesktop activeLink="tree" />
                 <Page>
-                    <TreeCard />
+                    <div style={{color: 'white', fontSize: '18px', fontWeight: 'bold', height: '500px', textAlign: 'center', marginTop: '50px', fontFamily: 'Poppins'}}>Tree will be available soon!</div>
+                    {/*<TreeCard/>*/}
                 </Page>
             </Main>
         </TreeStyled>

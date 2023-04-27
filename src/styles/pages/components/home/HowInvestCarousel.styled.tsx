@@ -102,6 +102,10 @@ export const CarouselItem = styled.div`
 
         > div {
             bottom: 22%;
+            
+            >h2 {
+                font-size: 14px;
+            }
         }
 
         > iframe {
