@@ -72,7 +72,7 @@ export const Paragraphs = styled.ul`
         font-family: 'PT Sans', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 18.04px;
+        font-size: 17px;
         line-height: 23px;
         letter-spacing: 0.02em;
         /* text-transform: lowercase; */

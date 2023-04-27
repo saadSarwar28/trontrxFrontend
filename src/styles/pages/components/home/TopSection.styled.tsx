@@ -66,7 +66,7 @@ export const ContentColumn = styled.div`
     > div {
       width: 100%;
       padding: 0 35px;
-      margin-top: 50px;
+      margin-top: 10px;
     }
   }
 
@@ -185,7 +185,9 @@ export const Text = styled.div`
     }
 
     p {
-      font-size: 11px;
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 30px;
     }
   }
 `

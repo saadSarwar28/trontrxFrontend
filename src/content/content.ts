@@ -13,7 +13,7 @@ export const CONTENT = {
   "topSection": {
     "heading": "King of all Contracts",
     "title": "100% Decentralized",
-    "desc": "Tron Trx is the perfect combination of Digital Technology, High Security and Community Program",
+    "desc": "The first and only decentralized community DeFi project",
     "buttons": [
       "Contribute",
       "whitepaper"
@@ -45,10 +45,10 @@ export const CONTENT = {
       " TronTrx"
     ],
     "paragraphs": [
-      "The TRON CHAIN smart contract has been designed to provide everyone with a DeFi support fund, fully based on the TRON blockchain and smart contract technology. Any participant can contribute TRX towards the community fund and support the TRON CHAIN community members, by doing so the contract code will be activated and the supporter will start to receive support back from the community members themselves.",
-      "TRON CHAIN is 100% decentralized and a community-based project; Meaning there are no guarantee or additional profits generated in this project. All that you receive from TRON CHAIN is received from other community members as this is a P2P support model.",
+      "The TronTrx smart contract has been designed to provide everyone with a DeFi support fund, fully based on the TRON blockchain and smart contract technology. Any participant can contribute TRX towards the community fund and support the TronTrx community members, by doing so the contract code will be activated and the supporter will start to receive support back from the community members themselves.",
+      "TronTrx is 100% decentralized and a community-based project; Meaning there are no guarantee or additional profits generated in this project. All that you receive from TronTrx is received from other community members as this is a P2P support model.",
       "You support others and others support you.",
-      "TRON CHAIN can be viewed as a decentralized third party which insures fairness, transparency and justice for all according to the algorithm code.",
+      "TronTrx can be viewed as a decentralized third party which insures fairness, transparency and justice for all according to the algorithm code.",
       "There are no mediators or intermediaries, no owners, no company or human interaction, effectively guaranteeing the fairness of all participating partners and partners funds according to the rules of the Smart Contract."
     ]
   },

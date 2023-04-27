@@ -1,9 +1,11 @@
 import { TopSectionStyled, ContentColumn, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn, MainImage } from '@/styles/pages/components/home/TopSection.styled'
 import { useEffect, useState } from 'react'
+import {useRouter} from 'next/router';
 
 
 const TopSection = ({ content }: any) => {
     const [animate, setAnimate] = useState(false);
+    const router = useRouter()
 
     useEffect(() => {
         setTimeout(() => {
@@ -11,6 +13,13 @@ const TopSection = ({ content }: any) => {
         }, 3000)
     }, [])
 
+    const gotoDashboard = () => {
+        router.push('/dashboard/deposit')
+    }
+
+    const gotoWhitepaper = () => {
+        router.push('/whitepaper')
+    }
 
     return (
         <TopSectionStyled id="home" style={{
@@ -24,8 +33,8 @@ const TopSection = ({ content }: any) => {
                         <p>{content.topSection.desc}</p>
                     </Text>
                     <Buttons className={animate ? 'animate' : ''}>
-                        <YellowButton>{content.topSection.buttons[0]}</YellowButton>
-                        <WhiteButton>{content.topSection.buttons[1]}</WhiteButton>
+                        <YellowButton onClick={gotoDashboard}>{content.topSection.buttons[0]}</YellowButton>
+                        <WhiteButton onClick={gotoWhitepaper}>{content.topSection.buttons[1]}</WhiteButton>
                     </Buttons>
                     <SocialIcons>
                         <div>
