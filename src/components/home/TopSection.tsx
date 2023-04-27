@@ -1,6 +1,6 @@
-import { TopSectionStyled, ContentColumn, TopSectionHeading, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn, MainImage } from '@/styles/pages/components/home/TopSection.styled'
+import { TopSectionStyled, ContentColumn, Text, Buttons, YellowButton, WhiteButton, SocialIcons, ImageColumn, MainImage } from '@/styles/pages/components/home/TopSection.styled'
 import { useEffect, useState } from 'react'
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 
 const TopSection = ({ content }: any) => {
@@ -25,6 +25,16 @@ const TopSection = ({ content }: any) => {
         router.push('/whitepaper')
     }
 
+    const gotoTelegram = () => {
+        // console.log('tele')
+        router.push('https://t.me/trontrxworld')
+    }
+
+    const gotoYoutube = () => {
+        // console.log('youtue')
+        router.push('https://youtube.com/@trontrx875')
+    }
+
     return (
         <TopSectionStyled id="home" style={{
             backgroundImage: `url("/assets/images/home/topSection/background.png")`
@@ -46,10 +56,10 @@ const TopSection = ({ content }: any) => {
                         <WhiteButton onClick={gotoWhitepaper}>{content.topSection.buttons[1]}</WhiteButton>
                     </Buttons>
                     <SocialIcons>
-                        <div>
+                        <div onClick={gotoTelegram}>
                             <img src="/assets/images/home/topSection/telegram-icon.svg" alt="..." />
                         </div>
-                        <div>
+                        <div onClick={gotoYoutube}>
                             <img src="/assets/images/home/topSection/youtube-icon.svg" alt="..." />
                         </div>
                     </SocialIcons>

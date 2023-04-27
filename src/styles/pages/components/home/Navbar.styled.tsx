@@ -35,7 +35,8 @@ export const NavbarStyled = styled.nav`
         background: ${({ theme }) => theme.colors.blackBg};
         top: 0;
         height: 80px;
-        z-index: 5;
+        /* z-index: 5; */
+        z-index: 100;
     }
 `
 
@@ -212,8 +213,8 @@ export const MobileNavbar = styled.div`
         position: absolute;        
         top: 76px;
         right: -100vw;
-        z-index: 4;
-        /* z-index: 10000; */
+        /* z-index: 4; */
+        z-index: 100;
 
         width: 350px;
         height: 100vh;

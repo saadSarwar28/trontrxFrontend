@@ -25,12 +25,7 @@ export const TopSectionStyled = styled.section`
   }
 
   @media (max-width: 768px) {
-    /* height: 810px; */
     height: 870px;
-  }
-
-  @media (max-width: 576px) {
-    
   }
 `
 
@@ -39,11 +34,10 @@ export const ContentColumn = styled.div`
 
   > div {
     position: absolute;
-    /* top: 50%; */
     top: 57%;
-    /* left: 30%; */
     left: 20%;
     transform: translateY(-50%);
+    z-index: 10;
   }
 
   @media (max-width: 1200px) {
@@ -57,7 +51,6 @@ export const ContentColumn = styled.div`
     > div {
       position: relative;
       width: 70%;
-      /* top: 45%; */
       top: 33%;
       left: 50%;
       transform: translateX(-50%);
@@ -70,70 +63,70 @@ export const ContentColumn = styled.div`
       width: 100%;
       padding: 0 35px;
       margin-top: 50px;
-      top: 40%;
-    }
-  }
-
-  @media (max-width: 576px) {
-    > div {
-      padding: 0 20px;
-    }
-  }
-`
-
-export const TopSectionHeading = styled.div`
-  /* width: 200%; */
-  margin: -10px 0 30px;
-
-  > h1 {
-    font-family: "Manrope", sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 40px;
-    line-height: 114%;
-    color: ${({ theme }) => theme.colors.whiteFont};
-
-    // animation
-    animation-name: topHeading;
-    animation-duration: 1s;
-    animation-delay: 0.25s;
-    animation-fill-mode: backwards;
-    @keyframes topHeading {
-      0% {
-        transform: translateX(-100vw);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-  }
-
-  @media (min-width: 1200px) {
-    width: 100%;
-  }
-
-  @media (max-width: 768px) {    
-    > h1 {
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 576px) {
-    margin: -55px 0 35px;
-
-    > h1 {
-      font-size: 25px;
+      top: 20%;
     }
   }
 
   @media (max-width: 300px) {
-    margin: -75px 0 35px;
-
-    > h1 {
-      font-size: 25px;
+    > div {
+      padding: 0 20px;
+      top: 20%;
     }
   }
 `
+
+// export const TopSectionHeading = styled.div`
+//   margin: -10px 0 30px;
+
+//   > h1 {
+//     font-family: "Manrope", sans-serif;
+//     font-style: normal;
+//     font-weight: 800;
+//     font-size: 40px;
+//     line-height: 114%;
+//     color: ${({ theme }) => theme.colors.whiteFont};
+
+//     // animation
+//     animation-name: topHeading;
+//     animation-duration: 1s;
+//     animation-delay: 0.25s;
+//     animation-fill-mode: backwards;
+//     @keyframes topHeading {
+//       0% {
+//         transform: translateX(-100vw);
+//       }
+//       100% {
+//         transform: translateX(0);
+//       }
+//     }
+//   }
+
+//   @media (min-width: 1200px) {
+//     width: 100%;
+//   }
+
+//   @media (max-width: 768px) {    
+//     > h1 {
+//       font-size: 30px;
+//     }
+//   }
+
+//   @media (max-width: 576px) {
+//     margin: -55px 0 35px;
+
+//     > h1 {
+//       font-size: 25px;
+//     }
+//   }
+
+//   @media (max-width: 300px) {
+//     margin: -75px 0 35px;
+
+//     > h1 {
+//       font-size: 25px;
+//     }
+//   }
+// `
 
 export const Text = styled.div`
   
@@ -191,9 +184,7 @@ export const Text = styled.div`
   }
 
   p {
-    /* width: 413px; */
-    height: 68px;
-    /* font-family: "PT Sans", sans-serif; */
+    /* height: 68px;
     font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -214,6 +205,29 @@ export const Text = styled.div`
       100% {
         transform: translateX(0);
       }
+    } */
+
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 114%;
+    color: ${({ theme }) => theme.colors.whiteFont};
+    font-size: 30px;
+    margin-bottom: 30px;
+
+    // animation
+    animation-name: topHeading;
+    animation-duration: 1s;
+    animation-delay: 0.25s;
+    animation-fill-mode: backwards;
+    @keyframes topHeading {
+      0% {
+        transform: translateX(-100vw);
+      }
+      100% {
+        transform: translateX(0);
+      }
     }
   }
 
@@ -226,12 +240,6 @@ export const Text = styled.div`
     h3 {
       font-size: 16px;
       margin-bottom: 10px;
-    }
-
-    p {
-      width: auto;
-      font-size: 14px;
-      line-height: 18px;
     }
   }
 
@@ -246,14 +254,6 @@ export const Text = styled.div`
 
     p {
       font-size: 24px;
-      line-height: 28px;
-      margin-bottom: 30px;
-    }
-  }
-  
-  @media (max-width: 300px) {
-    p {
-      margin-bottom: 90px;
     }
   }
 `
@@ -395,7 +395,7 @@ export const SocialIcons = styled.div`
 
   @media (max-width: 576px) {
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 20px;
 
     > div {
       img {
@@ -943,7 +943,8 @@ export const MainImage = styled.div`
   // 768px media query ends
 
   @media (max-width: 576px) {
-    top: 8%;
+    /* top: 8%; */
+    top: 0%;
     left: 40%;
   }
 
