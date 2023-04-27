@@ -87,7 +87,7 @@ export const Text = styled.div`
     /* or 48px */
     letter-spacing: 0.01em;
     text-transform: capitalize;
-    color: ${({ theme }) => theme.colors.whiteFont};
+    color: ${({ theme }) => theme.colors.mainYellow};
 
     margin-bottom: 18px;
 
@@ -190,6 +190,12 @@ export const Text = styled.div`
       margin-bottom: 30px;
     }
   }
+  
+  @media (max-width: 300px) {
+    p {
+      margin-bottom: 90px;
+    }
+  }
 `
 
 export const Buttons = styled.div`
@@ -252,7 +258,7 @@ export const Buttons = styled.div`
   @media (max-width: 300px) {
     button {
       font-size: 12px;
-      width: 140px;
+      width: 100px;
     }
   }
 `

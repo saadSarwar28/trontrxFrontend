@@ -13,7 +13,7 @@ export const CONTENT = {
     "topSection": {
         "heading": "King of all Contracts",
         "title": "100% Decentralized",
-        "desc": "The first and only decentralized community DeFi project",
+        "desc": "The first and only 100% decentralized community DeFi project",
         "buttons": [
             "Contribute",
             "whitepaper",

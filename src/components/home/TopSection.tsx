@@ -33,7 +33,7 @@ const TopSection = ({ content }: any) => {
                 <div>
                     <Text>
                         <h1>{content.topSection.heading}</h1>
-                        <h3>{content.topSection.title}</h3>
+                        {/*<h3>{content.topSection.title}</h3>*/}
                         <p>{content.topSection.desc}</p>
                     </Text>
                     <Buttons className={animate ? 'animate' : ''}>
