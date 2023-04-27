@@ -258,7 +258,7 @@ export const Buttons = styled.div`
   @media (max-width: 300px) {
     button {
       font-size: 12px;
-      width: 100px;
+      width: 95px;
     }
   }
 `
