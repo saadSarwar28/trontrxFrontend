@@ -19,13 +19,14 @@ export const HeaderStyled = styled.header`
 
         > img {
             display: block;
-            margin-top: 31px;
+            margin-top: 50px;
             margin-right: 25px;
         }
     }
 
     @media (max-width: 300px) {
         > img {
+            margin-top: 40px;
             margin-right: 13px;
         }
     }

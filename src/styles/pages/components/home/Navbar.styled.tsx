@@ -212,7 +212,6 @@ export const MobileNavbar = styled.div`
         position: absolute;        
         top: 76px;
         right: -100vw;
-        /* z-index: 4; */
         z-index: 100;
 
         width: 350px;
@@ -271,7 +270,12 @@ export const MobileNavbar = styled.div`
         right: -110vw;
     }
 
-    /* @media (orientation: landscape) {
-        height: 400px;
-    } */
+    @media (max-width: 992px) and (orientation: landscape) {
+        height: 300px;
+
+        > ul {
+            top: 5%;
+            row-gap: 15px;
+        }
+    }
 `
