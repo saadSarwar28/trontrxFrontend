@@ -21,26 +21,28 @@ export const CONTENT = {
             "Personal Wallet",
         ]
     },
-    "contractStats": {
-        "stats": [
-            {
-                "title": "0.00 TRX",
-                "desc": "Net Contract Balance"
-            },
-            {
-                "title": "0.00 TRX",
-                "desc": "Total Deposited"
-            },
-            {
-                "title": "0.00 TRX",
-                "desc": "Total Withdrawn"
-            },
-            {
-                "title": "0.00 TRX",
-                "desc": "Project insurance"
-            }
-        ]
-    },
+    // "contractStats": {
+    //     "mainHeading": "Contract Statistics",
+    //     "subHeading": "Contract Address",
+    //     "stats": [
+    //         {
+    //             "title": "0.00 TRX",
+    //             "desc": "Net Contract Balance"
+    //         },
+    //         {
+    //             "title": "0.00 TRX",
+    //             "desc": "Total Deposited"
+    //         },
+    //         {
+    //             "title": "0.00 TRX",
+    //             "desc": "Total Withdrawn"
+    //         },
+    //         {
+    //             "title": "0.00 TRX",
+    //             "desc": "Project insurance"
+    //         }
+    //     ]
+    // },
     "about": {
         "mainHeading": [
             "About",
@@ -467,6 +469,28 @@ export const CONTENT = {
             "withdrawButton": "withdraw",
             "connectWalletButton": "Connect Wallet",
         },
-        "tree": {}
+        "tree": {},
+        "contractStats": {
+            "mainHeading": "Contract Statistics",
+            "subHeading": "Contract Address",
+            "stats": [
+                {
+                    "title": "0.00 TRX",
+                    "desc": "Net Contract Balance"
+                },
+                {
+                    "title": "0.00 TRX",
+                    "desc": "Total Deposited"
+                },
+                {
+                    "title": "0.00 TRX",
+                    "desc": "Total Withdrawn"
+                },
+                {
+                    "title": "0.00 TRX",
+                    "desc": "Project insurance"
+                }
+            ]
+        },
     }
 }

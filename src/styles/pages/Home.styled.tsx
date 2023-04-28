@@ -9,7 +9,7 @@ export const UpArrow = styled.div`
     position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 1000;
+    z-index: 99;
 
     display: flex;
     justify-content: center;
@@ -29,5 +29,11 @@ export const UpArrow = styled.div`
 
     @media (max-width: 576px) {
         right: 15px;
+        padding: 5px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
     }
 `

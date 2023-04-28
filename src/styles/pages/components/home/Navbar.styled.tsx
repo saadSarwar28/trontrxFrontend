@@ -35,7 +35,6 @@ export const NavbarStyled = styled.nav`
         background: ${({ theme }) => theme.colors.blackBg};
         top: 0;
         height: 80px;
-        /* z-index: 5; */
         z-index: 100;
     }
 `
@@ -137,11 +136,11 @@ export const LogoSection = styled.div`
     @media (max-width: 300px) {
         > div:nth-child(2) {
             h1 {
-                font-size: 23px;
+                font-size: 21px;
             }
 
             p {
-                font-size: 9px;
+                font-size: 8px;
             }
         }
     }
@@ -270,5 +269,9 @@ export const MobileNavbar = styled.div`
     @media (max-width: 300px) {
         width: 250px;
         right: -110vw;
+    }
+
+    @media (orientation: landscape) {
+        height: 400px;
     }
 `
