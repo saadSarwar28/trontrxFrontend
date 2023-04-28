@@ -13,7 +13,7 @@ const SidebarDesktop: React.FC<SidebarMobileProps> = ({ activeLink }) => {
             <ul>
                 <LinkStyled className={activeLink === "currentStats" ? "active" : ""}>
                     <img src="/assets/images/dashboard/sidebar/currentStats.svg" alt="..." />
-                    <FooterNavItem text={'CURRENT STATS'} link="/dashboard" />
+                    <FooterNavItem text={'PERSONAL STATS'} link="/dashboard" />
                 </LinkStyled>
                 <LinkStyled className={activeLink === "deposit" ? "active" : ""}>
                     <img src="/assets/images/dashboard/sidebar/deposit.svg" alt="..." />

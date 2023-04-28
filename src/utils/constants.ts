@@ -5,7 +5,10 @@ export const CONSTANTS = {
     // CHAIN_ID : "97", // testnet
     textColor: '#8a332a',
     headingColor: '#3a3939',
+    colorGold: '#eacb64',
+    cardBackground: '#282c34',
     colorBlack: '#282C34',
+    colorWhite: 'rgba(255, 255, 255)',
     dailyRewards: 1.33,
     royaltyClaimThreshold: 86400 * 10, // 10 days
     PLATFORM_START_TIMESTAMP: 1668376821,
