@@ -87,6 +87,10 @@ export const SidebarMobileStyled = styled.aside`
             width: 220px;
         }
     }
+
+    @media (orientation: landscape) {
+        height: 500px;
+    }
 `
 
 export const HomeButtonMobile = styled.div`

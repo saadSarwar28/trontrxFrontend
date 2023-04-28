@@ -270,4 +270,8 @@ export const MobileNavbar = styled.div`
         width: 250px;
         right: -110vw;
     }
+
+    @media (orientation: landscape) {
+        height: 400px;
+    }
 `

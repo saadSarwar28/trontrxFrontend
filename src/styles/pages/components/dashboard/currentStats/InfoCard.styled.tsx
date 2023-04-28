@@ -109,7 +109,6 @@ export const BlackButton1 = styled(YellowButton1)`
         }
         
         span:last-child {
-            /* font-size: 8px; */
             font-size: 7px;
         }
     }
@@ -212,10 +211,6 @@ export const ConnectWalletButton = styled.button`
 
     @media (max-width: 576px) {
         margin-top: 25px;
-    }
-
-    @media (max-width: 576px) {
-        margin-top: 20px;
     }
 `
 

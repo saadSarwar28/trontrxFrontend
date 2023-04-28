@@ -34,6 +34,10 @@ const SidebarMobile: React.FC<SidebarMobileProps> = ({ sidebarClass, activeLink 
                     <img src="/assets/images/dashboard/sidebar/tree.svg" alt="..." />
                     <FooterNavItem text={'TREE'} link="/dashboard/tree" />
                 </div>
+                <div className={activeLink === "contractStats" ? "active" : ""}>
+                    <img src="/assets/images/dashboard/sidebar/currentStats.svg" alt="..." />
+                    <FooterNavItem text={'CONTRACT STATS'} link="/dashboard/contractstats" />
+                </div>
             </ul>
             <HomeButtonMobile>
                 <button type="button">
