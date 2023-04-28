@@ -2,6 +2,9 @@ import { ContractStatsCardStyled, ContractStatsButton, ContractAddressButton, Co
 import { useEffect, useState } from "react"
 import { CONTENT as content } from '@/content/content';
 import { CONSTANTS } from '../../../utils/constants'
+import {useDispatch, useSelector} from 'react-redux';
+import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
+import {ethers} from 'ethers';
 
 
 const ContractStatsCard = () => {
@@ -43,6 +46,45 @@ const ContractStatsCard = () => {
     //     })
     // }, [])
 
+    const account = useSelector(selectUserAccount)
+    const dispatch = useDispatch()
+    const [totalDeposited, setTotalDeposited] = useState(0)
+    const [totalWithdrawn, setTotalWithdrawn] = useState(0)
+
+    const connectWallet = async () => {
+        // @ts-ignore
+        if (window.tronWeb) {
+            // @ts-ignore
+            await window.tronLink.request({ method: 'tron_requestAccounts' });
+            // @ts-ignore
+            const { name, base58 } = await window.tronWeb.defaultAddress;
+            // @ts-ignore
+            dispatch(getUserAccountDetails(base58))
+        }
+    }
+    useEffect(() => {
+        if (!account.account.walletConnected) {
+            connectWallet()
+        }
+    }, [])
+
+    const fetchContractStats = async () => {
+        // @ts-ignore
+        let contract = await window.tronWeb.contract().at(CONSTANTS.contractAddress);
+        const totalInvestment = await contract.totalInvested().call();
+        setTotalDeposited(Number(ethers.formatUnits(totalInvestment.toString(), 6)))
+        const totalWithdrawn = await contract.totalWithdrawn().call();
+        setTotalWithdrawn(Number(ethers.formatUnits(totalWithdrawn.toString(), 6)))
+    }
+
+    useEffect(() => {
+        // @ts-ignore
+        if (window.tronWeb && totalWithdrawn === 0 && totalDeposited === 0) {
+            fetchContractStats()
+        }
+    }, [])
+
+
     return (
         <ContractStatsCardStyled>
             <ContractStatsButton type="button">{content.dashboard.contractStats.mainHeading}</ContractStatsButton>
@@ -52,16 +94,16 @@ const ContractStatsCard = () => {
             </ContractAddressButton>
             <ContractCardsContainer>
                 <ContractCard>
-                    <p>{content.dashboard.contractStats.stats[1].title}</p>
-                    <div>{content.dashboard.contractStats.stats[0].desc}</div>
-                </ContractCard>
-                <ContractCard>
-                    <p>{content.dashboard.contractStats.stats[2].title}</p>
+                    <p>{totalDeposited.toFixed(2)}</p>
                     <div>{content.dashboard.contractStats.stats[1].desc}</div>
                 </ContractCard>
                 <ContractCard>
-                    <p>{content.dashboard.contractStats.stats[3].title}</p>
+                    <p>{totalWithdrawn.toFixed(2)}</p>
                     <div>{content.dashboard.contractStats.stats[2].desc}</div>
+                </ContractCard>
+                <ContractCard>
+                    <p>{account.account.projectInsurance.toFixed(2)}</p>
+                    <div>{content.dashboard.contractStats.stats[3].desc}</div>
                 </ContractCard>
             </ContractCardsContainer>
         </ContractStatsCardStyled>
