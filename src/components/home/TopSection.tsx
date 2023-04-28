@@ -22,7 +22,7 @@ const TopSection = ({ content }: any) => {
     }
 
     const gotoWhitepaper = () => {
-        router.push('/whitepaper')
+        window.open('https://trontrx.s3.eu-north-1.amazonaws.com/Whitepaper/TronTrxWhitepaper.pdf')
     }
 
     const gotoTelegram = () => {
