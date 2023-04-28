@@ -27,6 +27,7 @@ export const HeaderStyled = styled.header`
     @media (max-width: 300px) {
         > img {
             margin-right: 13px;
+            margin-top: 45px;
         }
     }
 `
