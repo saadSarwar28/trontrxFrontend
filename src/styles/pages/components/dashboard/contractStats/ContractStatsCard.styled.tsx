@@ -175,14 +175,12 @@ export const ContractCard = styled.div`
     border-radius: 4.28936px;
 
     // animation
-    /* transform: scale(0);
-    &.animate {
-        animation: statsCard 1s ease 0.5s 1 normal forwards;
-        @keyframes statsCard {
-            0% {transform: scale(0);}
-            100% {transform: scale(1);}
-        }
-    } */
+    transform: scale(0);
+    animation: contractStatsCard 1s ease 0.5s 1 normal forwards;
+    @keyframes contractStatsCard {
+        0% {transform: scale(0);}
+        100% {transform: scale(1);}
+    }
 
     p {
         font-family: 'Poppins', sans-serif;
@@ -198,14 +196,14 @@ export const ContractCard = styled.div`
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 20.54px;
+        font-size: 18px;
         line-height: 31px;
         text-transform: uppercase;
         color: #FFFFFF;
     }
 
     @media (max-width: 1300px) {
-        p, div {
+        p {
             font-size: 17px;
         }
     }
@@ -213,7 +211,7 @@ export const ContractCard = styled.div`
     @media (max-width: 1200px) {
         width: 32%;
 
-        p, div {
+        p {
             font-size: 15.5px;
         }
     }
