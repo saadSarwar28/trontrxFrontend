@@ -3,13 +3,13 @@ import {
     CardsSectionDesktop, ThreeCardsDesktop, TwoCardsDesktop, CardDesktop, CardsSectionMobile, CardMobile,
     TimerSection, Paragraphs, Paragraph, WithdrawButton, ConnectWalletButton
 } from "@/styles/pages/components/dashboard/withdrawal/WithdrawalCard.styled"
-import {CONTENT as content} from '@/content/content';
-import {useState, useEffect} from "react"
+import { CONTENT as content } from '@/content/content';
+import { useState, useEffect } from "react"
 import Timer from './Timer'
-import {useSelector} from 'react-redux';
-import {getUserAccountDetails, selectUserAccount} from '@/store/accountSlice';
-import {connectWallet} from '@/utils/wallet';
-import {CONSTANTS} from '@/utils/constants';
+import { useSelector } from 'react-redux';
+import { getUserAccountDetails, selectUserAccount } from '@/store/accountSlice';
+import { connectWallet } from '@/utils/wallet';
+import { CONSTANTS } from '@/utils/constants';
 import timer from './Timer';
 
 
@@ -132,13 +132,13 @@ const WithdrawalCard = () => {
             <CardsSectionDesktop>
                 <ThreeCardsDesktop>
                     <CardDesktop>
-                        <img src={cardImages[0]} alt="..."/>
+                        <img src={cardImages[0]} alt="..." />
                         {/*current active deposit*/}
                         <p>{content.dashboard.withdrawal.cards[0].title}</p>
                         <div>{accountState.account.activeDeposit}</div>
                     </CardDesktop>
                     <CardDesktop>
-                        <img src={cardImages[1]} alt="..."/>
+                        <img src={cardImages[1]} alt="..." />
                         {/*daily ROI*/}
                         <p>{content.dashboard.withdrawal.cards[1].title}</p>
                         <div>
@@ -148,7 +148,7 @@ const WithdrawalCard = () => {
                         </div>
                     </CardDesktop>
                     <CardDesktop>
-                        <img src={cardImages[2]} alt="..."/>
+                        <img src={cardImages[2]} alt="..." />
                         {/*DIRECT REFERRAL INCOME*/}
                         <p>{content.dashboard.withdrawal.cards[2].title}</p>
                         <div>{Number(accountState.account.directCommission - accountState.account.directCommissionDebt).toFixed(2)}</div>
@@ -156,7 +156,7 @@ const WithdrawalCard = () => {
                 </ThreeCardsDesktop>
                 <TwoCardsDesktop>
                     <CardDesktop>
-                        <img src={cardImages[3]} alt="..."/>
+                        <img src={cardImages[3]} alt="..." />
                         {/*MATCHING LEVEL INCOME*/}
                         <p>{content.dashboard.withdrawal.cards[3].title}</p>
                         <div>
@@ -166,7 +166,7 @@ const WithdrawalCard = () => {
                         </div>
                     </CardDesktop>
                     <CardDesktop>
-                        <img src={cardImages[4]} alt="..."/>
+                        <img src={cardImages[4]} alt="..." />
                         {/*TOTAL WITHDRAWN*/}
                         <p>{content.dashboard.withdrawal.cards[4].title}</p>
                         <div>
@@ -178,7 +178,7 @@ const WithdrawalCard = () => {
                 </TwoCardsDesktop>
                 <ThreeCardsDesktop>
                     <CardDesktop>
-                        <img src={cardImages[5]} alt="..."/>
+                        <img src={cardImages[5]} alt="..." />
                         {/*310% REMAINING INCOME LIMIT*/}
                         <p>{content.dashboard.withdrawal.cards[5].title}</p>
                         <div>
@@ -189,7 +189,7 @@ const WithdrawalCard = () => {
                         </div>
                     </CardDesktop>
                     <CardDesktop>
-                        <img src={cardImages[6]} alt="..."/>
+                        <img src={cardImages[6]} alt="..." />
                         {/*AVAILABLE TO WITHDRAW*/}
                         <p>{content.dashboard.withdrawal.cards[6].title}</p>
                         <div>
@@ -225,10 +225,10 @@ const WithdrawalCard = () => {
                         </div>
                     </CardDesktop>
                     <CardDesktop>
-                        <img src={cardImages[7]} alt="..."/>
+                        <img src={cardImages[7]} alt="..." />
                         {/*LAST WITHDRAWN*/}
                         <p>{content.dashboard.withdrawal.cards[7].title}</p>
-                        <div style={{fontSize: '20px', whiteSpace: 'nowrap'}}>
+                        <div style={{ fontSize: '20px', whiteSpace: 'nowrap' }}>
                             {
                                 accountState.account.lastWithdrawn === 0 ? 'NA' : new Date(accountState.account.lastWithdrawn * 1000).toLocaleDateString() + ' ' + new Date(accountState.account.lastWithdrawn * 1000).toLocaleTimeString()
                             }
@@ -311,26 +311,26 @@ const WithdrawalCard = () => {
                 {
                     accountState.account.lastWithdrawn === 0 ? null :
                         <Timer endTs={accountState.account.lastWithdrawn + CONSTANTS.timeStep}
-                               callback={timerCallback}/>
+                            callback={timerCallback} />
                 }
             </TimerSection>
             <Paragraphs>
                 {content.dashboard.withdrawal.paragraphs.map((paragraph, index) => (
                     <Paragraph key={index} id={`para${index + 1}`}
-                               className={`paraWithdrawal ${paraWithdrawalClass ? 'animate' : ''}`}>
-                        <img src="/assets/images/dashboard/withdrawal/paragraph.svg" alt="..."/>
-                        <p style={{fontWeight: 'bold'}}>{paragraph}</p>
+                        className={`paraWithdrawal ${paraWithdrawalClass ? 'animate' : ''}`}>
+                        <img src="/assets/images/dashboard/withdrawal/paragraph.svg" alt="..." />
+                        <p style={{ fontWeight: 'bold' }}>{paragraph}</p>
                     </Paragraph>
                 ))}
             </Paragraphs>
             {
                 accountState.account.walletConnected ?
                     <WithdrawButton className={`withdrawButton ${withdrawButtonClass ? 'animate' : ''}`}
-                                    onClick={withdraw}>
+                        onClick={withdraw}>
                         <button>{content.dashboard.withdrawal.withdrawButton}</button>
                     </WithdrawButton> :
                     <ConnectWalletButton className={`withdrawButton ${withdrawButtonClass ? 'animate' : ''}`}
-                                         onClick={_connectWallet}>
+                        onClick={_connectWallet}>
                         <button>{content.dashboard.withdrawal.connectWalletButton}</button>
                     </ConnectWalletButton>
             }

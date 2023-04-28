@@ -99,11 +99,10 @@ interface TimerInterface {
 }
 // @ts-ignore
 const Timer: React.FC<TimerInterface> = ({ endTs, callback }) => {
-
   const { seconds, minutes, hours, days } = useTimer({
     expiryTimestamp: new Date(endTs * 1000),
-    // expiryTimestamp: new Date(time.setMinutes(time.getMinutes() + timerMinutes)),
-    onExpire: () => {},
+    // expiryTimestamp: new Date(time.setMinutes(time.getMinutes() + 30)),
+    onExpire: () => { },
   });
 
   useEffect(() => {
