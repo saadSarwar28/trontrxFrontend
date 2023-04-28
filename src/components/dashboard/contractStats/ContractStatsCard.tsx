@@ -52,15 +52,15 @@ const ContractStatsCard = () => {
             </ContractAddressButton>
             <ContractCardsContainer>
                 <ContractCard>
-                    <p>{content.dashboard.contractStats.stats[0].title}</p>
+                    <p>{content.dashboard.contractStats.stats[1].title}</p>
                     <div>{content.dashboard.contractStats.stats[0].desc}</div>
                 </ContractCard>
                 <ContractCard>
-                    <p>{content.dashboard.contractStats.stats[1].title}</p>
+                    <p>{content.dashboard.contractStats.stats[2].title}</p>
                     <div>{content.dashboard.contractStats.stats[1].desc}</div>
                 </ContractCard>
                 <ContractCard>
-                    <p>{content.dashboard.contractStats.stats[2].title}</p>
+                    <p>{content.dashboard.contractStats.stats[3].title}</p>
                     <div>{content.dashboard.contractStats.stats[2].desc}</div>
                 </ContractCard>
             </ContractCardsContainer>
