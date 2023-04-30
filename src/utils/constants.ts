@@ -1,6 +1,7 @@
 
 export const CONSTANTS = {
-    api: 'https://trontrx.world/api/v1/notification/',
+    api: 'https://api.trongrid.io/',
+    api_key: '49d645d6-5567-4dbc-ba92-76b0c04a18e7', // test api key
     CHAIN_ID : "56", // mainnet
     // CHAIN_ID : "97", // testnet
     textColor: '#8a332a',

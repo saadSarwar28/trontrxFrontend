@@ -2,9 +2,17 @@ import {CONSTANTS} from '@/utils/constants';
 import {ethers} from 'ethers';
 import {add} from '@noble/hashes/_u64';
 import {getUserAccountDetails} from '@/store/accountSlice';
+import {useEffect} from 'react';
+import {get} from '@/store/fetch';
+
+export const getBalanceOfAddress = async (address: string) => {
+
+    const response = await get('accounts/' + address)
+    console.log(response, ' response from api')
+}
 
 export const getWalletDetails = async (address: string) => {
-    console.log('wallet details called')
+    // console.log('wallet details called')
     // @ts-ignore
     if (window.tronWeb) {
         // @ts-ignore
@@ -54,5 +62,25 @@ export const connectWallet = async () => {
         // @ts-ignore
         const {name, base58} = await window.tronWeb.defaultAddress;
         return base58
+    }
+}
+
+export const fetchContractStats = async () => {
+    // console.log('contract stats called')
+    // @ts-ignore
+    let contract = await window.tronWeb.contract().at(CONSTANTS.contractAddress);
+    try {
+        const totalInvestment = await contract.totalInvested().call();
+        const totalWithdrawn = await contract.totalWithdrawn().call();
+        return {
+            contractTotalDeposited: Number(ethers.formatUnits(totalInvestment.toString(), 6)),
+            contractTotalWithdrawn: Number(ethers.formatUnits(totalWithdrawn.toString(), 6))
+        }
+    } catch (e) {
+        console.log(e)
+        return {
+            contractTotalDeposited: 0,
+            contractTotalWithdrawn: 0
+        }
     }
 }

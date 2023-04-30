@@ -79,7 +79,7 @@ export const ContractAddressButton = styled(ContractStatsButton)`
     font-weight: 700;
     font-size: 16.77px;
     line-height: 25px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     padding-left: 20px;
     padding-right: 16px;
     margin-top: 24px;

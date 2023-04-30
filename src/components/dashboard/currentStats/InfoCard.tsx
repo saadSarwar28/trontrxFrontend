@@ -47,13 +47,13 @@ const InfoCard = () => {
             <YellowButton1 type="button">{content.dashboard.currentStats.infoCard.yellowButton1}</YellowButton1>
             <BlackButton1 type="button">
                 <span>{content.dashboard.currentStats.infoCard.blackButton1.span1}</span>
-                <span>
+                <span style={{textTransform: 'none'}}>
                     {accountState.account.address}
                 </span>
             </BlackButton1>
             <YellowButton2 type="button">
                 <span>{content.dashboard.currentStats.infoCard.yellowButton2.span1}</span>
-                <span>{accountState.account.referrer}</span>
+                <span style={{textTransform: 'none'}}>{accountState.account.referrer}</span>
             </YellowButton2>
             <BlackButton2 type="button">
                 <span>{content.dashboard.currentStats.infoCard.blackButton2.span1}</span>

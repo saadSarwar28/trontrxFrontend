@@ -2,10 +2,16 @@ import {User} from '@/store/types';
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {get} from '@/store/fetch';
 import {AppState} from '@/store/store';
-import {UPDATE_ACCOUNT, UPDATE_ADDRESS, UPDATE_BALANCE, UPDATE_WALLET_CONNECTED} from '@/store/actionTypes';
+import {
+    UPDATE_ACCOUNT,
+    UPDATE_ADDRESS,
+    UPDATE_BALANCE,
+    UPDATE_CONTRACT_STATS,
+    UPDATE_WALLET_CONNECTED
+} from '@/store/actionTypes';
 import App from 'next/app';
 import {add} from '@noble/hashes/_u64';
-import {getWalletDetails} from '@/utils/wallet';
+import {fetchContractStats, getWalletDetails} from '@/utils/wallet';
 
 const initialState: User = {
     account: {
@@ -30,6 +36,8 @@ const initialState: User = {
         projectInsurance: 0,
         dailyRoi: 0,
         contractBalance: 0,
+        contractTotalDeposited: 0,
+        contractTotalWithdrawn: 0,
     }
 }
 
@@ -75,6 +83,17 @@ export const getUserAccountDetails = createAsyncThunk(
     }
 );
 
+export const getContractStats = createAsyncThunk(
+    UPDATE_CONTRACT_STATS,
+    (thunkAPI) => {
+        return new Promise<void>((resolve, reject) => {
+            fetchContractStats()
+                .then((res: any) => {
+                    resolve(res)
+                })
+        });
+    }
+);
 
 export const accountSlice = createSlice({
     name: "account",
@@ -94,6 +113,10 @@ export const accountSlice = createSlice({
         },
         [getUserAccountDetails.fulfilled.toString()]: (state, {payload}) => {
             state.account = payload
+        },
+        [getContractStats.fulfilled.toString()]: (state, {payload}) => {
+            state.account.contractTotalDeposited = payload.contractTotalDeposited
+            state.account.contractTotalWithdrawn = payload.contractTotalWithdrawn
         },
     }
 });
