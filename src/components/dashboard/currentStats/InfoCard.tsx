@@ -57,7 +57,7 @@ const InfoCard = () => {
             </YellowButton2>
             <BlackButton2 type="button">
                 <span>{content.dashboard.currentStats.infoCard.blackButton2.span1}</span>
-                <span>
+                <span style={{textTransform: 'none'}}>
                     {
                         "https://trontrx.world/?ref=" + accountState.account.address
                     }
