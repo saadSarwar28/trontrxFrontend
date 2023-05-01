@@ -28,6 +28,7 @@ export const HeaderStyled = styled.header`
         > img {
             margin-top: 40px;
             margin-right: 13px;
+            margin-top: 45px;
         }
     }
 `

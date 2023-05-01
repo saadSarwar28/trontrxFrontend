@@ -21,5 +21,7 @@ export interface User {
         projectInsurance: number,
         dailyRoi: number,
         contractBalance: number,
+        contractTotalDeposited: number,
+        contractTotalWithdrawn: number,
     }
 }

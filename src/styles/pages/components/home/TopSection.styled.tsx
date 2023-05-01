@@ -332,7 +332,7 @@ export const YellowButton = styled.button`
   /* font-family: "PT Sans", sans-serif; */
   font-family: "Manrope", sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;

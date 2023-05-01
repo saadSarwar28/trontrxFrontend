@@ -17,7 +17,7 @@ export const CONTENT = {
         "getStarted": "Get Started Now",
         "buttons": [
             "Contribute",
-            "whitepaper",
+            "Whitepaper",
             "Personal Wallet",
         ]
     },
@@ -352,6 +352,7 @@ export const CONTENT = {
                     "link": "https://trontrx.world/?ref=TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s"
                 },
                 "card1Text": "Share this link with your partners to get referral rewards. You should have active deposit to unlock affiliate bonuses!",
+                "card2Text": "Please press and select the referral link to copy.",
                 "copyButton": "Copy",
                 "connectWalletButton": "Connect Wallet",
             },
@@ -473,6 +474,7 @@ export const CONTENT = {
         "contractStats": {
             "mainHeading": "Contract Statistics",
             "subHeading": "Contract Address",
+            "subHeadingRunningSince": "Up Time",
             "stats": [
                 {
                     "title": "0.00 TRX",
