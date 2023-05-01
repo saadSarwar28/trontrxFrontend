@@ -16,7 +16,7 @@ const SidebarMobile: React.FC<SidebarMobileProps> = ({ sidebarClass, activeLink 
             <ul>
                 <div>
                     <img src="/assets/images/dashboard/header/dashboard.svg" alt="..." />
-                    <FooterNavItem text={'DASHBOARD'} link="#" />
+                    <FooterNavItem text={'DASHBOARD'} link="/dashboard" />
                 </div>
                 <div className={activeLink === "currentStats" ? "active" : ""}>
                     <img src="/assets/images/dashboard/sidebar/currentStats.svg" alt="..." />

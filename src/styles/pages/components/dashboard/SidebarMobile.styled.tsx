@@ -35,7 +35,7 @@ export const SidebarMobileStyled = styled.aside`
         // dashboard
         div:first-child {
             li {
-                margin-left: -12px;
+                //margin-left: -12px;
             }
 
             a {

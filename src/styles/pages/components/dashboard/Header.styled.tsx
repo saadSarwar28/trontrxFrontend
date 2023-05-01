@@ -19,7 +19,7 @@ export const HeaderStyled = styled.header`
 
         > img {
             display: block;
-            margin-top: 31px;
+            margin-top: 55px;
             margin-right: 25px;
         }
     }

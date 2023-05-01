@@ -112,7 +112,7 @@ export const ContractAddressButton = styled(ContractStatsButton)`
   }
 
   @media (max-width: 768px) {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 0;
   }
 
