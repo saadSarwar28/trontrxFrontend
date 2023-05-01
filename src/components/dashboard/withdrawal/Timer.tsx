@@ -69,7 +69,7 @@ const TimerBox = styled.div`
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #FFFFFF;
-      text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+      //text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
     }
 
   @media (max-width: 768px) {

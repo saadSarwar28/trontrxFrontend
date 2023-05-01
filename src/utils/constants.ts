@@ -13,6 +13,7 @@ export const CONSTANTS = {
     dailyRewards: 1.33,
     royaltyClaimThreshold: 86400 * 10, // 10 days
     PLATFORM_START_TIMESTAMP: 1668376821,
+    PLATFORM_START_DATE: '2023-01-26T17:20:00.556094Z',
     OWNER: 'TFuXP2fTdJ2Vt9d26cuhxuvHdSaS3yqGe7',
     // OWNER: 'TWkswCG7LdPidVTUrEfPFVEUmABDBAsfQH',
     topId: 'TELwoeetocGr8356hyNe5J2bULiRwVjxd6',

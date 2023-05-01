@@ -8,6 +8,8 @@ import {
 } from "@/styles/pages/components/dashboard/contractStats/ContractStatsCard.styled"
 import {CONTENT as content} from '@/content/content';
 import {CONSTANTS} from '../../../utils/constants'
+import {useRouter} from 'next/router';
+import Timer from '@/components/dashboard/contractStats/Timer';
 
 interface IContractStatsCard {
     totalDeposited: number,
@@ -54,12 +56,20 @@ const ContractStatsCard: React.FC<IContractStatsCard> = ({totalDeposited, totalW
     //     })
     // }, [])
 
+    const handleClick = () => {
+        window.open('https://tronscan.org/#/contract/TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN')
+    }
+
     return (
         <ContractStatsCardStyled>
             <ContractStatsButton type="button">{content.dashboard.contractStats.mainHeading}</ContractStatsButton>
-            <ContractAddressButton type="button">
+            <ContractAddressButton type="button" onClick={handleClick}>
                 <span>{content.dashboard.contractStats.subHeading}</span>
                 <span style={{textTransform: 'none'}}>{CONSTANTS.contractAddress}</span>
+            </ContractAddressButton>
+            <ContractAddressButton type="button">
+                <span>{content.dashboard.contractStats.subHeadingRunningSince}</span>
+                <span style={{textTransform: 'none'}}><Timer/></span>
             </ContractAddressButton>
             <ContractCardsContainer>
                 <ContractCard>

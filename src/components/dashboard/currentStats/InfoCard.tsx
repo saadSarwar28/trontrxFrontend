@@ -22,6 +22,7 @@ const InfoCard = () => {
 
     const [showMessage, setShowMessage] = useState(false);
     const dispatch = useDispatch()
+    const [_isMobile, setIsMobile] = useState(isMobile)
 
     const copyLink = () => {
         navigator.clipboard.writeText('https://trontrx.world/?ref=' + accountState.account.address);
@@ -41,6 +42,8 @@ const InfoCard = () => {
                 })
         }
     }
+
+
 
     return (
         <InfoCardStyled>
@@ -67,11 +70,21 @@ const InfoCard = () => {
                 {content.dashboard.currentStats.infoCard.card1Text}
             </CardText>
             {
+                _isMobile ? <CardText>{content.dashboard.currentStats.infoCard.card2Text}</CardText>: null
+            }
+            {
                 accountState.account.walletConnected ?
-                    <CopyButton onClick={copyLink}>
-                        <p>{content.dashboard.currentStats.infoCard.copyButton}</p>
-                        <CopyMessage className={showMessage ? "shown" : ""}>Link Copied</CopyMessage>
-                    </CopyButton>
+                    <>
+                        {
+                            _isMobile ?
+                                null
+                                :
+                                <CopyButton onClick={copyLink}>
+                                    <p>{content.dashboard.currentStats.infoCard.copyButton}</p>
+                                    <CopyMessage className={showMessage ? "shown" : ""}>Link Copied</CopyMessage>
+                                </CopyButton>
+                        }
+                    </>
                     :
                     <ConnectWalletButton onClick={_connectWallet}>
                         <p>{content.dashboard.currentStats.infoCard.connectWalletButton}</p>
