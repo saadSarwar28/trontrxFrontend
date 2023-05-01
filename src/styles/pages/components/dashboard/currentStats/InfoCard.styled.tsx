@@ -3,8 +3,7 @@ import styled from "styled-components"
 
 export const InfoCardStyled = styled.div`
     width: 96%;
-    /* height: 529px; */
-    height: 560px;
+    height: 529px;
     background: #FFFFFF;
     border-radius: 24.5px;
     text-align: center;
