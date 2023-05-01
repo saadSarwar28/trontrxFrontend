@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 export const InfoCardStyled = styled.div`
     width: 96%;
-    height: 529px;
+    /* height: 529px; */
+    height: 560px;
     background: #FFFFFF;
     border-radius: 24.5px;
     text-align: center;
@@ -12,7 +13,8 @@ export const InfoCardStyled = styled.div`
     border: 5px solid #FBBD18;
 
     @media (max-width: 1200px) {
-        height: 620px;
+        /* height: 620px; */
+        height: 660px;
     }
 
     @media (max-width: 768px) {
@@ -23,6 +25,18 @@ export const InfoCardStyled = styled.div`
 
     @media (max-width: 576px) {
         height: 668px;
+    }
+
+    @media (max-width: 441px) {
+        height: 678px;
+    }
+
+    @media (max-width: 387px) {
+        height: 700px;
+    }
+
+    @media (max-width: 325px) {
+        height: 720px;
     }
 `
 
@@ -66,7 +80,50 @@ export const YellowButton1 = styled.button`
     }
 `
 
-export const BlackButton1 = styled(YellowButton1)`
+export const YellowDiv1 = styled.div`
+    width: calc(100% - 80px);
+    height: 61px;
+    background: #FBBD18;
+    border: 1px solid #000000;
+    border-radius: 9.22347px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26.8319px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #000000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-left: 40px;
+
+    // animation
+    animation: yellowDiv1 1s ease 0s 1 normal backwards;
+    @keyframes yellowDiv1 {
+        0% {transform: translateY(-100vh);}
+        100% {transform: translateY(initial);}
+    }
+
+    @media (max-width: 1200px) {
+        width: calc(100% - 28px);
+        height: 50px;
+        margin-left: 14px;
+        font-size: 21px;
+    }
+
+    @media (max-width: 300px) {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+`
+
+export const BlackDiv1 = styled(YellowDiv1)`
     background: #000000;
     color: #F3B51C;
     font-family: 'Poppins', sans-serif;
@@ -114,7 +171,7 @@ export const BlackButton1 = styled(YellowButton1)`
     }
 `
 
-export const YellowButton2 = styled(BlackButton1)`
+export const YellowDiv2 = styled(BlackDiv1)`
     background: #F3B51C;
     color: #000000;
 
@@ -122,7 +179,7 @@ export const YellowButton2 = styled(BlackButton1)`
     animation-delay: 0.5s;
 `
 
-export const BlackButton2 = styled(BlackButton1)`
+export const BlackDiv2 = styled(BlackDiv1)`
     // animation
     animation-delay: 0.75s;
 
@@ -212,6 +269,10 @@ export const ConnectWalletButton = styled.button`
     @media (max-width: 576px) {
         margin-top: 25px;
     }
+
+    @media (max-width: 441px) {
+        margin-top: 10px;
+    }
 `
 
 export const CopyButton = styled.button`
@@ -246,12 +307,16 @@ export const CopyButton = styled.button`
         margin-top: 35px;
     }
 
+    /* @media (max-width: 576px) {
+        margin-top: 20px;
+    } */
+
     @media (max-width: 576px) {
         margin-top: 25px;
     }
 
-    @media (max-width: 576px) {
-        margin-top: 20px;
+    @media (max-width: 441px) {
+        margin-top: 10px;
     }
 `
 
