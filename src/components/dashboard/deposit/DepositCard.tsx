@@ -52,7 +52,7 @@ const DepositCard = () => {
             }
         })
     }, [])
-    const [amount, setAmount] = useState(100)
+    const [amount, setAmount] = useState(1000)
 
     const increaseAmount = () => {
         setAmount(amount + 50)
