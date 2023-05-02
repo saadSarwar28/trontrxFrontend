@@ -79,6 +79,86 @@ export const YellowButton1 = styled.button`
     }
 `
 
+export const BlackButton1 = styled(YellowButton1)`
+    background: #000000;
+    color: #F3B51C;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16.77px;
+    line-height: 25px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 16px;
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // animation
+    animation-delay: 0.25s;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        height: 112px;
+        justify-content: space-evenly;
+        margin-top: 16px;
+
+        span:first-child {
+            font-size: 16.77px;
+        }
+        
+        span:last-child {
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width: 300px) {
+        padding-left: 16px;
+
+        span:first-child {
+            font-size: 13px;
+        }
+        
+        span:last-child {
+            font-size: 7px;
+        }
+    }
+`
+
+export const YellowButton2 = styled(BlackButton1)`
+    background: #F3B51C;
+    color: #000000;
+
+    // animation
+    animation-delay: 0.5s;
+`
+
+export const BlackButton2 = styled(BlackButton1)`
+    // animation
+    animation-delay: 0.75s;
+
+    span {
+        font-size: 11.739px;
+        color: #F3B51C;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 0;
+
+        span {
+            font-size: 9.77px;
+        }
+    }
+
+    /* @media (max-width: 300px) {
+        span {
+            font-size: 7px;
+        }
+    } */
+`
+
 export const YellowDiv1 = styled.div`
     width: calc(100% - 80px);
     height: 61px;
