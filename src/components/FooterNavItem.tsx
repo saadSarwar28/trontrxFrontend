@@ -5,13 +5,22 @@ import styled from 'styled-components';
 import {useDispatch} from 'react-redux';
 import {getContractStats} from '@/store/accountSlice';
 
+const Button = styled.button`
+  border: none;
+  background: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+`
+
 
 interface FooterNavItemProps {
     text: string,
     link: string
 }
 
-const FooterNavItem: React.FC<FooterNavItemProps> = ({ text, link }) => {
+const FooterNavItem: React.FC<FooterNavItemProps> = ({text, link}) => {
 
     const router = useRouter()
     const dispatch = useDispatch()
@@ -32,7 +41,7 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ text, link }) => {
     return (
         <li>
             <div></div>
-            <button onClick={handleClick}>{text}</button>
+            <Button onClick={handleClick}>{text}</Button>
         </li>
     )
 }

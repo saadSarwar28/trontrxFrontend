@@ -352,7 +352,7 @@ export const CONTENT = {
                     "link": "https://trontrx.world/?ref=TEvG6VpgitzigWyqvhmGcihLf6WBEM1Q6s"
                 },
                 "card1Text": "Share this link with your partners to get referral rewards. You should have active deposit to unlock affiliate bonuses!",
-                "card2Text": "Please press and select the referral link to copy.",
+                "card2Text": "Please click on the referral link to select and copy.",
                 "copyButton": "Copy",
                 "connectWalletButton": "Connect Wallet",
             },

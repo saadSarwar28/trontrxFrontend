@@ -1,7 +1,7 @@
 // @ts-ignore
 import styled from "styled-components";
-import React, {useEffect, useState} from "react";
-import {useStopwatch, useTimer} from 'react-timer-hook';
+import React from "react";
+import {useStopwatch} from 'react-timer-hook';
 import {CONSTANTS} from '@/utils/constants';
 
 const TimerBoxContainerWrapper = styled.div`
@@ -55,23 +55,23 @@ const TimerBox = styled.div`
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
 
-  > span {
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 6px;
-    line-height: 8px;
-    text-align: center;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    //text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
-  }
+  //> span {
+  //  position: absolute;
+  //  bottom: -15px;
+  //  left: 50%;
+  //  transform: translateX(-50%);
+  //
+  //  font-family: 'Poppins', sans-serif;
+  //  font-style: normal;
+  //  font-weight: 800;
+  //  font-size: 6px;
+  //  line-height: 8px;
+  //  text-align: center;
+  //  letter-spacing: 0.15em;
+  //  text-transform: uppercase;
+  //  color: #FFFFFF;
+  //  //text-shadow: -1px 0 #C28616, 0 1px #C28616, 1px 0 #C28616, 0 -1px #C28616;
+  //}
 
   @media (max-width: 768px) {
     width: 21px;
@@ -82,25 +82,36 @@ const TimerBox = styled.div`
       line-height: 13px;
     }
 
-    > span {
-      font-size: 3px;
-      line-height: 4px;
-      bottom: -10px;
-    }
+    //> span {
+    //  font-size: 5px;
+    //  line-height: 4px;
+    //  bottom: -10px;
+    //}
   }
 `
 
-const callbackFunction = () => {
-    console.log('timer callback fired');
-}
+const Times = styled.span`
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 6px !important;
+  line-height: 8px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #FFFFFF;
 
-interface TimerInterface {
-    // endTs: number,
-    // callback: () => void
-}
+  @media (max-width: 768px) {
+    font-size: 5px !important;
+  }
+`
 
 // @ts-ignore
-const Timer: React.FC<TimerInterface> = ({}) => {
+const Timer: React.FC = () => {
 
     const now = new Date()
     const platformStartTimestamp = new Date(CONSTANTS.PLATFORM_START_TIMESTAMP * 1000);
@@ -120,19 +131,19 @@ const Timer: React.FC<TimerInterface> = ({}) => {
             <TimerBoxContainer>
                 <TimerBox style={{width: '50px'}}>
                     <p>{days.toString().padStart(2, '0')}</p>
-                    <span>Days</span>
+                    <Times>Days</Times>
                 </TimerBox>
                 <TimerBox>
                     <p>{hours.toString().padStart(2, '0')}</p>
-                    <span>Hours</span>
+                    <Times>Hours</Times>
                 </TimerBox>
                 <TimerBox>
                     <p>{minutes.toString().padStart(2, '0')}</p>
-                    <span>Minutes</span>
+                    <Times>Minutes</Times>
                 </TimerBox>
                 <TimerBox>
                     <p>{seconds.toString().padStart(2, '0')}</p>
-                    <span>Seconds</span>
+                    <Times>Seconds</Times>
                 </TimerBox>
             </TimerBoxContainer>
         </TimerBoxContainerWrapper>
