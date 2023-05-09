@@ -75,8 +75,8 @@ export const Paragraphs = styled.ul`
   > li {
     font-family: 'PT Sans', sans-serif;
     font-style: normal;
-    text-align: center;
-    /* text-justify: inter-word; */
+    text-align: justify;
+    text-justify: inter-word;
     font-weight: 400;
     font-size: 16px;
     line-height: 115%;
@@ -112,8 +112,7 @@ export const Paragraphs = styled.ul`
   @media (max-width: 1200px) {
     > li {
       font-size: 16px;
-      //line-height: 13px;
-      /* text-align: center; */
+      text-align: center;
     }
   }
 `
