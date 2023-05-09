@@ -79,7 +79,7 @@ export const Paragraphs = styled.ul`
     text-justify: inter-word;
     font-weight: 400;
     font-size: 16px;
-    line-height: 115%;
+    line-height: 100%;
     letter-spacing: 0.05em;
     color: ${({ theme }) => theme.colors.blackFont};
 

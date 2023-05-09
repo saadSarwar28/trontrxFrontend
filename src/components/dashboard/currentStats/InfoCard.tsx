@@ -52,7 +52,7 @@ const InfoCard = () => {
     }
 
     const selectTextOnclick = (event: any) => {
-        console.log(event.target.id, ' <<< ')
+        // console.log(event.target.id, ' <<< ')
         event.target.select()
         // setBackground('lightgrey')
     }
