@@ -22,9 +22,11 @@ const HowInvestCarousel = ({ content }: any) => {
                     items.forEach((item) => {
                         if (!item.classList.contains('react-multi-carousel-item--active')) {
                             const iframe = item.querySelectorAll('iframe');
-                            const temp = iframe[0].src;
-                            iframe[0].src = '';
-                            iframe[0].src = temp;
+                            if (iframe.length > 0) {
+                                const temp = iframe[0].src;
+                                iframe[0].src = '';
+                                iframe[0].src = temp;
+                            }
                         }
                     })
                 }}
@@ -51,7 +53,7 @@ const HowInvestCarousel = ({ content }: any) => {
                             {content.howInvest.rightSections[1].title}
                             <MovingLines />
                         </h2>
-                        <p>{content.howInvest.rightSections[1].desc}</p>
+                        <p>{content.howInvest.rightSections[1].desc} Click <a href="https://switchere.com/exchange/buy-trx" target="_blank">here</a> to purchase TRX with your credit/debit Card.</p>
                     </div>
                 </CarouselItem>
                 <CarouselItem>

@@ -110,7 +110,7 @@ export const CONTENT = {
             },
             {
                 "title": "Get Tron (TRX)",
-                "desc": "You can easily acquire TRX from the most popular platforms. After purchasing TRX, you can transfer it to your personal wallet, and then transfer it to Tron Trx smart-contract address."
+                "desc": "You can easily acquire TRX from the most popular platforms or exchanges. After purchasing TRX, you can transfer it to your personal wallet, and then make a deposit to Tron Trx smart-contract."
             },
             {
                 "title": "Deposit TRX",
