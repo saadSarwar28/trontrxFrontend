@@ -21,7 +21,7 @@ export const AboutStyled = styled.section`
   }
 
   @media (max-width: 300px) {
-    padding: 50px 25px 20px;
+    padding: 50px 20px 20px;
   }
 `
 
@@ -42,11 +42,10 @@ export const AboutHeading = styled.h1`
   line-height: 114.5%;
   letter-spacing: 0.01em;
   text-transform: capitalize;
-  color: ${({theme}) => theme.colors.blackFont};
+  color: ${({ theme }) => theme.colors.blackFont};
   margin-bottom: 15px;
 
   transform: scale(0);
-
   &.animate {
     // animation
     animation: abouttHeading 1s ease 0.25s 1 normal forwards;
@@ -61,7 +60,7 @@ export const AboutHeading = styled.h1`
   }
 
   > span {
-    color: ${({theme}) => theme.colors.mainYellow};
+    color: ${({ theme }) => theme.colors.mainYellow};
   }
 
   @media (max-width: 1200px) {
@@ -76,17 +75,15 @@ export const Paragraphs = styled.ul`
   > li {
     font-family: 'PT Sans', sans-serif;
     font-style: normal;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: center;
+    /* text-justify: inter-word; */
     font-weight: 400;
     font-size: 16px;
     line-height: 115%;
     letter-spacing: 0.05em;
-    /* text-transform: lowercase; */
-    color: ${({theme}) => theme.colors.blackFont};
+    color: ${({ theme }) => theme.colors.blackFont};
 
     transform: translateX(-100vw);
-
     &.animate {
       // animation
       animation-name: aboutParagraph;

@@ -7,6 +7,7 @@ import HowInvestNew from '@/components/home/HowInvestNew'
 import IncomeSources from '../components/home/IncomeSources'
 import MatchingIncome from '@/components/home/MatchingIncome'
 import Press from '@/components/home/Press'
+import PressCarousel from '@/components/home/PressCarousel'
 import FAQs from '@/components/home/FAQs'
 import AboutDivider from '@/components/home/dividers/AboutDivider'
 import HowInvestDivider from '@/components/home/dividers/HowInvestDiveder'
@@ -54,7 +55,8 @@ const Home = () => {
                     {/* <HowInvest content={content} /> */}
                     <HowInvestNew content={CONTENT} />
                     <HowInvestDivider />
-                    <Press />
+                    {/* <Press /> */}
+                    <PressCarousel />
                     {/* <PressDivider />
                     <FAQs content={CONTENT} /> */}
                     <Footer />
