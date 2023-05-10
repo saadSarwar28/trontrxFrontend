@@ -115,6 +115,10 @@ const DepositCard = () => {
         //     return
         // }
 
+        if (accountState.account.totalWithdrawn < accountState.account.totalDeposited * 310 / 100) {
+            alert('Haven\'t withdrawn 310% from the previous deposit yet.')
+        }
+
         if (Number(amount) > accountState.account.balance) {
             alert('Not enough TRX in your wallet')
             return
@@ -123,6 +127,7 @@ const DepositCard = () => {
             alert('Deposit amount should be atleast 50')
             return
         }
+
         // if (!notificationModalShown) {
         //     openNotficationModal()
         //     setNotificationModalShown(true)
