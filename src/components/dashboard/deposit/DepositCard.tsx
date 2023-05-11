@@ -117,6 +117,7 @@ const DepositCard = () => {
 
         if (accountState.account.totalWithdrawn < accountState.account.totalDeposited * 310 / 100) {
             alert('Haven\'t withdrawn 310% from the previous deposit yet.')
+            return
         }
 
         if (Number(amount) > accountState.account.balance) {
