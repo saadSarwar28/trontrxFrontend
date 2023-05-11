@@ -18,6 +18,7 @@ import { ethers } from 'ethers';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAccountDetails, selectUserAccount } from '@/store/accountSlice';
 import { useRouter } from 'next/router'
+import {CONSTANTS} from '@/utils/constants';
 
 
 const DepositCard = () => {
@@ -25,9 +26,10 @@ const DepositCard = () => {
     const router = useRouter()
     const { ref } = router.query
     const [referrerAddress, setReferrerAddress] = useState('')
+
     useEffect(() => {
         setReferrerAddress(String(ref))
-    }, [])
+    }, [ref])
 
     const animate = (setAnimationClass: any, element: any) => {
         const elementBottomPosition = element.getBoundingClientRect().top - window.innerHeight;
@@ -93,7 +95,6 @@ const DepositCard = () => {
     }
 
     const accountState = useSelector(selectUserAccount)
-    const [defaultReferrerAddress, setDefaultReferrerAddress] = useState('')
 
     const dispatch = useDispatch()
 
@@ -125,7 +126,7 @@ const DepositCard = () => {
             return
         }
         if (Number(amount) < 100) {
-            alert('Deposit amount should be atleast 50')
+            alert('Deposit amount should be at least 50')
             return
         }
 
@@ -134,17 +135,19 @@ const DepositCard = () => {
         //     setNotificationModalShown(true)
         //     return
         // }
+
+        console.log(referrerAddress, ' < referrer addres')
         // @ts-ignore
         if (window.tronWeb) {
             try {
                 // @ts-ignore
                 let contract = await window.tronWeb.contract().at(CONSTANTS.contractAddress);
                 // These methods do not modify the blockchain, do not cost anything to execute and are also not broadcasted to the network.
-                let refCode = 0
+                // let refCode = 0
                 // if (referrerCode !== '') {
                 //     refCode = Number(referrerCode)
                 // }
-                if (referrerAddress !== '' && referrerAddress !== null) {
+                if (referrerAddress !== '' && referrerAddress !== null && referrerAddress !== 'undefined') {
                     let result = await contract.deposit(referrerAddress).send(
                         {
                             callValue: amount + '000000',
@@ -153,7 +156,7 @@ const DepositCard = () => {
                     );
                     alert('successfully deposited, Trx id : ' + String(result));
                 } else {
-                    let result = await contract.deposit(defaultReferrerAddress).send(
+                    let result = await contract.deposit(CONSTANTS.topId).send(
                         {
                             callValue: amount + '000000',
                             feeLimit: 2000000000

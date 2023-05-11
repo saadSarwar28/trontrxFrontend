@@ -78,7 +78,7 @@ const InfoCard = () => {
             </BlackDiv1>
             <YellowDiv2>
                 <span>{content.dashboard.currentStats.infoCard.yellowButton2.span1}</span>
-                <span style={{ textTransform: 'none' }}>{accountState.account.referrer}</span>
+                <span style={{ textTransform: 'none' }}>{accountState.account.referrer === undefined ? 'No Upline Yet' : accountState.account.referrer}</span>
             </YellowDiv2>
             <BlackDiv2>
                 <span>{content.dashboard.currentStats.infoCard.blackButton2.span1}</span>
