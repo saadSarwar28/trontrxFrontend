@@ -29,7 +29,7 @@ const InfoCard = () => {
 
     useEffect(() => {
         if (accountState.account.address !== '') {
-            setReferralLink('https://trontrx.world/?ref=' + accountState.account.address)
+            setReferralLink('https://trontrx.world/dashboard/deposit?ref=' + accountState.account.address)
         }
     }, [accountState.account.address])
 

@@ -19,6 +19,8 @@ export const CONSTANTS = {
     topId: 'TELwoeetocGr8356hyNe5J2bULiRwVjxd6',
     adminId: 'TReyFDbY4cXCQekg8FsrzPfxXGCWfchZA3',
     PLATFORM_CYCLE_LENGTH: 172800, // TWO DAYS for testing
-    contractAddress: 'TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN', // mainnet
-    timeStep: 86400,
+    // contractAddress: 'TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN', // mainnet
+    contractAddress: 'TD586dtJJbwLRVFBNzncU8HNemqd1VVc22', // testnet
+    // timeStep: 86400,
+    timeStep: 600,
 }

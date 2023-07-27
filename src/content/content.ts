@@ -421,7 +421,7 @@ export const CONTENT = {
                 "Minimum contribution amount 100 TRX.",
                 "You can deposit again after withdrawing 310% from you previous deposit.",
                 "Your contribution will be activated after 1 confirmation in blockchain.",
-                "Withdrawable rewards come instantly to your secure wallet balance, which is accessible only to You.c"
+                "Withdrawable rewards come instantly to your secure wallet balance, which is accessible only to You."
             ],
             "depositButton": "DEPOSIT"
         },

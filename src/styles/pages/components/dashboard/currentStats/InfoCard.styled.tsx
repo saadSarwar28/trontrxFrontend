@@ -199,7 +199,7 @@ export const BlackDiv2 = styled(BlackDiv1)`
     font-weight: 700;
     font-size: 16.77px;
     color: #F3B51C;
-    width: 589px;
+    width: 760px;
     
     :focus {
       border: none;

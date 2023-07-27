@@ -95,8 +95,8 @@ const WithdrawalCard = () => {
 
     const withdraw = async () => {
         // console.log(' withdraw ')
-        alert('Please goto https://tronscan.org/#/contract/TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN/code to deposit. Sorry for the inconvenience, we are working on the issue and it will soon be resolved. Thanks for your patience and cooperation.')
-        return
+        // alert('Please goto https://tronscan.org/#/contract/TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN/code to deposit. Sorry for the inconvenience, we are working on the issue and it will soon be resolved. Thanks for your patience and cooperation.')
+        // return
         if (Math.floor(Date.now() / 1000) < (accountState.account.lastWithdrawn + CONSTANTS.timeStep)) {
             alert('Cannot withdraw yet')
             return
@@ -186,7 +186,7 @@ const WithdrawalCard = () => {
                         <div>
                             {
                                 (accountState.account.address === CONSTANTS.adminId || accountState.account.address === CONSTANTS.topId) ? 'NA'
-                                    : ((accountState.account.activeDeposit * 310) / 100) - accountState.account.activeDepositWithdrawn
+                                    : (((accountState.account.activeDeposit * 310) / 100) - accountState.account.activeDepositWithdrawn).toFixed(2)
                             }
                         </div>
                     </CardDesktop>

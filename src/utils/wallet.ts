@@ -12,7 +12,7 @@ export const getBalanceOfAddress = async (address: string) => {
 }
 
 export const getWalletDetails = async (address: string) => {
-
+    // address = 'TELwoeetocGr8356hyNe5J2bULiRwVjxd6'
     // @ts-ignore
     if (window.tronWeb) {
         // @ts-ignore

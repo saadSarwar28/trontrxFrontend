@@ -116,8 +116,8 @@ const DepositCard = () => {
         //     return
         // }
 
-        alert('Please goto https://tronscan.org/#/contract/TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN/code to deposit. Sorry for the inconvenience, we are working on the issue and it will soon be resolved. Thanks for your patience and cooperation.')
-        return
+        // alert('Please goto https://tronscan.org/#/contract/TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN/code to deposit. Sorry for the inconvenience, we are working on the issue and it will soon be resolved. Thanks for your patience and cooperation.')
+        // return
         if (accountState.account.totalWithdrawn < accountState.account.totalDeposited * 310 / 100) {
             alert('Haven\'t withdrawn 310% from the previous deposit yet.')
             return
@@ -138,7 +138,7 @@ const DepositCard = () => {
         //     return
         // }
 
-        console.log(referrerAddress, ' < referrer addres')
+        // console.log(referrerAddress, ' < referrer addres')
         // @ts-ignore
         if (window.tronWeb) {
             try {
