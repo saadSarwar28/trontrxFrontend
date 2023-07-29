@@ -2,127 +2,89 @@ import { Tree, TreeNode } from 'react-organizational-chart'
 import { HierarchyTreeMobileStyled } from "@/styles/pages/components/dashboard/tree/HierarchyTreeMobile.styled"
 import CustomNodeMobile from './CustomNodeMobile'
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    getUserAccountDetails,
+    selectUserAccount,
+} from '@/store/accountSlice';
+import { CONSTANTS } from '@/utils/constants';
+// @ts-ignore
+import TronWeb from 'tronweb';
+import { ethers } from 'ethers';
 
-
-const treeData = [
-    {
-        images: {
-            profileBg: "/assets/images/dashboard/tree/profile-bg.png",
-            profile: "/assets/images/dashboard/tree/profile.svg"
-        },
-        address: "TRX",
-        amount: 500
-    },
-    {
-        images: {
-            profileBg: "/assets/images/dashboard/tree/profile-bg.png",
-            profile: "/assets/images/dashboard/tree/profile.svg"
-        },
-        address: "TRX",
-        amount: 500
-    },
-    {
-        images: {
-            profileBg: "/assets/images/dashboard/tree/profile-bg.png",
-            profile: "/assets/images/dashboard/tree/profile.svg"
-        },
-        address: "TRX",
-        amount: 500
-    }
-]
 
 const HierarchyTreeMobile = () => {
-    const [loading, setLoading] = useState(false);
-    // const [loading, setLoading] = useState(true);
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setLoading(false);
-    //     }, 2000)
-    // }, [])
+
+    const accountState = useSelector(selectUserAccount)
+    const [loading, setLoading] = useState(true);
+    const [treeNodes, setTreeNodes] = useState<any>([]);
+
+    const getDownlines = async () => {
+        if (
+            accountState.account.address !== null ||
+            accountState.account.address !== undefined ||
+            accountState.account.address !== '' ||
+            treeNodes.length === 0
+        ) {
+
+            const tronWeb = new TronWeb({
+                fullHost: 'https://api.trongrid.io',
+                headers: { "TRON-PRO-API-KEY": CONSTANTS.api_key },
+                // privateKey: 'your private key'
+            })
+
+            const trontrxContract = await tronWeb.contract().at(CONSTANTS.contractAddress);
+            let downlines = []
+            let index = 0
+            while (true) {
+                try {
+                    const downline = await trontrxContract.userDownlines(accountState.account.address, 0, index).call({ from: accountState.account.address });
+                    // console.log(downline, ' <<<<');
+                    downlines.push(downline);
+                    index++;
+                } catch {
+                    break;
+                }
+            }
+            setTreeNodes(downlines)
+            setLoading(false)
+        }
+    }
+
+    useEffect(() => {
+        getDownlines()
+    }, [])
 
     return (
-        <HierarchyTreeMobileStyled className={loading ? '' : 'animate'}>
-            <Tree
-                lineWidth={'4px'}
-                lineHeight={'50px'}
-                lineColor={'#FBBD18'}
-                lineBorderRadius={'10px'}
-                nodePadding={'10px'}
-                label={
-                    <CustomNodeMobile
-                        profileBg={treeData[0].images.profileBg}
-                        profileImg={treeData[0].images.profile}
-                        address={treeData[0].address}
-                        amount={treeData[0].amount}
-                    />
-                }>
-
-                <TreeNode label={
-                    <CustomNodeMobile
-                        profileBg={treeData[0].images.profileBg}
-                        profileImg={treeData[0].images.profile}
-                        address={treeData[0].address}
-                        amount={treeData[0].amount}
-                    />
-                }>
-                    {treeData.map((item, index) => (
-                        <TreeNode key={index} label={
-                            <CustomNodeMobile
-                                profileBg={item.images.profileBg}
-                                profileImg={item.images.profile}
-                                address={item.address}
-                                amount={item.amount}
-                            />}>
-
-                            {treeData.map((item, index) => (
-                                <TreeNode key={index} label={
-                                    <CustomNodeMobile
-                                        profileBg={item.images.profileBg}
-                                        profileImg={item.images.profile}
-                                        address={item.address}
-                                        amount={item.amount}
-                                    />}>
-                                </TreeNode>
-                            ))}
-
-                        </TreeNode>
-                    ))}
-                </TreeNode>
-
-                <TreeNode label={
-                    <CustomNodeMobile
-                        profileBg={treeData[0].images.profileBg}
-                        profileImg={treeData[0].images.profile}
-                        address={treeData[0].address}
-                        amount={treeData[0].amount}
-                    />
-                }>
-                    {treeData.map((item, index) => (
-                        <TreeNode key={index} label={
-                            <CustomNodeMobile
-                                profileBg={item.images.profileBg}
-                                profileImg={item.images.profile}
-                                address={item.address}
-                                amount={item.amount}
-                            />}>
-
-                            {treeData.map((item, index) => (
-                                <TreeNode key={index} label={
-                                    <CustomNodeMobile
-                                        profileBg={item.images.profileBg}
-                                        profileImg={item.images.profile}
-                                        address={item.address}
-                                        amount={item.amount}
-                                    />}>
-                                </TreeNode>
-                            ))}
-
-                        </TreeNode>
-                    ))}
-                </TreeNode>
-
-            </Tree>
-        </HierarchyTreeMobileStyled>
+        <>
+            {
+                !loading ?
+                    <HierarchyTreeMobileStyled className={loading ? '' : 'animate'}>
+                        <Tree
+                            lineWidth={'4px'}
+                            lineHeight={'50px'}
+                            lineColor={'#FBBD18'}
+                            lineBorderRadius={'10px'}
+                            nodePadding={'10px'}
+                            label={
+                                <CustomNodeMobile
+                                    address={accountState.account.address}
+                                />
+                            }>
+                            {
+                                // @ts-ignore
+                                treeNodes.map((item, index) => (
+                                    <TreeNode key={index} label={
+                                        <CustomNodeMobile
+                                            address={item}
+                                        />}>
+                                    </TreeNode>
+                                ))
+                            }
+                        </Tree>
+                    </HierarchyTreeMobileStyled > : <div>Loading Tree...</div>
+            }
+        </>
     )
 }
 
