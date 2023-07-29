@@ -13,6 +13,7 @@ export const NodeStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 `
 
 export const NodeImage = styled.div`
@@ -52,6 +53,12 @@ export const NodeBody = styled.div`
     }
 `
 
+const ErrorMessage = styled.p`
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+`
+
 interface CustomNodeProps {
     address: string,
 }
@@ -64,7 +71,9 @@ const CustomNodeDesktop: React.FC<CustomNodeProps> = ({ address }) => {
     const [treeNodes, setTreeNodes] = useState<any>([]);
 
     useEffect(() => {
-        if (address !== '') {
+        if (address === accountState.account.address) {
+            setAmount(accountState.account.activeDeposit)
+        } else {
             getBalance()
         }
     }, [address])
@@ -117,28 +126,33 @@ const CustomNodeDesktop: React.FC<CustomNodeProps> = ({ address }) => {
 
     return (
         <>
+            <NodeStyled onClick={getDownlines}>
+                <NodeImage>
+                    <img src={CONSTANTS.treeImages.profileBg} alt="..." />
+                    <img src={CONSTANTS.treeImages.profile} alt="..." />
+                </NodeImage>
+                <NodeBody>
+                    <p>{address.slice(0, 3)}</p>
+                    <div>{amount.toFixed(2)}</div>
+                </NodeBody>
+            </NodeStyled>
             {
-                loading ? <div>Loading Downlines...</div> :
+                loading ? <ErrorMessage>Loading Downlines...</ErrorMessage> :
                     <>
-                        <NodeStyled onClick={getDownlines}>
-                            <NodeImage>
-                                <img src={CONSTANTS.treeImages.profileBg} alt="..." />
-                                <img src={CONSTANTS.treeImages.profile} alt="..." />
-                            </NodeImage>
-                            <NodeBody>
-                                <p>{address.slice(0, 3)}</p>
-                                <div>{amount.toFixed(2)}</div>
-                            </NodeBody>
-                        </NodeStyled>
                         {
-                            // @ts-ignore
-                            treeNodes.map((item, index) => (
-                                <TreeNode key={index} label={
-                                    <CustomNodeDesktop
-                                        address={item}
-                                    />}>
-                                </TreeNode>
-                            ))
+                            treeNodes.length > 0 ?
+                                <>
+                                    {
+                                        // @ts-ignore
+                                        treeNodes.map((item, index) => (
+                                            <TreeNode key={index} label={
+                                                <CustomNodeDesktop
+                                                    address={item}
+                                                />}>
+                                            </TreeNode>
+                                        ))
+                                    }
+                                </> : <ErrorMessage>No More Downlines</ErrorMessage>
                         }
                     </>
             }

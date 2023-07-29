@@ -4,7 +4,7 @@ import {
     HierarchyTreeStyled
 } from "@/styles/pages/components/dashboard/tree/TreeCard.styled"
 import dynamic from 'next/dynamic';
-
+import { isMobile } from 'react-device-detect';
 
 
 const TreeCard = () => {
@@ -16,8 +16,9 @@ const TreeCard = () => {
         <TreeCardStyled>
             <HierarchyButton>Your Hierarchy</HierarchyButton>
             <HierarchyTreeStyled>
-                <HierarchyTreeDesktop />
-                <HierarchyTreeMobile />
+                {
+                    isMobile ? <HierarchyTreeMobile /> : <HierarchyTreeDesktop />
+                }
             </HierarchyTreeStyled>
         </TreeCardStyled>
     )
