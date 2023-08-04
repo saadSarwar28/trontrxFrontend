@@ -19,6 +19,7 @@ import Navbar from '@/components/home/Navbar'
 import Footer from '@/components/home/Footer'
 import { CONTENT } from '@/content/content';
 import { useEffect } from 'react';
+import ContractStats from '@/components/home/ContractStats'
 
 
 const Home = () => {
@@ -43,7 +44,8 @@ const Home = () => {
                 <>
                     <Navbar />
                     <TopSection content={CONTENT} />
-                    {/* <ContractStats content={content} /> */}
+                    <ContractStats />
+                    <AboutDivider />
                     <About content={CONTENT} />
                     <AboutDivider />
                     <WhyChoose content={CONTENT} />

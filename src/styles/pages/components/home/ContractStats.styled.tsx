@@ -4,7 +4,7 @@ export const ContractStatsStyled = styled.section`
     display: flex;
     align-items: center;
 
-    height: 297px;
+    height: 400px;
     background: #F2F2F2;
 
     @media (max-width: 1200px) {
@@ -13,7 +13,7 @@ export const ContractStatsStyled = styled.section`
     }
 
     @media (max-width: 992px) {
-        height: 330px;
+        height: 480px;
     }
 `
 
@@ -31,34 +31,34 @@ export const StatsLeft = styled.div`
     }
 
     // main heading
-    > div {
-        transform: scale(0);
-    }
-    &.animate {
-        // main heading
-        > div {
-            animation-name: mainHeading;
-            animation-duration: 1s;
-            animation-delay: 0.25s;
-            animation-fill-mode: forwards;
-            @keyframes mainHeading {
-                0% {transform: scale(0);}
-                100% {transform: scale(1);}
-            }
-        }
+    // > div {
+    //     transform: scale(0);
+    // }
+    // &.animate {
+    //     // main heading
+    //     > div {
+    //         animation-name: mainHeading;
+    //         animation-duration: 1s;
+    //         animation-delay: 0.25s;
+    //         animation-fill-mode: forwards;
+    //         @keyframes mainHeading {
+    //             0% {transform: scale(0);}
+    //             100% {transform: scale(1);}
+    //         }
+    //     }
 
-        // right arrow
-        > img {
-            animation-name: rightArrow;
-            animation-duration: 2s;
-            animation-delay: 0.25s;
-            animation-fill-mode: forwards;
-            @keyframes rightArrow {
-                0% {opacity: 0;}
-                100% {opacity: 1;}
-            }
-        }   
-    }
+    //     // right arrow
+    //     > img {
+    //         animation-name: rightArrow;
+    //         animation-duration: 2s;
+    //         animation-delay: 0.25s;
+    //         animation-fill-mode: forwards;
+    //         @keyframes rightArrow {
+    //             0% {opacity: 0;}
+    //             100% {opacity: 1;}
+    //         }
+    //     }   
+    // }
     // animations end
 
     > div {
@@ -145,6 +145,7 @@ export const StatsRight = styled.div`
     align-items: center;
     width: 70%;
     padding: 0 30px 0 45px;
+    height: 250px;
 
     // left section and right section
     > div:first-child, > div:last-child {
@@ -213,7 +214,8 @@ export const StatsRight = styled.div`
 
     @media (max-width: 768px) {
         width: 100%;
-        padding-left: 10px;
+        padding-left: 0px;
+        height: 450px;
     }
 `
 
