@@ -208,13 +208,13 @@ const WithdrawalCard = () => {
                                                 </> :
                                                 <>
                                                     {
-                                                        (((accountState.account.activeDeposit * 310)) / 100) === accountState.account.activeDepositWithdrawn ?
+                                                        (((accountState.account.activeDeposit * 300)) / 100) === accountState.account.activeDepositWithdrawn ?
                                                             Number(accountState.account.directCommission - accountState.account.directCommissionDebt).toFixed(2)
                                                             :
                                                             <>
                                                                 {
                                                                     (accountState.account.dailyRoi + (accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt) + accountState.account.activeDepositWithdrawn) > (accountState.account.activeDeposit * 310) / 100 ?
-                                                                        ((accountState.account.activeDeposit * 310) / 100 - accountState.account.activeDepositWithdrawn).toFixed(2)
+                                                                        ((accountState.account.activeDeposit * 300) / 100 - accountState.account.activeDepositWithdrawn).toFixed(2)
                                                                         :
                                                                         Number(accountState.account.dailyRoi + (accountState.account.levelIncome - accountState.account.levelIncomeDebt) + (accountState.account.directCommission - accountState.account.directCommissionDebt)).toFixed(2)
                                                                 }

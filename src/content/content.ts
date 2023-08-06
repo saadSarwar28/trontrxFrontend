@@ -449,7 +449,7 @@ export const CONTENT = {
                     "amount": "0.00"
                 },
                 {
-                    "title": "310% Remaining Income Limit",
+                    "title": "300% Remaining Income Limit",
                     "amount": "0.00"
                 },
                 {
