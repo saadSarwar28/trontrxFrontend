@@ -61,7 +61,7 @@ const DepositCard = () => {
     }
 
     const decreaseAmount = () => {
-        if (amount > 100) {
+        if (amount > 1000) {
             setAmount(amount - 50)
         }
     }
@@ -116,10 +116,10 @@ const DepositCard = () => {
         //     return
         // }
 
-        alert('Please goto https://tronscan.org/#/contract/TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN/code to deposit. Sorry for the inconvenience, we are working on the issue and it will soon be resolved. Thanks for your patience and cooperation.')
-        return
-        if (accountState.account.totalWithdrawn < accountState.account.totalDeposited * 310 / 100) {
-            alert('Haven\'t withdrawn 310% from the previous deposit yet.')
+        // alert('Please goto https://tronscan.org/#/contract/TA6K7bdkY5hy4UVmFuFNCnK5699doLteqN/code to deposit. Sorry for the inconvenience, we are working on the issue and it will soon be resolved. Thanks for your patience and cooperation.')
+        // return
+        if (accountState.account.totalWithdrawn < accountState.account.totalDeposited * 300 / 100) {
+            alert('Haven\'t withdrawn 300% from the previous deposit yet.')
             return
         }
 
@@ -127,7 +127,7 @@ const DepositCard = () => {
             alert('Not enough TRX in your wallet')
             return
         }
-        if (Number(amount) < 100) {
+        if (Number(amount) < 1000) {
             alert('Deposit amount should be at least 50')
             return
         }
