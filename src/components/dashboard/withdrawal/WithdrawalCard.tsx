@@ -186,7 +186,7 @@ const WithdrawalCard = () => {
                         <div>
                             {
                                 (accountState.account.address === CONSTANTS.adminId || accountState.account.address === CONSTANTS.topId) ? 'NA'
-                                    : (((accountState.account.activeDeposit * 310) / 100) - accountState.account.activeDepositWithdrawn).toFixed(2)
+                                    : (((accountState.account.activeDeposit * 300) / 100) - accountState.account.activeDepositWithdrawn).toFixed(2)
                             }
                         </div>
                     </CardDesktop>
