@@ -145,7 +145,7 @@ const WithdrawalCard = () => {
                         <p>{content.dashboard.withdrawal.cards[1].title}</p>
                         <div>
                             {
-                                accountState.account.activeDepositWithdrawn >= (((accountState.account.activeDeposit * 310)) / 100) ? '0.00' : ((accountState.account.activeDeposit) / 100).toFixed(2)
+                                accountState.account.activeDepositWithdrawn >= (((accountState.account.activeDeposit * 300)) / 100) ? '0.00' : (((accountState.account.activeDeposit) * 0.5) / 100).toFixed(2)
                             }
                         </div>
                     </CardDesktop>
